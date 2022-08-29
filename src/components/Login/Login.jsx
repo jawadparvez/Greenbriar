@@ -50,7 +50,7 @@ const Login = () => {
                       <Button fullWidth className='google-button' sx={{ color: 'white', backgroundColor: '#0077FF' }} variant="contained" >Sign In</Button>
         </Typography>
         <Typography>
-                      <Button className='google-button' fullWidth sx={{ borderColor: "black" }} variant="outlined" startIcon={<img className='google-icon' src={Logo}></img>}>Sign In with Google</Button>
+                      <Button className='google-button' fullWidth sx={{ borderColor: "black" }} variant="outlined" startIcon={<img className='google-icon' src={Logo} alt=''></img>}>Sign In with Google</Button>
         </Typography>
 
         <Typography className='already-account'>
