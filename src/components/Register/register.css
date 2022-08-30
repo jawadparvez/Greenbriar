@@ -1,3 +1,16 @@
 .already-account {
-    margin-top: 210px !important;
+    margin-top: 130px !important;
+}
+
+.align-center{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wdot-icon {
+    margin-left: 5px;
+}
+
+.dot-icon {
+    margin-left: 10px!important;
 }
