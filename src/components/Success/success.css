@@ -1,0 +1,12 @@
+.success-text{
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    /* or 150% */
+
+    text-align: center;
+
+    color: #667085;
+}

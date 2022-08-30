@@ -16,7 +16,7 @@ const Login = () => {
             <p className="welcome-text">
               Welcome back! Please enter your <br /> details below
             </p>
-          
+            
             <h5 className="left">Email</h5>
             <TextField
               fullWidth
@@ -76,7 +76,7 @@ const Login = () => {
             <Button
               className="google-button"
               fullWidth
-              sx={{ borderColor: "black", borderRadius: "10px" }}
+              sx={{ borderColor: "black", borderRadius: "8px", border: "1px solid #00000" }}
               variant="outlined"
               startIcon={<img className="google-icon" src={Logo} alt=""></img>}
             >
