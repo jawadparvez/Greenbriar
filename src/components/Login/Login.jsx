@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { Typography, Checkbox, Link, Button } from "@mui/material";
+import {Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import "./login.css";
@@ -11,39 +11,32 @@ const Login = () => {
     <div>
       <Container maxWidth="xs">
         <div className="margin-top">
-          <Typography>
+          
             <h4 className="title">Sign up</h4>
             <p className="welcome-text">
               Welcome back! Please enter your <br /> details below
             </p>
-          </Typography>
-          <Typography>
+          
             <h5 className="left">Email</h5>
             <TextField
               fullWidth
               className="text-field"
-              floatingLabelStyle={{ color: "black" }}
               id="outlined-basic"
               label="Enter your email"
-              InputProps={{ disableUnderline: true }}
               variant="outlined"
               size="small"
             />
-          </Typography>
-          <Typography>
+          
             <h5 className="left">Password</h5>
             <TextField
               fullWidth
               className="text-field"
-              floatingLabelStyle={{ color: "black" }}
               id="outlined-basic"
               label="Enter your password"
               size="small"
               variant="outlined"
             />
-          </Typography>
-
-          <Typography>
+         
             <Grid container spacing="0">
               <Grid className="checkbox" item xs={1}>
                 <Checkbox
@@ -65,8 +58,7 @@ const Login = () => {
                 </div>
               </Grid>
             </Grid>
-          </Typography>
-          <Typography>
+          
             <Button
               fullWidth
               className="google-button"
@@ -80,8 +72,7 @@ const Login = () => {
             >
               Sign In
             </Button>
-          </Typography>
-          <Typography>
+          
             <Button
               className="google-button"
               fullWidth
@@ -91,9 +82,9 @@ const Login = () => {
             >
               Sign In with Google
             </Button>
-          </Typography>
+        
 
-          <Typography className="no-account">
+          <div className="no-account">
             <Grid container spacing={0}>
               <Grid item xs={8}>
                 <p className="text-account">Don't have an account?</p>
@@ -104,7 +95,7 @@ const Login = () => {
                 </Link>
               </Grid>
             </Grid>
-          </Typography>
+          </div>
         </div>
       </Container>
     </div>
