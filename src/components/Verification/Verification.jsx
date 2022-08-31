@@ -13,6 +13,9 @@ function Verification() {
      function handleClickk() {
        navigate("/");
      }
+     function handleClick() {
+       navigate("/success");
+     }
   return (
     <Container maxWidth="xs">
       <div>
@@ -37,20 +40,22 @@ function Verification() {
           fullWidth
           className="verify-button"
           sx={{
-            marginTop: "30px",
             color: "white",
             backgroundColor: "#0077FF",
             borderColor: "black",
-            borderRadius: "8px",
+            borderRadius: "10px",
+            border: "1px solid black",
+            height: "45px",
           }}
           variant="contained"
+          onClick={handleClick}
         >
           Verify Mobile
         </Button>
         <div className="mt-40">
-          <Link onClick={handleClickk}>
+          <Link style={{ textDecoration: "none" }} onClick={handleClickk}>
             <img className="arrow-icon-verify" src={Arrow} alt=""></img>
-            <span className="spacing">back to login</span>
+            <span className="spacing">Back to log in</span>
           </Link>
         </div>
       </div>

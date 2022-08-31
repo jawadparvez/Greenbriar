@@ -30,7 +30,11 @@ function Login(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -40,7 +44,7 @@ function Login(){
                 },
               },
             }}
-            id="outlined-basic"
+            
             label="Enter your email"
             variant="outlined"
             size="small"
@@ -52,7 +56,11 @@ function Login(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -62,7 +70,7 @@ function Login(){
                 },
               },
             }}
-            id="outlined-basic"
+            
             label="Enter your password"
             size="small"
             variant="outlined"
@@ -73,9 +81,10 @@ function Login(){
               <Checkbox
                 sx={{
                   color: "#D0D5DD",
-
+                  alignItems: "flex-start !important",
+                  marginLeft: "0px",
                   "&.Mui-checked": {
-                    color: "red",
+                    color: "#0077FF",
                   },
                 }}
               />
@@ -85,10 +94,7 @@ function Login(){
             </Grid>
             <Grid item xs={5}>
               <div className="float">
-                <Link
-                  onClick={handleClickk}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link onClick={handleClickk} style={{ textDecoration: "none" }}>
                   Forgot password
                 </Link>
               </div>
@@ -97,12 +103,14 @@ function Login(){
 
           <Button
             fullWidth
-            className="google-button"
+            className="signin-button"
             sx={{
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
               borderRadius: "10px",
+              border: "1px solid black",
+              height: "45px",
             }}
             variant="contained"
           >
@@ -116,6 +124,7 @@ function Login(){
               borderColor: "black",
               borderRadius: "8px",
               border: "1px solid #00000",
+              height: "45px",
             }}
             variant="outlined"
             startIcon={<img className="google-icon" src={Logo} alt=""></img>}

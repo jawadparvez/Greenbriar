@@ -10,7 +10,7 @@ import "./Email.css"
 function Email() {
   let navigate = useNavigate();
   function handleClick() {
-    navigate("/");
+    navigate("/newpassword");
   }
   function handleClickk() {
     navigate("/");
@@ -23,7 +23,9 @@ function Email() {
           <h4 className="code-text">Check your email</h4>
           <p className="number-text">
             We sent a password reset link to <br />
-            <Link>olivia@untitledui.com</Link>
+            <Link style={{ textDecoration: "none", fontWeight: "500" }}>
+              olivia@untitledui.com
+            </Link>
           </p>
 
           <Button
@@ -34,10 +36,13 @@ function Email() {
               backgroundColor: "#0077FF",
               borderColor: "black",
               borderRadius: "10px",
+              border: "1px solid black",
+              height: "45px",
             }}
             variant="contained"
+            onClick={handleClick}
           >
-            Sign In
+            Open email app
           </Button>
           <div className="verify-account">
             <Grid container spacing={0}>
@@ -47,7 +52,7 @@ function Email() {
               <Grid item xs={4}>
                 <Link
                   style={{ textDecoration: "none" }}
-                  className="Sign-Up"
+                  className="resendLink"
                   onClick={handleClickk}
                 >
                   Click to resend
@@ -56,9 +61,9 @@ function Email() {
             </Grid>
           </div>
           <div className="mt-40">
-            <Link onClick={handleClick}>
+            <Link style={{ textDecoration: "none" }} onClick={handleClick}>
               <img className="arrow-icon-verify" src={Arrow} alt=""></img>
-              <span className="spacing">back to login</span>
+              <span className="spacing">Back to log in</span>
             </Link>
           </div>
         </div>

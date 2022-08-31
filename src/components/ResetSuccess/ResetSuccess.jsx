@@ -24,7 +24,7 @@ function ResetSuccess() {
           <div className="mt-40">
             <Link style={{ textDecoration: "none" }} onClick={handleClick}>
               <img className="arrow-icon-verify" src={Arrow} alt=""></img>
-              <span className="spacing">back to login</span>
+              <span className="spacing">Back to log in</span>
             </Link>
           </div>
         </div>

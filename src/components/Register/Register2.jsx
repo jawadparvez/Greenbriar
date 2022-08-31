@@ -14,6 +14,9 @@ function Register2(){
   function handleClickk() {
     navigate("/signup");
   }
+  function handleClicck() {
+    navigate("/verification");
+  }
   function handleClick() {
     navigate("/");
   }
@@ -32,7 +35,11 @@ function Register2(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -54,7 +61,11 @@ function Register2(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -76,7 +87,11 @@ function Register2(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -103,8 +118,11 @@ function Register2(){
               backgroundColor: "#0077FF",
               borderColor: "black",
               borderRadius: "10px",
+              border: "1px solid black",
+              height: "45px",
             }}
             variant="contained"
+            onClick={handleClicck}
           >
             Create Account
           </Button>

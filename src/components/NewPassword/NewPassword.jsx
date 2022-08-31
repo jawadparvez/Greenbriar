@@ -12,6 +12,9 @@ function NewPassword() {
   function handleClickk() {
     navigate("/");
   }
+  function handleClick() {
+    navigate("/resetsuccess");
+  }
   return (
     <div>
       <Container maxWidth="xs">
@@ -28,7 +31,11 @@ function NewPassword() {
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -54,6 +61,7 @@ function NewPassword() {
                   "& > fieldset": {
                     borderColor: "#000000",
                     border: "1px solid",
+                    borderRadius: "8px",
                   },
                 },
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
@@ -71,7 +79,7 @@ function NewPassword() {
               size="small"
             />
             <FormHelperText id="standard-weight-helper-text">
-              passwords must match
+              Passwords must match
             </FormHelperText>
           </FormControl>
           <Button
@@ -82,15 +90,18 @@ function NewPassword() {
               backgroundColor: "#0077FF",
               borderColor: "black",
               borderRadius: "10px",
+              border: "1px solid black",
+              height: "45px",
             }}
             variant="contained"
+            onClick={handleClick}
           >
             Reset Password
           </Button>
           <div className="mt-40">
             <Link style={{ textDecoration: "none" }} onClick={handleClickk}>
               <img className="arrow-icon-verify" src={Arrow} alt=""></img>
-              <span className="spacing">back to login</span>
+              <span className="spacing">Back to log in</span>
             </Link>
           </div>
         </div>

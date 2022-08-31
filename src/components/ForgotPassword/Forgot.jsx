@@ -11,6 +11,9 @@ function Forgot() {
   function handleClick() {
     navigate("/");
   }
+  function handleClickk() {
+    navigate("/emailverify");
+  }
   return (
     <div>
       <Container maxWidth="xs">
@@ -26,7 +29,11 @@ function Forgot() {
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -50,15 +57,18 @@ function Forgot() {
             backgroundColor: "#0077FF",
             borderColor: "black",
             borderRadius: "10px",
+            border: "1px solid black",
+            height: "45px",
           }}
           variant="contained"
+          onClick={handleClickk}
         >
           Reset Password
         </Button>
         <div className="mt-40">
           <Link style={{ textDecoration: "none" }} onClick={handleClick}>
             <img className="arrow-icon-verify" src={Arrow} alt=""></img>
-            <span className="spacing">back to login</span>
+            <span className="spacing">Back to log in</span>
           </Link>
         </div>
       </Container>

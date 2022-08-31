@@ -30,7 +30,11 @@ function Register(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -52,7 +56,11 @@ function Register(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -74,7 +82,11 @@ function Register(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -96,7 +108,11 @@ function Register(){
             sx={{
               "& .MuiInputLabel-root": { color: "gray" }, //styles the label
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
@@ -122,6 +138,7 @@ function Register(){
                   "& > fieldset": {
                     borderColor: "#000000",
                     border: "1px solid",
+                    borderRadius: "8px",
                   },
                 },
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" },

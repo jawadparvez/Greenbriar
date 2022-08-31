@@ -8,7 +8,7 @@
     color: #000000;
 }
 .welcome-text{
-    font-weight: 500;
+    font-weight: 500!important;
     font-size: 15px!important;
     line-height: 32px!important;
     /* or 213% */
@@ -21,11 +21,11 @@
     text-align: left;
 }
 .left{
-    font-weight: 500!important;
+    font-weight: 520!important;
     font-size: 14px !important;
     line-height: 20px !important;
     /* identical to box height, or 143% */
-
+    margin-bottom: 6px!important;
     text-align: left;
     margin-bottom: 0px;
     color: #000000;
@@ -39,6 +39,10 @@
 }
 .margin-top{
     padding-top: 54px;
+}
+p.text-account {
+    font-weight: 400;
+    font-size: 14px;
 }
 
 
@@ -91,8 +95,11 @@
     /* Inside auto layout */
 
 }
+.signin-button{
+    margin-top: 30px!important;
+}
 .google-button{
-    margin-top: 25px!important;
+    margin-top: 15px!important;
 }
 .google-icon{
     max-width: 30px;
@@ -101,10 +108,12 @@
 
 .Sign-Up {
     text-align: left;
-    margin-left: 0px!important;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 3px!important;
     float: left;
     color: #0077FF !important;
-    margin-top: 15px!important;
+    margin-top: 13px!important;
 }
 .text-account{
     text-align: end;
@@ -112,4 +121,7 @@
 
 .no-account{
     margin-top: 200px!important;
+}
+button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.MuiButton-outlinedPrimary.MuiButton-sizeMedium.MuiButton-outlinedSizeMedium.MuiButton-fullWidth.google-button.css-c396dp-MuiButtonBase-root-MuiButton-root {
+    text-transform: capitalize!important;
 }

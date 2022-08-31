@@ -2,9 +2,13 @@ import React from 'react'
 import Tick from "../../Assets/Images/tick.png"
 import { Container } from "@mui/system";
 import { Button} from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./success.css"
 function Success() {
-  
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate("/forgotpassword");
+  }
   return (
     <div>
       <Container maxWidth="xs">
@@ -19,13 +23,15 @@ function Success() {
             fullWidth
             className="verify-button"
             sx={{
-              marginTop: "30px",
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
               borderRadius: "10px",
+              border: "1px solid black",
+              height: "45px",
             }}
             variant="contained"
+            onClick={handleClick}
           >
             Sign In
           </Button>
