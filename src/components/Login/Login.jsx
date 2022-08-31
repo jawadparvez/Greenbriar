@@ -5,84 +5,123 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import "./login.css";
 import Logo from "../../Assets/Images/Google-icon.png";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+function Login(){
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate("/signup");
+  }
+  function handleClickk() {
+    navigate("/forgotpassword");
+  }
   return (
     <div>
       <Container maxWidth="xs">
         <div className="margin-top">
-          
-            <h4 className="title">Sign up</h4>
-            <p className="welcome-text">
-              Welcome back! Please enter your <br /> details below
-            </p>
-            
-            <h5 className="left">Email</h5>
-            <TextField
-              fullWidth
-              className="text-field"
-              id="outlined-basic"
-              label="Enter your email"
-              variant="outlined"
-              size="small"
-            />
-          
-            <h5 className="left">Password</h5>
-            <TextField
-              fullWidth
-              className="text-field"
-              id="outlined-basic"
-              label="Enter your password"
-              size="small"
-              variant="outlined"
-            />
-         
-            <Grid container spacing="0">
-              <Grid className="checkbox" item xs={1}>
-                <Checkbox
-                  sx={{
-                    color: "#D0D5DD",
+          <h4 className="title">Sign up</h4>
+          <p className="welcome-text">
+            Welcome back! Please enter your <br /> details below
+          </p>
 
-                    "&.Mui-checked": {
-                      color: "red",
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <p className="p-css">Remember for 30 days</p>
-              </Grid>
-              <Grid item xs={5}>
-                <div className="float">
-                  <Link href="#">Forgot password</Link>
-                </div>
-              </Grid>
+          <h5 className="left">Email</h5>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            id="outlined-basic"
+            label="Enter your email"
+            variant="outlined"
+            size="small"
+          />
+
+          <h5 className="left">Password</h5>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            id="outlined-basic"
+            label="Enter your password"
+            size="small"
+            variant="outlined"
+          />
+
+          <Grid container spacing="0">
+            <Grid className="checkbox" item xs={1}>
+              <Checkbox
+                sx={{
+                  color: "#D0D5DD",
+
+                  "&.Mui-checked": {
+                    color: "red",
+                  },
+                }}
+              />
             </Grid>
-          
-            <Button
-              fullWidth
-              className="google-button"
-              sx={{
-                color: "white",
-                backgroundColor: "#0077FF",
-                borderColor: "black",
-                borderRadius: "10px",
-              }}
-              variant="contained"
-            >
-              Sign In
-            </Button>
-          
-            <Button
-              className="google-button"
-              fullWidth
-              sx={{ borderColor: "black", borderRadius: "8px", border: "1px solid #00000" }}
-              variant="outlined"
-              startIcon={<img className="google-icon" src={Logo} alt=""></img>}
-            >
-              Sign In with Google
-            </Button>
-        
+            <Grid item xs={6}>
+              <p className="p-css">Remember for 30 days</p>
+            </Grid>
+            <Grid item xs={5}>
+              <div className="float">
+                <Link
+                  onClick={handleClickk}
+                  style={{ textDecoration: "none" }}
+                >
+                  Forgot password
+                </Link>
+              </div>
+            </Grid>
+          </Grid>
+
+          <Button
+            fullWidth
+            className="google-button"
+            sx={{
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              borderRadius: "10px",
+            }}
+            variant="contained"
+          >
+            Sign In
+          </Button>
+
+          <Button
+            className="google-button"
+            fullWidth
+            sx={{
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid #00000",
+            }}
+            variant="outlined"
+            startIcon={<img className="google-icon" src={Logo} alt=""></img>}
+          >
+            Sign In with Google
+          </Button>
 
           <div className="no-account">
             <Grid container spacing={0}>
@@ -90,7 +129,11 @@ const Login = () => {
                 <p className="text-account">Don't have an account?</p>
               </Grid>
               <Grid item xs={4}>
-                <Link className="Sign-Up" href="/signup">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  className="Sign-Up"
+                  onClick={handleClick}
+                >
                   Sign Up
                 </Link>
               </Grid>

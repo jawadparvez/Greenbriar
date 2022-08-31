@@ -6,8 +6,17 @@ import { FormControl, FormHelperText } from '@mui/material'
 import TextField from '@mui/material/TextField';
 import WDot from '../../Assets/Images/wDot.png' 
 import Dot from "../../Assets/Images/Dot.png";
+import { useNavigate } from "react-router-dom";
 import "./register.css"
-const Register = () => {
+
+function Register(){
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate("/");
+  }
+  function handleClickk() {
+    navigate("/signupnext");
+  }
   return (
     <div>
       <Container maxWidth="xs">
@@ -18,7 +27,19 @@ const Register = () => {
 
           <TextField
             fullWidth
-            className="text-field"
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
             id="outlined-basic"
             label="Enter your first and last name"
             variant="outlined"
@@ -28,7 +49,19 @@ const Register = () => {
           <h5 className="left">Mobile Number</h5>
           <TextField
             fullWidth
-            className="text-field"
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
             id="outlined-basic"
             label="Enter your phone number"
             variant="outlined"
@@ -38,7 +71,19 @@ const Register = () => {
           <h5 className="left">Email</h5>
           <TextField
             fullWidth
-            className="text-field"
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
             id="outlined-basic"
             label="Enter your email"
             variant="outlined"
@@ -48,7 +93,19 @@ const Register = () => {
           <h5 className="left">Password</h5>
           <TextField
             fullWidth
-            className="text-field"
+            sx={{
+              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#000000", border: "1px solid" },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
             id="outlined-basic"
             label="Enter your password"
             variant="outlined"
@@ -59,14 +116,29 @@ const Register = () => {
           <FormControl fullWidth={true}>
             <TextField
               fullWidth
-              className="text-field"
+              sx={{
+                "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+                "& .MuiOutlinedInput-root": {
+                  "& > fieldset": {
+                    borderColor: "#000000",
+                    border: "1px solid",
+                  },
+                },
+                "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  "& > fieldset": {
+                    borderColor: "#000000",
+                    border: "1px solid",
+                  },
+                },
+              }}
               id="outlined-basic"
               label="Confirm password"
               variant="outlined"
               size="small"
             />
             <FormHelperText id="standard-weight-helper-text">
-              passwords must match
+              Passwords must match
             </FormHelperText>
           </FormControl>
 
@@ -74,7 +146,11 @@ const Register = () => {
             <img className="dot-icon" src={Dot} alt=""></img>
             <img className="wdot-icon" src={WDot} alt=""></img>
           </div>
-          <Link className="float" href="/signupnext">
+          <Link
+            style={{ textDecoration: "none" }}
+            className="float"
+            onClick={handleClickk}
+          >
             Next
           </Link>
 
@@ -84,7 +160,11 @@ const Register = () => {
                 <p className="text-account">Already have an account?</p>
               </Grid>
               <Grid item xs={4}>
-                <Link className="Sign-Up" href="/">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  className="Sign-Up"
+                  onClick={handleClick}
+                >
                   Log In
                 </Link>
               </Grid>
