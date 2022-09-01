@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
+import axios from "axios";
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -8,6 +9,13 @@ import Logo from "../../Assets/Images/Google-icon.png";
 import { useNavigate } from "react-router-dom";
 
 function Login(){
+  const [user, setUsers] = useState();
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")//this is a dummy Api
+      .then((response) => setUsers(response.data));
+  }, []);
+
   let navigate = useNavigate();
   function handleClick() {
     navigate("/signup");
@@ -15,6 +23,7 @@ function Login(){
   function handleClickk() {
     navigate("/forgotpassword");
   }
+
   return (
     <div>
       <Container maxWidth="xs">
