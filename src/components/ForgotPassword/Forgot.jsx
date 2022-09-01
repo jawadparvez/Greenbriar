@@ -33,6 +33,7 @@ function Forgot() {
                   borderColor: "#000000",
                   border: "1px solid",
                   borderRadius: "8px",
+                  height: "47px",
                 },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
@@ -51,14 +52,14 @@ function Forgot() {
         </div>
         <Button
           fullWidth
-          className="google-button"
+          className="google-button button"
           sx={{
             color: "white",
             backgroundColor: "#0077FF",
             borderColor: "black",
-            borderRadius: "10px",
+            borderRadius: "8px",
             border: "1px solid black",
-            height: "45px",
+            height: "44px",
           }}
           variant="contained"
           onClick={handleClickk}

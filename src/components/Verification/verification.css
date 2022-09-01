@@ -20,7 +20,7 @@ margin-bottom: 0px;
 
 .number-text{
     font-weight: 400!important;
-    font-size: 16px!important;
+    font-size: 15px!important;
     line-height: 24px!important;
     /* or 150% */
 
@@ -35,8 +35,8 @@ margin-bottom: 0px;
     font-size: 48px;
     line-height: 60px;
     font-size: 50px;
-    width: 50px!important;
-    height: 50px!important;
+    width: 40px!important;
+    height: 40px!important;
     color: #0077FF !important;
     border-radius: 8px;
     padding: 8px;

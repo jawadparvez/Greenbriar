@@ -2,7 +2,7 @@
     font-weight: 600!important;
     font-size: 20px!important;
     line-height: 32px!important;
-
+    margin-top: 18px!important;
     text-align: center;
     margin-bottom: 0px;
     color: #000000;
@@ -15,11 +15,13 @@
 
     text-align: center;
     margin-top: 0px;
+    margin: bottom 1px;
     color: #000000;
 }
 .text-align{
     text-align: left;
 }
+
 .left{
     font-weight: 520!important;
     font-size: 14px !important;
@@ -27,7 +29,8 @@
     /* identical to box height, or 143% */
     margin-bottom: 6px!important;
     text-align: left;
-    margin-bottom: 0px;
+    margin-top: 27px;
+    
     color: #000000;
 
 
@@ -38,7 +41,7 @@
     flex-grow: 0;
 }
 .margin-top{
-    padding-top: 54px;
+    margin-top: 74px;
 }
 p.text-account {
     font-weight: 400;
@@ -47,13 +50,13 @@ p.text-account {
 
 
 .p-css{
-    margin-top: 18px;
+    margin-top: 26px;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     /* identical to box height, or 143% */
 
-
+    margin-left: 2px;
     /* Gray/700 */
 
     color: #344054;
@@ -66,7 +69,7 @@ p.text-account {
     flex-grow: 0;
 }
 .float{
-    margin-top: 18px!important;
+    margin-top: 26px!important;
     float: right;
     font-weight: 500!important;
     font-size: 14px;
@@ -89,7 +92,7 @@ p.text-account {
     /* Gray/300 */
     text-align: left!important;
     margin-left: 0px;
-    margin-top: 7px!important;
+    margin-top: 15px!important;
     border-radius: 4px!important;
     color: white;
     /* Inside auto layout */
@@ -120,8 +123,5 @@ p.text-account {
 }
 
 .no-account{
-    margin-top: 200px!important;
-}
-button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.MuiButton-outlinedPrimary.MuiButton-sizeMedium.MuiButton-outlinedSizeMedium.MuiButton-fullWidth.google-button.css-c396dp-MuiButtonBase-root-MuiButton-root {
-    text-transform: capitalize!important;
+    margin-top: 156px!important;
 }
