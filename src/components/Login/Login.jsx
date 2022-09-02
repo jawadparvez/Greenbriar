@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
+// import {useSelector, useDispatch} from "react-redux"
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -9,7 +10,23 @@ import Logo from "../../Assets/Images/Google-icon.png";
 import { useNavigate } from "react-router-dom";
 
 function Login(){
+  // const dispatch = useDispatch();
+  // const errors = useSelector(state => state.errors);
+  // console.log(errors);
   const [user, setUsers] = useState();
+
+  // const HandleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  // }
+
+  // const newUser = {
+  //   email: data.get('email'),
+  //   password: data.get('password')
+  // };
+
+  // console.log(errors);
+  // dispatch(loginUser(newUser,navigate));
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")//this is a dummy Api

@@ -1,0 +1,37 @@
+.background-blue{
+    background-color: #0077FF;
+    text-align: center;
+    color: white;
+}
+
+.green{
+    color:#7DD236 ;
+    font-size: 23px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-block-start: 0px!important;
+}
+.red{
+    color: #FF0000;
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-block-start: 0px!important;
+}
+
+.bold{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+.bolder{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.right-icon{
+    margin-top: 32px;
+}

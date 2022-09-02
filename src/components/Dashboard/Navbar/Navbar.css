@@ -1,0 +1,9 @@
+.appLogo{
+    margin-top: 35px!important;
+    margin-left: -60px;
+    justify-content: start;
+}
+
+#logo{
+    align-items: flex-start;
+}

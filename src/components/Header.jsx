@@ -9,6 +9,7 @@ import Register from './Register/Register';
 import Register2 from './Register/Register2';
 import ResetSuccess from './ResetSuccess/ResetSuccess';
 import Success from './Success/Success';
+import Home from "./Dashboard/Home/Home"
 import Verification from './Verification/Verification';
 function Header() {
   return (
@@ -24,6 +25,8 @@ function Header() {
         <Route path="/newpassword" element={<NewPassword />} />
         <Route path="/resetsuccess" element={<ResetSuccess />} />
         <Route path="/404error" element={<Error />} />
+        <Route path="/notifications" element={<Error />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );
