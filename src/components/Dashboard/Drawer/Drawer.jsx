@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
 import './drawer.css'
-import { textAlign } from "@mui/system";
 
 const useStyles = makeStyles(() => ({
   link: {

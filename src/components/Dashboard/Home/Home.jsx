@@ -6,9 +6,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { useState } from 'react';
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import { Grid } from '@mui/material';
 import Navbar from "../Navbar/Navbar"
 import { Link } from "@mui/material";
@@ -212,7 +210,13 @@ function Home() {
               className="font-bold "
             >
               Welcome to walletpay. Get started with a quick tour.
-              <Link style={{ textDecoration: "none", fontWeight: "500", display:'inline' }}>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  fontWeight: "500",
+                  display: "inline",
+                }}
+              >
                 Take the tour?
               </Link>
             </p>
@@ -228,7 +232,7 @@ function Home() {
             }}
           >
             <p className="font-bold p-noti">
-              Invite accepted by . 
+              Invite accepted by .
               <Link style={{ textDecoration: "none", fontWeight: "500" }}>
                 Olivia J.
               </Link>

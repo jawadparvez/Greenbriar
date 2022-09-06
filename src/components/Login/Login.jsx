@@ -1,5 +1,5 @@
-import React, {useState,useEffect} from "react";
-import axios from "axios";
+import React from "react";
+// import {useState, useEffect} from "react"
 // import {useSelector, useDispatch} from "react-redux"
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
@@ -13,7 +13,7 @@ function Login(){
   // const dispatch = useDispatch();
   // const errors = useSelector(state => state.errors);
   // console.log(errors);
-  const [user, setUsers] = useState();
+  // const [user, setUsers] = useState();
 
   // const HandleSubmit = (event) => {
   //   event.preventDefault();
@@ -27,11 +27,11 @@ function Login(){
 
   // console.log(errors);
   // dispatch(loginUser(newUser,navigate));
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")//this is a dummy Api
-      .then((response) => setUsers(response.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://jsonplaceholder.typicode.com/users")//this is a dummy Api
+  //     .then((response) => setUsers(response.data));
+  // }, []);
 
   let navigate = useNavigate();
   function handleClick() {
