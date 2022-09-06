@@ -11,6 +11,7 @@ import ResetSuccess from './ResetSuccess/ResetSuccess';
 import Success from './Success/Success';
 import Home from "./Dashboard/Home/Home"
 import Verification from './Verification/Verification';
+import Menu from './Dashboard/Menu/Menu';
 function Header() {
   return (
     <div>
@@ -27,6 +28,7 @@ function Header() {
         <Route path="/404error" element={<Error />} />
         <Route path="/notifications" element={<Error />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </div>
   );

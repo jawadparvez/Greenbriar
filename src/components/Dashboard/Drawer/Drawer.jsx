@@ -8,6 +8,7 @@ import {
   Divider,
   makeStyles,
 } from "@material-ui/core";
+import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -55,7 +56,7 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
         classes={{ paper: classes.paper }}
       >
-        <box sx={{ backgroundColor: "primary.main" }} height="50vh">
+        <Box sx={{ backgroundColor: "primary.main" }} height="50vh">
           <List height="50vh">
             <ListItem onClick={() => setOpenDrawer(false)}>
               <ListItemText>
@@ -67,7 +68,7 @@ function DrawerComponent() {
             <Divider className={classes.divider} />
             <ListItem>
               <ListItemText>
-                <Link to="/" className={classes.link}>
+                <Link to="/menu" className={classes.link}>
                   Menu
                 </Link>
               </ListItemText>
@@ -124,7 +125,7 @@ function DrawerComponent() {
               </Grid>
             </Grid>
           </List>
-        </box>
+        </Box>
       </Drawer>
       <IconButton
         className={classes.icon}

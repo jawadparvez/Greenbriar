@@ -35,3 +35,43 @@
 .right-icon{
     margin-top: 32px;
 }
+
+.tab-value{
+    font-size: 23px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-block-start: 0px!important;
+    margin-bottom: 0px;
+}
+.tab-heading{
+    margin-bottom: 0px;
+}
+
+.text-color{
+    color: #101828;
+}
+
+.balance-value{
+    font-size: 23px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.pay{
+    font-style: italic;
+    color: #54C242;
+}
+
+.p-noti{
+    display: inline-flex;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.font-bold{
+    font-weight: 600;
+    font-size: 15px;
+}

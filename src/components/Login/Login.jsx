@@ -37,6 +37,9 @@ function Login(){
   function handleClick() {
     navigate("/signup");
   }
+  function handleClickkk() {
+    navigate("/home");
+  }
   function handleClickk() {
     navigate("/forgotpassword");
   }
@@ -151,6 +154,7 @@ function Login(){
               height: "44px",
             }}
             variant="contained"
+            onClick={handleClickkk}
           >
             Sign In
           </Button>

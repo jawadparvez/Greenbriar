@@ -11,6 +11,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Grid } from '@mui/material';
 import Navbar from "../Navbar/Navbar"
+import { Link } from "@mui/material";
 import Right from "../../../Assets/Images/right.png"
 import './Home.css'
 
@@ -27,8 +28,8 @@ function Home() {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
             onChange={handleTabChange}
-            textColor="Black"
             indicatorColor="primary"
+            textColor="black"
             aria-label="lab API tabs example"
           >
             <Tab
@@ -107,10 +108,10 @@ function Home() {
           >
             <Grid container>
               <Grid item xs={6}>
-                <h4 className="bolder">Balance</h4>
+                <h4 className="bolder text-color">Balance</h4>
               </Grid>
               <Grid item xs={5}>
-                <h4 className="bolder">$40,206.20</h4>
+                <h4 className="balance-value">$40,206.20</h4>
               </Grid>
               <Grid item xs={1}>
                 <img className="right-icon" src={Right} alt=""></img>
@@ -128,22 +129,21 @@ function Home() {
           >
             <Grid container>
               <Grid item xs={6}>
-                <h4 className="bolder">Today's Revenue</h4>
+                <h4 className="bolder text-color">Today's Revenue</h4>
               </Grid>
               <Grid item xs={5}>
-                <h4 className="bolder">$3,682.89</h4>
+                <h4 className="balance-value">$3,682.89</h4>
               </Grid>
               <Grid item xs={1}>
                 <img className="right-icon" src={Right} alt=""></img>
               </Grid>
             </Grid>
           </Card>
-          <Grid container>
-            <Grid item xs={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
               <Card
                 style={{
                   marginTop: "20px",
-                  maxWidth: "50%",
                   border: "1px solid black",
                   fontFamily: "Montserrat",
                   height: "80px",
@@ -152,34 +152,104 @@ function Home() {
               >
                 <Grid container>
                   <Grid item xs={12}>
-                    <h4 className="">Today's Tab Orders</h4>
-                    <p className=""> 56</p>
+                    <h4 className="tab-heading text-color">
+                      Today's Tab Orders
+                    </h4>
+                    <p className="tab-value"> 65</p>
                   </Grid>
                 </Grid>
               </Card>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <Card
                 style={{
                   marginTop: "20px",
-                  maxWidth: "50%",
                   border: "1px solid black",
                   fontFamily: "Montserrat",
                   height: "80px",
                   borderRadius: "8px",
                 }}
               >
-                <Grid container>
-                  <Grid item xs={12}>
-                    <h4 className="">Avg. Tab Value</h4>
-                    <p className=""> $51.92</p>
-                  </Grid>
+                <Grid item xs={12}>
+                  <h4 className="tab-heading text-color">Avg. Tab Value</h4>
+                  <p className="tab-value"> $51.92</p>
                 </Grid>
               </Card>
             </Grid>
           </Grid>
+          <Card
+            style={{
+              marginTop: "20px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+            }}
+          >
+            <Grid container>
+              <Grid item xs={11}>
+                <h4 className="bolder text-color">Settings</h4>
+              </Grid>
+
+              <Grid item xs={1}>
+                <img className="right-icon" src={Right} alt=""></img>
+              </Grid>
+            </Grid>
+          </Card>
         </TabPanel>
-        <TabPanel value="2">This is the notification panel</TabPanel>
+        <TabPanel value="2">
+          <Card
+            style={{
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+              backgroundColor: "#E3F2FD",
+            }}
+          >
+            <p
+              style={{ paddingLeft: "10px", paddingRight: "10px" }}
+              className="font-bold "
+            >
+              Welcome to walletpay. Get started with a quick tour.
+              <Link style={{ textDecoration: "none", fontWeight: "500", display:'inline' }}>
+                Take the tour?
+              </Link>
+            </p>
+          </Card>
+          <Card
+            style={{
+              marginTop: "20px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+              backgroundColor: "#E3F2FD",
+            }}
+          >
+            <p className="font-bold p-noti">
+              Invite accepted by . 
+              <Link style={{ textDecoration: "none", fontWeight: "500" }}>
+                Olivia J.
+              </Link>
+            </p>
+          </Card>
+          <Card
+            style={{
+              marginTop: "20px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+              backgroundColor: "#E3F2FD",
+            }}
+          >
+            <p style={{ display: "inline-block" }} className="font-bold">
+              Successfully transferred $40,000 from WALLET/
+              <span className="pay">PAY</span>
+            </p>
+          </Card>
+        </TabPanel>
       </TabContext>
     </div>
   );

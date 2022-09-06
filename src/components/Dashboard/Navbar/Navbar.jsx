@@ -35,36 +35,12 @@ function Navbar() {
     <AppBar position="static" style={{ background: "#0077FF" }}>
       <CssBaseline />
       <Toolbar>
-        <Typography id="logo" variant="span" className={classes.logo}>
-          <img className="appLogo" src={Logo} alt=""></img>
+        <Typography id="logo" className={classes.logo}>
+          <Link to='/'>
+            <img className="appLogo" src={Logo} alt=""></img>
+          </Link>
         </Typography>
-        {isMobile ? (
-          <DrawerComponent />
-        ) : (
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home Feed
-            </Link>
-            <Link to="/about" className={classes.link}>
-              Menu
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              Table Manager
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              Users
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              Accounts
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              Settings
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              Support
-            </Link>
-          </div>
-        )}
+        {isMobile ? <DrawerComponent /> : <div></div>}
       </Toolbar>
     </AppBar>
   );
