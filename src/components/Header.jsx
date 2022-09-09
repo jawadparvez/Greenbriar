@@ -12,6 +12,7 @@ import Success from './Success/Success';
 import Home from "./Dashboard/Home/Home"
 import Verification from './Verification/Verification';
 import Menu from './Dashboard/Menu/Menu';
+import TableManager from './Dashboard/TableManager/TableManager';
 function Header() {
   return (
     <div>
@@ -29,6 +30,7 @@ function Header() {
         <Route path="/notifications" element={<Error />} />
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/tablemanager" element={<TableManager />} />
       </Routes>
     </div>
   );

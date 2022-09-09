@@ -639,7 +639,7 @@ function Menu() {
               height: "44px",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloseee}
             // onClick={handleClickkk}
           >
             Cancel
@@ -795,7 +795,7 @@ function Menu() {
               height: "44px",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloseeee}
             // onClick={handleClickkk}
           >
             Cancel
@@ -829,7 +829,7 @@ function Menu() {
             variant="contained"
             // onClick={handleClickkk}
           >
-            Add
+            Remove
           </Button>
           <Button
             fullWidth
@@ -845,7 +845,7 @@ function Menu() {
               height: "44px",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloser}
             // onClick={handleClickkk}
           >
             Cancel

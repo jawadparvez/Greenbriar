@@ -75,7 +75,7 @@ function DrawerComponent() {
             <Divider className={classes.divider} />
             <ListItem>
               <ListItemText>
-                <Link to="/" className={classes.link}>
+                <Link to="/tablemanager" className={classes.link}>
                   Table Manager
                 </Link>
               </ListItemText>
