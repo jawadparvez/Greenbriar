@@ -1,7 +1,7 @@
 import React from 'react'
 import './tabhistory.css'
 import Navbar from '../Navbar/Navbar'
-import { Card, Divider, Grid } from '@material-ui/core';
+import {Divider, Grid } from '@material-ui/core';
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
@@ -56,7 +56,7 @@ function TabHistory() {
           inputProps={{ "aria-label": "search google maps" }}
         />
         <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-          <img src={Microphone} />
+          <img src={Microphone} alt='' />
         </IconButton>
       </Paper>
 
@@ -128,7 +128,7 @@ function TabHistory() {
             }}
             variant="contained"
           >
-            Data Range <img style={{marginLeft:'3px', marginTop:'4px'}} src={BottomArrow} />
+            Data Range <img style={{marginLeft:'3px', marginTop:'4px'}} src={BottomArrow}alt=''/>
           </Button>
         </Grid>
       </Grid>

@@ -294,7 +294,7 @@ useEffect(() => {
           </Grid>
           <Grid container>
             <Grid item xs={2}>
-              <span className="center color">Table</span>
+              <span className="center-t-c color">Table</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-c">Time</span>
