@@ -142,6 +142,7 @@ function Register({ page, setPage, formData, setFormData }) {
             label="Enter your password"
             variant="outlined"
             className="form-group"
+            type="password"
             size="small"
             value={formData.password} //setting the value of the form to the props value
             onChange={
@@ -172,6 +173,7 @@ function Register({ page, setPage, formData, setFormData }) {
                 },
               }}
               id="outlined-basic"
+              type="password"
               label="Confirm password"
               variant="outlined"
               className="form-group"
