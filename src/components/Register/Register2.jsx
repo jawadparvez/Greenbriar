@@ -9,23 +9,40 @@ import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router-dom";
 import './register2.css'
 
-function Register2(){
+function Register2({ page, setPage, formData, setFormData }) {
   let navigate = useNavigate();
-  function handleClickk() {
-    navigate("/signup");
-  }
-  function handleClicck() {
-    navigate("/verification");
-  }
   function handleClick() {
     navigate("/");
+  }
+
+  function submitHandle() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(formData);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:4000/users", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   }
   return (
     <div>
       <Container maxWidth="xs">
         <div className="margin-top">
           <h5 className="title">Resturant Info</h5>
-          <Link onClick={handleClickk}>
+          <Link
+            onClick={() => {
+              setPage(page - 1);
+            }}
+          >
             <img className="arrow-icon" src={Arrow} alt=""></img>
           </Link>
           <h5 className="left-1">Resturant Name</h5>
@@ -52,7 +69,13 @@ function Register2(){
             id="outlined-basic"
             label="Enter resturant name"
             variant="outlined"
+            className="form-group"
             size="small"
+            value={formData.restaurantName} //setting the value of the form to the props value
+            onChange={
+              (e) =>
+                setFormData({ ...formData, restaurantName: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
 
           <h5 className="left">Resturant Address</h5>
@@ -78,7 +101,13 @@ function Register2(){
             id="outlined-basic"
             label="Enter resturant address"
             variant="outlined"
+            className="form-group"
             size="small"
+            value={formData.restaurantAddress} //setting the value of the form to the props value
+            onChange={
+              (e) =>
+                setFormData({ ...formData, restaurantAddress: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
 
           <h5 className="left">Number of Tables</h5>
@@ -104,7 +133,12 @@ function Register2(){
             id="outlined-basic"
             label="Enter number"
             variant="outlined"
+            className="form-group"
             size="small"
+            value={formData.tableCount} //setting the value of the form to the props value
+            onChange={
+              (e) => setFormData({ ...formData, tableCount: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <div className="align-center">
             <img className="wdot-icon" src={WDot} alt="wdot"></img>
@@ -122,8 +156,11 @@ function Register2(){
               height: "44px",
             }}
             variant="contained"
-            onClick={handleClicck}
+            onClick={() => {
+              submitHandle();
+            }}
           >
+            {" "}
             Create Account
           </Button>
           <div className="alreadyy-account">

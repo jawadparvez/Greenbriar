@@ -9,6 +9,8 @@ import Paper from "@mui/material/Paper";
 import { Button } from '@mui/material';
 import InputBase from "@mui/material/InputBase";
 import { Link } from 'react-router-dom';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Microphone from '../../../Assets/Images/Microphone.png'
 import BottomArrow from '../../../Assets/Images/bottomarrow.png'
 
@@ -56,7 +58,7 @@ function TabHistory() {
           inputProps={{ "aria-label": "search google maps" }}
         />
         <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-          <img src={Microphone} alt='' />
+          <img src={Microphone} alt="" />
         </IconButton>
       </Paper>
 
@@ -128,11 +130,43 @@ function TabHistory() {
             }}
             variant="contained"
           >
-            Data Range <img style={{marginLeft:'3px', marginTop:'4px'}} src={BottomArrow}alt=''/>
+            Data Range{" "}
+            <img
+              style={{ marginLeft: "3px", marginTop: "4px" }}
+              src={BottomArrow}
+              alt=""
+            />
           </Button>
         </Grid>
       </Grid>
-      <Divider/>
+      <Divider />
+
+      <p
+        style={{
+          textAlign: "left",
+          marginLeft: "10px",
+          color: "#B1B1B1",
+          fontFamily: "Montserrat",
+        }}
+      >
+        1 - 3 of 55 results
+      </p>
+      <Card
+        style={{
+          marginTop: "20px",
+          border: "1px solid black",
+          fontFamily: "Montserrat",
+          height: "80px",
+          borderRadius: "8px",
+          marginLeft: "10px",
+          marginRight: "10px",
+        }}
+      >
+        <Grid item xs={12}>
+          <h4 className="tab-heading text-color">Avg. Tab Value</h4>
+          <p className="tab-value"> $51.92</p>
+        </Grid>
+      </Card>
     </div>
   );
 }

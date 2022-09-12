@@ -6,7 +6,6 @@ import Forgot from './ForgotPassword/Forgot';
 import Login from './Login/Login';
 import NewPassword from './NewPassword/NewPassword';
 import Register from './Register/Register';
-import Register2 from './Register/Register2';
 import ResetSuccess from './ResetSuccess/ResetSuccess';
 import Success from './Success/Success';
 import Home from "./Dashboard/Home/Home"
@@ -20,7 +19,6 @@ function Header() {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<Register />} />
-        <Route path="/signupnext" element={<Register2 />} />
         <Route path="/verification" element={<Verification />} />
         <Route path="/success" element={<Success />} />
         <Route path="/forgotpassword" element={<Forgot />} />
