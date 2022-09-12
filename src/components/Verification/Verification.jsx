@@ -14,6 +14,27 @@ function Verification() {
        navigate("/");
      }
      function handleClick() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify([
+        {
+          otpId: "a8e3ae0d6205e667031442ec5cf6fe53dc55be1d",
+          otpText: "3023",
+        },
+      ]);
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:4000/otp", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
        navigate("/success");
      }
   return (
