@@ -32,3 +32,19 @@
     margin-bottom: 0px;
     color: black;
 }
+
+.center-t{
+    display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: 20px!important;
+    margin-right: 1px;
+}
+
+.center-t-c{
+    display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: 8px!important;
+    margin-right: 1px;
+}

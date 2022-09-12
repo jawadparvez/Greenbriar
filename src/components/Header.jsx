@@ -13,6 +13,7 @@ import Home from "./Dashboard/Home/Home"
 import Verification from './Verification/Verification';
 import Menu from './Dashboard/Menu/Menu';
 import TableManager from './Dashboard/TableManager/TableManager';
+import TabHistory from './Dashboard/Tab History/TabHistory';
 function Header() {
   return (
     <div>
@@ -31,6 +32,7 @@ function Header() {
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/tablemanager" element={<TableManager />} />
+        <Route path="/tabhistory" element={<TabHistory />} />
       </Routes>
     </div>
   );

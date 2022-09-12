@@ -15,9 +15,9 @@ import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
-
+import {TextField } from "@material-ui/core";
 import { Divider } from "@material-ui/core";
-
+import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
@@ -68,6 +68,9 @@ useEffect(() => {
   const [openn, setOpenn] = useState(false);
   const [opennn, setOpennn] = useState(false);
   const [opene, setOpene] = useState(false);
+    const [opener, setOpener] = useState(false);
+    const [opening, setOpening] = useState(false);
+    const [openin, setOpenin] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
       const handleOpenn = () => setOpenn(true);
@@ -76,6 +79,12 @@ useEffect(() => {
       const handleCloseee = () => setOpennn(false);
       const handleOpene = () => setOpene(true);
       const handleCloser = () => setOpene(false);
+      const handleOpener = () => setOpener(true);
+      const handleCloserr = () => setOpener(false);
+      const handleOpening = () => setOpening(true);
+      const handleClosing = () => setOpening(false);
+      const handleOpenin = () => setOpenin(true);
+      const handleClosin = () => setOpenin(false);
 
     const stylee = {
       position: "absolute",
@@ -128,22 +137,41 @@ useEffect(() => {
       zIndex: "+1",
       p: 4,
     };
+    const styling = {
+      position: "absolute",
+      paddingTop: "0px !important",
+      paddingLeft: "15px !important",
+      paddingRight: "15px !important",
+      top: "42%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: 350,
+      height: "450px",
+      bgcolor: "white",
+      border: "1px solid black",
+      borderRadius: "8px",
+      boxShadow: 24,
+      zIndex: "+1",
+      p: 4,
+    };
   return (
     <div>
       <Navbar />
 
       <Grid container>
         <Grid item xs={6}>
-          <img
-            style={{
-              marginTop: "15px",
-              marginLeft: "10px",
-              AlignItems: "left !important",
-              display: "flex",
-            }}
-            src={BlackArrow}
-            alt=""
-          />
+          <Link to="/menu">
+            <img
+              style={{
+                marginTop: "15px",
+                marginLeft: "10px",
+                AlignItems: "left !important",
+                display: "flex",
+              }}
+              src={BlackArrow}
+              alt=""
+            />
+          </Link>
         </Grid>
         <Grid item xs={6}>
           <h3 style={{ marginLeft: "auto" }}>Table Manager</h3>
@@ -269,16 +297,16 @@ useEffect(() => {
               <span className="center color">Table</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center">Time</span>
+              <span className="center-t-c">Time</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center">Seats</span>
+              <span className="center-t">Seats</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center">Status</span>
+              <span className="center-t">Status</span>
             </Grid>
             <Grid item xs={4}>
-              <span className="center">Server</span>
+              <span className="center-t">Server</span>
             </Grid>
           </Grid>
           {table.map((tab, index) => {
@@ -397,8 +425,8 @@ useEffect(() => {
                             icon={<CircleUnchecked />}
                             checkedIcon={<CircleChecked />}
                             style={{
-                              textAlign: "left",
-                              marginLeft: "5px",
+                              textAlign: "left !important",
+                              marginLeft: "-10px",
                               marginTop: "0px",
                             }}
                             checked={personName.indexOf(name) > -1}
@@ -406,7 +434,6 @@ useEffect(() => {
                           <ListItemText
                             style={{
                               textAlign: "left",
-                              marginLeft: "10px",
                               marginTop: "0px",
                               fontSize: "10px!important",
                             }}
@@ -422,24 +449,334 @@ useEffect(() => {
           })}
         </TabPanel>
         <TabPanel value="2">
-          <Card
-            style={{
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "24px",
-              borderRadius: "8px",
-            }}
-          ></Card>
+          <Grid container spacing={5}>
+            <Grid item xs={6}>
+              <Card
+                style={{
+                  marginTop: "10px",
+                  border: "1px solid black",
+                  fontFamily: "Montserrat",
+                  height: "80px",
+                  borderRadius: "8px",
+                }}
+              >
+                <p
+                  style={{
+                    marginTop: "4px",
+                    marginBottom: "3px",
+                    fontWeight: "600",
+                    fontSize: "13px",
+                  }}
+                >
+                  {" "}
+                  Current Wait Time
+                </p>
+                <p
+                  style={{
+                    marginTop: "2px",
+                    marginBottom: "3px",
+                    color: "#0077FF",
+                    fontWeight: "600",
+                    fontSize: "14px",
+                  }}
+                >
+                  17 Minutes
+                </p>
+                <p
+                  style={{
+                    marginTop: "3px",
+                    fontWeight: "600",
+                    fontSize: "10px",
+                  }}
+                >
+                  (Party of 2+)
+                </p>
+              </Card>
+            </Grid>
+
+            <Grid item xs={6}>
+              <Card
+                style={{
+                  marginTop: "10px",
+                  border: "1px solid black",
+                  fontFamily: "Montserrat",
+                  height: "80px",
+                  borderRadius: "8px",
+                }}
+                onClick={handleOpening}
+              >
+                <h4 style={{ fontSize: "19px" }}>+ Guest</h4>
+              </Card>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={1}>
+              <span className="center-t-c">#</span>
+            </Grid>
+            <Grid item xs={2}>
+              <span className="center-t-c">Name</span>
+            </Grid>
+            <Grid item xs={2}>
+              <span className="center-t">Time</span>
+            </Grid>
+            <Grid item xs={2}>
+              <span className="center-t">Party</span>
+            </Grid>
+            <Grid item xs={5}>
+              <span className="center-t">Cell Number</span>
+            </Grid>
+          </Grid>
+
+          {table.map((tab, index) => {
+            return (
+              <Card
+                style={{
+                  border: "1px solid black",
+                  fontFamily: "Montserrat",
+                  marginLeft: "0px!important",
+                  marginBottom: "5px",
+                  height: "24px",
+                  width: "345px",
+                  borderRadius: "8px",
+                }}
+                onClick={handleOpenin}
+              >
+                <Grid container>
+                  <Grid item xs={1}>
+                    <span
+                      style={{
+                        marginTop: "2px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "10px",
+                        display: "flex",
+                      }}
+                    >
+                      {tab.id}.
+                    </span>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <span
+                      style={{
+                        marginTop: "2px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "0px",
+                        display: "flex",
+                        color: "#0077FF",
+                      }}
+                    >
+                      Williams
+                    </span>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <span
+                      style={{
+                        marginTop: "3px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "5px",
+                        display: "flex",
+                      }}
+                    >
+                      {tab.time}
+                    </span>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <span
+                      style={{
+                        marginTop: "3px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "0px",
+                      }}
+                    >
+                      3
+                    </span>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <span
+                      style={{
+                        marginTop: "3px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "0px",
+                      }}
+                    >
+                      706-645-2184
+                    </span>
+                  </Grid>
+                  <Grid item xs={1}>
+                    <img
+                      style={{ marginLeft: "0px", marginTop: "3px" }}
+                      src={Right}
+                      alt=""
+                    ></img>
+                  </Grid>
+                </Grid>
+              </Card>
+            );
+          })}
         </TabPanel>
         <TabPanel value="3">
-          <Card
-            style={{
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "90px",
-              borderRadius: "8px",
-            }}
-          ></Card>
+          <Link style={{textDecoration:'none'}} to="/tabhistory">
+            <Card
+              style={{
+                marginTop: "0px",
+                border: "1px solid black",
+                fontFamily: "Montserrat",
+                height: "70px",
+                borderRadius: "8px",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={11}>
+                  <h4
+                    style={{ fontWeight: "600", marginTop: "22px" }}
+                    className="bolder-text-modal "
+                  >
+                    Tab History
+                  </h4>
+                </Grid>
+                <Grid item xs={1}>
+                  <img
+                    style={{ marginTop: "26px" }}
+                    className="right-icon-modal"
+                    src={Right}
+                    alt=""
+                  ></img>
+                </Grid>
+              </Grid>
+            </Card>
+          </Link>
+          <h4>Current Table Orders</h4>
+          <Grid container>
+            <Grid item xs={3}>
+              <span className="center-t-c color">Table</span>
+            </Grid>
+            <Grid item xs={2}>
+              <span className="center-t-c">Time</span>
+            </Grid>
+            <Grid item xs={4}>
+              <span className="center-t">Server</span>
+            </Grid>
+            <Grid item xs={3}>
+              <span className="center-t">Server</span>
+            </Grid>
+          </Grid>
+
+          {table.map((tab, index) => {
+            return (
+              <Card
+                style={{
+                  border: "1px solid black",
+                  fontFamily: "Montserrat",
+                  marginLeft: "0px!important",
+                  marginBottom: "5px",
+                  height: "24px",
+                  width: "345px",
+                  borderRadius: "8px",
+                }}
+              >
+                <Grid container>
+                  <Grid item xs={2}>
+                    <Card
+                      style={{
+                        border: "1px solid black",
+                        fontFamily: "Montserrat",
+                        marginTop: "2px",
+                        marginLeft: "2px",
+                        height: "17px",
+                        width: "50px",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          marginTop: "0px",
+                          fontSize: "12px",
+                          fontWeight: "600",
+                          marginLeft: "20px",
+                          display: "flex",
+                        }}
+                      >
+                        {tab.id}
+                      </span>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <span
+                      style={{
+                        marginTop: "3px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "20px",
+                        display: "flex",
+                      }}
+                    >
+                      {tab.time}
+                    </span>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <span
+                      style={{
+                        marginTop: "0px",
+                        fontSize: "15px",
+                        fontWeight: "500",
+                        marginLeft: "15px",
+                        display: "flex",
+                      }}
+                    >
+                      Olivia
+                    </span>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Select
+                      style={{
+                        height: "19px",
+                        width: "110px",
+                        marginTop: "2px",
+                        marginLeft: "-9px",
+                        backgroundColor: "#0077FF",
+                        fontSize: "12px",
+                        color: "white",
+                        textAlign: "left",
+                      }}
+                      labelId="demo-multiple-checkbox-label"
+                      id="demo-multiple-checkbox"
+                      value={personName}
+                      onChange={handleChange}
+                      renderValue={(selected) => selected.join(", ")}
+                      MenuProps={MenuProps}
+                    >
+                      {names.map((name) => (
+                        <MenuItem key={name} value={name}>
+                          <Checkbox
+                            icon={<CircleUnchecked />}
+                            checkedIcon={<CircleChecked />}
+                            style={{
+                              textAlign: "left !important",
+                              marginLeft: "-10px",
+                              marginTop: "0px",
+                            }}
+                            checked={personName.indexOf(name) > -1}
+                          />
+                          <ListItemText
+                            style={{
+                              textAlign: "left",
+                              marginTop: "0px",
+                              fontSize: "10px!important",
+                            }}
+                            primary={name}
+                          />
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Grid>
+                </Grid>
+              </Card>
+            );
+          })}
         </TabPanel>
       </TabContext>
 
@@ -585,14 +922,14 @@ useEffect(() => {
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
-              marginTop: "30px!important",
+              marginTop: "90px!important",
               borderRadius: "8px",
               border: "1px solid black",
               fontFamily: "Montserrat",
               height: "44px",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleOpener}
           >
             Edit
           </Button>
@@ -822,13 +1159,12 @@ useEffect(() => {
               borderColor: "black",
               marginTop: "90px!important",
               borderRadius: "8px",
-              textAlign:'flex-end',
+              textAlign: "flex-end",
               border: "1px solid black",
               fontFamily: "Montserrat",
               height: "44px",
             }}
             variant="contained"
-            // onClick={handleClickkk}
           >
             Remove
           </Button>
@@ -847,6 +1183,402 @@ useEffect(() => {
               height: "44px",
             }}
             variant="contained"
+            // onClick={handleClickkk}
+          >
+            Cancel
+          </Button>
+        </Box>
+      </Modal>
+      <Modal
+        open={opener}
+        onClose={handleCloserr}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <p className="center">Table Sizer</p>
+          <h1 className="center-text">2</h1>
+          <Divider
+            style={{
+              color: "black",
+              marginTop: "0px",
+              width: "30%",
+              justifyContent: "center!important",
+              marginLeft: "110px",
+              border: "1px solid black",
+            }}
+          />
+          <h1 className="center-heading-modal">
+            Enter number of tables above.
+          </h1>
+          <Grid container>
+            <Grid item xs={6}>
+              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+            </Grid>
+            <Grid item xs={6}>
+              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+            </Grid>
+          </Grid>
+          {table.map((tab, index) => {
+            return (
+              <div>
+                <Card
+                  style={{
+                    border: "1px solid black",
+                    fontFamily: "Montserrat",
+                    marginLeft: "0px!important",
+                    marginBottom: "5px",
+                    height: "30px",
+                    width: "160px",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <Grid style={{ display: "flex" }} container>
+                    <Grid item xs={4}>
+                      <Checkbox
+                        icon={<CircleUnchecked />}
+                        checkedIcon={<CircleCheckedFilled />}
+                        style={{
+                          marginTop: "-6px",
+                          marginLeft: "1px",
+                          borderRadius: "10px",
+                        }}
+                      ></Checkbox>
+                    </Grid>
+
+                    <Grid item xs={6}>
+                      <Card
+                        style={{
+                          border: "1px solid black",
+                          fontFamily: "Montserrat",
+                          marginTop: "4px",
+                          marginBottom: "15px",
+                          marginLeft: "2px",
+                          height: "20px",
+                          width: "50px",
+                          borderRadius: "8px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            marginTop: "0px",
+                            fontSize: "14px",
+                            fontWeight: "600",
+                            marginLeft: "20px",
+                            display: "flex",
+                          }}
+                        >
+                          {tab.id}
+                        </span>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={1}>
+                      <span
+                        style={{
+                          marginTop: "2px",
+                          fontSize: "17px",
+                          fontWeight: "500",
+                          marginLeft: "0px",
+                          display: "flex",
+                        }}
+                      >
+                        {tab.seats}
+                      </span>
+                    </Grid>
+                  </Grid>
+                </Card>
+              </div>
+            );
+          })}
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              marginTop: "60px!important",
+              borderRadius: "8px",
+              textAlign: "flex-end",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            // onClick={handleClickkk}
+          >
+            Apply
+          </Button>
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "darkgray",
+              backgroundColor: "white",
+              borderColor: "black",
+              marginTop: "10px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              AlignText: "end",
+              height: "44px",
+            }}
+            variant="contained"
+            // onClick={handleClickkk}
+          >
+            Cancel
+          </Button>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={opening}
+        onClose={handleClosing}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={styling}>
+          <p className="left">Name</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Name"
+            variant="outlined"
+            size="small"
+          />
+          <p className="left">Cell Number</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Number"
+            variant="outlined"
+            size="small"
+          />
+          <p className="left">Party Size</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Party Size"
+            variant="outlined"
+            size="small"
+          />
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              marginTop: "40px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            // onClick={handleClickkk}
+          >
+            Add
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleClose}
+            // onClick={handleClickkk}
+          >
+            Cancel
+          </Button>
+        </Box>
+      </Modal>
+      <Modal
+        open={openin}
+        onClose={handleClosin}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={styling}>
+          <p className="left">Name</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Name"
+            variant="outlined"
+            size="small"
+          />
+          <p className="left">Cell Number</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Number"
+            variant="outlined"
+            size="small"
+          />
+          <p className="left">Party Size</p>
+          <TextField
+            fullWidth
+            sx={{
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }}
+            label="Enter Party Size"
+            variant="outlined"
+            size="small"
+          />
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#FF1F00",
+              borderColor: "black",
+              marginTop: "40px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            // onClick={handleClickkk}
+          >
+            Remove
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleClose}
             // onClick={handleClickkk}
           >
             Cancel
