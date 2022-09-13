@@ -26,23 +26,16 @@
     font-weight: 520!important;
     font-size: 14px !important;
     line-height: 20px !important;
-    /* identical to box height, or 143% */
     margin-bottom: 6px!important;
     text-align: left;
-    margin-top: 27px;
-    
+    margin-top: 27px;   
     color: #000000;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
+
 .margin-top{
     margin-top: 74px;
 }
+
 p.text-account {
     font-weight: 400;
     font-size: 14px;
@@ -54,19 +47,8 @@ p.text-account {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height, or 143% */
-
-    margin-left: 2px;
-    /* Gray/700 */
-
     color: #344054;
 
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 .float{
     margin-top: 26px!important;
@@ -90,10 +72,11 @@ p.text-account {
 .checkbox{
     background-color: #FFFFFF;
     /* Gray/300 */
-    text-align: left!important;
+    text-align: left;
     margin-left: 0px;
+    width:15px;
+    height: 15px;
     margin-top: 15px!important;
-    border-radius: 4px!important;
     color: white;
     /* Inside auto layout */
 

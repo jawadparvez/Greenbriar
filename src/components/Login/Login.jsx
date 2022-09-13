@@ -134,7 +134,7 @@ function Login(){
               <div className="float">
                 <Link
                   onClick={handleClickk}
-                  style={{ textDecoration: "none", color: "#0077FF" }}
+                  style={{ textDecoration: "none", color: "#0077FF",lineHeight:'20px' }}
                 >
                   Forgot password
                 </Link>
@@ -149,6 +149,8 @@ function Login(){
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
+              fontSize:'16px',
+              fontWeight:'600',
               borderRadius: "8px",
               border: "1px solid black",
               height: "44px",
@@ -165,6 +167,9 @@ function Login(){
             sx={{
               borderColor: "black",
               borderRadius: "8px",
+              fontSize:'16px',
+              fontWeight:'500',
+              width:'hug(159px)',
               border: "1px solid #00000",
               height: "44px",
             }}

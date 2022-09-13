@@ -23,8 +23,8 @@ function Menu() {
   const [open, setOpen] = useState(false);
   const [openn, setOpenn] = useState(false);
   const [opennn, setOpennn] = useState(false);
-    const [opennnn, setOpennnn] = useState(false);
-    const [opene, setOpene] = useState(false);
+  const [opennnn, setOpennnn] = useState(false);
+  const [opene, setOpene] = useState(false);
   const [category, setCategory] = useState([]);
   const [item, setItem] = useState([]);
   const handleOpen = () => setOpen(true);
@@ -61,7 +61,6 @@ function Menu() {
 
 
 
-  
 
   const stylee = {
     position: "absolute",
@@ -74,7 +73,7 @@ function Menu() {
     width: 350,
     height: "265px",
     bgcolor: "white",
-    border: "1px solid black",
+    border: "1px solid #000000",
     borderRadius: "8px",
     boxShadow: 24,
     zIndex: "+1",
