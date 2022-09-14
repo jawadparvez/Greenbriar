@@ -12,6 +12,7 @@ import { Checkbox } from "@mui/material";
 import Microphone from "../../../Assets/Images/Microphone.png";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
 import { AreaChart, Area, Tooltip } from "recharts";
+import { useNavigate } from "react-router-dom";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
 
@@ -72,6 +73,11 @@ function TabHistory2({page, setPage}) {
       amt: 2100,
     },
   ];
+
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate("/viewOrder");
+  }
   return (
     <div>
       <Navbar />
@@ -129,6 +135,7 @@ function TabHistory2({page, setPage}) {
           marginRight: "10px",
         }}
       >
+        
         <AreaChart
           width={730}
           height={250}
@@ -267,7 +274,9 @@ function TabHistory2({page, setPage}) {
                     }}
                     src={RightArrow}
                     alt=""
+                    onClick={handleClick}
                   />
+
                   <p
                     style={{
                       fontSize: "12px",

@@ -81,13 +81,14 @@ function TabHistory3({ page, setPage }) {
           <img src={Microphone} alt="" />
         </IconButton>
       </Paper>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item xs={6}>
           <Card
             style={{
               marginTop: "20px",
               border: "1px solid black",
               marginLeft: "20px",
+              marginRight:'10px',
               fontFamily: "Montserrat",
               height: "80px",
               borderRadius: "8px",
@@ -106,6 +107,7 @@ function TabHistory3({ page, setPage }) {
             style={{
               marginTop: "20px",
               marginRight: "20px",
+              marginLeft:'10px',
               border: "1px solid black",
               fontFamily: "Montserrat",
               height: "80px",

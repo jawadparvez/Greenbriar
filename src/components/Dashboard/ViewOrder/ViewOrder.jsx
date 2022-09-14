@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from "react";
-import "./tabhistory.css";
+import "./viewOrder.css";
 import Navbar from "../Navbar/Navbar";
-import { Divider, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
-import SearchIcon from "@mui/icons-material/Search";
-import IconButton from "@mui/material/IconButton";
-import Paper from "@mui/material/Paper";
-import { Button } from "@mui/material";
-import InputBase from "@mui/material/InputBase";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import { Checkbox } from "@mui/material";
-import Microphone from "../../../Assets/Images/Microphone.png";
-import BottomArrow from "../../../Assets/Images/bottomarrow.png";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
 
-function TabHistory({ page, setPage}) {
+function ViewOrder() {
   const [item, setItem] = useState([]);
   const [order, setOrder] = useState([]);
 
@@ -42,8 +35,8 @@ function TabHistory({ page, setPage}) {
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/tablemanager">
+        <Grid item xs={5}>
+          <Link to="/tabhistory">
             <img
               style={{
                 marginTop: "15px",
@@ -56,131 +49,38 @@ function TabHistory({ page, setPage}) {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto" }}>Tab History</h3>
+        <Grid item xs={7}>
+          <h3 style={{ marginLeft: "auto", marginRight: "2px" }}>
+            Table 1 Total: $164.88
+          </h3>
         </Grid>
       </Grid>
-      <Paper
-        component="form"
-        sx={{
-          p: "2px 4px",
-          marginLeft: "30px",
-          display: "flex",
-          alignItems: "center",
-          background: "#FAFAFA",
-          width: 300,
-        }}
-      >
-        <IconButton sx={{ p: "10px" }} aria-label="menu">
-          <SearchIcon />
-        </IconButton>
-        <InputBase
-          sx={{ ml: 1, flex: 1 }}
-          placeholder="Search "
-          inputProps={{ "aria-label": "search google maps" }}
-        />
-        <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-          <img src={Microphone} alt="" />
-        </IconButton>
-      </Paper>
-
-      <Grid container spacing={0}>
-        <Grid item xs={3}>
-          <Button
-            fullWidth
-            sx={{
-              color: "black",
-              marginLeft: "10px!important",
-              backgroundColor: "white",
-              borderColor: "black",
-              borderRadius: "8px",
-              fontWeight: "500",
-              marginTop: "20px!Important",
-              border: "1px solid black",
-              fontFamily: "Montserrat!important",
-              width: "85px",
-              fontSize: "13px",
-              height: "40px",
-              textTransform: "capitalize",
-            }}
-            variant="contained"
-            onClick={() => {
-              setPage(page + 2);
-            }}
-          >
-            Today
-          </Button>
-        </Grid>
-        <Grid item xs={4}>
-          <Button
-            fullWidth
-            sx={{
-              color: "black",
-              backgroundColor: "white",
-              marginLeft: "10px!important",
-              borderColor: "black",
-              borderRadius: "8px",
-              marginTop: "20px!Important",
-              fontWeight: "500",
-              fontSize: "13px",
-              border: "1px solid black",
-              fontFamily: "Montserrat!important",
-              width: "110px",
-              height: "40px",
-              textTransform: "capitalize",
-            }}
-            variant="contained"
-            onClick={() => {
-              setPage(page + 2);
-            }}
-          >
-            This Week
-          </Button>
-        </Grid>
-        <Grid item xs={5}>
-          <Button
-            fullWidth
-            sx={{
-              color: "black",
-              backgroundColor: "white",
-              marginLeft: "0px!important",
-              borderColor: "black",
-              borderRadius: "8px",
-              marginTop: "20px!Important",
-              marginBottom: "20px!important",
-              fontWeight: "500",
-              border: "1px solid black",
-              fontFamily: "Montserrat!important",
-              width: "140px",
-              fontSize: "13px",
-              height: "40px",
-              textTransform: "capitalize",
-            }}
-            variant="contained"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            Data Range{" "}
-            <img
-              style={{ marginLeft: "3px", marginTop: "4px" }}
-              src={BottomArrow}
-              alt=""
-            />
-          </Button>
-        </Grid>
-      </Grid>
-      <Divider />
 
       <p
         style={{
           textAlign: "left",
-          marginLeft: "10px",
-          color: "#B1B1B1",
-          fontFamily: "Montserrat",
+          marginLeft: "12px",
+          fontSize: "11px",
+          fontWeight: "500",
+          color: "#667085",
+          marginTop:'10px',
+          marginBottom: "0px",
         }}
       >
-        1 - 3 of 55 results
+        Mark
+      </p>
+      <p
+        style={{
+          textAlign: "left",
+          marginLeft: "12px",
+          fontSize: "11px",
+          fontWeight: "500",
+          marginTop:'0px',
+          color: "#667085",
+          marginBottom: "0px",
+        }}
+      >
+        Complete
       </p>
 
       {order.map((ord) => {
@@ -308,4 +208,5 @@ function TabHistory({ page, setPage}) {
   );
 }
 
-export default TabHistory;
+
+export default ViewOrder

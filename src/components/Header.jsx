@@ -13,6 +13,8 @@ import Verification from './Verification/Verification';
 import Menu from './Dashboard/Menu/Menu';
 import TableManager from './Dashboard/TableManager/TableManager';
 import TabHistory from './Dashboard/Tab History/TabHistory';
+import ViewOrder from './Dashboard/ViewOrder/ViewOrder';
+import ViewTab from './Dashboard/ViewTab/ViewTab';
 function Header() {
   return (
     <div>
@@ -31,6 +33,8 @@ function Header() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/tablemanager" element={<TableManager />} />
         <Route path="/tabhistory" element={<TabHistory />} />
+        <Route path="/vieworder" element={<ViewOrder />} />
+        <Route path="/viewTab" element={<ViewTab />} />
       </Routes>
     </div>
   );
