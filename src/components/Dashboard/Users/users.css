@@ -33,3 +33,21 @@
     font-weight: 500;
     margin-top: 90px;
 }
+
+.name-role-disabled{
+    font-size: 14px;
+    margin-top: 3px;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    color: #667085;
+}
+
+.role-email-disabled{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #667085;
+}
