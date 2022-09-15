@@ -6,6 +6,7 @@ import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import { Checkbox } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
@@ -30,6 +31,11 @@ function ViewOrder() {
         console.log("order is being retrieved");
       });
   }, []);
+
+    let navigate = useNavigate();
+    function handleClick() {
+      navigate("/viewtab");
+    }
   return (
     <div>
       <Navbar />
@@ -186,6 +192,7 @@ function ViewOrder() {
                     }}
                     src={RightArrow}
                     alt=""
+                    onClick={handleClick}
                   />
                   <p
                     style={{

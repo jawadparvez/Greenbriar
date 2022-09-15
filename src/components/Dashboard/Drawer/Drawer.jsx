@@ -83,7 +83,7 @@ function DrawerComponent() {
             <Divider className={classes.divider} />
             <ListItem>
               <ListItemText>
-                <Link to="/" className={classes.link}>
+                <Link to="/Users" className={classes.link}>
                   Users
                 </Link>
               </ListItemText>
