@@ -7,11 +7,24 @@ import { TextField } from "@material-ui/core";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Modal } from "@material-ui/core";
+import Slider from "@mui/material/Slider";
+import MuiInput from "@mui/material/Input";
+import { styled } from "@mui/material/styles";
+import Checkbox from "@mui/material/Checkbox";
+import Sliderr from '../../../Assets/Images/Slider.svg'
+import CheckSuccess from '../../../Assets/Images/CheckSuccess.png'
+import CircleChecked from "@material-ui/icons/CheckCircle";
+import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import Right from "../../../Assets/Images/right.png";
 import VISA from '../../../Assets/Images/visa.png'
 import Plus from '../../../Assets/Images/plus.png'
 import './accounts.css'
+
+const Input = styled(MuiInput)`
+  width: 162px;
+
+`;
 
 function Accounts() {
     const [open, setOpen] = React.useState(false);
@@ -20,6 +33,18 @@ function Accounts() {
     const [opene, setOpene] = React.useState(false);
     const handleOpene = () => setOpene(true);
     const handleClosee = () => setOpene(false);
+    const [opening, setOpening] = React.useState(false);
+    const handleOpening = () => setOpening(true);
+    const handleCloseing = () => setOpening(false);
+    const [openeing, setOpeneing] = React.useState(false);
+    const handleOpeneing = () => setOpeneing(true);
+    const handleClosing = () => setOpeneing(false);
+        const [openeingg, setOpeneingg] = React.useState(false);
+        const handleOpeneingg = () => setOpeneingg(true);
+        const handleClosingg = () => setOpeneingg(false);
+const [openingg, setOpeningg] = React.useState(false);
+const handleOpeningg = () => setOpeningg(true);
+const handleCloseingg = () => setOpeningg(false);
 
     const stylee = {
       position: "absolute",
@@ -38,10 +63,97 @@ function Accounts() {
       zIndex: "+1",
       p: 4,
     };
+      const style = {
+        position: "absolute",
+        paddingTop: "0px !important",
+        paddingLeft: "15px !important",
+        paddingRight: "15px !important",
+        top: "32%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: 350,
+        height: "265px",
+        bgcolor: "white",
+        border: "1px solid #000000",
+        borderRadius: "8px",
+        boxShadow: 24,
+        zIndex: "+1",
+        p: 4,
+      };
+      const styling = {
+        position: "absolute",
+        paddingTop: "0px !important",
+        paddingLeft: "15px !important",
+        paddingRight: "15px !important",
+        top: "35%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: 350,
+        height: "325px",
+        bgcolor: "white",
+        border: "1px solid #000000",
+        borderRadius: "8px",
+        boxShadow: 24,
+        zIndex: "+1",
+        p: 4,
+      };
+      const stylingSuccess = {
+        position: "absolute",
+        paddingTop: "0px !important",
+        paddingLeft: "15px !important",
+        paddingRight: "15px !important",
+        top: "35%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: 350,
+        height: "365px",
+        bgcolor: "white",
+        border: "1px solid #000000",
+        borderRadius: "8px",
+        boxShadow: 24,
+        zIndex: "+1",
+        p: 4,
+      };
+         const stylingModal = {
+           position: "absolute",
+           paddingTop: "0px !important",
+           paddingLeft: "15px !important",
+           paddingRight: "15px !important",
+           top: "54%",
+           left: "50%",
+           transform: "translate(-50%, -50%)",
+           width: 350,
+           height: "630px",
+           bgcolor: "white",
+           border: "1px solid #000000",
+           borderRadius: "8px",
+           boxShadow: 24,
+           zIndex: "+1",
+           p: 4,
+         };
+
+          const [value, setValue] = React.useState(10000);
+
+          const handleSliderChange = (event, newValue) => {
+            setValue(newValue);
+          };
+
+          const handleInputChange = (event) => {
+            setValue(
+              event.target.value === "" ? "" : Number(event.target.value)
+            );
+          };
+
+          const handleBlur = () => {
+            if (value < 0) {
+              setValue(0);
+            } else if (value > 1000000) {
+              setValue(1000000);
+            }
+          };
   return (
     <div>
       <Navbar />
-
       <Grid container>
         <Grid item xs={6}>
           <Link to="/menu">
@@ -61,7 +173,6 @@ function Accounts() {
           <h3 style={{ textAlign: "right", marginRight: "20px" }}>Accounts</h3>
         </Grid>
       </Grid>
-
       <Card
         style={{
           marginTop: "20px",
@@ -72,6 +183,7 @@ function Accounts() {
           height: "80px",
           borderRadius: "8px",
         }}
+        onClick={handleOpening}
       >
         <Grid container>
           <Grid item xs={6}>
@@ -85,7 +197,6 @@ function Accounts() {
           </Grid>
         </Grid>
       </Card>
-
       <Card
         style={{
           border: "1px solid black",
@@ -168,7 +279,6 @@ function Accounts() {
           </Grid>
         </Grid>
       </Card>
-
       <Modal
         open={opene}
         onClose={handleClosee}
@@ -515,6 +625,385 @@ function Accounts() {
           >
             Plain bank linking screen
           </p>
+        </Box>
+      </Modal>
+      <Modal
+        open={opening}
+        onClose={handleCloseing}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Card
+            style={{
+              marginTop: "20px",
+
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+            }}
+          >
+            <Grid container>
+              <Grid item xs={5}>
+                <h4 className="bolder text-color">Balance</h4>
+              </Grid>
+              <Grid item xs={6}>
+                <h4 className="balance-value">$40,206.20</h4>
+              </Grid>
+              <Grid item xs={1}>
+                <img className="right-icon" src={Right} alt=""></img>
+              </Grid>
+            </Grid>
+          </Card>
+
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              marginTop: "40px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleOpeneingg}
+          >
+            Transfer
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleCloseing}
+            // onClick={handleClickkk}
+          >
+            Back
+          </Button>
+        </Box>
+      </Modal>
+      <Modal
+        open={openeing}
+        onClose={handleClosing}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={styling}>
+          <Card
+            style={{
+              marginTop: "20px",
+
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "80px",
+              borderRadius: "8px",
+            }}
+          >
+            <Grid container>
+              <Grid item xs={8}>
+                <h4 className="bolder text-color">Walls Fargo Debit</h4>
+              </Grid>
+              <Grid item xs={4}>
+                <h4 className="balance-value">****5647</h4>
+              </Grid>
+            </Grid>
+          </Card>
+
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#FF1F00",
+              borderColor: "black",
+              marginTop: "40px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            // onClick={handleClickkk}
+          >
+            Remove
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleClosing}
+            // onClick={handleClickkk}
+          >
+            Replace
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleClosing}
+            // onClick={handleClickkk}
+          >
+            Back
+          </Button>
+        </Box>
+      </Modal>
+      <Modal
+        open={openeingg}
+        onClose={handleClosingg}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={stylingModal}>
+          <p
+            style={{ textAlign: "center", fontSize: "16px", fontWeight: "600" }}
+          >
+            Amount
+          </p>
+          <h4
+            style={{
+              textAlign: "center",
+              fontSize: "24px",
+              marginTop: "5px",
+              marginLeft: "60px",
+              textDecoration: "underline",
+            }}
+          >
+            $
+            <Input
+              disableUnderline
+              style={{
+                fontSize: "24px",
+                fontWeight: "600",
+                textAlign: "center",
+                border: "0px",
+                textDecoration: "underline",
+              }}
+              value={value}
+              size="small"
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              inputProps={{
+                step: 10,
+                min: 0,
+                max: 1000000,
+                textAlign: "center",
+                type: "number",
+                "aria-labelledby": "input-slider",
+              }}
+            />
+          </h4>
+
+          <Slider
+            value={typeof value === "number" ? value : 0}
+            onChange={handleSliderChange}
+            sx={{
+              "& .MuiSlider-thumb": {
+                height: 18,
+                width: 18,
+                backgroundColor: "#fff",
+              },
+            }}
+            min={0}
+            step={0.01}
+            stepMultiplier={0}
+            max={100000}
+            aria-labelledby="input-slider"
+          />
+          <img
+            style={{
+              position: "absolute",
+              marginLeft: "-317px",
+              marginTop: "35px",
+              width: "315px",
+            }}
+            src={Sliderr}
+            alt=""
+          />
+
+          <p style={{ fontSize: "12px", fontWeight: "500", marginTop: "30px" }}>
+            Transfer Method
+          </p>
+          <Grid container>
+            <Grid item xs={1}>
+              <Checkbox
+                icon={<CircleUnchecked />}
+                checkedIcon={<CircleChecked />}
+                style={{
+                  textAlign: "left !important",
+                  marginLeft: "-10px",
+                  marginTop: "10px",
+                }}
+              />
+            </Grid>
+            <Grid item xs={11}>
+              <h4
+                style={{
+                  marginBottom: "0px",
+                  fontWeight: "500",
+                  fontSize: "16px",
+                  color: "black",
+                }}
+              >
+                Fast Arrival
+              </h4>
+              <p style={{ marginTop: "0px", fontSize: "12px" }}>
+                Transfer funds from <strong>WALLET/</strong>
+                <span style={{ fontStyle: "italic", color: "#54C242" }}>
+                  PAY
+                </span>{" "}
+                to account ending in 9467. Expected arrival within 2 hours.
+                $100,000 limit per day. 5.99
+                <strong style={{ marginLeft: "4px" }}>fee</strong>.
+              </p>
+            </Grid>
+            <Grid item xs={1}>
+              <Checkbox
+                icon={<CircleUnchecked />}
+                checkedIcon={<CircleChecked />}
+                style={{
+                  textAlign: "left !important",
+                  marginLeft: "-10px",
+                  marginTop: "10px",
+                }}
+              />
+            </Grid>
+            <Grid item xs={11}>
+              <h4
+                style={{
+                  marginBottom: "0px",
+                  fontWeight: "500",
+                  fontSize: "16px",
+                  color: "black",
+                }}
+              >
+                Standard Arrival
+              </h4>
+              <p style={{ marginTop: "0px", fontSize: "12px" }}>
+                Transfer funds from <strong>WALLET/</strong>
+                <span style={{ fontStyle: "italic", color: "#54C242" }}>
+                  PAY
+                </span>{" "}
+                to account ending in 9467. Expected arrival within 2 -3 business
+                days. No daily limit.
+              </p>
+            </Grid>
+          </Grid>
+
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "White",
+              marginTop: "15px",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleOpeningg}
+            // onClick={handleClickkk}
+          >
+            Transfer
+          </Button>
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "Grey",
+              marginTop: "15px",
+              backgroundColor: "White",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleClosingg}
+            // onClick={handleClickkk}
+          >
+            Cancel
+          </Button>
+        </Box>
+      </Modal>
+      <Modal
+        open={openingg}
+        onClose={handleCloseingg}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={stylingSuccess}>
+          <img
+            style={{ marginLeft: "120px", marginTop: "30px" }}
+            src={CheckSuccess}
+            alt=""
+          />
+          <p
+            style={{
+              fontSize: "36px",
+              textAlign: "center",
+              marginTop: "10px",
+              color: "#0166FF",
+            }}
+          >
+            Who-hoo!
+          </p>
+          <p style={{fontSize:'16px', fontWeight:'600', textAlign:'center'}}>Money Transfered <br/> Confirmation #002319</p>
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              marginTop: "40px!important",
+              borderRadius: "8px",
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "44px",
+            }}
+            variant="contained"
+            onClick={handleCloseingg}
+          >
+            Close
+          </Button>
         </Box>
       </Modal>
     </div>

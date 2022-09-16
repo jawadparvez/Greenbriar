@@ -425,7 +425,6 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
               marginTop: "15px",
               backgroundColor: "White",
               borderColor: "black",
@@ -711,7 +710,6 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
               marginTop: "15px",
               backgroundColor: "White",
               borderColor: "black",

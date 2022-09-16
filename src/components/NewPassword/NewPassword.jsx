@@ -6,6 +6,7 @@ import Arrow from "../../Assets/Images/arrow.png";
 import { FormControl, FormHelperText } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Key from "../../Assets/Images/key.png";
+import './newpassword.css'
 
 function NewPassword() {
   let navigate = useNavigate();
@@ -19,7 +20,7 @@ function NewPassword() {
     <div>
       <Container maxWidth="xs">
         <div>
-          <img className="mail-icon" src={Key} alt=""></img>
+          <img className="key-icon" src={Key} alt=""></img>
           <h4 className="code-text">Set new password?</h4>
           <p className="number-text">
             Your new password must be different to <br /> previously used

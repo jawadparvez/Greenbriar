@@ -57,16 +57,18 @@ function Login(){
 
             <TextField
               fullWidth
+              
               sx={{
                 "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": {
                     borderColor: "#000000",
                     fontFamily: "Montserrat",
-                    fontWeight: "700",
+                    fontWeight: "600",
                     border: "1px solid",
                     borderRadius: "8px",
                     height: "47px",
+                    fontStretch:'120%'
                   },
                 },
                 "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },

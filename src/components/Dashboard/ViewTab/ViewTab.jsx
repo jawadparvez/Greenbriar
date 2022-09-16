@@ -12,7 +12,6 @@ import CheckIcon from "@mui/icons-material/Check";
 
 function ViewTab() {
  const [item, setItem] = useState([]);
-  const [order, setOrder] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/item")
@@ -20,14 +19,6 @@ function ViewTab() {
       .then((result) => {
         setItem(result);
         console.log("item is being retrieved");
-      });
-  }, []);
-  useEffect(() => {
-    fetch("http://localhost:4000/orders")
-      .then((response) => response.json())
-      .then((result) => {
-        setOrder(result);
-        console.log("order is being retrieved");
       });
   }, []);
   return (

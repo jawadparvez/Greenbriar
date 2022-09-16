@@ -1,5 +1,5 @@
 .title{
-    font-weight: 600!important;
+    font-weight: 650;
     font-size: 20px!important;
     line-height: 32px!important;
     margin-top: 18px!important;
@@ -23,8 +23,8 @@
 }
 
 .left{
-    font-weight: 520!important;
-    font-size: 14px !important;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 20px !important;
     margin-bottom: 6px!important;
     text-align: left;
@@ -106,5 +106,5 @@ p.text-account {
 }
 
 .no-account{
-    margin-top: 156px!important;
+    margin-top: 163px!important;
 }

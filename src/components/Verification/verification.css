@@ -44,9 +44,9 @@ margin-bottom: 0px;
 }
 
 .flex{
-    display: block!important;
-}
-
+    display: block;
+    margin-left:20px;
+font-family: Montserrat!important;}
 .verify-button{
     margin-top: 30px!important;
 }
