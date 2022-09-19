@@ -39,8 +39,8 @@ function Login(){
   }
   function handleClickkk() {
 
-    navigate("/home");
-    window.location.reload();//reload page after login 
+
+navigate("/home");//reload page after login 
   }
   function handleClickk() {
     navigate("/forgotpassword");
