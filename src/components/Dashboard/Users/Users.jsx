@@ -228,13 +228,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -253,13 +254,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -278,13 +280,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -304,14 +307,14 @@ function Users() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpene}
@@ -323,14 +326,14 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClose}
@@ -406,14 +409,14 @@ function Users() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpener}
@@ -425,14 +428,14 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
-              color: "#FF1F00",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+              color: "#FF1F00 !important",
             }}
             variant="contained"
             onClick={handleClosee}
@@ -489,13 +492,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important ",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -514,13 +518,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important ",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -539,13 +544,14 @@ function Users() {
               <Grid className="checkbox-modal" item xs={1}>
                 <Checkbox
                   sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    paddingLeft: "0px",
-                    left: "12px",
+                    marginTop: "8px !important ",
+                    color: "#D0D5DD !important",
+                    marginLeft: "0px !important",
+                    position: "relative !important",
+                    paddingLeft: "0px !important",
+                    left: "12px !important",
                     "&.Mui-checked": {
-                      color: "#0077FF",
+                      color: "#0077FF !important",
                     },
                   }}
                 />
@@ -565,14 +571,14 @@ function Users() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpener}
@@ -584,14 +590,14 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloser}
@@ -691,14 +697,14 @@ function Users() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              marginTop: "40px!important !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpener}
@@ -710,17 +716,17 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
-              color: "#FF1F00",
-              fontWeight:'500'
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+              color: "#FF1F00 !important",
+              fontWeight: "500 !important",
             }}
-            variant="contained"
+            variant="contained "
             onClick={handleCloserr}
             // onClick={handleClickkk}
           >
@@ -730,13 +736,13 @@ function Users() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
               height: "44px",
             }}
             variant="contained"

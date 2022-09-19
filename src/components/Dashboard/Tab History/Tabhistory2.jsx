@@ -13,6 +13,8 @@ import Microphone from "../../../Assets/Images/Microphone.png";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
 import { AreaChart, Area, Tooltip } from "recharts";
 import { useNavigate } from "react-router-dom";
+
+import { DateRangePicker } from "rsuite";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
 
@@ -135,7 +137,8 @@ function TabHistory2({page, setPage}) {
           marginRight: "10px",
         }}
       >
-        
+        hi
+        <DateRangePicker showOneCalendar />
         <AreaChart
           width={730}
           height={250}
@@ -195,38 +198,35 @@ function TabHistory2({page, setPage}) {
                             <Checkbox
                               icon={
                                 <CheckBoxOutlineBlankRoundedIcon
-                                  style={{
-                                    color: "#0376FB",
-                                    marginLeft: "10px",
+                                  sx={{
+                                    color: "#0376FB !important",
                                   }}
                                 />
                               }
                               checkedIcon={
                                 <CheckIcon
-                                  style={{
-                                    color: "#0376FB",
-                                    marginLeft: "10px",
-                                    width: "18px",
-                                    height: "18px",
+                                  sx={{
+                                    color: "#0376FB !important",
+                                    width: "18px !important",
+                                    height: "18px !important",
                                   }}
                                 />
                               }
                               sx={{
-                                color: "#D0D5DD",
-                                marginLeft: "7px",
-                                position: "relative",
-                                marginTop: "4px",
-                                paddinTop: "0px",
-                                marginBottom: "0px",
-                                width: "16px",
-                                height: "16px",
-                                paddingLeft: "0px",
-                                boxShadow: "0px 0px 0px 4px #F4EBFF",
-                                borderRadius: "4px",
-                                left: "12px",
+                                color: "#D0D5DD !important",
+                                position: "relative !important",
+                                marginTop: "4px !important",
+                                paddinTop: "0px !important",
+                                marginBottom: "0px !important",
+                                width: "16px !important",
+                                height: "16px !important",
+                                paddingLeft: "0px !important",
+                                boxShadow: "0px 0px 0px 4px #F4EBFF !important",
+                                borderRadius: "4px !important",
+                                left: "12px !important",
                                 "&.Mui-checked": {
-                                  color: "#0077FF",
-                                  outline: "none",
+                                  color: "#0077FF !important",
+                                  outline: "none !important",
                                 },
                               }}
                             />

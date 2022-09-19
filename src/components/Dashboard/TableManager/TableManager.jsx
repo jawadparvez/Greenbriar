@@ -226,18 +226,17 @@ useEffect(() => {
               <Button
                 fullWidth
                 sx={{
-                  color: "#0077FF",
+                  color: "#0077FF !important",
                   marginLeft: "0px!important",
-                  backgroundColor: "white",
-                  borderColor: "black",
-                  borderRadius: "8px",
-                  fontWeight: "500",
-                  marginTop: "0px!Important",
-                  border: "1px solid black",
-                  fontFamily: "Montserrat!important",
-                  width: "95px",
-                  height: "40px",
-                  textTransform: "capitalize",
+                  backgroundColor: "white !important",
+                  borderRadius: "8px !important",
+                  fontWeight: "500 !important",
+                  marginTop: "0px !important",
+                  border: "1px solid black !important",
+                  fontFamily: "Montserrat !important",
+                  width: "95px !important",
+                  height: "40px !important",
+                  textTransform: "capitalize !important",
                 }}
                 variant="contained"
               >
@@ -248,17 +247,17 @@ useEffect(() => {
               <Button
                 fullWidth
                 sx={{
-                  color: "#0077FF",
-                  backgroundColor: "white",
-                  borderColor: "black",
-                  borderRadius: "8px",
-                  marginTop: "0px!Important",
-                  fontWeight: "500",
-                  border: "1px solid black",
-                  fontFamily: "Montserrat!important",
-                  width: "95px",
-                  height: "40px",
-                  textTransform: "capitalize",
+                  color: "#0077FF !important",
+                  backgroundColor: "white !important",
+                  borderColor: "black !important",
+                  borderRadius: "8px !important",
+                  marginTop: "0px !important",
+                  fontWeight: "500 !important",
+                  border: "1px solid black !important",
+                  fontFamily: "Montserrat !important",
+                  width: "95px !important",
+                  height: "40px !important",
+                  textTransform: "capitalize !important",
                 }}
                 variant="contained"
                 onClick={handleOpenn}
@@ -271,17 +270,17 @@ useEffect(() => {
               <Button
                 fullWidth
                 sx={{
-                  color: "#0077FF",
-                  backgroundColor: "white",
-                  borderColor: "black",
-                  borderRadius: "8px",
-                  marginTop: "0px!Important",
-                  marginBottom: "20px!important",
-                  fontWeight: "500",
-                  border: "1px solid black",
+                  color: "#0077FF !important",
+                  backgroundColor: "white !important",
+                  borderColor: "black !important",
+                  borderRadius: "8px !important",
+                  marginTop: "0px !important",
+                  marginBottom: "20px !important",
+                  fontWeight: "500 !important",
+                  border: "1px solid black !important",
                   fontFamily: "Montserrat!important",
-                  width: "100px",
-                  height: "40px",
+                  width: "100px !important",
+                  height: "40px !important",
                   textTransform: "capitalize",
                 }}
                 variant="contained"
@@ -300,10 +299,10 @@ useEffect(() => {
               <span className="center-t-c">Time</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t">Seats</span>
+              <span className="center-t-c">Seats</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t">Status</span>
+              <span className="center-t-c">Status</span>
             </Grid>
             <Grid item xs={4}>
               <span className="center-t">Server</span>
@@ -404,7 +403,7 @@ useEffect(() => {
                     <Select
                       style={{
                         height: "19px",
-                        width: "110px",
+                        width: "110px ",
                         marginTop: "2px",
                         marginLeft: "-9px",
                         backgroundColor: "#0077FF",
@@ -426,15 +425,15 @@ useEffect(() => {
                             checkedIcon={<CircleChecked />}
                             style={{
                               textAlign: "left !important",
-                              marginLeft: "-10px",
-                              marginTop: "0px",
+                              marginLeft: "-10px !important",
+                              marginTop: "0px !important",
                             }}
                             checked={personName.indexOf(name) > -1}
                           />
                           <ListItemText
                             style={{
-                              textAlign: "left",
-                              marginTop: "0px",
+                              textAlign: "left !important",
+                              marginTop: "0px !important",
                               fontSize: "10px!important",
                             }}
                             primary={name}
@@ -517,13 +516,13 @@ useEffect(() => {
               <span className="center-t-c">Name</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t">Time</span>
+              <span className="center-t-r">Time</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t">Party</span>
+              <span className="center-t-r">Party</span>
             </Grid>
             <Grid item xs={5}>
-              <span className="center-t">Cell Number</span>
+              <span className="center-t-cell">Cell Number</span>
             </Grid>
           </Grid>
 
@@ -619,7 +618,7 @@ useEffect(() => {
           })}
         </TabPanel>
         <TabPanel value="3">
-          <Link style={{textDecoration:'none'}} to="/tabhistory">
+          <Link style={{ textDecoration: "none" }} to="/tabhistory">
             <Card
               style={{
                 marginTop: "0px",
@@ -658,10 +657,10 @@ useEffect(() => {
               <span className="center-t-c">Time</span>
             </Grid>
             <Grid item xs={4}>
-              <span className="center-t">Server</span>
+              <span className="center-t-server">Server</span>
             </Grid>
             <Grid item xs={3}>
-              <span className="center-t">Server</span>
+              <span className="center-t-cell">Order</span>
             </Grid>
           </Grid>
 
@@ -755,16 +754,16 @@ useEffect(() => {
                             icon={<CircleUnchecked />}
                             checkedIcon={<CircleChecked />}
                             style={{
-                              textAlign: "left !important",
-                              marginLeft: "-10px",
+                              textAlign: "center !important",
+                              marginLeft: "40px !important",
                               marginTop: "0px",
                             }}
                             checked={personName.indexOf(name) > -1}
                           />
                           <ListItemText
                             style={{
-                              textAlign: "left",
-                              marginTop: "0px",
+                              textAlign: "left !important",
+                              marginTop: "0px !important",
                               fontSize: "10px!important",
                             }}
                             primary={name}
@@ -834,16 +833,16 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
               marginTop: "30px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
+            onClick={handleClose}
           >
             Back
           </Button>
@@ -919,14 +918,14 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "90px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpener}
@@ -937,18 +936,18 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "darkgray",
-              backgroundColor: "white",
-              borderColor: "black",
+              color: "darkgray !important",
+              backgroundColor: "white !important",
+              borderColor: "black !important",
               marginTop: "10px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              AlignText: "end",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              AlignText: "end !important",
+              height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleClosee}
           >
             Cancel
           </Button>
@@ -965,12 +964,12 @@ useEffect(() => {
           <h1 className="center-text">2</h1>
           <Divider
             style={{
-              color: "black",
-              marginTop: "0px",
-              width: "30%",
+              color: "black !important",
+              marginTop: "0px !important",
+              width: "30% !important",
               justifyContent: "center!important",
-              marginLeft: "110px",
-              border: "1px solid black",
+              marginLeft: "110px !important",
+              border: "1px solid black !important",
             }}
           />
           <h1 className="center-heading-modal">
@@ -1029,14 +1028,14 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              marginTop: "30px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              marginTop: "30px!important !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -1047,17 +1046,17 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "gray",
-              backgroundColor: "white",
-              borderColor: "black",
+              color: "gray !important",
+              backgroundColor: "white !important",
+              borderColor: "black !important",
               marginTop: "10px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleCloseee}
           >
             Cancel
           </Button>
@@ -1098,10 +1097,9 @@ useEffect(() => {
                       <Checkbox
                         icon={<CircleUnchecked />}
                         checkedIcon={<CircleCheckedFilled />}
-                        style={{
-                          marginTop: "-6px",
-                          marginLeft: "1px",
-                          borderRadius: "10px",
+                        sx={{
+                          marginTop: "1px !important ",
+                          marginLeft: "5px !important ",
                         }}
                       ></Checkbox>
                     </Grid>
@@ -1154,15 +1152,15 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#FF1F00",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#FF1F00 !important",
+              borderColor: "black !important",
               marginTop: "90px!important",
-              borderRadius: "8px",
-              textAlign: "flex-end",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              textAlign: "flex-end !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
           >
@@ -1172,18 +1170,18 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "darkgray",
-              backgroundColor: "white",
-              borderColor: "black",
+              color: "darkgray !important",
+              backgroundColor: "white !important",
+              borderColor: "black !important",
               marginTop: "10px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              AlignText: "end",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              AlignText: "end !important",
+              height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleCloser}
           >
             Cancel
           </Button>
@@ -1238,10 +1236,9 @@ useEffect(() => {
                       <Checkbox
                         icon={<CircleUnchecked />}
                         checkedIcon={<CircleCheckedFilled />}
-                        style={{
-                          marginTop: "-6px",
-                          marginLeft: "1px",
-                          borderRadius: "10px",
+                        sx={{
+                          marginTop: "1px !important",
+                          marginLeft: "5px !important",
                         }}
                       ></Checkbox>
                     </Grid>
@@ -1294,15 +1291,15 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "60px!important",
-              borderRadius: "8px",
-              textAlign: "flex-end",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              textAlign: "flex-end !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -1313,18 +1310,18 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "darkgray",
-              backgroundColor: "white",
-              borderColor: "black",
+              color: "darkgray !important",
+              backgroundColor: "white !important",
+              borderColor: "black !important",
               marginTop: "10px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              AlignText: "end",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              AlignText: "end !important",
+              height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleCloserr}
           >
             Cancel
           </Button>
@@ -1423,14 +1420,14 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -1441,18 +1438,17 @@ useEffect(() => {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
-            // onClick={handleClickkk}
+            onClick={handleClosing}
           >
             Cancel
           </Button>
@@ -1550,14 +1546,14 @@ useEffect(() => {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#FF1F00",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#FF1F00 !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -1568,18 +1564,17 @@ useEffect(() => {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
-            // onClick={handleClickkk}
+            onClick={handleClosin}
           >
             Cancel
           </Button>

@@ -251,6 +251,36 @@
       "restaurantAddress": "",
       "tableCount": "",
       "id": 23
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "restaurantName": "",
+      "restaurantAddress": "",
+      "tableCount": "",
+      "id": 24
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "restaurantName": "",
+      "restaurantAddress": "",
+      "tableCount": "",
+      "id": 25
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "restaurantName": "",
+      "restaurantAddress": "",
+      "tableCount": "",
+      "id": 26
     }
   ],
   "otp": [
@@ -278,6 +308,18 @@
       {
         "otpId": "1232143",
         "otpText": "4324324"
+      }
+    ],
+    [
+      {
+        "otpId": "a8e3ae0d6205e667031442ec5cf6fe53dc55be1d",
+        "otpText": "3023"
+      }
+    ],
+    [
+      {
+        "otpId": "a8e3ae0d6205e667031442ec5cf6fe53dc55be1d",
+        "otpText": "3023"
       }
     ],
     [

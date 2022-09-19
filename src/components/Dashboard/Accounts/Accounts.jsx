@@ -22,7 +22,7 @@ import Plus from '../../../Assets/Images/plus.png'
 import './accounts.css'
 
 const Input = styled(MuiInput)`
-  width: 162px;
+  width: 50%
 
 `;
 
@@ -279,7 +279,7 @@ const handleCloseingg = () => setOpeningg(false);
           </Grid>
         </Grid>
       </Card>
-      <Modal
+      {/* <Modal
         open={opene}
         onClose={handleClosee}
         aria-labelledby="modal-modal-title"
@@ -406,16 +406,16 @@ const handleCloseingg = () => setOpeningg(false);
 
           <Button
             fullWidth
-            className="signin-button button"
+            className="button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              marginTop: "40px!important !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -426,14 +426,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClosee}
@@ -442,7 +442,7 @@ const handleCloseingg = () => setOpeningg(false);
             Back
           </Button>
         </Box>
-      </Modal>
+      </Modal> */}
       <Modal
         open={opene}
         onClose={handleClosee}
@@ -572,14 +572,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpen}
@@ -590,14 +590,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClosee}
@@ -661,14 +661,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              marginTop: "40px!important ",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpeneingg}
@@ -679,14 +679,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloseing}
@@ -727,14 +727,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#FF1F00",
-              borderColor: "black",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "white !important",
+              backgroundColor: "#FF1F00 !important",
+              borderColor: "black !important",
+              marginTop: "40px!important !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -745,14 +745,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClosing}
@@ -764,14 +764,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClosing}
@@ -798,7 +798,7 @@ const handleCloseingg = () => setOpeningg(false);
               textAlign: "center",
               fontSize: "24px",
               marginTop: "5px",
-              marginLeft: "60px",
+              marginLeft: "10%",
               textDecoration: "underline",
             }}
           >
@@ -927,14 +927,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "White",
-              marginTop: "15px",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "White !important",
+              marginTop: "15px !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpeningg}
@@ -946,14 +946,14 @@ const handleCloseingg = () => setOpeningg(false);
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClosingg}
@@ -985,19 +985,23 @@ const handleCloseingg = () => setOpeningg(false);
           >
             Who-hoo!
           </p>
-          <p style={{fontSize:'16px', fontWeight:'600', textAlign:'center'}}>Money Transfered <br/> Confirmation #002319</p>
+          <p
+            style={{ fontSize: "16px", fontWeight: "600", textAlign: "center" }}
+          >
+            Money Transfered <br /> Confirmation #002319
+          </p>
           <Button
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloseingg}

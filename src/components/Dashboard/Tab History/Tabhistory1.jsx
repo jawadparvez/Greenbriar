@@ -89,19 +89,19 @@ function TabHistory({ page, setPage}) {
           <Button
             fullWidth
             sx={{
-              color: "black",
+              color: "black !important",
               marginLeft: "10px!important",
-              backgroundColor: "white",
-              borderColor: "black",
-              borderRadius: "8px",
-              fontWeight: "500",
+              backgroundColor: "white !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              fontWeight: "500 !important",
               marginTop: "20px!Important",
-              border: "1px solid black",
+              border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "85px",
-              fontSize: "13px",
-              height: "40px",
-              textTransform: "capitalize",
+              width: "85px !important",
+              fontSize: "13px !important",
+              height: "40px !important",
+              textTransform: "capitalize !important",
             }}
             variant="contained"
             onClick={() => {
@@ -115,19 +115,19 @@ function TabHistory({ page, setPage}) {
           <Button
             fullWidth
             sx={{
-              color: "black",
-              backgroundColor: "white",
+              color: "black !important",
+              backgroundColor: "white !important",
               marginLeft: "10px!important",
-              borderColor: "black",
-              borderRadius: "8px",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
               marginTop: "20px!Important",
-              fontWeight: "500",
-              fontSize: "13px",
-              border: "1px solid black",
+              fontWeight: "500 !important",
+              fontSize: "13px !important",
+              border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "110px",
-              height: "40px",
-              textTransform: "capitalize",
+              width: "110px !important",
+              height: "40px !important",
+              textTransform: "capitalize !important",
             }}
             variant="contained"
             onClick={() => {
@@ -141,20 +141,20 @@ function TabHistory({ page, setPage}) {
           <Button
             fullWidth
             sx={{
-              color: "black",
-              backgroundColor: "white",
+              color: "black !important",
+              backgroundColor: "white !important",
               marginLeft: "0px!important",
-              borderColor: "black",
-              borderRadius: "8px",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
               marginTop: "20px!Important",
               marginBottom: "20px!important",
-              fontWeight: "500",
-              border: "1px solid black",
+              fontWeight: "500 !important",
+              border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "140px",
-              fontSize: "13px",
-              height: "40px",
-              textTransform: "capitalize",
+              width: "140px !important",
+              fontSize: "13px !important",
+              height: "40px !important",
+              textTransform: "capitalize !important",
             }}
             variant="contained"
             onClick={() => {
@@ -207,38 +207,38 @@ function TabHistory({ page, setPage}) {
                             <Checkbox
                               icon={
                                 <CheckBoxOutlineBlankRoundedIcon
-                                  style={{
-                                    color: "#0376FB",
-                                    marginLeft: "10px",
+                                  sx={{
+                                    color: "#0376FB !important",
+                                    marginLeft: "1px !important",
                                   }}
                                 />
                               }
                               checkedIcon={
                                 <CheckIcon
-                                  style={{
-                                    color: "#0376FB",
-                                    marginLeft: "10px",
-                                    width: "18px",
-                                    height: "18px",
+                                  sx={{
+                                    color: "#0376FB !important",
+                                    marginLeft: "10px !important",
+                                    width: "18px !important",
+                                    height: "18px !important",
                                   }}
                                 />
                               }
                               sx={{
-                                color: "#D0D5DD",
-                                marginLeft: "7px",
-                                position: "relative",
-                                marginTop: "4px",
-                                paddinTop: "0px",
-                                marginBottom: "0px",
-                                width: "16px",
-                                height: "16px",
-                                paddingLeft: "0px",
-                                boxShadow: "0px 0px 0px 4px #F4EBFF",
-                                borderRadius: "4px",
-                                left: "12px",
+                                color: "#D0D5DD !important",
+                                marginLeft: "7px !important",
+                                position: "relative !important",
+                                marginTop: "4px !important",
+                                paddinTop: "0px !important",
+                                marginBottom: "0px !important",
+                                width: "16px !important",
+                                height: "16px !important",
+                                paddingLeft: "0px !important",
+                                boxShadow: "0px 0px 0px 4px #F4EBFF !important",
+                                borderRadius: "4px !important",
+                                left: "12px !important",
                                 "&.Mui-checked": {
-                                  color: "#0077FF",
-                                  outline: "none",
+                                  color: "#0077FF !important",
+                                  outline: "none !important",
                                 },
                               }}
                             />

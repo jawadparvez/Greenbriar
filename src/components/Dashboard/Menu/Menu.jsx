@@ -125,7 +125,7 @@ function Menu() {
       <Navbar />
       <h4 className="bolderr text-color">Menu</h4>
 
-      <Grid container spacing={6}>
+      <Grid container spacing={0}>
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
           <Card
@@ -154,12 +154,12 @@ function Menu() {
             </Link>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Card
             style={{
               marginTop: "20px",
-              marginLeft: "auto",
-              marginRight: "20px",
+              marginLeft: "5px",
+              marginRight: "10px !important",
               width: "max-content",
               paddingTop: "3px",
               paddingLeft: "10px",
@@ -181,12 +181,12 @@ function Menu() {
             </Link>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Card
             style={{
               marginTop: "20px",
-              marginLeft: "auto",
-              marginRight: "20px",
+              marginLeft: "0px!important",
+              marginRight: "10px !important",
               width: "max-content",
               paddingTop: "3px",
               paddingLeft: "10px",
@@ -350,36 +350,37 @@ function Menu() {
             size="small"
           />
 
-            <Button
-              fullWidth
-              className="signin-button button"
-              sx={{
-                color: "white",
-                backgroundColor: "#0077FF!important",
-                marginTop: "40px!important",
-                borderRadius: "8px",
-                border: "1px solid black",
-                fontFamily: "Montserrat",
-                height: "44px",
-              }}
-              variant="contained"
-              // onClick={handleClickkk}
-            >
-              Add
-            </Button>
+          <Button
+            variant="contained"
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white !important",
+              backgroundColor: "#0077FF!important",
+              marginTop: "40px!important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+            }}
+
+            // onClick={handleClickkk}
+          >
+            Add
+          </Button>
 
           <Button
             fullWidth
             className="button"
             sx={{
               color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleClose}
@@ -407,13 +408,14 @@ function Menu() {
                     <Grid className="checkbox-modal" item xs={1}>
                       <Checkbox
                         sx={{
-                          color: "#D0D5DD",
-                          marginLeft: "0px",
-                          position: "relative",
-                          paddingLeft: "0px",
-                          left: "12px",
+                          color: "#D0D5DD !important",
+                          marginLeft: "0px !important",
+                          marginTop: "8px !important",
+                          position: "relative !important",
+                          paddingLeft: "0px !important",
+                          left: "12px !important",
                           "&.Mui-checked": {
-                            color: "#0077FF",
+                            color: "#0077FF !important",
                           },
                         }}
                       />
@@ -437,15 +439,15 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "red",
+              color: "red !important",
               backgroundColor: "White",
               fontWeight: "500 !important",
-              borderColor: "black",
-              borderRadius: "8px",
-              marginTop: "40px",
-              border: "1px solid black",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              marginTop: "40px !important",
+              border: "1px solid black !important",
               fontFamily: "Montserrat !important",
-              height: "44px",
+              height: "44px !important",
             }}
             variant="contained"
           >
@@ -455,18 +457,17 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
               fontWeight: "500 !important",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
               fontFamily: "Montserrat !important",
-              height: "44px",
+              height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleClosee}
           >
             Cancel
           </Button>
@@ -610,14 +611,13 @@ function Menu() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
               marginTop: "90px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpennnn}
@@ -628,14 +628,14 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloseee}
@@ -747,14 +747,14 @@ function Menu() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
               marginTop: "90px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -765,14 +765,14 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "red",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "red !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleOpene}
@@ -784,14 +784,14 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloseeee}
@@ -816,14 +816,13 @@ function Menu() {
             fullWidth
             className="signin-button button"
             sx={{
-              color: "red",
-              backgroundColor: "white",
-              borderColor: "black",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid red",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "red  !important",
+              backgroundColor: "white !important",
+              marginTop: "40px!important !important",
+              borderRadius: "8px !important",
+              border: "1px solid red !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             // onClick={handleClickkk}
@@ -834,14 +833,14 @@ function Menu() {
             fullWidth
             className="button"
             sx={{
-              color: "Grey",
-              marginTop: "15px",
-              backgroundColor: "White",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
+              color: "Grey !important",
+              marginTop: "15px !important",
+              backgroundColor: "White !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
             }}
             variant="contained"
             onClick={handleCloser}
