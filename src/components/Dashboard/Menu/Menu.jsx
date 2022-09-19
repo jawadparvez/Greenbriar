@@ -350,23 +350,24 @@ function Menu() {
             size="small"
           />
 
-          <Button
-            fullWidth
-            className="signin-button button"
-            sx={{
-              color: "white",
-              backgroundColor: "#0077FF!important",
-              marginTop: "40px!important",
-              borderRadius: "8px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "44px",
-            }}
-            variant="contained"
-            // onClick={handleClickkk}
-          >
-            Add
-          </Button>
+            <Button
+              fullWidth
+              className="signin-button button"
+              sx={{
+                color: "white",
+                backgroundColor: "#0077FF!important",
+                marginTop: "40px!important",
+                borderRadius: "8px",
+                border: "1px solid black",
+                fontFamily: "Montserrat",
+                height: "44px",
+              }}
+              variant="contained"
+              // onClick={handleClickkk}
+            >
+              Add
+            </Button>
+
           <Button
             fullWidth
             className="button"
