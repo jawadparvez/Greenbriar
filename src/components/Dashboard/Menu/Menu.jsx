@@ -355,8 +355,7 @@ function Menu() {
             className="signin-button button"
             sx={{
               color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
+              backgroundColor: "#0077FF!important",
               marginTop: "40px!important",
               borderRadius: "8px",
               border: "1px solid black",

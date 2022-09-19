@@ -63,12 +63,9 @@ function Login(){
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": {
                     borderColor: "#000000",
-                    fontFamily: "Montserrat",
-                    fontWeight: "600",
                     border: "1px solid",
                     borderRadius: "8px",
                     height: "47px",
-                    fontStretch:'120%'
                   },
                 },
                 "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
@@ -98,7 +95,7 @@ function Login(){
                     height: "47px",
                   },
                   "& > placeholder": {
-                    fontWeight: "400",
+                    fontWeight: "900",
                   },
                 },
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
@@ -121,8 +118,8 @@ function Login(){
                 sx={{
                   color: "#D0D5DD",
                   marginLeft: "0px",
-                  position: "absolute",
-                  left: "12px",
+                  position: "relative",
+                  left: "-10px",
                   "&.Mui-checked": {
                     color: "#0077FF",
                   },
