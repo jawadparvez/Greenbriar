@@ -17,6 +17,7 @@ import ViewOrder from './Dashboard/ViewOrder/ViewOrder';
 import ViewTab from './Dashboard/ViewTab/ViewTab';
 import Users from './Dashboard/Users/Users';
 import Accounts from './Dashboard/Accounts/Accounts';
+import Settings from './Dashboard/Settings/Settings';
 function Header() {
   return (
     <div>
@@ -39,6 +40,7 @@ function Header() {
         <Route path="/viewTab" element={<ViewTab />} />
         <Route path="/Users" element={<Users />} />
         <Route path="/Accounts" element={<Accounts />} />
+        <Route path="/Settings" element={<Settings />} />
       </Routes>
     </div>
   );
