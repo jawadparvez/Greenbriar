@@ -75,7 +75,8 @@ function Home() {
               >
                 <CardContent
                   style={{
-                    marginTop: "16px",
+                    marginTop: "15px",
+                    marginBottom: "10px",
                     fontWeight: "500",
                     fontSize: "18px",
                     fontFamily: "Montserrat",
@@ -206,7 +207,11 @@ function Home() {
             }}
           >
             <p
-              style={{ paddingLeft: "10px", paddingRight: "10px" }}
+              style={{
+                paddingLeft: "10px",
+                paddingRight: "10px",
+                marginTop: "5%",
+              }}
               className="font-bold "
             >
               Welcome to walletpay. Get started with a quick tour.
@@ -248,7 +253,10 @@ function Home() {
               backgroundColor: "#E3F2FD",
             }}
           >
-            <p style={{ display: "inline-block" }} className="font-bold">
+            <p
+              style={{ display: "inline-block", marginTop: "5%" }}
+              className="font-bold"
+            >
               Successfully transferred $40,000 from WALLET/
               <span className="pay">PAY</span>
             </p>

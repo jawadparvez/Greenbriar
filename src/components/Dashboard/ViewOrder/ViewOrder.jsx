@@ -56,7 +56,7 @@ function ViewOrder() {
           </Link>
         </Grid>
         <Grid item xs={7}>
-          <h3 style={{ marginLeft: "auto", marginRight: "2px" }}>
+          <h3 style={{ marginLeft: "auto", marginRight: "2px", fontSize:'18px', marginTop:'5px' }}>
             Table 1 Total: $164.88
           </h3>
         </Grid>

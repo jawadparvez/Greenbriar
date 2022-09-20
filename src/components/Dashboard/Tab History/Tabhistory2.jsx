@@ -13,7 +13,7 @@ import Microphone from "../../../Assets/Images/Microphone.png";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
 import { AreaChart, Area, Tooltip } from "recharts";
 import { useNavigate } from "react-router-dom";
-
+import "rsuite/dist/rsuite.min.css";
 import { DateRangePicker } from "rsuite";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
@@ -101,7 +101,7 @@ function TabHistory2({page, setPage}) {
           />
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto" }}>Tab History</h3>
+          <h3 style={{ marginLeft: "auto", fontSize:'18px' }}>Tab History</h3>
         </Grid>
       </Grid>
       <Paper
@@ -137,7 +137,6 @@ function TabHistory2({page, setPage}) {
           marginRight: "10px",
         }}
       >
-        hi
         <DateRangePicker showOneCalendar />
         <AreaChart
           width={730}

@@ -126,13 +126,11 @@ function Menu() {
       <h4 className="bolderr text-color">Menu</h4>
 
       <Grid container spacing={0}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Card
             style={{
               marginTop: "20px",
               marginLeft: "auto",
-              marginRight: "20px",
               width: "max-content",
               paddingTop: "3px",
               paddingLeft: "10px",
@@ -158,8 +156,8 @@ function Menu() {
           <Card
             style={{
               marginTop: "20px",
-              marginLeft: "5px",
-              marginRight: "10px !important",
+              marginLeft: "auto",
+              marginRight: "10px",
               width: "max-content",
               paddingTop: "3px",
               paddingLeft: "10px",
@@ -280,7 +278,14 @@ function Menu() {
                           </Card>
                         </Grid>
                         <Grid item xs={6}>
-                          <h4 style={{ textAlign: "left", marginTop: "13px" }}>
+                          <h4
+                            style={{
+                              textAlign: "left",
+                              marginTop: "7px",
+                              fontSize: "14px",
+                              fontWeight: "600",
+                            }}
+                          >
                             {itm.name}
                           </h4>
                         </Grid>
@@ -288,8 +293,10 @@ function Menu() {
                           <h4
                             style={{
                               textAlign: "right",
-                              marginTop: "13px",
+                              marginTop: "7px",
                               marginRight: "5px",
+                              fontSize: "14px",
+                              fontWeight: "600",
                             }}
                           >
                             {itm.price}
@@ -297,7 +304,7 @@ function Menu() {
                         </Grid>
                         <Grid item xs={1}>
                           <img
-                            style={{ marginTop: "17px" }}
+                            style={{ marginTop: "18px" }}
                             src={Right}
                             alt=""
                           ></img>
@@ -392,7 +399,12 @@ function Menu() {
       </Modal>
       <Modal open={openn} onClose={handleClosee}>
         <Box sx={style}>
-          <p className="center-text bold-text">Select Category</p>
+          <p
+            style={{ marginTop: "5px", marginBottom: "5px" }}
+            className="center-text bold-text"
+          >
+            Select Category
+          </p>
           <Card
             style={{
               border: "1px solid black",
@@ -411,6 +423,7 @@ function Menu() {
                           color: "#D0D5DD !important",
                           marginLeft: "0px !important",
                           marginTop: "8px !important",
+                          marginBottom: "4px !important",
                           position: "relative !important",
                           paddingLeft: "0px !important",
                           left: "12px !important",
@@ -488,7 +501,15 @@ function Menu() {
                   borderRadius: "100px",
                 }}
               >
-                <h2 style={{ textAlign: "center", marginTop: "30px" }}>FMS</h2>
+                <h2
+                  style={{
+                    textAlign: "center",
+                    marginTop: "23px",
+                    fontSize: "24px",
+                  }}
+                >
+                  FMS
+                </h2>
               </Card>
               <p style={{ textAlign: "left", marginLeft: "28px" }}>Image</p>
             </Grid>
@@ -504,7 +525,13 @@ function Menu() {
                       ></img>
                     </Grid>
                     <Grid item xs={8}>
-                      <h4 className="margin-top-text"> Take Photo</h4>
+                      <h4
+                        style={{ fontSize: "16px" }}
+                        className="margin-top-text"
+                      >
+                        {" "}
+                        Take Photo
+                      </h4>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -518,7 +545,13 @@ function Menu() {
                       ></img>
                     </Grid>
                     <Grid item xs={8}>
-                      <h4 className="margin-top-text"> Upload Image</h4>
+                      <h4
+                        style={{ fontSize: "16px" }}
+                        className="margin-top-text"
+                      >
+                        {" "}
+                        Upload 
+                      </h4>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -660,7 +693,7 @@ function Menu() {
               alignContent: "center",
             }}
           >
-            <h2 style={{ textAlign: "center", marginTop: "30px" }}>FMS</h2>
+            <h2 style={{ textAlign: "center", marginTop: "23px", fontSize:'24px' }}>FMS</h2>
           </Card>
           <p className="left">Item Name</p>
           <TextField
@@ -808,7 +841,7 @@ function Menu() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={stylee}>
-          <p className="success-text">
+          <p style={{marginTop:'30px'}} className="success-text">
             Are you sure you want to <br /> remove this item?
           </p>
 

@@ -41,7 +41,7 @@ function ViewTab() {
           </Link>
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto", marginRight: "2px" }}>TAB ID1263</h3>
+          <h3 style={{ marginLeft: "auto", marginRight: "2px", fontSize:'18px', marginTop:'5px' }}>TAB ID1263</h3>
         </Grid>
       </Grid>
       <Grid>

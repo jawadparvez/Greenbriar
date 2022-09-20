@@ -174,7 +174,11 @@ useEffect(() => {
           </Link>
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto" }}>Table Manager</h3>
+          <h3
+            style={{ marginLeft: "auto", fontSize: "18px", marginTop: "7px" }}
+          >
+            Table Manager
+          </h3>
         </Grid>
       </Grid>
 
@@ -336,7 +340,7 @@ useEffect(() => {
                     >
                       <span
                         style={{
-                          marginTop: "0px",
+                          marginTop: "-1px",
                           fontSize: "12px",
                           fontWeight: "600",
                           marginLeft: "20px",
@@ -461,7 +465,7 @@ useEffect(() => {
               >
                 <p
                   style={{
-                    marginTop: "4px",
+                    marginTop: "8px",
                     marginBottom: "3px",
                     fontWeight: "600",
                     fontSize: "13px",
@@ -472,7 +476,7 @@ useEffect(() => {
                 </p>
                 <p
                   style={{
-                    marginTop: "2px",
+                    marginTop: "4px",
                     marginBottom: "3px",
                     color: "#0077FF",
                     fontWeight: "600",
@@ -504,7 +508,7 @@ useEffect(() => {
                 }}
                 onClick={handleOpening}
               >
-                <h4 style={{ fontSize: "19px" }}>+ Guest</h4>
+                <h4 style={{ fontSize: "19px", marginTop: "21px" }}>+ Guest</h4>
               </Card>
             </Grid>
           </Grid>
@@ -631,7 +635,7 @@ useEffect(() => {
               <Grid container>
                 <Grid item xs={11}>
                   <h4
-                    style={{ fontWeight: "600", marginTop: "22px" }}
+                    style={{ fontWeight: "600", marginTop: "18px" }}
                     className="bolder-text-modal "
                   >
                     Tab History
@@ -648,7 +652,7 @@ useEffect(() => {
               </Grid>
             </Card>
           </Link>
-          <h4>Current Table Orders</h4>
+          <h4 style={{ fontSize: "13px", fontWeight:'500',textAlign:'left', marginTop:'10px', marginBottom:"" }}>Current Table Orders</h4>
           <Grid container>
             <Grid item xs={3}>
               <span className="center-t-c color">Table</span>
@@ -786,7 +790,7 @@ useEffect(() => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={stylee}>
-          <p className="center">-/+ Table</p>
+          <p style={{marginTop:'10px'}} className="center">-/+ Table</p>
           <Card
             style={{
               marginTop: "20px",
@@ -873,8 +877,8 @@ useEffect(() => {
                       style={{
                         border: "1px solid black",
                         fontFamily: "Montserrat",
-                        marginTop: "4px",
-                        marginBottom: "15px",
+                        marginTop: "5px",
+                        marginBottom: "10px",
                         marginLeft: "2px",
                         height: "20px",
                         width: "50px",
@@ -897,7 +901,7 @@ useEffect(() => {
                   <Grid item xs={1}>
                     <span
                       style={{
-                        marginTop: "2px",
+                        marginTop: "3px",
                         fontSize: "17px",
                         fontWeight: "500",
                         marginLeft: "0px",
@@ -964,12 +968,12 @@ useEffect(() => {
           <h1 className="center-text">2</h1>
           <Divider
             style={{
-              color: "black !important",
-              marginTop: "0px !important",
-              width: "30% !important",
-              justifyContent: "center!important",
-              marginLeft: "110px !important",
-              border: "1px solid black !important",
+              color: "black ",
+              marginTop: "0px ",
+              width: "30%",
+              justifyContent: "center",
+              marginLeft: "110px ",
+              border: "1px solid black",
             }}
           />
           <h1 className="center-heading-modal">
@@ -1069,7 +1073,7 @@ useEffect(() => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <p className="center">Select which tables to remove</p>
+          <p style={{marginTop:"10px", marginBottom:'20px'}} className="center">Select which tables to remove</p>
           <Grid container>
             <Grid item xs={6}>
               <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>

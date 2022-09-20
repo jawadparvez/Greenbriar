@@ -59,7 +59,6 @@ navigate("/home");//reload page after login
 
             <TextField
               fullWidth
-              
               sx={{
                 "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                 "& .MuiOutlinedInput-root": {
@@ -88,7 +87,7 @@ navigate("/home");//reload page after login
               className="input"
               fullWidth
               sx={{
-                "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+                "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": {
                     borderColor: "#000000",
@@ -135,7 +134,11 @@ navigate("/home");//reload page after login
               <div className="float">
                 <Link
                   onClick={handleClickk}
-                  style={{ textDecoration: "none", color: "#0077FF",lineHeight:'20px' }}
+                  style={{
+                    textDecoration: "none",
+                    color: "#0077FF",
+                    lineHeight: "20px",
+                  }}
                 >
                   Forgot password
                 </Link>
@@ -150,8 +153,8 @@ navigate("/home");//reload page after login
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
-              fontSize:'16px',
-              fontWeight:'600',
+              fontSize: "16px",
+              fontWeight: "600",
               borderRadius: "8px",
               border: "1px solid black",
               height: "44px",
@@ -168,9 +171,9 @@ navigate("/home");//reload page after login
             sx={{
               borderColor: "black",
               borderRadius: "8px",
-              fontSize:'16px',
-              fontWeight:'500',
-              width:'hug(159px)',
+              fontSize: "16px",
+              fontWeight: "500",
+              width: "hug(159px)",
               border: "1px solid #00000",
               height: "44px",
             }}

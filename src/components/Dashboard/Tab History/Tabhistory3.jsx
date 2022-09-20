@@ -55,7 +55,7 @@ function TabHistory3({ page, setPage }) {
           />
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto" }}>Tab History</h3>
+          <h3 style={{ marginLeft: "auto", fontSize:'18px' }}>Tab History</h3>
         </Grid>
       </Grid>
       <Paper

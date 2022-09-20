@@ -131,7 +131,9 @@ function Users() {
           <Grid item xs={11}>
             <Grid container>
               <Grid item xs={12}>
-                <h4 className="name-role">Leah Martin - Admin</h4>
+                <h4 style={{ marginTop: "-4px" }} className="name-role">
+                  Leah Martin - Admin
+                </h4>
               </Grid>
               <Grid item xs={12}>
                 <p className="role-email">leah23martin@italybarandgrill.com</p>
@@ -159,7 +161,12 @@ function Users() {
           <Grid item xs={11}>
             <Grid container>
               <Grid item xs={12}>
-                <h4 className="name-role-disabled">Pending - Admin</h4>
+                <h4
+                  style={{ marginTop: "-4px" }}
+                  className="name-role-disabled"
+                >
+                  Pending - Admin
+                </h4>
               </Grid>
               <Grid item xs={12}>
                 <p className="role-email-disabled">sarahjane67@gmail.com</p>

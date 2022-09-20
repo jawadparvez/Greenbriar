@@ -170,7 +170,16 @@ const handleCloseingg = () => setOpeningg(false);
           </Link>
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ textAlign: "right", marginRight: "20px" }}>Accounts</h3>
+          <h3
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+              marginTop: "5px",
+            }}
+          >
+            Accounts
+          </h3>
         </Grid>
       </Grid>
       <Card
@@ -222,7 +231,7 @@ const handleCloseingg = () => setOpeningg(false);
             <h4
               style={{
                 textAlign: "left",
-                marginTop: "10px",
+                marginTop: "4px",
                 marginLeft: "10px",
                 fontSize: "16px",
                 fontWeight: "500",
@@ -264,7 +273,7 @@ const handleCloseingg = () => setOpeningg(false);
             <h4
               style={{
                 textAlign: "left",
-                marginTop: "10px",
+                marginTop: "4px",
                 marginLeft: "10px",
                 fontSize: "16px",
                 fontWeight: "500",
@@ -854,7 +863,7 @@ const handleCloseingg = () => setOpeningg(false);
             alt=""
           />
 
-          <p style={{ fontSize: "12px", fontWeight: "500", marginTop: "30px" }}>
+          <p style={{ fontSize: "12px", fontWeight: "500", marginTop: "40px" }}>
             Transfer Method
           </p>
           <Grid container>
@@ -865,7 +874,7 @@ const handleCloseingg = () => setOpeningg(false);
                 style={{
                   textAlign: "left !important",
                   marginLeft: "-10px",
-                  marginTop: "10px",
+                  marginTop: "30px",
                 }}
               />
             </Grid>
@@ -876,11 +885,18 @@ const handleCloseingg = () => setOpeningg(false);
                   fontWeight: "500",
                   fontSize: "16px",
                   color: "black",
+                  marginTop: "23px",
                 }}
               >
                 Fast Arrival
               </h4>
-              <p style={{ marginTop: "0px", fontSize: "12px" }}>
+              <p
+                style={{
+                  marginTop: "0px",
+                  fontSize: "12px",
+                  marginBottom: "30px",
+                }}
+              >
                 Transfer funds from <strong>WALLET/</strong>
                 <span style={{ fontStyle: "italic", color: "#54C242" }}>
                   PAY
@@ -912,7 +928,13 @@ const handleCloseingg = () => setOpeningg(false);
               >
                 Standard Arrival
               </h4>
-              <p style={{ marginTop: "0px", fontSize: "12px" }}>
+              <p
+                style={{
+                  marginTop: "0px",
+                  fontSize: "12px",
+                  marginBottom: "30px",
+                }}
+              >
                 Transfer funds from <strong>WALLET/</strong>
                 <span style={{ fontStyle: "italic", color: "#54C242" }}>
                   PAY
@@ -928,7 +950,7 @@ const handleCloseingg = () => setOpeningg(false);
             className="button"
             sx={{
               color: "White !important",
-              marginTop: "15px !important",
+              marginTop: "55px !important",
               backgroundColor: "#0077FF !important",
               borderColor: "black !important",
               borderRadius: "8px !important",
