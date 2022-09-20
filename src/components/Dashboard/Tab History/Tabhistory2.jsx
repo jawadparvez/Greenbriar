@@ -17,6 +17,8 @@ import "rsuite/dist/rsuite.min.css";
 import { DateRangePicker } from "rsuite";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
+import DateRangeIcon from '../../../Assets/Images/cart.png'
+import Calender from "../../../Assets/Images/calendar.png";
 
 function TabHistory2({page, setPage}) {
   const [item, setItem] = useState([]);
@@ -38,6 +40,9 @@ function TabHistory2({page, setPage}) {
         console.log("order is being retrieved");
       });
   }, []);
+
+  const Ranges = [
+  ];
   const data = [
     {
       uv: 4000,
@@ -101,7 +106,7 @@ function TabHistory2({page, setPage}) {
           />
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto", fontSize:'18px' }}>Tab History</h3>
+          <h3 style={{ marginLeft: "auto", fontSize: "18px" }}>Tab History</h3>
         </Grid>
       </Grid>
       <Paper
@@ -137,7 +142,38 @@ function TabHistory2({page, setPage}) {
           marginRight: "10px",
         }}
       >
-        <DateRangePicker showOneCalendar />
+        {" "}
+        <Grid container>
+          <Grid item xs={2}>
+            <Card
+              style={{
+                marginTop: "30%",
+                marginLeft: "50px",
+                width: "42px",
+                height: "39px",
+                background: "#0077FF",
+                borderRadius:'10px'
+              }}
+            >
+            <img style={{marginTop:'7px'}} src={Calender} alt=''></img>
+            </Card>
+          </Grid>
+          <Grid item xs={8}>
+            <DateRangePicker
+              style={{
+                marginTop: "20px",
+                outline: "none",
+                width: "160px",
+              }}
+              placeholder="09 - 13 May"
+              ranges={Ranges}
+              appearance="subtle"
+              showOneCalendar
+              preventOverflow
+              placement="auto"
+            />
+          </Grid>
+        </Grid>
         <AreaChart
           width={730}
           height={250}
@@ -160,7 +196,7 @@ function TabHistory2({page, setPage}) {
           />
         </AreaChart>
       </Card>
-      <Divider />
+      <Divider style={{marginTop:'10px'}} />
 
       <p
         style={{
