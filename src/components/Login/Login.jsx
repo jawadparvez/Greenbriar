@@ -38,9 +38,7 @@ function Login(){
     navigate("/signup");
   }
   function handleClickkk() {
-
-
-navigate("/home");//reload page after login 
+    navigate("/home");//reload page after login 
   }
   function handleClickk() {
     navigate("/forgotpassword");
@@ -153,8 +151,8 @@ navigate("/home");//reload page after login
               color: "white",
               backgroundColor: "#0077FF",
               borderColor: "black",
-              fontSize: "16px",
-              fontWeight: "600",
+              fontSize: "16px!important",
+              fontWeight: "500 !important",
               borderRadius: "8px",
               border: "1px solid black",
               height: "44px",
@@ -171,11 +169,13 @@ navigate("/home");//reload page after login
             sx={{
               borderColor: "black",
               borderRadius: "8px",
-              fontSize: "16px",
-              fontWeight: "500",
+              fontFamily: "Montserrat!important",
+              fontSize: "16px!important",
+              fontWeight: "500!important",
               width: "hug(159px)",
               border: "1px solid #00000",
               height: "44px",
+              color: "#0077FF",
             }}
             variant="outlined"
             startIcon={<img className="google-icon" src={Logo} alt=""></img>}

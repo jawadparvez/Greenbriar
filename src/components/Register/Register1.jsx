@@ -194,7 +194,12 @@ function Register({ page, setPage, formData, setFormData }) {
             <img className="wdot-icon" src={WDot} alt=""></img>
           </div>
           <Link
-            style={{ textDecoration: "none" }}
+            style={{
+              textDecoration: "none",
+              fontSize: "16px",
+              color: "#0077FF",
+              marginRight:'20px'
+            }}
             className="float"
             onClick={() => {
               setPage(page + 1);

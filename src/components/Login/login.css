@@ -1,15 +1,15 @@
 .title{
     
     font-weight: 600!important;
-    font-size: 20px!important;
+    font-size: 21px!important;
     line-height: 32px!important;
     margin-top: 18px!important;
     text-align: center;
     margin-bottom: 0px;
-    color: #000000;
+    color: #000000 !important;
 }
 .welcome-text{
-    font-weight: 500!important;
+    font-weight: 600!important;
     font-size: 15px!important;
     line-height: 32px!important;
     /* or 213% */
@@ -24,7 +24,7 @@
 }
 
 .left{
-    font-weight: 500!important;
+    font-weight: 600!important;
     font-size: 14px;
     line-height: 20px !important;
     margin-bottom: 6px!important;
@@ -45,8 +45,9 @@ p.text-account {
 
 .p-css{
     margin-top: 26px;
-    font-weight: 500;
-    font-size: 14px;
+    margin-left: -15px;
+    font-weight: 500!important;
+    font-size: 14px!important;
     line-height: 20px;
     color: #344054;
 
@@ -96,7 +97,7 @@ p.text-account {
 .Sign-Up {
     text-align: left;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500 !important;
     margin-left: 3px!important;
     float: left;
     color: #0077FF !important;
@@ -104,6 +105,8 @@ p.text-account {
 }
 .text-account{
     text-align: end;
+    font-size: 14px;
+    font-weight: 500!important;
 }
 
 .no-account{
