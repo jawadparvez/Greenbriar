@@ -46,6 +46,21 @@ const [openingg, setOpeningg] = React.useState(false);
 const handleOpeningg = () => setOpeningg(true);
 const handleCloseingg = () => setOpeningg(false);
 
+  function handleOpenClose() {
+    handleOpen();
+    handleClosee();
+  }
+  function handleOpenClose2() {
+    handleOpeneingg();
+    handleCloseing();
+  }
+
+    function handleOpenClose3() {
+      handleOpeningg();
+      handleClosingg();
+    }
+
+
     const stylee = {
       position: "absolute",
       paddingTop: "0px !important",
@@ -591,7 +606,7 @@ const handleCloseingg = () => setOpeningg(false);
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpen}
+            onClick={handleOpenClose}
           >
             Add
           </Button>
@@ -680,7 +695,7 @@ const handleCloseingg = () => setOpeningg(false);
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpeneingg}
+            onClick={handleOpenClose2}
           >
             Transfer
           </Button>
@@ -959,7 +974,7 @@ const handleCloseingg = () => setOpeningg(false);
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpeningg}
+            onClick={handleOpenClose3}
             // onClick={handleClickkk}
           >
             Transfer

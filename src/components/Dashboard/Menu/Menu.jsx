@@ -38,6 +38,16 @@ function Menu() {
   const handleOpene = () => setOpene(true);
   const handleCloser = () => setOpene(false);
 
+  function handleOpenClose () {
+    handleOpennnn();
+    handleCloseee();
+  }
+
+  function handleOpenClose2() {
+    handleOpene();
+    handleCloseeee();
+  }
+
   useEffect(() => {
     fetch("http://localhost:4000/categoryy")
     .then(response => response.json())
@@ -550,7 +560,7 @@ function Menu() {
                         className="margin-top-text"
                       >
                         {" "}
-                        Upload 
+                        Upload
                       </h4>
                     </Grid>
                   </Grid>
@@ -653,7 +663,7 @@ function Menu() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpennnn}
+            onClick={handleOpenClose}
           >
             Add
           </Button>
@@ -693,7 +703,15 @@ function Menu() {
               alignContent: "center",
             }}
           >
-            <h2 style={{ textAlign: "center", marginTop: "23px", fontSize:'24px' }}>FMS</h2>
+            <h2
+              style={{
+                textAlign: "center",
+                marginTop: "23px",
+                fontSize: "24px",
+              }}
+            >
+              FMS
+            </h2>
           </Card>
           <p className="left">Item Name</p>
           <TextField
@@ -808,8 +826,7 @@ function Menu() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpene}
-            // onClick={handleClickkk}
+            onClick={handleOpenClose2}
           >
             Remove
           </Button>
@@ -841,7 +858,7 @@ function Menu() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={stylee}>
-          <p style={{marginTop:'30px'}} className="success-text">
+          <p style={{ marginTop: "30px" }} className="success-text">
             Are you sure you want to <br /> remove this item?
           </p>
 

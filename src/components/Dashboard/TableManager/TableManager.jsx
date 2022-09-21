@@ -86,6 +86,22 @@ useEffect(() => {
       const handleOpenin = () => setOpenin(true);
       const handleClosin = () => setOpenin(false);
 
+        function handleOpenClose() {
+          handleOpennn();
+          handleClose();
+        }
+
+        function handleOpenClose2() {
+          handleOpene();
+          handleClose();
+          }
+
+        function handleOpenClose3() {
+          handleOpener();
+          handleClosee();
+          }
+
+
     const stylee = {
       position: "absolute",
       paddingTop: "0px !important",
@@ -652,7 +668,17 @@ useEffect(() => {
               </Grid>
             </Card>
           </Link>
-          <h4 style={{ fontSize: "13px", fontWeight:'500',textAlign:'left', marginTop:'10px', marginBottom:"" }}>Current Table Orders</h4>
+          <h4
+            style={{
+              fontSize: "13px",
+              fontWeight: "500",
+              textAlign: "left",
+              marginTop: "10px",
+              marginBottom: "",
+            }}
+          >
+            Current Table Orders
+          </h4>
           <Grid container>
             <Grid item xs={3}>
               <span className="center-t-c color">Table</span>
@@ -790,7 +816,9 @@ useEffect(() => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={stylee}>
-          <p style={{marginTop:'10px'}} className="center">-/+ Table</p>
+          <p style={{ marginTop: "10px" }} className="center">
+            -/+ Table
+          </p>
           <Card
             style={{
               marginTop: "20px",
@@ -802,7 +830,7 @@ useEffect(() => {
           >
             <Grid container>
               <Grid item xs={11}>
-                <h4 className="bolder-text-modal " onClick={handleOpennn}>
+                <h4 className="bolder-text-modal " onClick={handleOpenClose}>
                   Add Table
                 </h4>
               </Grid>
@@ -822,7 +850,7 @@ useEffect(() => {
           >
             <Grid container>
               <Grid item xs={11}>
-                <h4 className="bolder-text-modal" onClick={handleOpene}>
+                <h4 className="bolder-text-modal" onClick={handleOpenClose2}>
                   Remove Table
                 </h4>
               </Grid>
@@ -932,7 +960,7 @@ useEffect(() => {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpener}
+            onClick={handleOpenClose3}
           >
             Edit
           </Button>
@@ -1073,7 +1101,12 @@ useEffect(() => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <p style={{marginTop:"10px", marginBottom:'20px'}} className="center">Select which tables to remove</p>
+          <p
+            style={{ marginTop: "10px", marginBottom: "20px" }}
+            className="center"
+          >
+            Select which tables to remove
+          </p>
           <Grid container>
             <Grid item xs={6}>
               <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>

@@ -24,6 +24,19 @@ function Users() {
             const handleOpenerr = () => setOpenerr(true);
             const handleCloserr = () => setOpenerr(false);
 
+              function handleOpenClose() {
+                handleOpene();
+                handleClose();
+              }
+                function handleOpenClose2() {
+                  handleOpener();
+                  handleClosee();
+                }
+                function handleOpenClose3() {
+                  handleOpener();
+                  handleCloserr();
+                }
+
     const style = {
       position: "absolute",
       paddingTop: "0px !important",
@@ -324,7 +337,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpene}
+            onClick={handleOpenClose}
             // onClick={handleClickkk}
           >
             Invite
@@ -426,7 +439,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpener}
+            onClick={handleOpenClose2}
             // onClick={handleClickkk}
           >
             Edit Role
@@ -714,7 +727,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpener}
+            onClick={handleOpenClose3}
             // onClick={handleClickkk}
           >
             Edit Role
