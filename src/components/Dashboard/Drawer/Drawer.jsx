@@ -23,6 +23,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "16px",
     fontWeight: "300",
     fontFamily: "Montserrat",
+    
   },
   icon: { color: "white", marginTop: "60px" },
   logo: { flexGrow: "1", cursor: "pointer" },
@@ -65,7 +66,7 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
         classes={{ paper: classes.paper }}
       >
-        <Box sx={{ backgroundColor: "primary.main" }} height="50vh">
+        <Box sx={{ backgroundColor: "#0077FF" }} height="50vh">
           <List height="50vh">
             <ListItem onClick={() => setOpenDrawer(false)}>
               <ListItemText>
