@@ -31,6 +31,7 @@ function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+
   return (
     <AppBar position="static" style={{ background: "#0077FF" }}>
       <CssBaseline />

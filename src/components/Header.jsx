@@ -17,8 +17,18 @@ import ViewOrder from './Dashboard/ViewOrder/ViewOrder';
 import ViewTab from './Dashboard/ViewTab/ViewTab';
 import Users from './Dashboard/Users/Users';
 import Accounts from './Dashboard/Accounts/Accounts';
+import {PrivateRoute } from "../PrivateRoute";
+import { history } from "../_helpers";
+import {
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import Settings from './Dashboard/Settings/Settings';
 function Header() {
+
+      history.navigate = useNavigate();
+      history.location = useLocation();
   return (
     <div>
       <Routes>
@@ -32,7 +42,14 @@ function Header() {
         <Route path="/resetsuccess" element={<ResetSuccess />} />
         <Route path="/404error" element={<Error />} />
         <Route path="/notifications" element={<Error />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
         <Route path="/menu" element={<Menu />} />
         <Route path="/tablemanager" element={<TableManager />} />
         <Route path="/tabhistory" element={<TabHistory />} />

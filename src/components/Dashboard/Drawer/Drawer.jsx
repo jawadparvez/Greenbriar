@@ -12,6 +12,8 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
+import { useSelector, useDispatch } from "react-redux";
+import { authActions } from "../../../_store";
 import './drawer.css'
 
 const useStyles = makeStyles(() => ({
@@ -45,6 +47,14 @@ const useStyles = makeStyles(() => ({
 function DrawerComponent() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+
+        const authUser = useSelector((x) => x.auth.user);
+        const dispatch = useDispatch();
+        const logout = () => dispatch(authActions.logout());
+
+        // only show nav when logged in
+        if (!authUser) return null;
+
 
   return (
     <>
@@ -115,7 +125,12 @@ function DrawerComponent() {
             <Divider className={classes.divider} />
             <Grid className="top" container spacing={3}>
               <Grid item xs={6}>
-                <Link id="sign-out" to="/" className={classes.link}>
+                <Link
+                  id="sign-out"
+                  to="/"
+                  onClick={logout}
+                  className={classes.link}
+                >
                   Sign Out
                 </Link>
               </Grid>
