@@ -50,14 +50,70 @@ function Header() {
             </PrivateRoute>
           }
         />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/tablemanager" element={<TableManager />} />
-        <Route path="/tabhistory" element={<TabHistory />} />
-        <Route path="/vieworder" element={<ViewOrder />} />
-        <Route path="/viewTab" element={<ViewTab />} />
-        <Route path="/Users" element={<Users />} />
-        <Route path="/Accounts" element={<Accounts />} />
-        <Route path="/Settings" element={<Settings />} />
+        <Route
+          path="/menu"
+          element={
+            <PrivateRoute>
+              <Menu />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tablemanager"
+          element={
+            <PrivateRoute>
+              <TableManager />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tabhistory"
+          element={
+            <PrivateRoute>
+              <TabHistory />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/vieworder"
+          element={
+            <PrivateRoute>
+              <ViewOrder />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/viewTab"
+          element={
+            <PrivateRoute>
+              <ViewTab />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Users"
+          element={
+            <PrivateRoute>
+              <Users />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Accounts"
+          element={
+            <PrivateRoute>
+              <Accounts />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Settings"
+          element={
+            <PrivateRoute>
+              <Settings />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </div>
   );
