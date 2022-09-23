@@ -56,7 +56,7 @@ function TableManager() {
 
     const [table, setTable] = useState([]);
 useEffect(() => {
-  fetch("http://localhost:4000/table")
+  fetch("https://jawad-fake-server-app.herokuapp.com/table")
     .then((response) => response.json())
     .then((result) => {
       setTable(result);

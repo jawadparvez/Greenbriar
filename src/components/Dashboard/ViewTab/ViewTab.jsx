@@ -14,7 +14,7 @@ function ViewTab() {
  const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/item")
+    fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
       .then((result) => {
         setItem(result);

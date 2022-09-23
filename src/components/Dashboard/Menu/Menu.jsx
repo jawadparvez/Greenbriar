@@ -49,11 +49,11 @@ function Menu() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:4000/categoryy")
-    .then(response => response.json())
+    fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
+      .then((response) => response.json())
       .then((result) => {
         setCategory(result);
-        if(result.length){
+        if (result.length) {
           setWtext("hidden");
         }
         console.log("catergory has been retrieved");
@@ -61,7 +61,7 @@ function Menu() {
       
   }, []);
   useEffect(() => {
-    fetch("http://localhost:4000/item")
+    fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
       .then((result) => {
         setItem(result);
