@@ -129,7 +129,41 @@ function Menu() {
   const handleTabChange = (event, newTabIndex) => {
     setValue(newTabIndex);
   };
+
+  const [catergoryname, setCategoryname] = useState({
+    name: "",
+  });
+
+  function submitHandle() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(catergoryname);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+      
+      handleClose();
+  }
   
+
+    const [valuee, setValuee] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+      setValuee(newValue);
+    };
   return (
     <div>
       <Navbar />
@@ -225,6 +259,9 @@ function Menu() {
             style={{
               marginTop: "20px",
             }}
+            value={valuee}
+            variant="scrollable"
+            scrollButtons="auto"
             indicatorColor="primary"
             textColor="primary"
             aria-label="lab API tabs example"
@@ -233,7 +270,6 @@ function Menu() {
               return (
                 <Tab
                   style={{
-                    width: "60px",
                     fontFamily: "Montserrat",
                     fontWeight: "500",
                     fontSize: "16px",
@@ -365,6 +401,10 @@ function Menu() {
             label="Beverages"
             variant="outlined"
             size="small"
+            value={catergoryname.name} //setting the value of the form to the props value
+            onChange={
+              (e) => setCategoryname({ ...catergoryname, name: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
 
           <Button
@@ -380,8 +420,9 @@ function Menu() {
               fontFamily: "Montserrat !important",
               height: "44px !important",
             }}
-
-            // onClick={handleClickkk}
+            onClick={() => {
+              submitHandle();
+            }}
           >
             Add
           </Button>

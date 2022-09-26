@@ -19,6 +19,10 @@ function Home() {
       setValue(newTabIndex);
     };
 
+    function handleClick() {
+      
+    }
+
   return (
     <div>
       <Navbar />
@@ -32,7 +36,6 @@ function Home() {
           >
             <Tab
               style={{
-                width: "140px",
                 fontFamily: "Montserrat",
                 fontWeight: "600",
                 fontSize: "17px",
@@ -43,7 +46,7 @@ function Home() {
             />
             <Tab
               style={{
-                width: "140px",
+
                 fontFamily: "Montserrat",
                 fontWeight: "500",
                 fontSize: "17px",
@@ -113,7 +116,7 @@ function Home() {
                 <h4 className="balance-value">$40,206.20</h4>
               </Grid>
               <Grid item xs={1}>
-                <img className="right-icon" src={Right} alt=""></img>
+                <img onClick={handleClick} className="right-icon" src={Right} alt=""></img>
               </Grid>
             </Grid>
           </Card>
