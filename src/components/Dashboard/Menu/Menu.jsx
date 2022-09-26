@@ -273,6 +273,7 @@ function Menu() {
                     fontFamily: "Montserrat",
                     fontWeight: "500",
                     fontSize: "16px",
+                    padding: "12px 16px",
                     textTransform: "capitalize",
                   }}
                   label={cat.name}
