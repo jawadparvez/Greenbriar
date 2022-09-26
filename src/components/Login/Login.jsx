@@ -1,12 +1,13 @@
 import React from "react";
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import "./login.css";
 import Logo from "../../Assets/Images/Google-icon.png";
-import { useNavigate } from "react-router-dom";import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,7 +26,6 @@ function Login() {
   useEffect(() => {
     // redirect to home if already logged in
     // if (authUser) history.navigate("/home");
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -70,7 +70,10 @@ function Login() {
               <TextField
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
                       borderColor: "#000000",
@@ -91,7 +94,7 @@ function Login() {
                 variant="outlined"
                 name="username"
                 size="small"
-                {...register('username')}
+                {...register("username")}
                 className={`form-control ${
                   errors.username ? "is-invalid" : ""
                 }`}
@@ -177,6 +180,7 @@ function Login() {
                 borderRadius: "8px",
                 border: "1px solid black",
                 height: "44px",
+                fontFamily: "Montserrat",
               }}
               variant="contained"
               type="submit"
@@ -228,6 +232,6 @@ function Login() {
       </Container>
     </div>
   );
-};
+}
 
 export default Login;

@@ -56,6 +56,8 @@ font-family: Montserrat!important;}
 .spacing{
     margin-left: 10px;
     font-weight: 500;
+    font-size: 14px;
+    color: #0077FF;
 }
 .css-1ps4owl-MuiTypography-root-MuiLink-root{
     display: flex;

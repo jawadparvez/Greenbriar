@@ -1,5 +1,5 @@
 .already-account {
-    margin-top: 90px !important;
+    margin-top: 31% !important;
 }
 
 .align-center{
@@ -13,4 +13,10 @@
 
 .dot-icon {
     margin-left: 10px!important;
+}
+
+#standard-weight-helper-text{
+    margin-top: 3px;
+    margin-left: 0px;
+    font-family: Montserrat;
 }

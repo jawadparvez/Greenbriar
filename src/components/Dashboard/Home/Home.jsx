@@ -11,6 +11,7 @@ import { Grid } from '@mui/material';
 import Navbar from "../Navbar/Navbar"
 import { Link } from "@mui/material";
 import Right from "../../../Assets/Images/right.png"
+import { useNavigate } from "react-router-dom";
 import './Home.css'
 
 function Home() {
@@ -18,9 +19,12 @@ function Home() {
     const handleTabChange = (event, newTabIndex) => {
       setValue(newTabIndex);
     };
-
+  let navigate = useNavigate();
     function handleClick() {
-      
+      navigate("/Accounts");
+    }
+    function handleClickk() {
+      navigate("/Settings");
     }
 
   return (
@@ -117,12 +121,14 @@ function Home() {
                 <h4 className="balance-value">$40,206.20</h4>
               </Grid>
               <Grid item xs={1}>
-                <img
-                  onClick={handleClick}
-                  className="right-icon"
-                  src={Right}
-                  alt=""
-                ></img>
+                <Link onClick={handleClick}>
+                  <img
+                    onClick={handleClick}
+                    className="right-icon"
+                    src={Right}
+                    alt=""
+                  ></img>
+                </Link>
               </Grid>
             </Grid>
           </Card>
@@ -200,7 +206,9 @@ function Home() {
               </Grid>
 
               <Grid item xs={1}>
-                <img className="right-icon" src={Right} alt=""></img>
+                <Link onClick={handleClickk}>
+                  <img className="right-icon" src={Right} alt=""></img>
+                </Link>
               </Grid>
             </Grid>
           </Card>

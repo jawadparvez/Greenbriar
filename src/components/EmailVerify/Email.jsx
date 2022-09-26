@@ -23,7 +23,13 @@ function Email() {
           <h4 className="code-text">Check your email</h4>
           <p className="number-text">
             We sent a password reset link to <br />
-            <Link style={{ textDecoration: "none", fontWeight: "500" }}>
+            <Link
+              style={{
+                textDecoration: "none",
+                fontWeight: "500",
+                color: "#0077FF",
+              }}
+            >
               olivia@untitledui.com
             </Link>
           </p>
@@ -51,7 +57,7 @@ function Email() {
               </Grid>
               <Grid item xs={4}>
                 <Link
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "#0077FF" }}
                   className="resendLink"
                   onClick={handleClickk}
                 >

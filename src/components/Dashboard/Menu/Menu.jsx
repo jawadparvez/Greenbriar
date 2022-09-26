@@ -16,6 +16,8 @@ import Right from "../../../Assets/Images/right.png";
 import Grid from '@mui/material/Grid';
 import './menu.css'
 import { Divider } from '@material-ui/core';
+import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
+import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 
 
 
@@ -158,6 +160,57 @@ function Menu() {
       handleClose();
   }
   
+  function submitHandlee() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(catergoryname);
+
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+  
+    const [itemname, setItemname] = useState({
+      name: "",
+      category: 0,
+      price:''
+    });
+
+    function submitHandling() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify(itemname);
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://jawad-fake-server-app.herokuapp.com/item/",
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+
+      handleOpenClose();
+    }
 
     const [valuee, setValuee] = React.useState(0);
 
@@ -468,7 +521,7 @@ function Menu() {
             {category.map((cat, index) => {
               return (
                 <div>
-                  <Grid container spacing={1}>
+                  <Grid key={index} container spacing={1}>
                     <Grid className="checkbox-modal" item xs={1}>
                       <Checkbox
                         sx={{
@@ -483,6 +536,9 @@ function Menu() {
                             color: "#0077FF !important",
                           },
                         }}
+                        icon={<CircleUnchecked />}
+                        checkedIcon={<CircleCheckedFilled />}
+                        
                       />
                     </Grid>
                     <Grid item xs={11}>
@@ -494,7 +550,7 @@ function Menu() {
                       </p>
                     </Grid>
                   </Grid>
-                  <Divider />
+                  <Divider style={{ marginTop: "10px" }} />
                 </div>
               );
             })}
@@ -637,6 +693,10 @@ function Menu() {
             label="Italy 5 Cheese Dinner"
             variant="outlined"
             size="small"
+            value={item.name} //setting the value of the form to the props value
+            onChange={
+              (e) => setItemname({ ...itemname, name: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <p className="left">Price</p>
           <TextField
@@ -664,6 +724,10 @@ function Menu() {
             label="$21.99"
             variant="outlined"
             size="small"
+            value={item.price} //setting the value of the form to the props value
+            onChange={
+              (e) => setItemname({ ...itemname, price: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <p className="left">Description</p>
           <TextField
@@ -691,6 +755,10 @@ function Menu() {
             label="Enter item Description"
             variant="outlined"
             size="small"
+            value={item.category} //setting the value of the form to the props value
+            onChange={
+              (e) => setItemname({ ...itemname, category: parseInt(e.target.value) }) //setting the formData to the value input of the textfield
+            }
           />
           <Button
             fullWidth
@@ -705,7 +773,7 @@ function Menu() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose}
+            onClick={submitHandling}
           >
             Add
           </Button>
