@@ -39,6 +39,7 @@ function Home() {
                 fontFamily: "Montserrat",
                 fontWeight: "600",
                 fontSize: "17px",
+                padding:"12px 16px", 
                 textTransform: "capitalize",
               }}
               label="Home Feed"
