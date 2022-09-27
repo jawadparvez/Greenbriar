@@ -18,6 +18,8 @@ import './menu.css'
 import { Divider } from '@material-ui/core';
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
+import { useNavigate } from "react-router-dom";
+import { array } from 'yup/lib/locale';
 
 
 
@@ -49,19 +51,20 @@ function Menu() {
     handleOpene();
     handleCloseeee();
   }
-
+ function fetchcat() {
+  fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
+    .then((response) => response.json())
+    .then((result) => {
+      setCategory(result);
+      if (result.length) {
+        setWtext("hidden");
+      }
+      console.log("catergory has been retrieved");
+    });
+ }
   useEffect(() => {
-    fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
-      .then((response) => response.json())
-      .then((result) => {
-        setCategory(result);
-        if (result.length) {
-          setWtext("hidden");
-        }
-        console.log("catergory has been retrieved");
-      });
-      
-  }, []);
+    fetchcat();
+  }, [category]);
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
@@ -159,8 +162,22 @@ function Menu() {
       
       handleClose();
   }
+  let navigate = useNavigate();
+  const [removecategory, setRemovecategory] = useState([]);
+  function submitHandlee(){
+    if (deletecat.length <= 0) {
+      console.log("array is empty");
+    } else {
+      for (var i = 0; i < deletecat.length; i++) deleteCategory(deletecat[i]);
+    }
+    navigate("/menu");
+    fetchcat();
+    handleClosee();
+
+    }
+    
   
-  function submitHandlee() {
+  function deleteCategory(id) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -174,12 +191,14 @@ function Menu() {
     };
 
     fetch(
-      "https://jawad-fake-server-app.herokuapp.com/categoryy/",
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/"+id,
       requestOptions
     )
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+
   }
   
     const [itemname, setItemname] = useState({
@@ -217,6 +236,28 @@ function Menu() {
     const handleChange = (event, newValue) => {
       setValuee(newValue);
     };
+    const deletecat = [];
+    const [isChecked, setisChecked] = useState([]);
+    const handleCheckbox = (e) => {
+      const { value, checked } = e.target;
+      if (checked && check(deletecat, value)) {
+        deletecat.push(value);
+        console.log(deletecat);
+      } else if (!checked && !check(deletecat, value)) {
+        var index = deletecat.indexOf(value);
+        deletecat.splice(index, 1);
+        console.log(deletecat);
+      }
+    };
+
+    function check(a, name) {
+      if(a.indexOf(name) != -1 ) {
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
   return (
     <div>
       <Navbar />
@@ -520,8 +561,8 @@ function Menu() {
           >
             {category.map((cat, index) => {
               return (
-                <div>
-                  <Grid key={index} container spacing={1}>
+                <div key={index}>
+                  <Grid container spacing={1}>
                     <Grid className="checkbox-modal" item xs={1}>
                       <Checkbox
                         sx={{
@@ -538,7 +579,11 @@ function Menu() {
                         }}
                         icon={<CircleUnchecked />}
                         checkedIcon={<CircleCheckedFilled />}
-                        
+                        value={cat.id}
+                        checked={cat.isChecked}
+                        onChange={(e) => {
+                          handleCheckbox(e);
+                        }}
                       />
                     </Grid>
                     <Grid item xs={11}>
@@ -571,6 +616,7 @@ function Menu() {
               height: "44px !important",
             }}
             variant="contained"
+            onClick={submitHandlee}
           >
             Remove
           </Button>
@@ -757,7 +803,8 @@ function Menu() {
             size="small"
             value={item.category} //setting the value of the form to the props value
             onChange={
-              (e) => setItemname({ ...itemname, category: parseInt(e.target.value) }) //setting the formData to the value input of the textfield
+              (e) =>
+                setItemname({ ...itemname, category: parseInt(e.target.value) }) //setting the formData to the value input of the textfield
             }
           />
           <Button

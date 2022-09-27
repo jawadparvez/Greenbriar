@@ -198,7 +198,7 @@ function Register({ page, setPage, formData, setFormData }) {
               textDecoration: "none",
               fontSize: "16px",
               color: "#0077FF",
-              marginRight:'20px'
+              marginRight: "20px",
             }}
             className="float"
             onClick={() => {
