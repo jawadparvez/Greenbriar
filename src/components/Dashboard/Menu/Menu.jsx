@@ -64,7 +64,7 @@ function Menu() {
  }
   useEffect(() => {
     fetchcat();
-  }, [category]);
+  }, []);
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
