@@ -56,21 +56,21 @@ function Menu() {
     .then((response) => response.json())
     .then((result) => {
       setCategory(result);
+      fetchcat();
       if (result.length) {
         setWtext("hidden");
       }
-      console.log("catergory has been retrieved");
     });
  }
   useEffect(() => {
     fetchcat();
-  }, [category]);
+  }, []);
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
       .then((result) => {
         setItem(result);
-        console.log("item is being retrieved");
+
       });
   }, []);
 
@@ -170,8 +170,7 @@ function Menu() {
     } else {
       for (var i = 0; i < deletecat.length; i++) deleteCategory(deletecat[i]);
     }
-    navigate("/menu");
-    fetchcat();
+
     handleClosee();
 
     }
@@ -195,7 +194,7 @@ function Menu() {
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => fetchcat())
       .catch((error) => console.log("error", error));
 
 
