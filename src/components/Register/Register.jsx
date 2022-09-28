@@ -14,9 +14,7 @@ function Register() {
       restaurantName: "",
       restaurantAddress: "",
       tableCount: ""
-    });
-
-    
+    });   
 
     const componentList = [
       <Register1

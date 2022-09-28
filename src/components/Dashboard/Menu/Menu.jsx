@@ -14,27 +14,24 @@ import Camera from "../../../Assets/Images/camera.png";
 import Upload from "../../../Assets/Images/download.png";
 import Right from "../../../Assets/Images/right.png";
 import Grid from '@mui/material/Grid';
-import './menu.css'
 import { Divider } from '@material-ui/core';
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import { useNavigate } from "react-router-dom";
 import { array } from 'yup/lib/locale';
-
-
+import "./menu.css";
 
 function Menu() {
   const [open, setOpen] = useState(false);
-  const [openn, setOpenn] = useState(false);
+  const [open1, setOpen1] = useState(false);
   const [opennn, setOpennn] = useState(false);
   const [opennnn, setOpennnn] = useState(false);
   const [opene, setOpene] = useState(false);
-  const [category, setCategory] = useState([]);
-  const [item, setItem] = useState([]);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleOpenn = () => setOpenn(true);
-  const handleClosee = () => setOpenn(false);
+  const handleOpen1 = () => setOpen1(true);
+  const handleClosee = () => setOpen1(false);
   const handleOpennn = () => setOpennn(true);
   const handleCloseee = () => setOpennn(false);
   const handleOpennnn = () => setOpennnn(true);
@@ -43,7 +40,6 @@ function Menu() {
   const handleCloser = () => setOpene(false);
 
   function handleOpenClose () {
-    handleOpennnn();
     handleCloseee();
   }
 
@@ -51,6 +47,10 @@ function Menu() {
     handleOpene();
     handleCloseeee();
   }
+
+  const [category, setCategory] = useState([]);
+  const [item, setItem] = useState([]);
+
  function fetchcat() {
   fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
     .then((response) => response.json())
@@ -59,24 +59,166 @@ function Menu() {
       if (result.length) {
         setWtext("hidden");
       }
-      console.log("catergory has been retrieved");
+      console.log("Categories are being displayed from the database");
     });
  }
   useEffect(() => {
     fetchcat();
       
   }, []);
+
+  function fetchitem() {
+fetch("https://jawad-fake-server-app.herokuapp.com/item")
+  .then((response) => response.json())
+  .then((result) => {
+    setItem(result);
+    console.log("Items are being retrieved from the database");
+  });
+  }
   useEffect(() => {
-    fetch("https://jawad-fake-server-app.herokuapp.com/item")
-      .then((response) => response.json())
-      .then((result) => {
-        setItem(result);
-        console.log("item is being retrieved");
-      });
+    fetchitem();
   }, []);
 
 
 
+
+  const [value, setValue] = useState("1");
+  const [wtext, setWtext] = useState("");
+  const [selectedtab, setSelectedtab] = useState();
+  const handleTabChange = (event, newTabIndex) => {
+    setValue(newTabIndex);
+     setSelectedtab(event.target.ariaPlaceholder)
+
+  };
+
+  const [catergoryname, setCategoryname] = useState({
+    name: "",
+  });
+
+  function submitHandle() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(catergoryname);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => fetchcat())
+      .catch((error) => console.log("error", error));
+      
+      handleClose();
+  }
+let navigate = useNavigate();
+
+  const [removecategory, setRemovecategory] = useState([]);
+  function submitHandlee(){
+    if (deletecat.length <= 0) {
+      console.log("You haven't selected anything to delete");
+    } else {
+      for (var i = 0; i < deletecat.length; i++) deleteCategory(deletecat[i]);
+    }
+    navigate("/menu");
+    handleClosee();
+
+    }
+    
+  
+  function deleteCategory(id) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(catergoryname);
+
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/"+id,
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => fetchcat())
+      .catch((error) => console.log("error", error));
+
+
+  }
+  
+    const [itemname, setItemname] = useState({
+      name: "",
+      category: 0,
+      price: "",
+      description: "",
+    });
+
+    function submitHandling() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      itemname.category = parseInt(selectedtab);
+      var raw = JSON.stringify(itemname);
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("https://jawad-fake-server-app.herokuapp.com/item/", requestOptions)
+        .then((response) => response.text())
+        .then((result) => fetchitem())
+        .catch((error) => console.log("error", error));
+
+      handleOpenClose();
+    }
+
+    const [valuee, setValuee] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+      setValuee(newValue);
+    };
+    const deletecat = [];
+    const [isChecked, setisChecked] = useState([]);
+    const handleCheckbox = (e) => {
+      const { value, checked } = e.target;
+      if (checked && check(deletecat, value)) {
+        deletecat.push(value);
+        console.log(deletecat);
+      } else if (!checked && !check(deletecat, value)) {
+        var index = deletecat.indexOf(value);
+        deletecat.splice(index, 1);
+        console.log(deletecat);
+      }
+    };
+
+    function check(a, name) {
+      if(a.indexOf(name) != -1 ) {
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+
+    function handleitem (e) {
+      
+      console.log(e.target.ariaPlaceholder);
+    }
+
+    
 
   const stylee = {
     position: "absolute",
@@ -129,136 +271,6 @@ function Menu() {
     zIndex: "+1",
     p: 4,
   };
-
-  const [value, setValue] = useState("1");
-  const [wtext, setWtext] = useState("");
-  const handleTabChange = (event, newTabIndex) => {
-    setValue(newTabIndex);
-  };
-
-  const [catergoryname, setCategoryname] = useState({
-    name: "",
-  });
-
-  function submitHandle() {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify(catergoryname);
-
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://jawad-fake-server-app.herokuapp.com/categoryy/",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => fetchcat())
-      .catch((error) => console.log("error", error));
-      
-      handleClose();
-  }
-let navigate = useNavigate();
-
-  const [removecategory, setRemovecategory] = useState([]);
-  function submitHandlee(){
-    if (deletecat.length <= 0) {
-      console.log("array is empty");
-    } else {
-      for (var i = 0; i < deletecat.length; i++) deleteCategory(deletecat[i]);
-    }
-    navigate("/menu");
-    handleClosee();
-
-    }
-    
-  
-  function deleteCategory(id) {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify(catergoryname);
-
-    var requestOptions = {
-      method: "DELETE",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://jawad-fake-server-app.herokuapp.com/categoryy/"+id,
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => fetchcat())
-      .catch((error) => console.log("error", error));
-
-
-  }
-  
-    const [itemname, setItemname] = useState({
-      name: "",
-      category: 0,
-      price:''
-    });
-
-    function submitHandling() {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      var raw = JSON.stringify(itemname);
-
-      var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-      };
-
-      fetch(
-        "https://jawad-fake-server-app.herokuapp.com/item/",
-        requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
-
-      handleOpenClose();
-    }
-
-    const [valuee, setValuee] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-      setValuee(newValue);
-    };
-    const deletecat = [];
-    const [isChecked, setisChecked] = useState([]);
-    const handleCheckbox = (e) => {
-      const { value, checked } = e.target;
-      if (checked && check(deletecat, value)) {
-        deletecat.push(value);
-        console.log(deletecat);
-      } else if (!checked && !check(deletecat, value)) {
-        var index = deletecat.indexOf(value);
-        deletecat.splice(index, 1);
-        console.log(deletecat);
-      }
-    };
-
-    function check(a, name) {
-      if(a.indexOf(name) != -1 ) {
-        return false;
-      }
-      else{
-        return true;
-      }
-    }
   return (
     <div>
       <Navbar />
@@ -306,7 +318,7 @@ let navigate = useNavigate();
               height: "30px",
               borderRadius: "8px",
             }}
-            onClick={handleOpenn}
+            onClick={handleOpen1}
           >
             <Link
               style={{
@@ -374,6 +386,8 @@ let navigate = useNavigate();
                   label={cat.name}
                   value={cat.id}
                   id="tab-id"
+                  aria-placeholder={cat.id}
+                  name="hi"
                 />
               );
             })}
@@ -449,6 +463,9 @@ let navigate = useNavigate();
                             style={{ marginTop: "18px" }}
                             src={Right}
                             alt=""
+                            aria-placeholder = {itm.id}
+                            onClick={(e) => {
+                              handleitem(e);}}
                           ></img>
                         </Grid>
                       </Grid>
@@ -544,7 +561,7 @@ let navigate = useNavigate();
           </Button>
         </Box>
       </Modal>
-      <Modal open={openn} onClose={handleClosee}>
+      <Modal open={open1} onClose={handleClosee}>
         <Box sx={style}>
           <p
             style={{ marginTop: "5px", marginBottom: "5px" }}
@@ -558,6 +575,7 @@ let navigate = useNavigate();
               fontFamily: "Montserrat",
               height: "330px",
               borderRadius: "8px",
+              overflow: "scroll",
             }}
           >
             {category.map((cat, index) => {
@@ -802,10 +820,13 @@ let navigate = useNavigate();
             label="Enter item Description"
             variant="outlined"
             size="small"
-            value={item.category} //setting the value of the form to the props value
+            value={item.description} //setting the value of the form to the props value
             onChange={
               (e) =>
-                setItemname({ ...itemname, category: parseInt(e.target.value) }) //setting the formData to the value input of the textfield
+                setItemname({
+                  ...itemname,
+                  description: e.target.value,
+                }) //setting the formData to the value input of the textfield
             }
           />
           <Button
@@ -814,7 +835,7 @@ let navigate = useNavigate();
             sx={{
               color: "white !important",
               backgroundColor: "#0077FF !important",
-              marginTop: "90px!important",
+              marginTop: "110px!important",
               borderRadius: "8px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat !important",
@@ -968,7 +989,7 @@ let navigate = useNavigate();
             variant="contained"
             // onClick={handleClickkk}
           >
-            Add
+            Edit
           </Button>
           <Button
             fullWidth
@@ -1026,7 +1047,7 @@ let navigate = useNavigate();
             sx={{
               color: "red  !important",
               backgroundColor: "white !important",
-              marginTop: "40px!important !important",
+              marginTop: "60px!important",
               borderRadius: "8px !important",
               border: "1px solid red !important",
               fontFamily: "Montserrat !important",

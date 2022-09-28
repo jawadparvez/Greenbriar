@@ -1,19 +1,18 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import "./login.css";
 import Logo from "../../Assets/Images/Google-icon.png";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
-
 import { history } from "../../_helpers";
 import { authActions } from "../../_store";
+import "./login.css";
 
 export { Login };
 
@@ -24,9 +23,6 @@ function Login() {
 
   if (authUser) history.navigate("/home");
   useEffect(() => {
-    // redirect to home if already logged in
-    // if (authUser) history.navigate("/home");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // form validation rules
@@ -47,9 +43,6 @@ function Login() {
   let navigate = useNavigate();
   function handleClick() {
     navigate("/signup");
-  }
-  function handleClickkk() {
-    navigate("/home"); //reload page after login
   }
   function handleClickk() {
     navigate("/forgotpassword");

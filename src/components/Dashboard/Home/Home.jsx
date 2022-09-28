@@ -19,7 +19,10 @@ function Home() {
     const handleTabChange = (event, newTabIndex) => {
       setValue(newTabIndex);
     };
-  let navigate = useNavigate();
+
+
+    // navigate/routes for pages
+    let navigate = useNavigate();
     function handleClick() {
       navigate("/Accounts");
     }
@@ -27,6 +30,8 @@ function Home() {
       navigate("/Settings");
     }
 
+
+    //return statement
   return (
     <div>
       <Navbar />
