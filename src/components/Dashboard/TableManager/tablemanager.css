@@ -24,6 +24,18 @@
     margin-bottom: 0px;
     color: black;
 }
+.center-textInput{
+    margin-left: 102px;
+    height: 70px;
+    border: 0px;
+    width: 110px;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: black;
+}
 
 .center-heading-modal{
     text-align: center;

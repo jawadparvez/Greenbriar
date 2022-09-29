@@ -68,7 +68,7 @@ function Menu() {
   }, []);
 
   function fetchitem() {
-fetch("https://jawad-fake-server-app.herokuapp.com/item")
+  fetch("https://jawad-fake-server-app.herokuapp.com/item")
   .then((response) => response.json())
   .then((result) => {
     setItem(result);
@@ -185,6 +185,53 @@ let navigate = useNavigate();
       handleOpenClose();
     }
 
+
+    function handleItemPut() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify(itemarray);
+
+      var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => fetchitem())
+        .catch((error) => console.log("error", error));
+
+        handleCloseeee();
+    }
+
+    function handleItemDelete () {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+
+      var requestOptions = {
+        method: "DELETE",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => fetchitem())
+        .catch((error) => console.log("error", error));
+
+        handleCloser();
+    }
+
     const [valuee, setValuee] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -213,9 +260,23 @@ let navigate = useNavigate();
       }
     }
 
+    const [itemarray, setItemarray] = useState({
+      id : 0,
+      name: "",
+      category: 0,
+      price: "",
+      description: "",
+  })
     function handleitem (e) {
-      
-      console.log(e.target.ariaPlaceholder);
+      for(var i =0; i<item.length; i++)
+      { 
+        if(item[i].id == e.target.ariaPlaceholder)
+        {
+          setItemarray(item[i])
+          
+        }
+      }
+      handleOpennnn();
     }
 
     
@@ -463,9 +524,10 @@ let navigate = useNavigate();
                             style={{ marginTop: "18px" }}
                             src={Right}
                             alt=""
-                            aria-placeholder = {itm.id}
+                            aria-placeholder={itm.id}
                             onClick={(e) => {
-                              handleitem(e);}}
+                              handleitem(e);
+                            }}
                           ></img>
                         </Grid>
                       </Grid>
@@ -915,9 +977,12 @@ let navigate = useNavigate();
                 },
               },
             }}
-            disabled
             variant="outlined"
             size="small"
+            value={itemarray.name}
+            onChange={(e) =>
+              setItemarray({ ...itemarray, name: e.target.value })
+            }
           />
           <p className="left">Price</p>
           <TextField
@@ -943,8 +1008,11 @@ let navigate = useNavigate();
               },
             }}
             variant="outlined"
-            disabled
             size="small"
+            value={itemarray.price}
+            onChange={(e) =>
+              setItemarray({ ...itemarray, price: e.target.value })
+            }
           />
           <p className="left">Description</p>
           <TextField
@@ -969,9 +1037,12 @@ let navigate = useNavigate();
                 },
               },
             }}
-            disabled
             variant="outlined"
             size="small"
+            value={itemarray.description}
+            onChange={(e) =>
+              setItemarray({ ...itemarray, description: e.target.value })
+            }
           />
           <Button
             fullWidth
@@ -987,9 +1058,9 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleItemPut}
           >
-            Edit
+            Update
           </Button>
           <Button
             fullWidth
@@ -1054,7 +1125,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleItemDelete}
           >
             Remove
           </Button>

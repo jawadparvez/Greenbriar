@@ -15,7 +15,7 @@ import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
-import {TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import { Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
@@ -54,122 +54,158 @@ function TableManager() {
     );
   };
 
-    const [table, setTable] = useState([]);
-useEffect(() => {
-  fetch("https://jawad-fake-server-app.herokuapp.com/table")
-    .then((response) => response.json())
-    .then((result) => {
-      setTable(result);
-      console.log("table has been retrieved");
-    });
-}, []);
+  const [table, setTable] = useState([]);
+
+  function fetchtable() {
+    fetch("https://jawad-fake-server-app.herokuapp.com/table")
+      .then((response) => response.json())
+      .then((result) => {
+        setTable(result);
+        console.log("table has been retrieved");
+      });
+  }
+  useEffect(() => {
+    fetchtable();
+  }, []);
 
   const [open, setOpen] = useState(false);
   const [openn, setOpenn] = useState(false);
   const [opennn, setOpennn] = useState(false);
   const [opene, setOpene] = useState(false);
-    const [opener, setOpener] = useState(false);
-    const [opening, setOpening] = useState(false);
-    const [openin, setOpenin] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-      const handleOpenn = () => setOpenn(true);
-      const handleClosee = () => setOpenn(false);
-      const handleOpennn = () => setOpennn(true);
-      const handleCloseee = () => setOpennn(false);
-      const handleOpene = () => setOpene(true);
-      const handleCloser = () => setOpene(false);
-      const handleOpener = () => setOpener(true);
-      const handleCloserr = () => setOpener(false);
-      const handleOpening = () => setOpening(true);
-      const handleClosing = () => setOpening(false);
-      const handleOpenin = () => setOpenin(true);
-      const handleClosin = () => setOpenin(false);
+  const [opener, setOpener] = useState(false);
+  const [opening, setOpening] = useState(false);
+  const [openin, setOpenin] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleOpenn = () => setOpenn(true);
+  const handleClosee = () => setOpenn(false);
+  const handleOpennn = () => setOpennn(true);
+  const handleCloseee = () => setOpennn(false);
+  const handleOpene = () => setOpene(true);
+  const handleCloser = () => setOpene(false);
+  const handleOpener = () => setOpener(true);
+  const handleCloserr = () => setOpener(false);
+  const handleOpening = () => setOpening(true);
+  const handleClosing = () => setOpening(false);
+  const handleOpenin = () => setOpenin(true);
+  const handleClosin = () => setOpenin(false);
 
-        function handleOpenClose() {
-          handleOpennn();
-          handleClose();
-        }
+  function handleOpenClose() {
+    handleOpennn();
+    handleClose();
+  }
 
-        function handleOpenClose2() {
-          handleOpene();
-          handleClose();
-          }
+  function handleOpenClose2() {
+    handleOpene();
+    handleClose();
+  }
 
-        function handleOpenClose3() {
-          handleOpener();
-          handleClosee();
-          }
+  function handleOpenClose3() {
+    handleOpener();
+    handleClosee();
+  }
 
+  // const [tableToAdd, setTableToAdd] = useState()
 
-    const stylee = {
-      position: "absolute",
-      paddingTop: "0px !important",
-      paddingLeft: "15px !important",
-      paddingRight: "15px !important",
-      top: "32%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 350,
-      height: "290px",
-      bgcolor: "white",
-      border: "1px solid black",
-      borderRadius: "8px",
-      boxShadow: 24,
-      zIndex: "+1",
-      p: 4,
+  function handleAddTables (e) {
+    for(var i=0; i<=e.target.value; i++){
+      handleAddTable();
+    }
+  }
+  const [addtable, setAddtable] = useState({
+    time: "00:00:00",
+    seats: 0,
+    status: "OPEN",
+  });
+
+  function handleAddTable() {
+    console.log('kutty na chal')
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(addtable);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
     };
-    const style = {
-      position: "absolute",
-      paddingTop: "0px !important",
-      paddingLeft: "15px !important",
-      paddingRight: "15px !important",
-      top: "48%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 350,
-      height: "540px",
-      bgcolor: "white",
-      border: "1px solid black",
-      borderRadius: "8px",
-      boxShadow: 24,
-      zIndex: "+1",
-      p: 4,
-    };
-    const styleee = {
-      position: "absolute",
-      paddingTop: "0px !important",
-      paddingLeft: "15px !important",
-      paddingRight: "15px !important",
-      top: "39%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 350,
-      height: "400px",
-      bgcolor: "white",
-      border: "1px solid black",
-      borderRadius: "8px",
-      boxShadow: 24,
-      zIndex: "+1",
-      p: 4,
-    };
-    const styling = {
-      position: "absolute",
-      paddingTop: "0px !important",
-      paddingLeft: "15px !important",
-      paddingRight: "15px !important",
-      top: "42%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 350,
-      height: "450px",
-      bgcolor: "white",
-      border: "1px solid black",
-      borderRadius: "8px",
-      boxShadow: 24,
-      zIndex: "+1",
-      p: 4,
-    };
+
+    fetch("https://jawad-fake-server-app.herokuapp.com/table", requestOptions)
+      .then((response) => response.text())
+      .then((result) => fetchtable())
+      .catch((error) => console.log("error", error));
+  }
+
+  const stylee = {
+    position: "absolute",
+    paddingTop: "0px !important",
+    paddingLeft: "15px !important",
+    paddingRight: "15px !important",
+    top: "32%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 350,
+    height: "290px",
+    bgcolor: "white",
+    border: "1px solid black",
+    borderRadius: "8px",
+    boxShadow: 24,
+    zIndex: "+1",
+    p: 4,
+  };
+  const style = {
+    position: "absolute",
+    paddingTop: "0px !important",
+    paddingLeft: "15px !important",
+    paddingRight: "15px !important",
+    top: "48%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 350,
+    height: "540px",
+    bgcolor: "white",
+    border: "1px solid black",
+    borderRadius: "8px",
+    boxShadow: 24,
+    zIndex: "+1",
+    p: 4,
+  };
+  const styleee = {
+    position: "absolute",
+    paddingTop: "0px !important",
+    paddingLeft: "15px !important",
+    paddingRight: "15px !important",
+    top: "39%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 350,
+    height: "400px",
+    bgcolor: "white",
+    border: "1px solid black",
+    borderRadius: "8px",
+    boxShadow: 24,
+    zIndex: "+1",
+    p: 4,
+  };
+  const styling = {
+    position: "absolute",
+    paddingTop: "0px !important",
+    paddingLeft: "15px !important",
+    paddingRight: "15px !important",
+    top: "42%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 350,
+    height: "450px",
+    bgcolor: "white",
+    border: "1px solid black",
+    borderRadius: "8px",
+    boxShadow: 24,
+    zIndex: "+1",
+    p: 4,
+  };
   return (
     <div>
       <Navbar />
@@ -888,64 +924,79 @@ useEffect(() => {
       >
         <Box sx={style}>
           <p className="center">Table Sizer</p>
-          <Grid container>
-            <Grid item xs={6}>
-              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+          <div style={{ height: "400px", overflow: "scroll" }}>
+            <Grid container>
+              <Grid item xs={6}>
+                <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+              </Grid>
+              <Grid item xs={6}>
+                <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+            <Grid container spacing={0}>
+              {table.map((tab, index) => {
+                return (
+                  <div>
+                    <Grid item xs={6}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={8}>
+                          <Card
+                            style={{
+                              border: "1px solid black",
+                              fontFamily: "Montserrat",
+                              marginTop: "5px",
+                              marginBottom: "10px",
+                              marginLeft: "2px",
+                              height: "20px",
+                              width: "50px",
+                              borderRadius: "8px",
+                            }}
+                          >
+                            <span
+                              style={{
+                                marginTop: "0px",
+                                fontSize: "14px",
+                                fontWeight: "600",
+                                marginLeft: "20px",
+                                display: "flex",
+                              }}
+                            >
+                              {tab.id}
+                            </span>
+                          </Card>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <input
+                            style={{
+                              marginTop: "2px",
+                              marginLeft: "40px",
+                              marginRight: "0px",
+                              border: "0px",
+                              fontSize: "17px",
+                              fontWeight: "500",
+                              display: "flex",
+                              width: "50px",
+                              paddingRight: "10px",
+                              textAlign: "right",
+                            }}
+                            type={"number"}
+                            value={tab.seats}
+                          />
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    <Divider
+                      style={{
+                        background: "gray",
+                        color: "black",
+                        width: "96%",
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </Grid>
-          </Grid>
-          {table.map((tab, index) => {
-            return (
-              <div>
-                <Grid style={{ display: "flex" }} container>
-                  <Grid item xs={5}>
-                    <Card
-                      style={{
-                        border: "1px solid black",
-                        fontFamily: "Montserrat",
-                        marginTop: "5px",
-                        marginBottom: "10px",
-                        marginLeft: "2px",
-                        height: "20px",
-                        width: "50px",
-                        borderRadius: "8px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          marginTop: "0px",
-                          fontSize: "14px",
-                          fontWeight: "600",
-                          marginLeft: "20px",
-                          display: "flex",
-                        }}
-                      >
-                        {tab.id}
-                      </span>
-                    </Card>
-                  </Grid>
-                  <Grid item xs={1}>
-                    <span
-                      style={{
-                        marginTop: "3px",
-                        fontSize: "17px",
-                        fontWeight: "500",
-                        marginLeft: "0px",
-                        display: "flex",
-                      }}
-                    >
-                      {tab.seats}
-                    </span>
-                  </Grid>
-                </Grid>
-                <Divider
-                  style={{ background: "gray", color: "black", width: "50%" }}
-                />
-              </div>
-            );
-          })}
+          </div>
           <Button
             fullWidth
             className="signin-button button"
@@ -953,7 +1004,7 @@ useEffect(() => {
               color: "white !important",
               backgroundColor: "#0077FF !important",
               borderColor: "black !important",
-              marginTop: "180px!important",
+              marginTop: "0px!important",
               borderRadius: "8px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat !important",
@@ -993,7 +1044,11 @@ useEffect(() => {
       >
         <Box sx={styleee}>
           <p className="center">+ Table</p>
-          <h1 className="center-text">2</h1>
+          <input
+            type={"number"}
+            className="center-textInput"
+            //setting the value of the form to the props value
+          />
           <Divider
             style={{
               color: "black ",
@@ -1070,7 +1125,9 @@ useEffect(() => {
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={
+              () => handleAddTables() //setting the formData to the value input of the textfield
+            }
           >
             Add
           </Button>
