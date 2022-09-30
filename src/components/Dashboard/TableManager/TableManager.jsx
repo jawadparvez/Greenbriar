@@ -23,6 +23,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 
+
 const ITEM_HEIGHT = 40;
 const ITEM_PADDING_TOP = 0;
 const MenuProps = {
@@ -67,6 +68,20 @@ function TableManager() {
   useEffect(() => {
     fetchtable();
   }, []);
+
+ const [guest, setGuest] = useState([]);
+  function fetchGuest() {
+    fetch("https://jawad-fake-server-app.herokuapp.com/guests")
+      .then((response) => response.json())
+      .then((result) => {
+        setGuest(result);
+        console.log("guest has been retrieved");
+      });
+  }
+
+  useEffect(() => {
+    fetchGuest();
+  },[]);
 
   const [open, setOpen] = useState(false);
   const [openn, setOpenn] = useState(false);
@@ -121,7 +136,6 @@ function TableManager() {
   });
 
   function handleAddTable() {
-    console.log('stop')
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -224,6 +238,69 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             .catch((error) => console.log("error", error));
         }
 
+  const [guestname, setGuestname] = useState({
+    name: "",
+    time:"00:00:00",
+    party:"",
+    cellphone:""
+  });
+
+  function handleAddGuest(){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(guestname);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("https://jawad-fake-server-app.herokuapp.com/guests", requestOptions)
+      .then((response) => response.text())
+      .then((result) => fetchGuest())
+      .catch((error) => console.log("error", error));
+
+      handleClosing();
+  }
+  const [guestarray, setGuestarray] = useState({
+    id: 0,
+    name: "",
+    time: "",
+    party: "",
+    cellphone: "",
+  });
+  function handleguest(e) {
+    for (var i = 0; i < guest.length; i++) {
+      if (guest[i].id == e.target.ariaPlaceholder) {
+        setGuestarray(guest[i]);
+      }
+    }
+
+  }
+   function handleDeleteguest() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+
+      var requestOptions = {
+        method: "DELETE",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://jawad-fake-server-app.herokuapp.com/guests/" + guestarray.id,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => fetchGuest())
+        .catch((error) => console.log("error", error));
+    handleClosin();
+      }
+  
   const stylee = {
     position: "absolute",
     paddingTop: "0px !important",
@@ -668,7 +745,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             </Grid>
           </Grid>
 
-          {table.map((tab, index) => {
+          {guest.map((gue, index) => {
             return (
               <Card
                 style={{
@@ -693,7 +770,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         display: "flex",
                       }}
                     >
-                      {tab.id}.
+                      {gue.id}.
                     </span>
                   </Grid>
                   <Grid item xs={2}>
@@ -707,7 +784,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         color: "#0077FF",
                       }}
                     >
-                      Williams
+                      {gue.name}
                     </span>
                   </Grid>
                   <Grid item xs={2}>
@@ -720,7 +797,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         display: "flex",
                       }}
                     >
-                      {tab.time}
+                      {gue.time}
                     </span>
                   </Grid>
                   <Grid item xs={2}>
@@ -732,7 +809,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         marginLeft: "0px",
                       }}
                     >
-                      3
+                      {gue.party}
                     </span>
                   </Grid>
                   <Grid item xs={4}>
@@ -744,7 +821,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         marginLeft: "0px",
                       }}
                     >
-                      706-645-2184
+                      {gue.cellphone}
                     </span>
                   </Grid>
                   <Grid item xs={1}>
@@ -752,6 +829,10 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                       style={{ marginLeft: "0px", marginTop: "3px" }}
                       src={Right}
                       alt=""
+                      aria-placeholder={gue.id}
+                      onClick={(e) => {
+                        handleguest(e);
+                      }}
                     ></img>
                   </Grid>
                 </Grid>
@@ -1412,76 +1493,80 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
             </Grid>
           </Grid>
-          {table.map((tab, index) => {
-            return (
-              <div>
-                <Card
-                  style={{
-                    border: "1px solid black",
-                    fontFamily: "Montserrat",
-                    marginLeft: "0px!important",
-                    marginBottom: "5px",
-                    height: "30px",
-                    width: "160px",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <Grid style={{ display: "flex" }} container>
-                    <Grid item xs={4}>
-                      <Checkbox
-                        icon={<CircleUnchecked />}
-                        checkedIcon={<CircleCheckedFilled />}
-                        sx={{
-                          marginTop: "1px !important",
-                          marginLeft: "5px !important",
-                        }}
-                      ></Checkbox>
-                    </Grid>
+          <div style={{overflow:'scroll',height:'180px'}}>
+            <Grid container spacing={0}>
+              {table.map((tab, index) => {
+                return (
+                  <div>
+                    <Card
+                      style={{
+                        border: "1px solid black",
+                        fontFamily: "Montserrat",
+                        marginLeft: "10px",
+                        marginBottom: "5px",
+                        height: "30px",
+                        width: "148px",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      <Grid style={{ display: "flex" }} container>
+                        <Grid item xs={4}>
+                          <Checkbox
+                            icon={<CircleUnchecked />}
+                            checkedIcon={<CircleCheckedFilled />}
+                            sx={{
+                              marginTop: "1px !important",
+                              marginLeft: "5px !important",
+                            }}
+                          ></Checkbox>
+                        </Grid>
 
-                    <Grid item xs={6}>
-                      <Card
-                        style={{
-                          border: "1px solid black",
-                          fontFamily: "Montserrat",
-                          marginTop: "4px",
-                          marginBottom: "15px",
-                          marginLeft: "2px",
-                          height: "20px",
-                          width: "50px",
-                          borderRadius: "8px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            marginTop: "0px",
-                            fontSize: "14px",
-                            fontWeight: "600",
-                            marginLeft: "20px",
-                            display: "flex",
-                          }}
-                        >
-                          {tab.id}
-                        </span>
-                      </Card>
-                    </Grid>
-                    <Grid item xs={1}>
-                      <span
-                        style={{
-                          marginTop: "2px",
-                          fontSize: "17px",
-                          fontWeight: "500",
-                          marginLeft: "0px",
-                          display: "flex",
-                        }}
-                      >
-                        {tab.seats}
-                      </span>
-                    </Grid>
-                  </Grid>
-                </Card>
-              </div>
-            );
-          })}
+                        <Grid item xs={6}>
+                          <Card
+                            style={{
+                              border: "1px solid black",
+                              fontFamily: "Montserrat",
+                              marginTop: "4px",
+                              marginBottom: "15px",
+                              marginLeft: "2px",
+                              height: "20px",
+                              width: "50px",
+                              borderRadius: "8px",
+                            }}
+                          >
+                            <span
+                              style={{
+                                marginTop: "0px",
+                                fontSize: "14px",
+                                fontWeight: "600",
+                                marginLeft: "20px",
+                                display: "flex",
+                              }}
+                            >
+                              {tab.id}
+                            </span>
+                          </Card>
+                        </Grid>
+                        <Grid item xs={1}>
+                          <span
+                            style={{
+                              marginTop: "2px",
+                              fontSize: "17px",
+                              fontWeight: "500",
+                              marginLeft: "0px",
+                              display: "flex",
+                            }}
+                          >
+                            {tab.seats}
+                          </span>
+                        </Grid>
+                      </Grid>
+                    </Card>
+                  </div>
+                );
+              })}
+            </Grid>
+          </div>
           <Button
             fullWidth
             className="signin-button button"
@@ -1556,8 +1641,12 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Name"
             variant="outlined"
             size="small"
+            onChange={
+              (e) => setGuestname({ ...guestname, name: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <p className="left">Cell Number</p>
+
           <TextField
             fullWidth
             sx={{
@@ -1583,6 +1672,9 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Number"
             variant="outlined"
             size="small"
+            onChange={
+              (e) => setGuestname({ ...guestname, cellphone: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <p className="left">Party Size</p>
           <TextField
@@ -1610,6 +1702,9 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Party Size"
             variant="outlined"
             size="small"
+            onChange={
+              (e) => setGuestname({ ...guestname, party: e.target.value }) //setting the formData to the value input of the textfield
+            }
           />
           <Button
             fullWidth
@@ -1625,7 +1720,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleAddGuest}
           >
             Add
           </Button>
@@ -1682,6 +1777,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Name"
             variant="outlined"
             size="small"
+            value={guestarray.name}
           />
           <p className="left">Cell Number</p>
           <TextField
@@ -1709,6 +1805,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Number"
             variant="outlined"
             size="small"
+            value={guestarray.cellphone}
           />
           <p className="left">Party Size</p>
           <TextField
@@ -1736,6 +1833,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             label="Enter Party Size"
             variant="outlined"
             size="small"
+            value={guestarray.party}
           />
           <Button
             fullWidth
@@ -1751,7 +1849,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleDeleteguest}
           >
             Remove
           </Button>
