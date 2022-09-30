@@ -105,13 +105,15 @@ function TableManager() {
     handleClosee();
   }
 
-  // const [tableToAdd, setTableToAdd] = useState()
+  const [tableToAdd, setTableToAdd] = useState()
 
-  function handleAddTables (e) {
-    for(var i=0; i<=e.target.value; i++){
+  function handleAddTables () {
+    for (var i = 0; i < tableToAdd; i++) {
       handleAddTable();
     }
+    handleCloseee();
   }
+
   const [addtable, setAddtable] = useState({
     time: "00:00:00",
     seats: 0,
@@ -137,6 +139,90 @@ function TableManager() {
       .then((result) => fetchtable())
       .catch((error) => console.log("error", error));
   }
+
+
+   const deletetable = [];
+   const [isChecked, setisChecked] = useState([]);
+   const handleCheckbox = (e) => {
+     const { value, checked } = e.target;
+     if (checked && check(deletetable, value)) {
+       deletetable.push(value);
+       console.log(deletetable);
+     } else if (!checked && !check(deletetable, value)) {
+       var index = deletetable.indexOf(value);
+       deletetable.splice(index, 1);
+       console.log(deletetable);
+     }
+   };
+
+   function check(a, name) {
+     if (a.indexOf(name) != -1) {
+       return false;
+     } else {
+       return true;
+     }
+   }
+
+    function submitHandleTable() {
+      if (deletetable.length <= 0) {
+        console.log("You haven't selected anything to delete");
+      } else {
+        for (var i = 0; i < deletetable.length; i++)
+          deleteTable(deletetable[i]);
+      }
+      handleCloser();
+    }
+
+    function deleteTable(id) {
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+  method: "DELETE",
+  headers: myHeaders,
+  redirect: "follow",
+};
+
+fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
+  .then((response) => response.text())
+  .then((result) => fetchtable())
+  .catch((error) => console.log("error", error));
+    }
+
+        const [tablearray, setTablearray] = useState({
+          id: 0,
+          seats: "",
+        });
+        function handleSeats(e) {
+          for (var i = 0; i < table.length; i++) {
+            if (table[i].id == e.target.ariaPlaceholder) {
+              setTablearray(table[i]);
+            }
+          }
+          
+        }
+
+        function handleTableSeats() {
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          var raw = JSON.stringify(tablearray);
+
+          var requestOptions = {
+            method: "PUT",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+          };
+
+          fetch(
+            "https://jawad-fake-server-app.herokuapp.com/table/" + tablearray.id,
+            requestOptions
+          )
+            .then((response) => response.text())
+            .then((result) => fetchtable())
+            .catch((error) => console.log("error", error));
+        }
 
   const stylee = {
     position: "absolute",
@@ -924,15 +1010,15 @@ function TableManager() {
       >
         <Box sx={style}>
           <p className="center">Table Sizer</p>
-          <div style={{ height: "400px", overflow: "scroll" }}>
-            <Grid container>
-              <Grid item xs={6}>
-                <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
-              </Grid>
-              <Grid item xs={6}>
-                <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
-              </Grid>
+          <Grid container>
+            <Grid item xs={6}>
+              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
             </Grid>
+            <Grid item xs={6}>
+              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+            </Grid>
+          </Grid>
+          <div style={{ height: "340px", overflow: "scroll" }}>
             <Grid container spacing={0}>
               {table.map((tab, index) => {
                 return (
@@ -1004,7 +1090,7 @@ function TableManager() {
               color: "white !important",
               backgroundColor: "#0077FF !important",
               borderColor: "black !important",
-              marginTop: "0px!important",
+              marginTop: "40px!important",
               borderRadius: "8px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat !important",
@@ -1047,7 +1133,10 @@ function TableManager() {
           <input
             type={"number"}
             className="center-textInput"
-            //setting the value of the form to the props value
+            value={tableToAdd} //setting the value of the form to the props value
+            onChange={
+              (e) => setTableToAdd(e.target.value) //setting the formData to the value input of the textfield
+            }
           />
           <Divider
             style={{
@@ -1169,79 +1258,90 @@ function TableManager() {
               <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
             </Grid>
             <Grid item xs={6}>
-              <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
+              <p style={{ textAlign: "right", marginRight: "10px" }}>seats</p>
             </Grid>
           </Grid>
-          {table.map((tab, index) => {
-            return (
-              <div>
-                <Card
-                  style={{
-                    border: "1px solid black",
-                    fontFamily: "Montserrat",
-                    marginLeft: "0px!important",
-                    marginBottom: "5px",
-                    height: "30px",
-                    width: "160px",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <Grid style={{ display: "flex" }} container>
-                    <Grid item xs={4}>
-                      <Checkbox
-                        icon={<CircleUnchecked />}
-                        checkedIcon={<CircleCheckedFilled />}
-                        sx={{
-                          marginTop: "1px !important ",
-                          marginLeft: "5px !important ",
-                        }}
-                      ></Checkbox>
-                    </Grid>
-
+          <div style={{ height: "320px", overflow: "scroll" }}>
+            <Grid container spacing={0}>
+              {table.map((tab, index) => {
+                return (
+                  <div>
                     <Grid item xs={6}>
                       <Card
                         style={{
                           border: "1px solid black",
                           fontFamily: "Montserrat",
-                          marginTop: "4px",
-                          marginBottom: "15px",
-                          marginLeft: "2px",
-                          height: "20px",
-                          width: "50px",
+                          marginLeft: "5px",
+                          marginBottom: "5px",
+                          height: "30px",
+                          width: "150px",
                           borderRadius: "8px",
                         }}
                       >
-                        <span
-                          style={{
-                            marginTop: "0px",
-                            fontSize: "14px",
-                            fontWeight: "600",
-                            marginLeft: "20px",
-                            display: "flex",
-                          }}
-                        >
-                          {tab.id}
-                        </span>
+                        <Grid container spacing={0}>
+                          <Grid item xs={4}>
+                            <Checkbox
+                              icon={<CircleUnchecked />}
+                              checkedIcon={<CircleCheckedFilled />}
+                              sx={{
+                                marginTop: "1px !important ",
+                                marginLeft: "5px !important ",
+                              }}
+                              value={tab.id}
+                              checked={tab.isChecked}
+                              onChange={(e) => {
+                                handleCheckbox(e);
+                              }}
+                            ></Checkbox>
+                          </Grid>
+
+                          <Grid item xs={6}>
+                            <Card
+                              style={{
+                                border: "1px solid black",
+                                fontFamily: "Montserrat",
+                                marginTop: "4px",
+                                marginBottom: "15px",
+                                marginLeft: "2px",
+                                height: "20px",
+                                width: "50px",
+                                borderRadius: "8px",
+                              }}
+                            >
+                              <span
+                                style={{
+                                  marginTop: "0px",
+                                  fontSize: "14px",
+                                  fontWeight: "600",
+                                  marginLeft: "20px",
+                                  display: "flex",
+                                }}
+                              >
+                                {tab.id}
+                              </span>
+                            </Card>
+                          </Grid>
+                          <Grid item xs={1}>
+                            <span
+                              style={{
+                                marginTop: "2px",
+                                fontSize: "17px",
+                                fontWeight: "500",
+                                marginLeft: "0px",
+                                display: "flex",
+                              }}
+                            >
+                              {tab.seats}
+                            </span>
+                          </Grid>
+                        </Grid>
                       </Card>
                     </Grid>
-                    <Grid item xs={1}>
-                      <span
-                        style={{
-                          marginTop: "2px",
-                          fontSize: "17px",
-                          fontWeight: "500",
-                          marginLeft: "0px",
-                          display: "flex",
-                        }}
-                      >
-                        {tab.seats}
-                      </span>
-                    </Grid>
-                  </Grid>
-                </Card>
-              </div>
-            );
-          })}
+                  </div>
+                );
+              })}
+            </Grid>
+          </div>
           <Button
             fullWidth
             className="signin-button button"
@@ -1249,7 +1349,7 @@ function TableManager() {
               color: "white !important",
               backgroundColor: "#FF1F00 !important",
               borderColor: "black !important",
-              marginTop: "160px!important",
+              marginTop: "30px!important",
               borderRadius: "8px !important",
               textAlign: "flex-end !important",
               border: "1px solid black !important",
@@ -1257,6 +1357,7 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
+            onClick={submitHandleTable}
           >
             Remove
           </Button>
