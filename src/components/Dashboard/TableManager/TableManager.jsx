@@ -119,7 +119,7 @@ function TableManager() {
   });
 
   function handleAddTable() {
-    console.log('kutty na chal')
+    console.log('stop')
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
