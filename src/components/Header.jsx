@@ -25,6 +25,12 @@ import {
   useLocation,
 } from "react-router-dom";
 import Settings from './Dashboard/Settings/Settings';
+import ServerHome from './ServerDashboard/ServerHome/ServerHome';
+import Tips from './ServerDashboard/Tips/Tips';
+import ServerTableManager from './ServerDashboard/ServerTableManager/ServerTableManager';
+import ViewTabServer from './ServerDashboard/ViewTab/ViewTab';
+import ServerViewOrder from './ServerDashboard/ServerViewOrder/ServerViewOrder';
+import ServerMenu from './ServerDashboard/Menu/ServerMenu';
 function Header() {
 
       history.navigate = useNavigate();
@@ -111,6 +117,54 @@ function Header() {
           element={
             <PrivateRoute>
               <Settings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerHome"
+          element={
+            <PrivateRoute>
+              <ServerHome />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Tips"
+          element={
+            <PrivateRoute>
+              <Tips />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerTableManager"
+          element={
+            <PrivateRoute>
+              <ServerTableManager />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerViewTab"
+          element={
+            <PrivateRoute>
+              <ViewTabServer />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerViewOrder"
+          element={
+            <PrivateRoute>
+              <ServerViewOrder />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerMenu"
+          element={
+            <PrivateRoute>
+              <ServerMenu />
             </PrivateRoute>
           }
         />

@@ -576,7 +576,7 @@ let navigate = useNavigate();
             label="Beverages"
             variant="outlined"
             size="small"
-            value={catergoryname.name} //setting the value of the form to the props value
+             //setting the value of the form to the props value
             onChange={
               (e) => setCategoryname({ ...catergoryname, name: e.target.value }) //setting the formData to the value input of the textfield
             }
@@ -820,7 +820,7 @@ let navigate = useNavigate();
             label="Italy 5 Cheese Dinner"
             variant="outlined"
             size="small"
-            value={item.name} //setting the value of the form to the props value
+             //setting the value of the form to the props value
             onChange={
               (e) => setItemname({ ...itemname, name: e.target.value }) //setting the formData to the value input of the textfield
             }
@@ -851,7 +851,7 @@ let navigate = useNavigate();
             label="$21.99"
             variant="outlined"
             size="small"
-            value={item.price} //setting the value of the form to the props value
+             //setting the value of the form to the props value
             onChange={
               (e) => setItemname({ ...itemname, price: e.target.value }) //setting the formData to the value input of the textfield
             }
@@ -882,7 +882,7 @@ let navigate = useNavigate();
             label="Enter item Description"
             variant="outlined"
             size="small"
-            value={item.description} //setting the value of the form to the props value
+             //setting the value of the form to the props value
             onChange={
               (e) =>
                 setItemname({
