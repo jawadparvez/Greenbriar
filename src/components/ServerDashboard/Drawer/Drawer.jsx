@@ -68,7 +68,7 @@ function DrawerComponent() {
           <List height="50vh">
             <ListItem onClick={() => setOpenDrawer(false)}>
               <ListItemText>
-                <Link to="/home" className={classes.link}>
+                <Link to="/ServerHome" className={classes.link}>
                   Home Feed
                 </Link>
               </ListItemText>
@@ -100,7 +100,7 @@ function DrawerComponent() {
             <Divider className={classes.divider} />
             <ListItem>
               <ListItemText>
-                <Link to="/Settings" className={classes.link}>
+                <Link to="/ServerSettings" className={classes.link}>
                   Settings
                 </Link>
               </ListItemText>

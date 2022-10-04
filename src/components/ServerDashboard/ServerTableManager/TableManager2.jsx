@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { Grid } from "@mui/material";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import Modal from "@mui/material/Modal";
-import { Button } from "@mui/material";
+import Plus from "../../../Assets/Images/plus.png"
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import "./servertable.css";
-import { Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
+
 
 
 function TableManager2({ page, setPage }) {
@@ -50,6 +47,13 @@ function TableManager2({ page, setPage }) {
       <p style={{ fontSize: "16px", marginLeft: "3%" }}>
         Select the plus sign below to make selections from the menu.
       </p>
+      <Link to='/ServerMenu'>
+        <img
+          style={{ marginTop: "15%", width: "20.55px", height: "20.55px" }}
+          src={Plus}
+          alt=""
+        />
+      </Link>
     </div>
   );
 }

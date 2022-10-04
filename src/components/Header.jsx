@@ -31,6 +31,11 @@ import ServerTableManager from './ServerDashboard/ServerTableManager/ServerTable
 import ViewTabServer from './ServerDashboard/ViewTab/ViewTab';
 import ServerViewOrder from './ServerDashboard/ServerViewOrder/ServerViewOrder';
 import ServerMenu from './ServerDashboard/Menu/ServerMenu';
+import ServerSettings from './ServerDashboard/Settings/ServerSettings';
+import HostHome from './HostDashboard/HostHome/HomeHost';
+import HostTableManager from './HostDashboard/TableManager/TableManager'
+import HostSettings from './HostDashboard/Settings/Settings'
+import TabAndTip from './ServerDashboard/TabAndTip/TabAndTip';
 function Header() {
 
       history.navigate = useNavigate();
@@ -165,6 +170,46 @@ function Header() {
           element={
             <PrivateRoute>
               <ServerMenu />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ServerSettings"
+          element={
+            <PrivateRoute>
+              <ServerSettings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/HostHome"
+          element={
+            <PrivateRoute>
+              <HostHome />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/HostTableManager"
+          element={
+            <PrivateRoute>
+              <HostTableManager />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/HostSettings"
+          element={
+            <PrivateRoute>
+              <HostSettings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/TabAndTip"
+          element={
+            <PrivateRoute>
+              <TabAndTip />
             </PrivateRoute>
           }
         />
