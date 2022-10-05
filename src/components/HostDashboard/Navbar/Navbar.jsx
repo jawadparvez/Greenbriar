@@ -11,7 +11,6 @@ import {
 import { Link } from "react-router-dom";
 import DrawerComponent from "../Drawer/Drawer.jsx";
 import Logo from "../../../Assets/Images/AppLogo.svg";
-import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: { marginLeft: theme.spacing(10), display: "flex" },
