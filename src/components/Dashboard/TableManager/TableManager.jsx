@@ -904,7 +904,6 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                   marginLeft: "0px!important",
                   marginBottom: "5px",
                   height: "24px",
-                  width: "345px",
                   borderRadius: "8px",
                 }}
               >
