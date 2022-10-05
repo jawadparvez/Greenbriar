@@ -49,8 +49,8 @@
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left: 27%!important;
-    margin-right: 1px;
+    margin-left:0% !important;
+
 }
 
 .center-t-seats{
@@ -58,7 +58,7 @@
     text-align: center;
     margin-top: 10px!important;
     margin-left: 0%!important;
-    margin-right: 1px;
+
 }
 
 .center-t-c{
@@ -66,14 +66,14 @@
     text-align: center;
     margin-top: 10px!important;
     margin-left: 10%!important;
-    margin-right: 1px;
+
 }
 .center-t-time{
     display: flex;
     text-align: center;
     margin-top: 10px!important;
     margin-left: 0%!important;
-    margin-right: 1px;
+
 }
 
 .center-t-r{
@@ -81,7 +81,7 @@
     text-align: center;
     margin-top: 10px!important;
     margin-left: 19%!important;
-    margin-right: 1px;
+
 }
 
 .center-t-name{
@@ -89,20 +89,20 @@
     text-align: center;
     margin-top: 10px!important;
     margin-left: 0%!important;
-    margin-right: 1px;
+
 }
 .center-t-cell{
     display: flex;
-    text-align: center;
+    
     margin-top: 10px!important;
-    margin-left: 1%!important;
-    margin-right: 1px;
+    margin-left: 0%!important;
+
 }
 
 .center-t-server{
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left: 12%!important;
-    margin-right: 1px;
+    margin-left: 8%!important;
+
 }
