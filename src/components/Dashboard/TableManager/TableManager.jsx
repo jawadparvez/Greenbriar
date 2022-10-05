@@ -891,7 +891,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <span className="center-t-server">Server</span>
             </Grid>
             <Grid item xs={3}>
-              <span className="center-t-cell">Order</span>
+              <span  className="center-t-cell">Order</span>
             </Grid>
           </Grid>
 
