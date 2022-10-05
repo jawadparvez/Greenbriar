@@ -36,6 +36,7 @@ import HostHome from './HostDashboard/HostHome/HomeHost';
 import HostTableManager from './HostDashboard/TableManager/TableManager'
 import HostSettings from './HostDashboard/Settings/Settings'
 import TabAndTip from './ServerDashboard/TabAndTip/TabAndTip';
+import Receipt from './ServerDashboard/Receipt/Receipt';
 function Header() {
 
       history.navigate = useNavigate();
@@ -210,6 +211,14 @@ function Header() {
           element={
             <PrivateRoute>
               <TabAndTip />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Receipt"
+          element={
+            <PrivateRoute>
+              <Receipt />
             </PrivateRoute>
           }
         />
