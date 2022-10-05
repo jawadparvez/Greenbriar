@@ -521,7 +521,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <span className="center-t-c">Seats</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-c">Status</span>
+              <span className="center-t-seats">Status</span>
             </Grid>
             <Grid item xs={4}>
               <span className="center-t">Server</span>
@@ -731,7 +731,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <span className="center-t-c">#</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-c">Name</span>
+              <span className="center-t-name">Name</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-r">Time</span>
@@ -885,7 +885,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <span className="center-t-c color">Table</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-c">Time</span>
+              <span className="center-t-time">Time</span>
             </Grid>
             <Grid item xs={4}>
               <span className="center-t-server">Server</span>
