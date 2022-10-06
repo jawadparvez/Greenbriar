@@ -468,7 +468,6 @@ function TabAndTip() {
               fontWeight: "600",
               color: "#0077FF",
             }}
-            onClick={onClickShoww}
           >
             Order Submitted
           </p>

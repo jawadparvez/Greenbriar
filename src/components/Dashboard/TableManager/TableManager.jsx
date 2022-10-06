@@ -169,6 +169,45 @@ function TableManager() {
      }
    };
 
+   const [seatarray, setSeatarray] = useState({
+     id: 0,
+     time: "00:00:00",
+     seats: 0,
+     status: "OPEN",
+   });
+
+     const [tableSeatsToAdd, setTableSeatsToAdd] = useState();
+
+           const addTableSeats = [];
+           const handleSeatsCheckbox = (e) => {
+             const { value, checked } = e.target;
+             if (checked && check(addTableSeats, value)) {
+               addTableSeats.push(value);
+               console.log(addTableSeats);
+             } else if (!checked && !check(addTableSeats, value)) {
+               var index = addTableSeats.indexOf(value);
+               addTableSeats.splice(index, 1);
+               console.log(addTableSeats);
+             }
+           };
+
+     function handleAddTablesSeats() {
+
+
+      if (!tableSeatsToAdd && addTableSeats <= 0) {
+        console.log("nothing is selected to be added");
+      } else {
+        for (var i = 0; i < addTableSeats.length; i++) {
+          handleTableSeats(addTableSeats[i]);
+        }
+      }
+      //  for (var i = 0; i < tableSeatsToAdd; i++) {}
+
+       handleCloserr();
+     }
+
+
+
    function check(a, name) {
      if (a.indexOf(name) != -1) {
        return false;
@@ -203,24 +242,12 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
   .catch((error) => console.log("error", error));
     }
 
-        const [tablearray, setTablearray] = useState({
-          id: 0,
-          seats: "",
-        });
-        function handleSeats(e) {
-          for (var i = 0; i < table.length; i++) {
-            if (table[i].id == e.target.ariaPlaceholder) {
-              setTablearray(table[i]);
-            }
-          }
-          
-        }
 
-        function handleTableSeats() {
+        function handleTableSeats(id) {
           var myHeaders = new Headers();
           myHeaders.append("Content-Type", "application/json");
 
-          var raw = JSON.stringify(tablearray);
+          var raw = JSON.stringify(seatarray);
 
           var requestOptions = {
             method: "PUT",
@@ -230,7 +257,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
           };
 
           fetch(
-            "https://jawad-fake-server-app.herokuapp.com/table/" + tablearray.id,
+            "https://jawad-fake-server-app.herokuapp.com/table/" +id,
             requestOptions
           )
             .then((response) => response.text())
@@ -638,24 +665,34 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                     >
                       {names.map((name) => (
                         <MenuItem key={name} value={name}>
-                          <Checkbox
-                            icon={<CircleUnchecked />}
-                            checkedIcon={<CircleChecked />}
-                            style={{
-                              textAlign: "left !important",
-                              marginLeft: "-10px !important",
-                              marginTop: "0px !important",
-                            }}
-                            checked={personName.indexOf(name) > -1}
-                          />
-                          <ListItemText
-                            style={{
-                              textAlign: "left !important",
-                              marginTop: "0px !important",
-                              fontSize: "10px!important",
-                            }}
-                            primary={name}
-                          />
+                          <Grid container spacing={2}>
+                            <Grid item xs={4}>
+                              <Checkbox
+                                icon={<CircleUnchecked />}
+                                checkedIcon={<CircleChecked />}
+                                style={{
+                                  textAlign: "left ",
+                                  marginLeft: "10px",
+                                  marginTop: "0px ",
+                                  paddingTop: "0px ",
+                                  paddingBottom: "0px ",
+                                }}
+                                checked={personName.indexOf(name) > -1}
+                              />
+                            </Grid>
+                            <Grid item xs={8}>
+                              <ListItemText
+                                style={{
+                                  textAlign: "left ",
+                                  marginTop: "0px ",
+                                  fontSize: "10px",
+                                  color: "#0077FF",
+                                  marginLeft: "0px",
+                                }}
+                                primary={name}
+                              />
+                            </Grid>
+                          </Grid>
                         </MenuItem>
                       ))}
                     </Select>
@@ -891,7 +928,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <span className="center-t-server">Server</span>
             </Grid>
             <Grid item xs={3}>
-              <span  className="center-t-cell">Order</span>
+              <span className="center-t-cell">Order</span>
             </Grid>
           </Grid>
 
@@ -975,7 +1012,6 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                       id="demo-multiple-checkbox"
                       value={personName}
                       onChange={handleChange}
-                      renderValue={(selected) => selected.join(", ")}
                       MenuProps={MenuProps}
                     >
                       {names.map((name) => (
@@ -1143,6 +1179,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                               paddingRight: "10px",
                               textAlign: "right",
                             }}
+                            disabled
                             type={"number"}
                             value={tab.seats}
                           />
@@ -1468,7 +1505,13 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
       >
         <Box sx={style}>
           <p className="center">Table Sizer</p>
-          <h1 className="center-text">2</h1>
+          <input
+            className="center-textInput"
+             //setting the value of the form to the props value
+            onChange={
+              (e) => setSeatarray({ ...seatarray, seats: e.target.value }) //setting the formData to the value input of the textfield
+            }
+          />
           <Divider
             style={{
               color: "black",
@@ -1490,7 +1533,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               <p style={{ textAlign: "right", marginRight: "5px" }}>seats</p>
             </Grid>
           </Grid>
-          <div style={{overflow:'scroll',height:'180px'}}>
+          <div style={{ overflow: "scroll", height: "180px" }}>
             <Grid container spacing={0}>
               {table.map((tab, index) => {
                 return (
@@ -1514,6 +1557,11 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                             sx={{
                               marginTop: "1px !important",
                               marginLeft: "5px !important",
+                            }}
+                            value={tab.id}
+                            checked={tab.isChecked}
+                            onChange={(e) => {
+                              handleSeatsCheckbox(e);
                             }}
                           ></Checkbox>
                         </Grid>
@@ -1579,7 +1627,7 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
               height: "44px !important",
             }}
             variant="contained"
-            // onClick={handleClickkk}
+            onClick={handleAddTablesSeats}
           >
             Apply
           </Button>
