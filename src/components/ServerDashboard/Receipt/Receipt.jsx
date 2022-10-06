@@ -232,7 +232,6 @@ function handleModal2() {
                 marginLeft: "30px",
                 fontSize: "14px",
                 fontWeight: "600",
-                marginTop: "1px",
                 color: "#667085",
                 marginTop: "5px",
               }}
@@ -245,7 +244,6 @@ function handleModal2() {
               style={{
                 fontSize: "14px",
                 fontWeight: "600",
-                marginTop: "1px",
                 textAlign: "right",
                 marginRight: "20px",
                 color: "#667085",
@@ -262,7 +260,6 @@ function handleModal2() {
                 marginLeft: "30px",
                 fontSize: "14px",
                 fontWeight: "600",
-                marginTop: "1px",
                 color: "#667085",
                 marginTop: "5px",
               }}
@@ -275,7 +272,6 @@ function handleModal2() {
               style={{
                 fontSize: "14px",
                 fontWeight: "600",
-                marginTop: "1px",
                 textAlign: "right",
                 marginRight: "20px",
                 color: "#667085",

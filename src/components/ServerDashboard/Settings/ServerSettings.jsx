@@ -218,7 +218,6 @@ function ServerSettings() {
               </p>
               <p
                 style={{
-                  marginLeft: "3px",
                   textAlign: "left",
                   fontSize: "14px",
                   fontWeight: "500",
