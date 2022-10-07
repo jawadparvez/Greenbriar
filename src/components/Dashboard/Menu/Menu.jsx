@@ -259,7 +259,7 @@ let navigate = useNavigate();
         return true;
       }
     }
-    
+
     const [itemarray, setItemarray] = useState({
       id : 0,
       name: "",

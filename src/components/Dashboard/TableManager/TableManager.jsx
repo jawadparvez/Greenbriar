@@ -22,6 +22,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 
 const ITEM_HEIGHT = 40;
@@ -43,17 +44,7 @@ function TableManager() {
     setValue(newTabIndex);
   };
 
-  const [personName, setPersonName] = React.useState([]);
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
 
   const [table, setTable] = useState([]);
 
@@ -133,6 +124,7 @@ function TableManager() {
     time: "00:00:00",
     seats: 0,
     status: "OPEN",
+    server: ""
   });
 
   function handleAddTable() {
@@ -227,16 +219,16 @@ function TableManager() {
     }
 
     function deleteTable(id) {
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-var requestOptions = {
-  method: "DELETE",
-  headers: myHeaders,
-  redirect: "follow",
-};
+    var requestOptions = {
+    method: "DELETE",
+    headers: myHeaders,
+    redirect: "follow",
+    };
 
-fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
+  fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
   .then((response) => response.text())
   .then((result) => fetchtable())
   .catch((error) => console.log("error", error));
@@ -264,6 +256,65 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
             .then((result) => fetchtable())
             .catch((error) => console.log("error", error));
         }
+
+    var [tablearray, setTablearray] = useState({
+      id: 0,
+      time: "",
+      seats: 0,
+      status: "",
+      server:"",
+    });
+
+      const [personName, setPersonName] = React.useState([]);
+
+      const handleChange = (event) => {
+        const {
+          target: { value },
+        } = event;
+        for (var i = 0; i < table.length; i++) {
+          if (table[i].id == event.target.name) {
+            console.clear();
+            console.log(event.target.name);
+            tablearray = table[i];        
+            console.log(table[i]);
+            handleTS(event.target.name,value)
+
+            
+          }
+          
+        }
+      };
+
+            function AddTableServer(id) {
+              var myHeaders = new Headers();
+              myHeaders.append("Content-Type", "application/json");
+
+              var raw = JSON.stringify(tablearray);
+
+              var requestOptions = {
+                method: "PUT",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow",
+              };
+
+              fetch(
+                "https://jawad-fake-server-app.herokuapp.com/table/" + id,
+                requestOptions
+              )
+                .then((response) => response.text())
+                .then((result) => fetchtable())
+                .catch((error) => console.log("error", error));
+            }
+
+      function handleTS(name, value) {
+        tablearray.server = value;
+        AddTableServer(name);
+        console.log(tablearray);
+      }
+
+    
+    
 
   const [guestname, setGuestname] = useState({
     name: "",
@@ -327,6 +378,9 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
         .catch((error) => console.log("error", error));
     handleClosin();
       }
+
+
+
   
   const stylee = {
     position: "absolute",
@@ -653,12 +707,12 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         marginLeft: "-9px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
-                        color: "white",
+                        color: "white !important",
                         textAlign: "left",
                       }}
                       labelId="demo-multiple-checkbox-label"
-                      id="demo-multiple-checkbox"
-                      value={personName}
+                      name={tab.id}
+                      value={tablearray.server}
                       onChange={handleChange}
                       renderValue={(selected) => selected.join(", ")}
                       MenuProps={MenuProps}
@@ -1009,8 +1063,8 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                         textAlign: "left",
                       }}
                       labelId="demo-multiple-checkbox-label"
-                      id="demo-multiple-checkbox"
-                      value={personName}
+                      id={tab.id}
+                      value={tablearray.server}
                       onChange={handleChange}
                       MenuProps={MenuProps}
                     >
