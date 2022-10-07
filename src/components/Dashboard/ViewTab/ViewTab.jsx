@@ -88,7 +88,7 @@ function ViewTab() {
         </Grid>
       </Grid>
 
-      <Grid container spacing={1}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
           {item.map((cat) => {
             return (
@@ -104,7 +104,7 @@ function ViewTab() {
                     marginRight: "10px",
                   }}
                 >
-                  <Grid container spacing={1}>
+                  <Grid container spacing={0}>
                     <Grid className="checkbox-modal" item xs={1}>
                       <Checkbox
                         icon={
@@ -199,7 +199,7 @@ function ViewTab() {
         }}
       />
 
-      <Grid container>
+      <Grid container spacing={0}>
         <Grid item xs={8}>
           <p
             style={{

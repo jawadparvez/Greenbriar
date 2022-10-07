@@ -1016,24 +1016,34 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
                     >
                       {names.map((name) => (
                         <MenuItem key={name} value={name}>
-                          <Checkbox
-                            icon={<CircleUnchecked />}
-                            checkedIcon={<CircleChecked />}
-                            style={{
-                              textAlign: "center !important",
-                              marginLeft: "40px !important",
-                              marginTop: "0px",
-                            }}
-                            checked={personName.indexOf(name) > -1}
-                          />
-                          <ListItemText
-                            style={{
-                              textAlign: "left !important",
-                              marginTop: "0px !important",
-                              fontSize: "10px!important",
-                            }}
-                            primary={name}
-                          />
+                          <Grid container spacing={2}>
+                            <Grid item xs={4}>
+                              <Checkbox
+                                icon={<CircleUnchecked />}
+                                checkedIcon={<CircleChecked />}
+                                style={{
+                                  textAlign: "left ",
+                                  marginLeft: "10px",
+                                  marginTop: "0px ",
+                                  paddingTop: "0px ",
+                                  paddingBottom: "0px ",
+                                }}
+                                checked={personName.indexOf(name) > -1}
+                              />
+                            </Grid>
+                            <Grid item xs={8}>
+                              <ListItemText
+                                style={{
+                                  textAlign: "left ",
+                                  marginTop: "0px ",
+                                  fontSize: "10px",
+                                  color: "#0077FF",
+                                  marginLeft: "0px",
+                                }}
+                                primary={name}
+                              />
+                            </Grid>
+                          </Grid>
                         </MenuItem>
                       ))}
                     </Select>
@@ -1506,8 +1516,9 @@ fetch("https://jawad-fake-server-app.herokuapp.com/table/" + id, requestOptions)
         <Box sx={style}>
           <p className="center">Table Sizer</p>
           <input
+            type={"number"}
             className="center-textInput"
-             //setting the value of the form to the props value
+            //setting the value of the form to the props value
             onChange={
               (e) => setSeatarray({ ...seatarray, seats: e.target.value }) //setting the formData to the value input of the textfield
             }
