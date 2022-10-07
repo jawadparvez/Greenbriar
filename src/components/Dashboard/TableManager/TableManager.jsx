@@ -1884,7 +1884,6 @@ function TableManager() {
                 },
               },
             }}
-            label="Enter Name"
             variant="outlined"
             size="small"
             value={guestarray.name}
@@ -1912,7 +1911,6 @@ function TableManager() {
                 },
               },
             }}
-            label="Enter Number"
             variant="outlined"
             size="small"
             value={guestarray.cellphone}
@@ -1940,7 +1938,6 @@ function TableManager() {
                 },
               },
             }}
-            label="Enter Party Size"
             variant="outlined"
             size="small"
             value={guestarray.party}
