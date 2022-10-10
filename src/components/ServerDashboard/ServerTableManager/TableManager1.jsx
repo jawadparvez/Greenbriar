@@ -338,6 +338,7 @@ const ServerTableManager = ({ page, setPage }) => {
               height: "44px !important",
             }}
             variant="contained"
+            onClick={handleClose}
           >
             Cancel
           </Button>

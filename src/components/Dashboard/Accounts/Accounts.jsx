@@ -503,32 +503,34 @@ const handleCloseingg = () => setOpeningg(false);
           <p style={{ color: "#344054" }} className="left">
             Card Number
           </p>
-          <TextField
-            fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000",
-                  borderRadius: "8px",
-                  height: "47px",
-                  color: "#667085",
+          <div style={{position:'relative'}}>
+            <TextField
+              fullWidth
+              sx={{
+                "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                "& .MuiOutlinedInput-root": {
+                  "& > fieldset": {
+                    fontFamily: "Montserrat",
+                    fontWeight: "700",
+                    border: "1px solid #000000",
+                    borderRadius: "8px",
+                    height: "47px",
+                    color: "#667085",
+                  },
                 },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  border: "1px solid #000000 ",
-                  color: "#667085",
+                "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  "& > fieldset": {
+                    border: "1px solid #000000 ",
+                    color: "#667085",
+                  },
                 },
-              },
-            }}
-            variant="outlined"
-            size="small"
-          />
-
+              }}
+              variant="outlined"
+              size="small"
+            />
+            <img style={{ position: "absolute", right:'14px', top:'10px' }} src={VISA} />
+          </div>
           <Grid container spacing={2}>
             <Grid item xs={6}>
               <p style={{ color: "#344054" }} className="left">
