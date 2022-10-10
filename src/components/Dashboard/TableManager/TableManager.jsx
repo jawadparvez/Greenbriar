@@ -278,7 +278,10 @@ function TableManager() {
             tablearray = table[i];        
             console.log(table[i]);
             handleTS(event.target.name,value)
-
+            setPersonName(
+             // On autofill we get a stringified value.
+            typeof value === "string" ? value.split(",") : value
+            );
             
           }
           
@@ -707,12 +710,13 @@ function TableManager() {
                         marginLeft: "-9px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
-                        color: "white !important",
+                        color: "white ",
                         textAlign: "left",
                       }}
                       labelId="demo-multiple-checkbox-label"
                       name={tab.id}
-                      value={tablearray.server}
+                      placeholder={tab.server}
+                      value={personName}
                       onChange={handleChange}
                       renderValue={(selected) => selected.join(", ")}
                       MenuProps={MenuProps}

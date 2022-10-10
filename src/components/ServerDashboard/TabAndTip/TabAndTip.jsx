@@ -736,6 +736,7 @@ function TabAndTip() {
               height: "44px !important",
             }}
             variant="contained"
+            onClick={handleClosee}
           >
             Cancel
           </Button>
