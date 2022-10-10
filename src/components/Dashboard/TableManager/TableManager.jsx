@@ -25,12 +25,14 @@ import Checkbox from "@mui/material/Checkbox";
 import { tab } from "@testing-library/user-event/dist/tab";
 
 
-const ITEM_HEIGHT = 40;
+const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 0;
 const MenuProps = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      border:'1px solid black',
+      borderRadius:"8px",
+      maxHeight: 210,
       width: 150,
     },
   },
@@ -266,6 +268,8 @@ function TableManager() {
     });
 
       const [personName, setPersonName] = React.useState([]);
+      const [pname, setpname] = React.useState();
+
 
       const handleChange = (event) => {
         const {
@@ -277,11 +281,7 @@ function TableManager() {
             console.log(event.target.name);
             tablearray = table[i];        
             console.log(table[i]);
-            handleTS(event.target.name,value)
-            setPersonName(
-             // On autofill we get a stringified value.
-            typeof value === "string" ? value.split(",") : value
-            );
+            handleTS(event.target.name,value);
             
           }
           
@@ -655,7 +655,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "0px",
+                        marginLeft: "5px",
                         display: "flex",
                       }}
                     >
@@ -668,7 +668,7 @@ function TableManager() {
                         marginTop: "0px",
                         fontSize: "17px",
                         fontWeight: "600",
-                        marginLeft: "15px",
+                        marginLeft: "20px",
                         display: "flex",
                       }}
                     >
@@ -705,20 +705,28 @@ function TableManager() {
                     <Select
                       style={{
                         height: "19px",
-                        width: "100px ",
+                        width: "109px ",
                         marginTop: "2px",
-                        marginLeft: "-9px",
+                        marginLeft: "-2px",
+                        borderRadius:'8px',
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
                         color: "white ",
                         textAlign: "left",
                       }}
+                      displayEmpty
                       labelId="demo-multiple-checkbox-label"
                       name={tab.id}
                       placeholder={tab.server}
                       value={personName}
                       onChange={handleChange}
-                      renderValue={(selected) => selected.join(", ")}
+                      renderValue={(selected) => {
+                        if (selected.length === 0) {
+                          return <p style={{color:'white', marginLeft:'-5px'}}>{tab.server}</p>;
+                        }
+
+                        return selected.join(", ");
+                      }}
                       MenuProps={MenuProps}
                     >
                       {names.map((name) => (
@@ -1034,7 +1042,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "20px",
+                        marginLeft: "15px",
                         display: "flex",
                       }}
                     >
@@ -1044,14 +1052,15 @@ function TableManager() {
                   <Grid item xs={3}>
                     <span
                       style={{
-                        marginTop: "0px",
-                        fontSize: "15px",
-                        fontWeight: "500",
-                        marginLeft: "15px",
+                        marginTop: "3px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "0px",
                         display: "flex",
+                        color: "#0077FF",
                       }}
                     >
-                      Olivia
+                      {tab.server}
                     </span>
                   </Grid>
                   <Grid item xs={4}>
@@ -1066,10 +1075,21 @@ function TableManager() {
                         color: "white",
                         textAlign: "left",
                       }}
+                      displayEmpty
                       labelId="demo-multiple-checkbox-label"
                       id={tab.id}
-                      value={tablearray.server}
-                      onChange={handleChange}
+                      value={personName}
+                      renderValue={(selected) => {
+                        if (selected.length === 0) {
+                          return (
+                            <p style={{ color: "white", marginLeft: "-5px" }}>
+                              {tab.server}
+                            </p>
+                          );
+                        }
+
+                        return selected.join(", ");
+                      }}
                       MenuProps={MenuProps}
                     >
                       {names.map((name) => (
