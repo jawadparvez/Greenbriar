@@ -21,12 +21,12 @@ import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 
-const ITEM_HEIGHT = 40;
+const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 0;
 const MenuProps = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      maxHeight: 210,
       width: 150,
     },
   },
@@ -41,16 +41,6 @@ function TableManager() {
   };
 
   const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
 
   const [table, setTable] = useState([]);
 
@@ -88,7 +78,56 @@ function TableManager() {
   const handleOpenin = () => setOpenin(true);
   const handleClosin = () => setOpenin(false);
 
+    var [tablearray, setTablearray] = useState({
+      id: 0,
+      time: "",
+      seats: 0,
+      status: "",
+      server: "",
+    });
 
+    const handleChange = (event) => {
+      const {
+        target: { value },
+      } = event;
+      for (var i = 0; i < table.length; i++) {
+        if (table[i].id == event.target.name) {
+          console.clear();
+          console.log(event.target.name);
+          tablearray = table[i];
+          console.log(table[i]);
+          handleTS(event.target.name, value);
+        }
+      }
+    };
+
+    function AddTableServer(id) {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify(tablearray);
+
+      var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://jawad-fake-server-app.herokuapp.com/table/" + id,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => fetchtable())
+        .catch((error) => console.log("error", error));
+    }
+
+    function handleTS(name, value) {
+      tablearray.server = value;
+      AddTableServer(name);
+      console.log(tablearray);
+    }
 
 
   
@@ -280,7 +319,6 @@ function TableManager() {
                   marginLeft: "0px!important",
                   marginBottom: "5px",
                   height: "24px",
-                  width: "345px",
                   borderRadius: "8px",
                 }}
               >
@@ -366,41 +404,64 @@ function TableManager() {
                     <Select
                       style={{
                         height: "19px",
-                        width: "110px ",
+                        width: "109px ",
                         marginTop: "2px",
-                        marginLeft: "-9px",
+                        marginLeft: "-2px",
+                        borderRadius: "8px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
-                        color: "white",
+                        color: "white ",
                         textAlign: "left",
                       }}
+                      displayEmpty
                       labelId="demo-multiple-checkbox-label"
-                      id="demo-multiple-checkbox"
+                      name={tab.id}
+                      placeholder={tab.server}
                       value={personName}
                       onChange={handleChange}
-                      renderValue={(selected) => selected.join(", ")}
+                      renderValue={(selected) => {
+                        if (selected.length === 0) {
+                          return (
+                            <p style={{ color: "white", marginLeft: "-5px" }}>
+                              {tab.server}
+                            </p>
+                          );
+                        }
+
+                        return selected.join(", ");
+                      }}
                       MenuProps={MenuProps}
                     >
                       {names.map((name) => (
                         <MenuItem key={name} value={name}>
-                          <Checkbox
-                            icon={<CircleUnchecked />}
-                            checkedIcon={<CircleChecked />}
-                            style={{
-                              textAlign: "left !important",
-                              marginLeft: "-10px !important",
-                              marginTop: "0px !important",
-                            }}
-                            checked={personName.indexOf(name) > -1}
-                          />
-                          <ListItemText
-                            style={{
-                              textAlign: "left !important",
-                              marginTop: "0px !important",
-                              fontSize: "10px!important",
-                            }}
-                            primary={name}
-                          />
+                          <Grid container spacing={2}>
+                            <Grid item xs={4}>
+                              <Checkbox
+                                icon={<CircleUnchecked />}
+                                checkedIcon={<CircleChecked />}
+                                style={{
+                                  textAlign: "left ",
+                                  marginLeft: "10px",
+                                  marginTop: "0px ",
+                                  paddingTop: "0px ",
+                                  paddingBottom: "0px ",
+                                }}
+                                checked={personName.indexOf(name) > -1}
+                              />
+                            </Grid>
+                            <Grid item xs={8}>
+                              <ListItemText
+                                style={{
+                                  textAlign: "left ",
+                                  marginTop: "0px ",
+                                  fontSize: "10px",
+                                  color: "#0077FF",
+                                  marginLeft: "0px",
+                                }}
+                                primary={name}
+                              />
+                            </Grid>
+                          </Grid>
                         </MenuItem>
                       ))}
                     </Select>

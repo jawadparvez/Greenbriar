@@ -35,7 +35,7 @@ function Navbar() {
       <CssBaseline />
       <Toolbar>
         <Typography id="logo" className={classes.logo}>
-          <Link to="/ServerHome">
+          <Link to="/HostHome">
             <img className="appLogo" src={Logo} alt=""></img>
           </Link>
         </Typography>

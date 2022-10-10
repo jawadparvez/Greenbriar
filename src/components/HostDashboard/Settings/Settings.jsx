@@ -40,7 +40,7 @@ function HostSettings() {
       <Navbar />
       <Grid container>
         <Grid item xs={6}>
-          <Link to="/HostTableManager">
+          <Link to="/HostHome">
             <img
               style={{
                 marginTop: "15px",

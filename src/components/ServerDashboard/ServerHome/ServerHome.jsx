@@ -22,10 +22,14 @@ const ServerHome = () => {
   // navigate/routes for pages
   let navigate = useNavigate();
   function handleClick() {
-    navigate("/Accounts");
+    navigate("/Tips");
   }
   function handleClickk() {
-    navigate("/Settings");
+    navigate("/ServerSettings");
+  }
+
+  function handleClickMenu() {
+    navigate("/ServerMenu");
   }
 
   //return statement
@@ -129,12 +133,7 @@ const ServerHome = () => {
               </Grid>
               <Grid item xs={1}>
                 <Link onClick={handleClick}>
-                  <img
-                    onClick={handleClick}
-                    className="right-icon"
-                    src={Right}
-                    alt=""
-                  ></img>
+                  <img className="right-icon" src={Right} alt=""></img>
                 </Link>
               </Grid>
             </Grid>
@@ -173,7 +172,9 @@ const ServerHome = () => {
               </Grid>
 
               <Grid item xs={1}>
-                <img className="right-icon" src={Right} alt=""></img>
+                <Link onClick={handleClickMenu}>
+                  <img className="right-icon" src={Right} alt=""></img>
+                </Link>
               </Grid>
             </Grid>
           </Card>

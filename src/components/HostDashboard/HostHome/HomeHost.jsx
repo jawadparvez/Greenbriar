@@ -22,10 +22,10 @@ const HostHome = () => {
   // navigate/routes for pages
   let navigate = useNavigate();
   function handleClick() {
-    navigate("/Accounts");
+    navigate("/HostTableManager");
   }
   function handleClickk() {
-    navigate("/Settings");
+    navigate("/HostSettings");
   }
 
   //return statement
@@ -121,7 +121,14 @@ const HostHome = () => {
               </Grid>
 
               <Grid item xs={1}>
-                <img className="right-icon" src={Right} alt=""></img>
+                <Link onClick={handleClickk}>
+                  <img
+                    className="right-icon"
+                    src={Right}
+                    alt=""
+                    
+                  ></img>
+                </Link>
               </Grid>
             </Grid>
           </Card>
