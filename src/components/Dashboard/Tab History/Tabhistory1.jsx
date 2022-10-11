@@ -53,7 +53,7 @@ function TabHistory({ page, setPage}) {
             <img
               style={{
                 marginTop: "10px",
-                marginLeft: "0px",
+                marginLeft: "10px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
