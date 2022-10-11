@@ -121,13 +121,8 @@ const HostHome = () => {
               </Grid>
 
               <Grid item xs={1}>
-                <Link onClick={handleClickk}>
-                  <img
-                    className="right-icon"
-                    src={Right}
-                    alt=""
-                    
-                  ></img>
+                <Link onClick={handleClick}>
+                  <img className="right-icon" src={Right} alt=""></img>
                 </Link>
               </Grid>
             </Grid>

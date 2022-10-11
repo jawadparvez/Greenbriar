@@ -8,7 +8,8 @@ import { Button } from "@mui/material";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import "./servertable.css";
 import { Divider } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const ITEM_HEIGHT = 40;
 const ITEM_PADDING_TOP = 0;
@@ -71,12 +72,17 @@ const ServerTableManager = ({ page, setPage }) => {
     p: 4,
   };
 
+      let navigate = useNavigate();
+      function handleClick() {
+        navigate(-1);
+      }
+
   return (
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/Tips">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
@@ -89,10 +95,11 @@ const ServerTableManager = ({ page, setPage }) => {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
-              marginLeft: "auto",
+              textAlign:'right',
+              marginRight:'20px',
               fontSize: "18px",
               marginTop: "7px",
             }}

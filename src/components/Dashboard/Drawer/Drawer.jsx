@@ -116,14 +116,6 @@ function DrawerComponent() {
               </ListItemText>
             </ListItem>
             <Divider className={classes.divider} />
-            <ListItem>
-              <ListItemText>
-                <Link to="/Settings" className={classes.link}>
-                  Support
-                </Link>
-              </ListItemText>
-            </ListItem>
-            <Divider className={classes.divider} />
             <Grid className="top" container spacing={3}>
               <Grid item xs={6}>
                 <Link

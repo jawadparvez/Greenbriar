@@ -8,6 +8,7 @@ import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
 import {TextField} from '@material-ui/core';
 import Right from "../../../Assets/Images/right.png"
+import { useNavigate } from "react-router-dom";
 import './users.css'
 
 function Users() {
@@ -88,6 +89,11 @@ function Users() {
           zIndex: "+1",
           p: 4,
         };
+        
+       let navigate = useNavigate();
+       function handleClick() {
+              navigate(-1);
+       }
   return (
     <div>
       <Navbar />

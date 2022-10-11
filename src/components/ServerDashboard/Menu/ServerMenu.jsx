@@ -109,16 +109,20 @@ function ServerMenu() {
     zIndex: "+1",
     p: 4,
   };
+
+      function handleClickk() {
+        navigate(-1);
+      }
   return (
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/ServerHome">
+        <Grid item xs={2}>
+          <Link onClick={handleClickk}>
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "-130px",
+                marginLeft: "0px",
                 AlignItems: "left",
                 display: "flex",
               }}
@@ -127,7 +131,7 @@ function ServerMenu() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
               textAlign: "right",
@@ -555,27 +559,26 @@ function ServerMenu() {
             size="small"
             rows={5}
           />
-            <Button
-              fullWidth
-              className="button"
-              sx={{
-                color: "White !important",
-                marginTop: "70px !important",
-                backgroundColor: "#0077FF !important",
-                borderColor: "black !important",
-                borderRadius: "8px !important",
-                border: "1px solid black !important",
-                fontFamily: "Montserrat !important",
-                height: "44px !important",
-                marginLeft: "10px",
-                width: "330px",
-              }}
-              variant="contained"
-              onClick={handleClick}
-            >
-              Add to Tab
-            </Button>
-
+          <Button
+            fullWidth
+            className="button"
+            sx={{
+              color: "White !important",
+              marginTop: "70px !important",
+              backgroundColor: "#0077FF !important",
+              borderColor: "black !important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+              marginLeft: "10px",
+              width: "330px",
+            }}
+            variant="contained"
+            onClick={handleClick}
+          >
+            Add to Tab
+          </Button>
         </>
       ) : null}
 

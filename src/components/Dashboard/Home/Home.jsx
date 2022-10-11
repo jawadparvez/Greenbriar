@@ -27,6 +27,7 @@ function Home() {
       navigate("/Accounts");
     }
     function handleClickk() {
+      navigate(+1);
       navigate("/Settings");
     }
 

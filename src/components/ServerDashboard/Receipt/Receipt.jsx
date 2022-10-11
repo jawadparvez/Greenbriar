@@ -7,6 +7,8 @@ import { Divider } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@material-ui/core";
+import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Receipt() {
   const [item, setItem] = useState([]);
@@ -74,6 +76,11 @@ function handleModal2() {
      zIndex: "+1",
      p: 4,
    };
+
+  let navigate = useNavigate();
+  function handleClick() {
+  navigate("/ServerMenu");
+  }
   return (
     <div>
       <Navbar />
@@ -108,6 +115,7 @@ function handleModal2() {
                 fontSize: "16px",
                 fontWeight: "500",
               }}
+              onClick={handleClick}
             >
               Close
             </p>

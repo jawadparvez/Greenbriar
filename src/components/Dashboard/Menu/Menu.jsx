@@ -18,7 +18,6 @@ import { Divider } from '@material-ui/core';
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import { useNavigate } from "react-router-dom";
-import { array } from 'yup/lib/locale';
 import "./menu.css";
 
 function Menu() {

@@ -8,7 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import { Checkbox } from "@mui/material";
 import Microphone from "../../../Assets/Images/Microphone.png";
@@ -37,17 +38,22 @@ function TabHistory({ page, setPage}) {
         console.log("order is being retrieved");
       });
   }, []);
+
+      let navigate = useNavigate();
+      function handleClick() {
+        navigate(-1);
+      }
   return (
     <div>
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/tablemanager">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
-                marginTop: "15px",
-                marginLeft: "10px",
+                marginTop: "10px",
+                marginLeft: "0px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
@@ -56,8 +62,8 @@ function TabHistory({ page, setPage}) {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto", fontSize:'18px' }}>Tab History</h3>
+        <Grid item xs={10}>
+          <h3 style={{ textAlign:'right', marginRight:'20px', fontSize:'18px' }}>Tab History</h3>
         </Grid>
       </Grid>
       <Paper

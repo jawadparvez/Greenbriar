@@ -32,6 +32,10 @@ const ServerHome = () => {
     navigate("/ServerMenu");
   }
 
+  function handleClickTableManager() {
+    navigate("/ServerTableManager");
+  }
+
   //return statement
   return (
     <div>
@@ -153,7 +157,9 @@ const ServerHome = () => {
               </Grid>
 
               <Grid item xs={1}>
-                <img className="right-icon" src={Right} alt=""></img>
+                <Link onClick={handleClickTableManager}>
+                  <img className="right-icon" src={Right} alt=""></img>
+                </Link>
               </Grid>
             </Grid>
           </Card>

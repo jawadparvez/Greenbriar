@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
 import Card from "@mui/material/Card";
 import { TextField } from "@material-ui/core";
 import { Button } from "@mui/material";
@@ -15,11 +15,15 @@ import Sliderr from '../../../Assets/Images/Slider.svg'
 import CheckSuccess from '../../../Assets/Images/CheckSuccess.png'
 import CircleChecked from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
+import { useNavigate } from "react-router-dom";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import Right from "../../../Assets/Images/right.png";
 import VISA from '../../../Assets/Images/visa.png'
 import Plus from '../../../Assets/Images/plus.png'
 import './accounts.css'
+
+
+
 
 const Input = styled(MuiInput)`
   width: 50%
@@ -39,12 +43,12 @@ function Accounts() {
     const [openeing, setOpeneing] = React.useState(false);
     const handleOpeneing = () => setOpeneing(true);
     const handleClosing = () => setOpeneing(false);
-        const [openeingg, setOpeneingg] = React.useState(false);
-        const handleOpeneingg = () => setOpeneingg(true);
-        const handleClosingg = () => setOpeneingg(false);
-const [openingg, setOpeningg] = React.useState(false);
-const handleOpeningg = () => setOpeningg(true);
-const handleCloseingg = () => setOpeningg(false);
+    const [openeingg, setOpeneingg] = React.useState(false);
+    const handleOpeneingg = () => setOpeneingg(true);
+    const handleClosingg = () => setOpeneingg(false);
+    const [openingg, setOpeningg] = React.useState(false);
+    const handleOpeningg = () => setOpeningg(true);
+    const handleCloseingg = () => setOpeningg(false);
 
   function handleOpenClose() {
     handleOpen();
@@ -166,16 +170,21 @@ const handleCloseingg = () => setOpeningg(false);
               setValue(1000000);
             }
           };
+
+      let navigate = useNavigate();
+      function handleClick() {
+        navigate(-1);
+      }
   return (
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/menu">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "10px",
+                marginLeft: "0px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
@@ -184,7 +193,7 @@ const handleCloseingg = () => setOpeningg(false);
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
               textAlign: "right",
@@ -503,7 +512,7 @@ const handleCloseingg = () => setOpeningg(false);
           <p style={{ color: "#344054" }} className="left">
             Card Number
           </p>
-          <div style={{position:'relative'}}>
+          <div style={{ position: "relative" }}>
             <TextField
               fullWidth
               sx={{
@@ -529,7 +538,10 @@ const handleCloseingg = () => setOpeningg(false);
               variant="outlined"
               size="small"
             />
-            <img style={{ position: "absolute", right:'14px', top:'10px' }} src={VISA} />
+            <img
+              style={{ position: "absolute", right: "14px", top: "10px" }}
+              src={VISA}
+            />
           </div>
           <Grid container spacing={2}>
             <Grid item xs={6}>

@@ -3,12 +3,13 @@ import "./tab.css";
 import Navbar from "../Navbar/Navbar";
 import { Grid } from "@material-ui/core";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
 import Card from "@mui/material/Card";
 import { Checkbox } from "@mui/material";
 import { Divider } from "@material-ui/core";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
+import { useNavigate } from "react-router-dom";
 
 function ViewTab() {
   const [item, setItem] = useState([]);
@@ -21,13 +22,18 @@ function ViewTab() {
         console.log("item is being retrieved");
       });
   }, []);
+
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate(-1);
+  }
   return (
     <div>
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/ServerViewOrder">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
@@ -40,11 +46,11 @@ function ViewTab() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
-              marginLeft: "auto",
-              marginRight: "2px",
+              textAlign:'right',
+              marginRight: "20px",
               fontSize: "18px",
               marginTop: "5px",
             }}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
@@ -15,6 +15,7 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { Modal } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 import CheckSuccess from "../../../Assets/Images/CheckSuccess.png";
 
 function Settings() {
@@ -75,17 +76,21 @@ function Settings() {
           p: 4,
         };
         
+    let navigate = useNavigate();
+    function handleClick() {
+      navigate(-1);
+    }
 
   return (
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/Accounts">
+        <Grid item xs={2}>
+          <Link style={{textAlign:'left', alignContent:'left', marginLeft:'0px !important', paddingLeft:'0px'}} onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "10px",
+                marginLeft: "0px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
@@ -94,7 +99,7 @@ function Settings() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
               textAlign: "right",

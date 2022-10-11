@@ -42,7 +42,7 @@ function TabHistory3({ page, setPage }) {
         <Grid item xs={6}>
           <img
             style={{
-              marginTop: "15px",
+              marginTop: "10px",
               marginLeft: "10px",
               AlignItems: "left !important",
               display: "flex",
@@ -55,7 +55,15 @@ function TabHistory3({ page, setPage }) {
           />
         </Grid>
         <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto", fontSize:'18px' }}>Tab History</h3>
+          <h3
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+            }}
+          >
+            Tab History
+          </h3>
         </Grid>
       </Grid>
       <Paper
@@ -88,7 +96,7 @@ function TabHistory3({ page, setPage }) {
               marginTop: "20px",
               border: "1px solid black",
               marginLeft: "20px",
-              marginRight:'10px',
+              marginRight: "10px",
               fontFamily: "Montserrat",
               height: "80px",
               borderRadius: "8px",
@@ -107,7 +115,7 @@ function TabHistory3({ page, setPage }) {
             style={{
               marginTop: "20px",
               marginRight: "20px",
-              marginLeft:'10px',
+              marginLeft: "10px",
               border: "1px solid black",
               fontFamily: "Montserrat",
               height: "80px",

@@ -15,11 +15,12 @@ import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import { TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
+import { useNavigate } from "react-router-dom";
 
 const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 0;
@@ -209,13 +210,18 @@ function TableManager() {
     zIndex: "+1",
     p: 4,
   };
+
+      let navigate = useNavigate();
+      function handleClick() {
+        navigate(-1);
+      }
   return (
     <div>
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/HostHome">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
@@ -228,9 +234,9 @@ function TableManager() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
-            style={{ marginLeft: "auto", fontSize: "18px", marginTop: "7px" }}
+            style={{ textAlign:'right',marginRight:'20px', fontSize: "18px", marginTop: "7px" }}
           >
             Table Manager
           </h3>

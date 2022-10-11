@@ -47,6 +47,9 @@ function TabAndTip() {
     function NavigateReceipt() {
     navigate("/Receipt");
     }
+    function handleClick() {
+    navigate(-1);
+    }
 
       const [open, setOpen] = useState(false);
       const [opene, setOpene] = useState(false);
@@ -93,7 +96,7 @@ function TabAndTip() {
       <Navbar />
       <Grid container>
         <Grid item xs={6}>
-          <Link to="/ServerHome">
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",

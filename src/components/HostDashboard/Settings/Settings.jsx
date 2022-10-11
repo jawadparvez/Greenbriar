@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
@@ -35,12 +36,17 @@ function HostSettings() {
     setShower(!shower);
     setShowwer(!showwer);
   }
+
+      let navigate = useNavigate();
+      function handleClick() {
+        navigate(-1);
+      }
   return (
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/HostHome">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
@@ -53,7 +59,7 @@ function HostSettings() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
               textAlign: "right",

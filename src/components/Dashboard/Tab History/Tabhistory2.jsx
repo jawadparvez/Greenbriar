@@ -90,10 +90,10 @@ function TabHistory2({page, setPage}) {
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={2}>
           <img
             style={{
-              marginTop: "15px",
+              marginTop: "10px",
               marginLeft: "10px",
               AlignItems: "left !important",
               display: "flex",
@@ -105,8 +105,16 @@ function TabHistory2({page, setPage}) {
             }}
           />
         </Grid>
-        <Grid item xs={6}>
-          <h3 style={{ marginLeft: "auto", fontSize: "18px" }}>Tab History</h3>
+        <Grid item xs={10}>
+          <h3
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+            }}
+          >
+            Tab History
+          </h3>
         </Grid>
       </Grid>
       <Paper
@@ -152,10 +160,10 @@ function TabHistory2({page, setPage}) {
                 width: "42px",
                 height: "39px",
                 background: "#0077FF",
-                borderRadius:'10px'
+                borderRadius: "10px",
               }}
             >
-            <img style={{marginTop:'7px'}} src={Calender} alt=''></img>
+              <img style={{ marginTop: "7px" }} src={Calender} alt=""></img>
             </Card>
           </Grid>
           <Grid item xs={8}>
@@ -196,7 +204,7 @@ function TabHistory2({page, setPage}) {
           />
         </AreaChart>
       </Card>
-      <Divider style={{marginTop:'10px'}} />
+      <Divider style={{ marginTop: "10px" }} />
 
       <p
         style={{

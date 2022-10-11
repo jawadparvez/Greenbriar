@@ -17,12 +17,13 @@ import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import { TextField } from "@material-ui/core";
 import { Divider } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
-import { tab } from "@testing-library/user-event/dist/tab";
+import { Link as DOMLink} from "react-router-dom";
+import Link from "@material-ui/core/Link";
+import { useNavigate } from "react-router-dom";
 
 
 const ITEM_HEIGHT = 30;
@@ -453,13 +454,19 @@ function TableManager() {
     zIndex: "+1",
     p: 4,
   };
+
+  
+    let navigate = useNavigate();
+    function handleClick() {
+      navigate(-1);
+    }
   return (
     <div>
       <Navbar />
 
       <Grid container>
-        <Grid item xs={6}>
-          <Link to="/menu">
+        <Grid item xs={2}>
+          <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
@@ -472,9 +479,14 @@ function TableManager() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
-            style={{ marginLeft: "auto", fontSize: "18px", marginTop: "7px" }}
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+              marginTop: "7px",
+            }}
           >
             Table Manager
           </h3>
@@ -708,7 +720,7 @@ function TableManager() {
                         width: "109px ",
                         marginTop: "2px",
                         marginLeft: "-2px",
-                        borderRadius:'8px',
+                        borderRadius: "8px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
                         color: "white ",
@@ -722,7 +734,11 @@ function TableManager() {
                       onChange={handleChange}
                       renderValue={(selected) => {
                         if (selected.length === 0) {
-                          return <p style={{color:'white', marginLeft:'-5px'}}>{tab.server}</p>;
+                          return (
+                            <p style={{ color: "white", marginLeft: "-5px" }}>
+                              {tab.server}
+                            </p>
+                          );
                         }
 
                         return selected.join(", ");
@@ -942,7 +958,7 @@ function TableManager() {
           })}
         </TabPanel>
         <TabPanel value="3">
-          <Link style={{ textDecoration: "none" }} to="/tabhistory">
+          <DOMLink style={{ textDecoration: "none" }} to="/tabhistory">
             <Card
               style={{
                 marginTop: "0px",
@@ -971,7 +987,7 @@ function TableManager() {
                 </Grid>
               </Grid>
             </Card>
-          </Link>
+          </DOMLink>
           <h4
             style={{
               fontSize: "13px",
