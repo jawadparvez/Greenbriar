@@ -559,7 +559,6 @@ function TableManager() {
                   marginLeft: "0px!important",
                   marginBottom: "5px",
                   height: "24px",
-                  width: "345px",
                   borderRadius: "8px",
                 }}
                 onClick={handleOpenin}
@@ -598,7 +597,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "5px",
+                        marginLeft: "10px",
                         display: "flex",
                       }}
                     >
@@ -611,7 +610,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "0px",
+                        marginLeft: "15px",
                       }}
                     >
                       {gue.party}
@@ -623,7 +622,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "0px",
+                        marginLeft: "20px",
                       }}
                     >
                       {gue.cellphone}
