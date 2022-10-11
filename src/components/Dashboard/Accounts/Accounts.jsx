@@ -184,7 +184,7 @@ function Accounts() {
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "0px",
+                marginLeft: "10px",
                 AlignItems: "left !important",
                 display: "flex",
               }}

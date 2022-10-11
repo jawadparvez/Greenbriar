@@ -95,12 +95,12 @@ function TabAndTip() {
     <div>
       <Navbar />
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={2}>
           <Link onClick={handleClick}>
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "-130px",
+                marginLeft: "10px",
                 AlignItems: "left",
                 display: "flex",
               }}
@@ -109,7 +109,7 @@ function TabAndTip() {
             />
           </Link>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h3
             style={{
               textAlign: "right",
