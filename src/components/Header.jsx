@@ -37,6 +37,11 @@ import HostTableManager from './HostDashboard/TableManager/TableManager'
 import HostSettings from './HostDashboard/Settings/Settings'
 import TabAndTip from './ServerDashboard/TabAndTip/TabAndTip';
 import Receipt from './ServerDashboard/Receipt/Receipt';
+import ConsumerHome from './ConsumerDashboard/ConsumerHome/ConsumerHome';
+import ConsumerOrder from './ConsumerDashboard/ConsumerOrder/ConsumerOrder';
+import ConsumerOrderItems from './ConsumerDashboard/ConsumerOrderItems/ConsumerOrderItems';
+import ConsumerReceipt from './ConsumerDashboard/ConsumerReceipt/ConsumerReceipt';
+import ConsumerProfile from './ConsumerDashboard/ConsumerProfile/ConsumerProfile';
 function Header() {
 
       history.navigate = useNavigate();
@@ -219,6 +224,46 @@ function Header() {
           element={
             <PrivateRoute>
               <Receipt />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ConsumerHome"
+          element={
+            <PrivateRoute>
+              <ConsumerHome />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ConsumerOrder"
+          element={
+            <PrivateRoute>
+              <ConsumerOrder />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ComsumerOrderItems"
+          element={
+            <PrivateRoute>
+              <ConsumerOrderItems />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ComsumerReceipt"
+          element={
+            <PrivateRoute>
+              <ConsumerReceipt />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ComsumerProfile"
+          element={
+            <PrivateRoute>
+              <ConsumerProfile />
             </PrivateRoute>
           }
         />

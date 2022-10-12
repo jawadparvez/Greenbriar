@@ -215,6 +215,8 @@ function TableManager() {
       function handleClick() {
         navigate(-1);
       }
+
+const [data, setData] = useState("No result");
   return (
     <div>
       <Navbar />
@@ -236,7 +238,12 @@ function TableManager() {
         </Grid>
         <Grid item xs={10}>
           <h3
-            style={{ textAlign:'right',marginRight:'20px', fontSize: "18px", marginTop: "7px" }}
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+              marginTop: "7px",
+            }}
           >
             Table Manager
           </h3>
@@ -297,7 +304,6 @@ function TableManager() {
                 QRcode
               </Button>
             </Grid>
-           
           </Grid>
           <Grid container>
             <Grid item xs={2}>
