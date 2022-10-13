@@ -620,7 +620,7 @@ function TableManager() {
               <span className="center-t-seats">Status</span>
             </Grid>
             <Grid item xs={4}>
-              <span className="center-t">Server</span>
+              <span className="center-t-ser">Server</span>
             </Grid>
           </Grid>
           {table.map((tab, index) => {
@@ -715,9 +715,9 @@ function TableManager() {
                   </Grid>
                   <Grid item xs={4}>
                     <Select
+                    fullWidth
                       style={{
                         height: "19px",
-                        width: "109px ",
                         marginTop: "2px",
                         marginLeft: "-2px",
                         borderRadius: "8px",
@@ -999,18 +999,18 @@ function TableManager() {
           >
             Current Table Orders
           </h4>
-          <Grid container>
+          <Grid container spacing={0}>
             <Grid item xs={3}>
               <span className="center-t-c color">Table</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-time">Time</span>
             </Grid>
-            <Grid item xs={4}>
-              <span className="center-t-server">Server</span>
-            </Grid>
             <Grid item xs={3}>
-              <span className="center-t-cell">Order</span>
+              <span className="center-t-tableserver">Server</span>
+            </Grid>
+            <Grid item xs={4}>
+              <span className="center-t-cellOrder">Order</span>
             </Grid>
           </Grid>
 
@@ -1068,11 +1068,11 @@ function TableManager() {
                   <Grid item xs={3}>
                     <span
                       style={{
+                        textAlign:'center',
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "0px",
-                        display: "flex",
+                        marginLeft: "-10px",
                         color: "#0077FF",
                       }}
                     >
@@ -1081,14 +1081,15 @@ function TableManager() {
                   </Grid>
                   <Grid item xs={4}>
                     <Select
+                    fullWidth
                       style={{
                         height: "19px",
-                        width: "110px",
                         marginTop: "2px",
-                        marginLeft: "-9px",
+                        marginLeft: "-2px",
+                        borderRadius: "8px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
-                        color: "white",
+                        color: "white ",
                         textAlign: "left",
                       }}
                       displayEmpty

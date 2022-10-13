@@ -42,6 +42,8 @@ import ConsumerOrder from './ConsumerDashboard/ConsumerOrder/ConsumerOrder';
 import ConsumerOrderItems from './ConsumerDashboard/ConsumerOrderItems/ConsumerOrderItems';
 import ConsumerReceipt from './ConsumerDashboard/ConsumerReceipt/ConsumerReceipt';
 import ConsumerProfile from './ConsumerDashboard/ConsumerProfile/ConsumerProfile';
+import ConsumerLogin from './ConsumerDashboard/ConsumerLogin/ConsumerLogin';
+import ConsumerRegister from './ConsumerDashboard/ConsumerRegister/ConsumerRegister';
 function Header() {
 
       history.navigate = useNavigate();
@@ -267,6 +269,8 @@ function Header() {
             </PrivateRoute>
           }
         />
+        <Route path="/ComsumerLogin" element={<ConsumerLogin />} />
+        <Route path="/ComsumerRegister" element={<ConsumerRegister />} />
       </Routes>
     </div>
   );
