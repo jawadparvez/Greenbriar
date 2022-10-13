@@ -86,7 +86,15 @@ function Settings() {
       <Navbar />
       <Grid container>
         <Grid item xs={2}>
-          <Link style={{textAlign:'left', alignContent:'left', marginLeft:'0px !important', paddingLeft:'0px'}} onClick={handleClick}>
+          <Link
+            style={{
+              textAlign: "left",
+              alignContent: "left",
+              marginLeft: "0px !important",
+              paddingLeft: "0px",
+            }}
+            onClick={handleClick}
+          >
             <img
               style={{
                 marginTop: "15px",
@@ -312,23 +320,25 @@ function Settings() {
                 Legal Restaurant Name
               </p>
               <TextField
-                className="input"
                 fullWidth
-                sx={{
+                style={{
+                  border:"1px solid black !important",
                   "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      fontFamily: "Montserrat",
+                      fontWeight: "700",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -350,7 +360,7 @@ function Settings() {
               <TextField
                 className="input"
                 fullWidth
-                sx={{
+                style={{
                   "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {

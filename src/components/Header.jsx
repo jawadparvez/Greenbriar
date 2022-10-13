@@ -44,6 +44,13 @@ import ConsumerReceipt from './ConsumerDashboard/ConsumerReceipt/ConsumerReceipt
 import ConsumerProfile from './ConsumerDashboard/ConsumerProfile/ConsumerProfile';
 import ConsumerLogin from './ConsumerDashboard/ConsumerLogin/ConsumerLogin';
 import ConsumerRegister from './ConsumerDashboard/ConsumerRegister/ConsumerRegister';
+import ConsumerVerification from './ConsumerDashboard/ConsumerVerification/ConsumerVerification';
+import ConsumerSMS from './ConsumerDashboard/ConsumerSms/ConsumerSMS';
+import ConsumerEditProfile from './ConsumerDashboard/ConsumerEditProfile/ConsumerEditProfile';
+import ConsumerDetailReceipts from './ConsumerDashboard/ConsumerDetailReceipts/ConsumerDetailReceipts';
+import ConsumerPassword from './ConsumerDashboard/ConsumerPassword/ConsumerPassword';
+import ConsumerWallet from './ConsumerDashboard/ConsumerWallet/ConsumerWallet';
+import ConsumerCard from './ConsumerDashboard/ConsumerCard/ConsumerCard';
 function Header() {
 
       history.navigate = useNavigate();
@@ -262,15 +269,29 @@ function Header() {
           }
         />
         <Route
-          path="/ComsumerProfile"
+          path="/ConsumerProfile"
           element={
             <PrivateRoute>
               <ConsumerProfile />
             </PrivateRoute>
           }
         />
-        <Route path="/ComsumerLogin" element={<ConsumerLogin />} />
-        <Route path="/ComsumerRegister" element={<ConsumerRegister />} />
+        <Route path="/ConsumerLogin" element={<ConsumerLogin />} />
+        <Route path="/ConsumerRegister" element={<ConsumerRegister />} />
+        <Route
+          path="/ComsumerVerification"
+          element={<ConsumerVerification />}
+        />
+        <Route path="/ConsumerSMS" element={<ConsumerSMS />} />
+        <Route path="/ConsumerSMS" element={<ConsumerSMS />} />
+        <Route path="/EditProfile" element={<ConsumerEditProfile />} />
+        <Route
+          path="/ConsumerDetailReceipt"
+          element={<ConsumerDetailReceipts />}
+        />
+        <Route path="/ConsumerPassword" element={<ConsumerPassword />} />
+        <Route path="/ConsumerWallet" element={<ConsumerWallet />} />
+        <Route path="/ConsumerAddCard" element={<ConsumerCard />} />
       </Routes>
     </div>
   );

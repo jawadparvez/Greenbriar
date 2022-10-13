@@ -1,12 +1,26 @@
 import React from 'react'
 import Card from "@mui/material/Card";
-import { Link } from "@mui/material";
+import Link from "@material-ui/core/Link";
 import { Grid } from "@mui/material";
 import Arrow from "../../../Assets/Images/rightarrow.png"
 import Navbar from "../Navbar/Navbar.jsx"
+import { useNavigate } from "react-router-dom";
 import './ConsumerProfile.css'
 
 function ConsumerProfile() {
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate("/EditProfile");
+  }
+  function handleNavigateReceipt() {
+    navigate("/ConsumerDetailReceipt");
+  }
+  function handleNavigatePassword() {
+    navigate("/ConsumerPassword");
+  }
+  function handleNavigateWallet() {
+    navigate("/ConsumerWallet");
+  }
   return (
     <div>
       <Navbar />
@@ -55,21 +69,25 @@ function ConsumerProfile() {
           </p>
           <Grid container>
             <Grid item xs={10}>
-              <p
-                style={{
-                  color: "#0077FF",
-                  textAlign: "left",
-                  marginLeft: "18px",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  marginTop: "20px",
-                }}
-              >
-                Edit Profile
-              </p>
+              <Link style={{ textDecoration: "none" }} onClick={handleClick}>
+                <p
+                  style={{
+                    color: "#0077FF",
+                    textAlign: "left",
+                    marginLeft: "18px",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginTop: "20px",
+                  }}
+                >
+                  Edit Profile
+                </p>
+              </Link>
             </Grid>
             <Grid item xs={2}>
-              <img style={{ marginTop: "20px" }} src={Arrow} alt="" />
+              <Link onClick={handleClick}>
+                <img style={{ marginTop: "20px" }} src={Arrow} alt="" />
+              </Link>
             </Grid>
           </Grid>
         </Card>
@@ -84,21 +102,31 @@ function ConsumerProfile() {
         >
           <Grid container>
             <Grid item xs={10}>
-              <p
-                style={{
-                  color: "#0077FF",
-                  textAlign: "left",
-                  marginLeft: "18px",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  marginTop: "18px",
-                }}
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigateReceipt}
               >
-                Receipts
-              </p>
+                <p
+                  style={{
+                    color: "#0077FF",
+                    textAlign: "left",
+                    marginLeft: "18px",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginTop: "18px",
+                  }}
+                >
+                  Receipts
+                </p>
+              </Link>
             </Grid>
             <Grid item xs={2}>
-              <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigateReceipt}
+              >
+                <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              </Link>
             </Grid>
           </Grid>
         </Card>
@@ -112,21 +140,31 @@ function ConsumerProfile() {
         >
           <Grid container>
             <Grid item xs={10}>
-              <p
-                style={{
-                  color: "#0077FF",
-                  textAlign: "left",
-                  marginLeft: "18px",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  marginTop: "18px",
-                }}
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigateWallet}
               >
-                Wallet
-              </p>
+                <p
+                  style={{
+                    color: "#0077FF",
+                    textAlign: "left",
+                    marginLeft: "18px",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginTop: "18px",
+                  }}
+                >
+                  Wallet
+                </p>
+              </Link>
             </Grid>
             <Grid item xs={2}>
-              <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigateWallet}
+              >
+                <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              </Link>
             </Grid>
           </Grid>
         </Card>
@@ -140,32 +178,44 @@ function ConsumerProfile() {
         >
           <Grid container>
             <Grid item xs={10}>
-              <p
-                style={{
-                  color: "#0077FF",
-                  textAlign: "left",
-                  marginLeft: "18px",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  marginTop: "18px",
-                }}
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigatePassword}
               >
-                Security
-              </p>
+                <p
+                  style={{
+                    color: "#0077FF",
+                    textAlign: "left",
+                    marginLeft: "18px",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginTop: "18px",
+                  }}
+                >
+                  Security
+                </p>
+              </Link>
             </Grid>
             <Grid item xs={2}>
-              <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={handleNavigatePassword}
+              >
+                <img style={{ marginTop: "18px" }} src={Arrow} alt="" />
+              </Link>
             </Grid>
           </Grid>
         </Card>
       </div>
-      <Link
-        style={{ textDecoration: "none", textAlign: "center" }}
-        className="Sign-outConsumer"
-        // onClick={handleClick}
-      >
-        Sign-Out
-      </Link>
+      <div style={{ marginTop: "100px" }}>
+        <Link
+          style={{ textDecoration: "none" }}
+          className="Sign-outConsumer"
+          // onClick={handleClick}
+        >
+          Sign-Out
+        </Link>
+      </div>
     </div>
   );
 }
