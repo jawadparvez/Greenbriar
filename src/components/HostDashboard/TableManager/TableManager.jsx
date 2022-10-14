@@ -316,10 +316,10 @@ const [data, setData] = useState("No result");
               <span className="center-t-c">Seats</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-c">Status</span>
+              <span className="center-t-seats">Status</span>
             </Grid>
             <Grid item xs={4}>
-              <span className="center-t">Server</span>
+              <span className="center-t-ser">Server</span>
             </Grid>
           </Grid>
           {table.map((tab, index) => {
@@ -414,9 +414,9 @@ const [data, setData] = useState("No result");
                   </Grid>
                   <Grid item xs={4}>
                     <Select
+                    fullWidth
                       style={{
                         height: "19px",
-                        width: "109px ",
                         marginTop: "2px",
                         marginLeft: "-2px",
                         borderRadius: "8px",

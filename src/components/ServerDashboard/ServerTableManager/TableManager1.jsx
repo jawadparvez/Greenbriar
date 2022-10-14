@@ -98,8 +98,8 @@ const ServerTableManager = ({ page, setPage }) => {
         <Grid item xs={10}>
           <h3
             style={{
-              textAlign:'right',
-              marginRight:'20px',
+              textAlign: "right",
+              marginRight: "20px",
               fontSize: "18px",
               marginTop: "7px",
             }}
@@ -163,122 +163,122 @@ const ServerTableManager = ({ page, setPage }) => {
           <span className="center-tServer">Order</span>
         </Grid>
       </Grid>
-      {table.map((tab, index) => {
-        return (
-          <Card
-            style={{
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              marginLeft: "15px",
-              marginBottom: "5px",
-              height: "24px",
-              width: "345px",
-              borderRadius: "8px",
-              marginTop: "9px",
-            }}
-          >
-            <Grid container>
-              <Grid item xs={2}>
-                <Card
-                  style={{
-                    border: "1px solid black",
-                    fontFamily: "Montserrat",
-                    marginTop: "2px",
-                    marginLeft: "2px",
-                    height: "17px",
-                    width: "50px",
-                    borderRadius: "8px",
-                  }}
-                >
+      <div style={{marginLeft:'20px', marginRight:'20px'}}>
+        {table.map((tab, index) => {
+          return (
+            <Card
+              style={{
+                border: "1px solid black",
+                fontFamily: "Montserrat",
+                marginBottom: "5px",
+                height: "24px",
+                borderRadius: "8px",
+                marginTop: "7px",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={2}>
+                  <Card
+                    style={{
+                      border: "1px solid black",
+                      fontFamily: "Montserrat",
+                      marginTop: "2px",
+                      marginLeft: "2px",
+                      height: "17px",
+                      width: "50px",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        marginTop: "-1px",
+                        fontSize: "12px",
+                        fontWeight: "600",
+                        marginLeft: "20px",
+                        display: "flex",
+                      }}
+                    >
+                      {tab.id}
+                    </span>
+                  </Card>
+                </Grid>
+                <Grid item xs={2}>
                   <span
                     style={{
-                      marginTop: "-1px",
+                      marginTop: "3px",
                       fontSize: "12px",
                       fontWeight: "600",
-                      marginLeft: "20px",
+                      marginLeft: "0px",
                       display: "flex",
                     }}
                   >
-                    {tab.id}
+                    {tab.time}
                   </span>
-                </Card>
-              </Grid>
-              <Grid item xs={2}>
-                <span
-                  style={{
-                    marginTop: "3px",
-                    fontSize: "12px",
-                    fontWeight: "600",
-                    marginLeft: "0px",
-                    display: "flex",
-                  }}
-                >
-                  {tab.time}
-                </span>
-              </Grid>
-              <Grid item xs={2}>
-                <span
-                  style={{
-                    marginTop: "0px",
-                    fontSize: "17px",
-                    fontWeight: "600",
-                    marginLeft: "15px",
-                    display: "flex",
-                  }}
-                >
-                  {tab.seats}
-                </span>
-              </Grid>
-              <Grid item xs={2}>
-                <Card
-                  style={{
-                    border: "1px solid black",
-                    fontFamily: "Montserrat",
-                    marginTop: "2px",
-                    height: "19px",
-                    width: "60px",
-                    marginLeft: "-8px",
-                    backgroundColor: "#54C242",
-                    color: "white",
-                    borderRadius: "8px",
-                  }}
-                >
+                </Grid>
+                <Grid item xs={2}>
                   <span
                     style={{
-                      marginTop: "0px!important",
-                      fontSize: "13px",
-                      marginLeft: "9px",
+                      marginTop: "0px",
+                      fontSize: "17px",
+                      fontWeight: "600",
+                      marginLeft: "15px",
                       display: "flex",
                     }}
                   >
-                    {tab.status}
+                    {tab.seats}
                   </span>
-                </Card>
+                </Grid>
+                <Grid item xs={2}>
+                  <Card
+                    style={{
+                      border: "1px solid black",
+                      fontFamily: "Montserrat",
+                      marginTop: "2px",
+                      height: "19px",
+                      width: "60px",
+                      marginLeft: "-8px",
+                      backgroundColor: "#54C242",
+                      color: "white",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        marginTop: "0px!important",
+                        fontSize: "13px",
+                        marginLeft: "9px",
+                        display: "flex",
+                      }}
+                    >
+                      {tab.status}
+                    </span>
+                  </Card>
+                </Grid>
+                <Grid item xs={4}>
+                  <Button
+                    fullWidth
+                    style={{
+                      height: "19px",
+                      marginTop: "0px",
+                      marginLeft: "-2px",
+                      backgroundColor: "#0077FF",
+                      fontSize: "12px",
+                      color: "white",
+                      textAlign: "left",
+                      borderRadius: "10px",
+                    }}
+                    onClick={() => {
+                      setPage(page + 1);
+                    }}
+                  >
+                    -----
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-                <Button
-                  style={{
-                    height: "19px",
-                    width: "113px ",
-                    marginTop: "0px",
-                    marginLeft: "-9px",
-                    backgroundColor: "#0077FF",
-                    fontSize: "12px",
-                    color: "white",
-                    textAlign: "left",
-                    borderRadius: "10px",
-                  }}
-                  onClick={() => {
-                    setPage(page + 1);
-                  }}
-                >
-                  -----
-                </Button>
-              </Grid>
-            </Grid>
-          </Card>
-        );
-      })}
+            </Card>
+          );
+        })}
+      </div>
 
       <Modal
         open={open}

@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
     background: "#0077FF",
     color: "white",
     width: 180,
-    height: 450,
+    height: 400,
   },
   divider: {
     // Theme Color, or use css color in quote
@@ -102,14 +102,6 @@ function DrawerComponent() {
               <ListItemText>
                 <Link to="/ServerSettings" className={classes.link}>
                   Settings
-                </Link>
-              </ListItemText>
-            </ListItem>
-            <Divider className={classes.divider} />
-            <ListItem>
-              <ListItemText>
-                <Link to="/" className={classes.link}>
-                  Support
                 </Link>
               </ListItemText>
             </ListItem>
