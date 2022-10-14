@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { Grid } from "@mui/material";
 import { Link } from "@mui/material";
 import Card from "@mui/material/Card";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Modal } from "@material-ui/core";

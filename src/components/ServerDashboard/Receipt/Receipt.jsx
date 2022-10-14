@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import { Divider } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -469,12 +469,14 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -482,7 +484,8 @@ function handleModal2() {
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}
@@ -495,12 +498,14 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -508,7 +513,8 @@ function handleModal2() {
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}
@@ -521,23 +527,23 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              border: "1px solid black !important",
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000 !important",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
-                  color: "#667085",
                 },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
-                  color: "#667085",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}
@@ -605,12 +611,14 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -618,7 +626,8 @@ function handleModal2() {
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}
@@ -631,12 +640,14 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -644,7 +655,8 @@ function handleModal2() {
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}
@@ -657,23 +669,23 @@ function handleModal2() {
           <TextField
             fullWidth
             sx={{
-              border: "1px solid black !important",
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiInputLabel-root": {
+                color: "#667085",
+                fontFamily: "Montserrat",
+              }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid #000000 !important",
+                  borderColor: "#000000",
+                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
-                  color: "#667085",
                 },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  border: "1px solid #000000 ",
-                  color: "#667085",
+                  borderColor: "#000000",
+                  border: "1px solid",
                 },
               },
             }}

@@ -10,7 +10,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Right from "../../../Assets/Images/rightarrow.png";
 import Card from "@mui/material/Card";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
@@ -321,14 +321,14 @@ function Settings() {
               </p>
               <TextField
                 fullWidth
-                style={{
-                  border:"1px solid black !important",
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                sx={{
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      fontFamily: "Montserrat",
-                      fontWeight: "700",
                       border: "1px solid",
                       borderRadius: "8px",
                       height: "47px",
@@ -360,21 +360,24 @@ function Settings() {
               <TextField
                 className="input"
                 fullWidth
-                style={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                sx={{
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -397,20 +400,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -686,20 +692,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -722,20 +731,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -758,20 +770,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -922,20 +937,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -958,20 +976,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -994,20 +1015,23 @@ function Settings() {
                 className="input"
                 fullWidth
                 sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+                  "& .MuiInputLabel-root": {
+                    color: "#667085",
+                    fontFamily: "Montserrat",
+                  }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: "#000000 !important",
-                      border: "1px solid black !important ",
-                      borderRadius: "8px !important ",
-                      height: "47px !important",
+                      borderColor: "#000000",
+                      border: "1px solid",
+                      borderRadius: "8px",
+                      height: "47px",
                     },
                   },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
                   "& .MuiOutlinedInput-root.Mui-focused": {
                     "& > fieldset": {
                       borderColor: "#000000",
-                      border: "1px solid !important",
+                      border: "1px solid",
                     },
                   },
                 }}
@@ -1142,16 +1166,13 @@ function Settings() {
               <TextField
                 fullWidth
                 sx={{
-                  width: "330px",
-                  height: "161px",
+                  border: "1px solid #000000 !important",
+                  borderRadius: "8px",
                   "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
                       fontFamily: "Montserrat",
                       fontWeight: "700",
-                      border: "2px solid #000000 !important",
-                      borderRadius: "8px",
-                      height: "47px",
                       color: "#667085",
                     },
                   },

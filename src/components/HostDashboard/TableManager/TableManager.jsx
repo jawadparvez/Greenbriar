@@ -14,7 +14,7 @@ import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import { Link } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";

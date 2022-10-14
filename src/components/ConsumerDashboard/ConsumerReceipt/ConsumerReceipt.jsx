@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
-import { Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import { Divider } from "@material-ui/core";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import { TextField } from "@material-ui/core";
-import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function ConsumerReceipt() {

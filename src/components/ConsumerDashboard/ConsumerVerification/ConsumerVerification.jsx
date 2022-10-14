@@ -3,7 +3,6 @@ import Mail from "../../../Assets/Images/mail.png";
 import OTPInput from "otp-input-react";
 import { Button, Link } from "@mui/material";
 import { useState } from "react";
-import Arrow from "../../../Assets/Images/arrow.png";
 import "./verification.css";
 import { Container } from "@mui/system";
 import { useNavigate } from "react-router-dom";

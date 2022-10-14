@@ -2,7 +2,7 @@ import React from 'react'
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import { Grid } from "@mui/material";
 import { Button } from "@mui/material";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import Link from "@material-ui/core/Link";
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Navbar/Navbar'
@@ -38,7 +38,7 @@ function ConsumerEditProfile() {
               marginRight: "20px",
               fontSize: "20px",
               marginTop: "5px",
-              fontFamily:'Montserrat !important'
+              fontFamily: "Montserrat !important",
             }}
           >
             Edit Profile
@@ -58,24 +58,26 @@ function ConsumerEditProfile() {
           Name
         </p>
         <TextField
-          className="input"
+
           fullWidth
           sx={{
-            border:"1px solid black",
-            "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+            "& .MuiInputLabel-root": {
+              color: "#667085",
+              fontFamily: "Montserrat",
+            }, //styles the label
             "& .MuiOutlinedInput-root": {
               "& > fieldset": {
-                borderColor: "#000000 !important",
-                border: "1px solid black !important ",
-                borderRadius: "8px !important ",
-                height: "47px !important",
+                borderColor: "#000000",
+                border: "1px solid",
+                borderRadius: "8px",
+                height: "47px",
               },
             },
-            "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+            "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
             "& .MuiOutlinedInput-root.Mui-focused": {
               "& > fieldset": {
                 borderColor: "#000000",
-                border: "1px solid !important",
+                border: "1px solid",
               },
             },
           }}
@@ -95,7 +97,7 @@ function ConsumerEditProfile() {
           Phone Number
         </p>
         <TextField
-          className="input"
+
           fullWidth
           sx={{
             "& .MuiInputLabel-root": { color: "#667085" }, //styles the label

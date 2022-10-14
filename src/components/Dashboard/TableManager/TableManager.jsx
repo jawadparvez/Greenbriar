@@ -15,7 +15,7 @@ import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
-import { TextField } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
 import { Divider } from "@material-ui/core";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -715,7 +715,7 @@ function TableManager() {
                   </Grid>
                   <Grid item xs={4}>
                     <Select
-                    fullWidth
+                      fullWidth
                       style={{
                         height: "19px",
                         marginTop: "2px",
@@ -1068,7 +1068,7 @@ function TableManager() {
                   <Grid item xs={3}>
                     <span
                       style={{
-                        textAlign:'center',
+                        textAlign: "center",
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
@@ -1081,7 +1081,7 @@ function TableManager() {
                   </Grid>
                   <Grid item xs={4}>
                     <Select
-                    fullWidth
+                      fullWidth
                       style={{
                         height: "19px",
                         marginTop: "2px",
@@ -1774,14 +1774,15 @@ function TableManager() {
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
                   borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
                   border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
+                "& > placeholder": {
+                  fontWeight: "900",
+                },
               },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
                   borderColor: "#000000",
@@ -1805,14 +1806,15 @@ function TableManager() {
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
                   borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
                   border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
+                "& > placeholder": {
+                  fontWeight: "900",
+                },
               },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
                   borderColor: "#000000",
@@ -1835,14 +1837,15 @@ function TableManager() {
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
                   borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
                   border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
+                "& > placeholder": {
+                  fontWeight: "900",
+                },
               },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
                   borderColor: "#000000",
