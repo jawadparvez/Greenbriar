@@ -274,7 +274,6 @@ function ServerMenu() {
             style={{
               border: "1px solid black",
               marginTop: "30px",
-              width: "329px",
               height: "148px",
               marginLeft: "6%",
               borderRadius: "8px",
