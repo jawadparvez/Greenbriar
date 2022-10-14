@@ -21,6 +21,10 @@ function ConsumerProfile() {
   function handleNavigateWallet() {
     navigate("/ConsumerWallet");
   }
+
+  function handleClickLogOut() {
+    navigate("/ConsumerLogin");
+  }
   return (
     <div>
       <Navbar />
@@ -211,7 +215,7 @@ function ConsumerProfile() {
         <Link
           style={{ textDecoration: "none" }}
           className="Sign-outConsumer"
-          // onClick={handleClick}
+          onClick={handleClickLogOut}
         >
           Sign-Out
         </Link>

@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   Button,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../../../Assets/Images/AppLogo.svg";
 import { Grid } from "@mui/material";
 import "./Navbar.css";
@@ -44,14 +44,18 @@ function Navbar() {
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <Typography id="logoConsumer" className={classes.logo}>
-              <Link to="/HostHome">
+              <NavLink to="/HostHome">
                 <img className="appLogoConsumer" src={Logo} alt=""></img>
-              </Link>
+              </NavLink>
             </Typography>
           </Grid>
           <Grid item xs={4}>
             <Button
               fullWidth
+              exact
+              component={NavLink}
+              to={"/ConsumerHome"}
+              activeClassName="activeLink"
               style={{
                 color: "white",
                 marginLeft: "-25px",
@@ -64,6 +68,9 @@ function Navbar() {
                 width: "97px ",
                 height: "43px ",
                 textTransform: "capitalize ",
+                "&:hover": {
+                  backgroundColor: "purple",
+                },
               }}
               variant="contained"
             >
@@ -73,6 +80,9 @@ function Navbar() {
           <Grid item xs={4}>
             <Button
               fullWidth
+              component={NavLink}
+              activeClassName="activeLink"
+              to="/ConsumerOrder"
               style={{
                 color: "#0077FF",
                 marginLeft: "-25px",
@@ -99,7 +109,9 @@ function Navbar() {
             />
           </Grid>
           <Grid item xs={2}>
-            <img style={{ marginTop: "30%" }} src={Avatar} alt="" />
+            <NavLink to ="/ConsumerLogin">
+              <img style={{ marginTop: "30%" }} src={Avatar} alt="" />
+            </NavLink>
           </Grid>
         </Grid>
       </Toolbar>

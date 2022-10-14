@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 function ConsumerRegister() {
     let navigate = useNavigate();
     function handleClick() {
-      navigate("/ComsumerLogin");
+      navigate("/ConsumerLogin");
     }
   return (
     <div>

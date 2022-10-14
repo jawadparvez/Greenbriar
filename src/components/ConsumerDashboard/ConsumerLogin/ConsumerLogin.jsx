@@ -10,7 +10,11 @@ import './login.css'
 function ConsumerLogin() {
       let navigate = useNavigate();
       function handleClick() {
-        navigate("/ComsumerRegister");
+        navigate("/ConsumerRegister");
+      }
+
+      function handleClickProfile(){
+        navigate("/ConsumerProfile");
       }
   return (
     <div>
@@ -140,6 +144,7 @@ function ConsumerLogin() {
           }}
           variant="contained"
           type="submit"
+          onClick={handleClickProfile}
         >
           Sign In
         </Button>
