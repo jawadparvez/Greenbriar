@@ -44,7 +44,7 @@ function Navbar() {
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <Typography id="logoConsumer" className={classes.logo}>
-              <NavLink to="/HostHome">
+              <NavLink to="/ConsumerHome">
                 <img className="appLogoConsumer" src={Logo} alt=""></img>
               </NavLink>
             </Typography>
