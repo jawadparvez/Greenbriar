@@ -103,14 +103,14 @@ function Navbar() {
           </Grid>
           <Grid item xs={2}>
             <img
-              style={{ marginTop: "40%", marginLeft: "-20%" }}
+              style={{ marginTop: "24px", marginLeft: "-20%" }}
               src={SCAN}
               alt=""
             />
           </Grid>
           <Grid item xs={2}>
             <NavLink to ="/ConsumerLogin">
-              <img style={{ marginTop: "30%" }} src={Avatar} alt="" />
+              <img style={{ marginTop: "18px" }} src={Avatar} alt="" />
             </NavLink>
           </Grid>
         </Grid>

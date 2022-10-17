@@ -239,9 +239,7 @@ function Header() {
         <Route
           path="/ConsumerHome"
           element={
-            <PrivateRoute>
               <ConsumerHome />
-            </PrivateRoute>
           }
         />
         <Route
