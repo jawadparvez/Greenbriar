@@ -6,7 +6,7 @@ import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import Paper from "@mui/material/Paper";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ function TabHistory({ page, setPage}) {
             <img
               style={{
                 marginTop: "10px",
-                marginLeft: "10px",
+                marginLeft: "-10px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
@@ -63,13 +63,22 @@ function TabHistory({ page, setPage}) {
           </Link>
         </Grid>
         <Grid item xs={10}>
-          <h3 style={{ textAlign:'right', marginRight:'20px', fontSize:'18px' }}>Tab History</h3>
+          <h3
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontSize: "18px",
+            }}
+          >
+            Tab History
+          </h3>
         </Grid>
       </Grid>
       <Paper
-        component="form"
-        sx={{
+        style={{
           p: "2px 4px",
+          color: "black",
+          borderRadius: "20px",
           marginLeft: "30px",
           display: "flex",
           alignItems: "center",
@@ -91,7 +100,7 @@ function TabHistory({ page, setPage}) {
       </Paper>
 
       <Grid container spacing={0}>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Button
             fullWidth
             sx={{
@@ -100,11 +109,10 @@ function TabHistory({ page, setPage}) {
               backgroundColor: "white !important",
               borderColor: "black !important",
               borderRadius: "8px !important",
-              fontWeight: "500 !important",
+              fontWeight: "600 !important",
               marginTop: "20px!Important",
               border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "85px !important",
               fontSize: "13px !important",
               height: "40px !important",
               textTransform: "capitalize !important",
@@ -117,13 +125,13 @@ function TabHistory({ page, setPage}) {
             Today
           </Button>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <Button
             fullWidth
             sx={{
               color: "black !important",
               backgroundColor: "white !important",
-              marginLeft: "10px!important",
+              marginLeft: "20px!important",
               borderColor: "black !important",
               borderRadius: "8px !important",
               marginTop: "20px!Important",
@@ -131,7 +139,6 @@ function TabHistory({ page, setPage}) {
               fontSize: "13px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "110px !important",
               height: "40px !important",
               textTransform: "capitalize !important",
             }}
@@ -143,13 +150,13 @@ function TabHistory({ page, setPage}) {
             This Week
           </Button>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Button
             fullWidth
             sx={{
               color: "black !important",
               backgroundColor: "white !important",
-              marginLeft: "0px!important",
+              marginLeft: "30px!important",
               borderColor: "black !important",
               borderRadius: "8px !important",
               marginTop: "20px!Important",
@@ -157,7 +164,6 @@ function TabHistory({ page, setPage}) {
               fontWeight: "500 !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat!important",
-              width: "140px !important",
               fontSize: "13px !important",
               height: "40px !important",
               textTransform: "capitalize !important",
@@ -167,7 +173,7 @@ function TabHistory({ page, setPage}) {
               setPage(page + 1);
             }}
           >
-            Data Range{" "}
+            Data Range
             <img
               style={{ marginLeft: "3px", marginTop: "4px" }}
               src={BottomArrow}

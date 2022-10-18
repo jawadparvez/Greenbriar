@@ -67,9 +67,10 @@ function TabHistory3({ page, setPage }) {
         </Grid>
       </Grid>
       <Paper
-        component="form"
-        sx={{
+        style={{
           p: "2px 4px",
+          color: "black",
+          borderRadius: "20px",
           marginLeft: "30px",
           display: "flex",
           alignItems: "center",

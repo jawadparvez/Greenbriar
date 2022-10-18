@@ -17,7 +17,7 @@ import "rsuite/dist/rsuite.min.css";
 import { DateRangePicker } from "rsuite";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import CheckIcon from "@mui/icons-material/Check";
-import DateRangeIcon from '../../../Assets/Images/cart.png'
+import AssessmentIcon from "@mui/icons-material/Assessment";
 import Calender from "../../../Assets/Images/calendar.png";
 
 function TabHistory2({page, setPage}) {
@@ -118,9 +118,10 @@ function TabHistory2({page, setPage}) {
         </Grid>
       </Grid>
       <Paper
-        component="form"
-        sx={{
+        style={{
           p: "2px 4px",
+          color: "black",
+          borderRadius: "20px",
           marginLeft: "30px",
           display: "flex",
           alignItems: "center",
@@ -172,12 +173,14 @@ function TabHistory2({page, setPage}) {
                 marginTop: "20px",
                 outline: "none",
                 width: "160px",
+                
               }}
               placeholder="09 - 13 May"
               ranges={Ranges}
               appearance="subtle"
               showOneCalendar
               preventOverflow
+              caretAs={AssessmentIcon}
               placement="auto"
             />
           </Grid>

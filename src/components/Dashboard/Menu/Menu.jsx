@@ -49,7 +49,6 @@ function Menu() {
 
   const [category, setCategory] = useState([]);
   const [item, setItem] = useState([]);
-
  function fetchcat() {
   fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
     .then((response) => response.json())
@@ -57,6 +56,7 @@ function Menu() {
       setCategory(result);
       if (result.length) {
         setWtext("hidden");
+        setBtext("");
       }
       console.log("Categories are being displayed from the database");
     });
@@ -83,6 +83,7 @@ function Menu() {
 
   const [value, setValue] = useState("1");
   const [wtext, setWtext] = useState("");
+   const [btext, setBtext] = useState("hidden");
   const [selectedtab, setSelectedtab] = useState();
   const handleTabChange = (event, newTabIndex) => {
     setValue(newTabIndex);
@@ -335,10 +336,13 @@ let navigate = useNavigate();
     <div>
       <Navbar />
       <h4 className="bolderr text-color">Menu</h4>
-
+      {category.map((cat, index) => {
+        return <></>;
+      })}
       <Grid container spacing={0}>
         <Grid item xs={4}>
           <Card
+            className={`${btext}`}
             style={{
               marginTop: "20px",
               marginLeft: "auto",
@@ -357,14 +361,16 @@ let navigate = useNavigate();
               style={{
                 textDecoration: "none",
                 fontWeight: "500",
+                color: "#0077FF",
               }}
             >
-              Add Item
+              + Item
             </Link>
           </Card>
         </Grid>
         <Grid item xs={4}>
           <Card
+            className={`${btext}`}
             style={{
               marginTop: "20px",
               marginLeft: "auto",
@@ -384,6 +390,7 @@ let navigate = useNavigate();
               style={{
                 textDecoration: "none",
                 fontWeight: "500",
+                color: "#0077FF",
               }}
             >
               - Category
@@ -411,6 +418,8 @@ let navigate = useNavigate();
               style={{
                 textDecoration: "none",
                 fontWeight: "500",
+                fontSize: "14px",
+                color: "#0077FF",
               }}
             >
               + Category
@@ -423,8 +432,12 @@ let navigate = useNavigate();
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
             onChange={handleTabChange}
-            style={{
+            sx={{
               marginTop: "20px",
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
             }}
             value={valuee}
             variant="scrollable"
@@ -437,10 +450,12 @@ let navigate = useNavigate();
               return (
                 <Tab
                   style={{
+                    marginLeft: "15px",
+                    minWidth: "auto",
                     fontFamily: "Montserrat",
                     fontWeight: "500",
                     fontSize: "16px",
-                    padding: "12px 16px",
+                    color: "#667085",
                     textTransform: "capitalize",
                   }}
                   label={cat.name}
@@ -575,7 +590,7 @@ let navigate = useNavigate();
             label="Beverages"
             variant="outlined"
             size="small"
-             //setting the value of the form to the props value
+            //setting the value of the form to the props value
             onChange={
               (e) => setCategoryname({ ...catergoryname, name: e.target.value }) //setting the formData to the value input of the textfield
             }
@@ -819,7 +834,7 @@ let navigate = useNavigate();
             label="Italy 5 Cheese Dinner"
             variant="outlined"
             size="small"
-             //setting the value of the form to the props value
+            //setting the value of the form to the props value
             onChange={
               (e) => setItemname({ ...itemname, name: e.target.value }) //setting the formData to the value input of the textfield
             }
@@ -850,13 +865,15 @@ let navigate = useNavigate();
             label="$21.99"
             variant="outlined"
             size="small"
-             //setting the value of the form to the props value
+            //setting the value of the form to the props value
             onChange={
               (e) => setItemname({ ...itemname, price: e.target.value }) //setting the formData to the value input of the textfield
             }
           />
           <p className="left">Description</p>
           <TextField
+            multiline
+            rows={5}
             fullWidth
             sx={{
               "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
@@ -867,7 +884,6 @@ let navigate = useNavigate();
                   fontWeight: "700",
                   border: "1px solid",
                   borderRadius: "8px",
-                  height: "95px",
                 },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
@@ -881,7 +897,7 @@ let navigate = useNavigate();
             label="Enter item Description"
             variant="outlined"
             size="small"
-             //setting the value of the form to the props value
+            //setting the value of the form to the props value
             onChange={
               (e) =>
                 setItemname({
@@ -896,7 +912,7 @@ let navigate = useNavigate();
             sx={{
               color: "white !important",
               backgroundColor: "#0077FF !important",
-              marginTop: "110px!important",
+              marginTop: "40px!important",
               borderRadius: "8px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat !important",
@@ -960,10 +976,9 @@ let navigate = useNavigate();
               "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  borderColor: "#000000",
+                  border: "1px solid #D0D5DD",
                   fontFamily: "Montserrat",
                   fontWeight: "700",
-                  border: "1px solid",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -971,8 +986,7 @@ let navigate = useNavigate();
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
+                  border: "1px solid #D0D5DD ",
                 },
               },
             }}
@@ -990,10 +1004,9 @@ let navigate = useNavigate();
               "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  borderColor: "#000000",
                   fontFamily: "Montserrat",
                   fontWeight: "700",
-                  border: "1px solid",
+                  border: "1px solid #D0D5DD",
                   borderRadius: "8px",
                   height: "47px",
                 },
@@ -1001,8 +1014,7 @@ let navigate = useNavigate();
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
+                  border: "1px solid #D0D5DD",
                 },
               },
             }}
@@ -1016,23 +1028,22 @@ let navigate = useNavigate();
           <p className="left">Description</p>
           <TextField
             fullWidth
+            multiline
+            rows={3}
             sx={{
               "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
               "& .MuiOutlinedInput-root": {
                 "& > fieldset": {
-                  borderColor: "#000000",
                   fontFamily: "Montserrat",
                   fontWeight: "700",
-                  border: "1px solid",
+                  border: "1px solid #D0D5DD",
                   borderRadius: "8px",
-                  height: "95px",
                 },
               },
               "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
               "& .MuiOutlinedInput-root.Mui-focused": {
                 "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
+                  border: "1px solid #D0D5DD",
                 },
               },
             }}
@@ -1049,8 +1060,7 @@ let navigate = useNavigate();
             sx={{
               color: "white !important",
               backgroundColor: "#0077FF !important",
-              borderColor: "black !important",
-              marginTop: "90px!important",
+              marginTop: "40px!important",
               borderRadius: "8px !important",
               border: "1px solid black !important",
               fontFamily: "Montserrat !important",

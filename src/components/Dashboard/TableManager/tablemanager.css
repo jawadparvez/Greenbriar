@@ -56,7 +56,7 @@
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left:30% !important;
+    margin-left:25% !important;
 }
 
 .center-t-seats{
@@ -74,11 +74,25 @@
     margin-left: 10%!important;
 
 }
+
+.center-t-table{
+    display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: -2%!important;
+}
+
+.center-t-status{
+    display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: -10%!important;
+}
 .center-t-time{
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left: 0%!important;
+    margin-left: 20%!important;
 
 }
 
@@ -86,28 +100,41 @@
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left: 19%!important;
+    margin-left: 13%!important;
 
 }
 
+.center-t-party{
+        display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: 10%!important;
+}
 .center-t-name{
     display: flex;
     text-align: center;
     margin-top: 10px!important;
-    margin-left: 0%!important;
+    margin-left: -7%!important;
+
+}
+.center-t-number{
+    display: flex;
+    text-align: center;
+    margin-top: 10px!important;
+    margin-left: -3%!important;
 
 }
 .center-t-cell{
     display: flex;
-    
+    text-align: center;
     margin-top: 10px!important;
-    margin-left: 0%!important;
+    margin-left: 12%!important;
 
 }
 .center-t-cellOrder{
     display: flex;
     margin-top: 10px!important;
-    margin-left: 30%!important;
+    margin-left: 26%!important;
 }
 
 .center-t-server{
@@ -123,5 +150,5 @@
     text-align: left;
     padding-left: 0px;
     margin-top: 10px!important;
-    margin-left: 16% !important;
+    margin-left: 10% !important;
 }

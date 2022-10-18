@@ -23,6 +23,8 @@ import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import { Link as DOMLink} from "react-router-dom";
 import Link from "@material-ui/core/Link";
+import RightWhite from "../../../Assets/Images/rightwhite.png"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useNavigate } from "react-router-dom";
 
 
@@ -32,6 +34,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       border:'1px solid black',
+      right:"30%",
       borderRadius:"8px",
       maxHeight: 210,
       width: 150,
@@ -499,12 +502,19 @@ function TableManager() {
             onChange={handleTabChange}
             indicatorColor="primary"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             <Tab
               style={{
-                width: "50px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "600",
+                color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
               }}
@@ -513,9 +523,10 @@ function TableManager() {
             />
             <Tab
               style={{
-                width: "50px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
+                color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
               }}
@@ -524,9 +535,10 @@ function TableManager() {
             />
             <Tab
               style={{
-                width: "50px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
+                color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
               }}
@@ -542,7 +554,7 @@ function TableManager() {
                 fullWidth
                 sx={{
                   color: "#0077FF !important",
-                  marginLeft: "0px!important",
+                  marginLeft: "-12px!important",
                   backgroundColor: "white !important",
                   borderRadius: "8px !important",
                   fontWeight: "500 !important",
@@ -563,6 +575,7 @@ function TableManager() {
                 fullWidth
                 sx={{
                   color: "#0077FF !important",
+                  marginLeft: "-12px!important",
                   backgroundColor: "white !important",
                   borderColor: "black !important",
                   borderRadius: "8px !important",
@@ -586,6 +599,7 @@ function TableManager() {
                 fullWidth
                 sx={{
                   color: "#0077FF !important",
+                  marginLeft: "-12px!important",
                   backgroundColor: "white !important",
                   borderColor: "black !important",
                   borderRadius: "8px !important",
@@ -608,16 +622,16 @@ function TableManager() {
           </Grid>
           <Grid container>
             <Grid item xs={2}>
-              <span className="center-t-c color">Table</span>
+              <span className="center-t-table color">Table</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-c">Time</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-c">Seats</span>
+              <span className="center-t-seats">Seats</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-seats">Status</span>
+              <span className="center-t-status">Status</span>
             </Grid>
             <Grid item xs={4}>
               <span className="center-t-ser">Server</span>
@@ -629,7 +643,7 @@ function TableManager() {
                 style={{
                   border: "1px solid black",
                   fontFamily: "Montserrat",
-                  marginLeft: "0px!important",
+                  marginLeft: "-10px",
                   marginBottom: "5px",
                   height: "24px",
                   borderRadius: "8px",
@@ -692,7 +706,7 @@ function TableManager() {
                       style={{
                         border: "1px solid black",
                         fontFamily: "Montserrat",
-                        marginTop: "2px",
+                        marginTop: "1.5px",
                         height: "19px",
                         width: "60px",
                         marginLeft: "-8px",
@@ -716,16 +730,20 @@ function TableManager() {
                   <Grid item xs={4}>
                     <Select
                       fullWidth
-                      style={{
+                      sx={{
                         height: "19px",
-                        marginTop: "2px",
+                        marginTop: "1.5px!important",
                         marginLeft: "-2px",
                         borderRadius: "8px",
                         backgroundColor: "#0077FF",
                         fontSize: "12px",
                         color: "white ",
                         textAlign: "left",
+                        ".MuiSvgIcon-root ": {
+                          fill: "white !important",
+                        },
                       }}
+                      IconComponent={ExpandMoreIcon}
                       displayEmpty
                       labelId="demo-multiple-checkbox-label"
                       name={tab.id}
@@ -755,7 +773,7 @@ function TableManager() {
                                 style={{
                                   textAlign: "left ",
                                   marginLeft: "10px",
-                                  marginTop: "0px ",
+                                  marginTop: "-12px ",
                                   paddingTop: "0px ",
                                   paddingBottom: "0px ",
                                 }}
@@ -766,7 +784,7 @@ function TableManager() {
                               <ListItemText
                                 style={{
                                   textAlign: "left ",
-                                  marginTop: "0px ",
+                                  marginTop: "-5px ",
                                   fontSize: "10px",
                                   color: "#0077FF",
                                   marginLeft: "0px",
@@ -785,11 +803,12 @@ function TableManager() {
           })}
         </TabPanel>
         <TabPanel value="2">
-          <Grid container spacing={5}>
+          <Grid container spacing={4}>
             <Grid item xs={6}>
               <Card
                 style={{
                   marginTop: "10px",
+                  marginLeft: "-10px",
                   border: "1px solid black",
                   fontFamily: "Montserrat",
                   height: "80px",
@@ -847,7 +866,7 @@ function TableManager() {
           </Grid>
           <Grid container>
             <Grid item xs={1}>
-              <span className="center-t-c">#</span>
+              <span className="center-t-number">#</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-name">Name</span>
@@ -856,9 +875,9 @@ function TableManager() {
               <span className="center-t-r">Time</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-r">Party</span>
+              <span className="center-t-party">Party</span>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={4}>
               <span className="center-t-cell">Cell Number</span>
             </Grid>
           </Grid>
@@ -869,7 +888,7 @@ function TableManager() {
                 style={{
                   border: "1px solid black",
                   fontFamily: "Montserrat",
-                  marginLeft: "0px!important",
+                  marginLeft: "-10px",
                   marginBottom: "5px",
                   height: "24px",
                   borderRadius: "8px",
@@ -935,7 +954,7 @@ function TableManager() {
                         marginTop: "3px",
                         fontSize: "12px",
                         fontWeight: "600",
-                        marginLeft: "0px",
+                        marginLeft: "11px",
                       }}
                     >
                       {gue.cellphone}
@@ -962,6 +981,7 @@ function TableManager() {
             <Card
               style={{
                 marginTop: "0px",
+                marginLeft: "-10px",
                 border: "1px solid black",
                 fontFamily: "Montserrat",
                 height: "70px",
@@ -994,16 +1014,16 @@ function TableManager() {
               fontWeight: "500",
               textAlign: "left",
               marginTop: "10px",
-              marginBottom: "",
+              marginLeft: "-10px",
             }}
           >
             Current Table Orders
           </h4>
           <Grid container spacing={0}>
-            <Grid item xs={3}>
-              <span className="center-t-c color">Table</span>
-            </Grid>
             <Grid item xs={2}>
+              <span className="center-t-table color">Table</span>
+            </Grid>
+            <Grid item xs={3}>
               <span className="center-t-time">Time</span>
             </Grid>
             <Grid item xs={3}>
@@ -1020,7 +1040,7 @@ function TableManager() {
                 style={{
                   border: "1px solid black",
                   fontFamily: "Montserrat",
-                  marginLeft: "0px!important",
+                  marginLeft: "-10px",
                   marginBottom: "5px",
                   height: "24px",
                   borderRadius: "8px",
@@ -1080,68 +1100,31 @@ function TableManager() {
                     </span>
                   </Grid>
                   <Grid item xs={4}>
-                    <Select
+                    <Button
                       fullWidth
-                      style={{
-                        height: "19px",
-                        marginTop: "2px",
-                        marginLeft: "-2px",
-                        borderRadius: "8px",
-                        backgroundColor: "#0077FF",
-                        fontSize: "12px",
-                        color: "white ",
-                        textAlign: "left",
+                      endIcon={
+                        <img
+                          style={{ marginLeft: "10px" }}
+                          src={RightWhite}
+                          alt=""
+                        />
+                      }
+                      sx={{
+                        height: "19px !important",
+                        marginTop: "0px !important",
+                        marginLeft: "-2px !important",
+                        backgroundColor: "#0077FF !important",
+                        fontSize: "12px !important",
+                        color: "white !important",
+                        fontWeight: "400 !important",
+                        textAlign: "left !important",
+                        borderRadius: "10px !important",
+                        fontFamily: "Montserrat !important",
+                        textTransform: "capitalize !important",
                       }}
-                      displayEmpty
-                      labelId="demo-multiple-checkbox-label"
-                      id={tab.id}
-                      value={personName}
-                      renderValue={(selected) => {
-                        if (selected.length === 0) {
-                          return (
-                            <p style={{ color: "white", marginLeft: "-5px" }}>
-                              {tab.server}
-                            </p>
-                          );
-                        }
-
-                        return selected.join(", ");
-                      }}
-                      MenuProps={MenuProps}
                     >
-                      {names.map((name) => (
-                        <MenuItem key={name} value={name}>
-                          <Grid container spacing={2}>
-                            <Grid item xs={4}>
-                              <Checkbox
-                                icon={<CircleUnchecked />}
-                                checkedIcon={<CircleChecked />}
-                                style={{
-                                  textAlign: "left ",
-                                  marginLeft: "10px",
-                                  marginTop: "0px ",
-                                  paddingTop: "0px ",
-                                  paddingBottom: "0px ",
-                                }}
-                                checked={personName.indexOf(name) > -1}
-                              />
-                            </Grid>
-                            <Grid item xs={8}>
-                              <ListItemText
-                                style={{
-                                  textAlign: "left ",
-                                  marginTop: "0px ",
-                                  fontSize: "10px",
-                                  color: "#0077FF",
-                                  marginLeft: "0px",
-                                }}
-                                primary={name}
-                              />
-                            </Grid>
-                          </Grid>
-                        </MenuItem>
-                      ))}
-                    </Select>
+                      Table Order
+                    </Button>
                   </Grid>
                 </Grid>
               </Card>

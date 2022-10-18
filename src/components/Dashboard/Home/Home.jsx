@@ -43,14 +43,21 @@ function Home() {
             indicatorColor="primary"
             textColor="black"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                fontWeight: "600 ",
+                color:"black !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             <Tab
               style={{
                 fontFamily: "Montserrat",
-                fontWeight: "600",
+                marginLeft:"10px",
                 fontSize: "17px",
-                padding: "12px 16px",
                 textTransform: "capitalize",
+                color: "#9298A3",
               }}
               label="Home Feed"
               value="1"
@@ -58,10 +65,10 @@ function Home() {
             <Tab
               style={{
                 fontFamily: "Montserrat",
-                fontWeight: "500",
+                paddingLeft:"10px",
                 fontSize: "17px",
-                padding: "12px 16px",
                 textTransform: "capitalize",
+                color: "#9298A3",
               }}
               label="Notifications"
               value="2"
