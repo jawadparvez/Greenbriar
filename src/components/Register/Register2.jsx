@@ -66,6 +66,7 @@ function Register2({ page, setPage, formData, setFormData }) {
     borderColor: "black",
     borderRadius: "8px",
     border: "1px solid black",
+    fontFamily:"Montserrat !important",
     height: "44px",
   };
 
