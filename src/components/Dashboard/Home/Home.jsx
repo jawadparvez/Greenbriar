@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import './Home.css'
 
 function Home() {
+
+    //Declaration
     const [value, setValue] = useState("1");
     const handleTabChange = (event, newTabIndex) => {
       setValue(newTabIndex);
@@ -31,6 +33,58 @@ function Home() {
       navigate("/Settings");
     }
 
+    //Styled Components
+    const StyleTabList = {
+      "& .Mui-selected": {
+        fontWeight: "600 ",
+        color: "black !important",
+        borderBottom: "#0077FF",
+      },
+    };
+    const StyleTab = {
+      fontFamily: "Montserrat",
+      marginLeft: "10px",
+      fontSize: "17px",
+      textTransform: "capitalize",
+      color: "#9298A3",
+      padding: "0px",
+     }
+     const StyleTab1Card = {
+       border: "1px solid black",
+       fontFamily: "Montserrat",
+       height: "90px",
+       borderRadius: "8px",
+     };
+     const StyleCardContentTable = {
+       marginTop: "15px",
+       marginBottom: "10px",
+       fontWeight: "500",
+       fontSize: "18px",
+       fontFamily: "Montserrat",
+     };
+     const StyleDetailCard = {
+       marginTop: "20px",
+       border: "1px solid black",
+       fontFamily: "Montserrat",
+       height: "80px",
+       borderRadius: "8px",
+     }
+     const StyleNotificationCard1st = {
+       border: "1px solid black",
+       fontFamily: "Montserrat",
+       height: "80px",
+       borderRadius: "8px",
+       backgroundColor: "#E3F2FD",
+     };
+     const StyleNotificationCard = {
+       border: "1px solid black",
+       fontFamily: "Montserrat",
+       height: "80px",
+       borderRadius: "8px",
+       marginTop:"20px",
+       backgroundColor: "#E3F2FD",
+    }
+
 
     //return statement
   return (
@@ -43,49 +97,14 @@ function Home() {
             indicatorColor="primary"
             textColor="black"
             aria-label="lab API tabs example"
-            sx={{
-              "& .Mui-selected": {
-                fontWeight: "600 ",
-                color: "black !important",
-                borderBottom: "#0077FF",
-              },
-            }}
+            sx={StyleTabList}
           >
-            <Tab
-              style={{
-                fontFamily: "Montserrat",
-                marginLeft: "10px",
-                fontSize: "17px",
-                textTransform: "capitalize",
-                color: "#9298A3",
-                padding: "0px",
-              }}
-              label="Home Feed"
-              value="1"
-            />
-            <Tab
-              style={{
-                marginLeft:"10px",
-                fontFamily: "Montserrat",
-                fontSize: "17px",
-                textTransform: "capitalize",
-                color: "#9298A3",
-                padding: "0px",
-              }}
-              label="Notifications"
-              value="2"
-            />
+            <Tab style={StyleTab} label="Home Feed" value="1" />
+            <Tab style={StyleTab} label="Notifications" value="2" />
           </TabList>
         </Box>
         <TabPanel value="1">
-          <Card
-            style={{
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "90px",
-              borderRadius: "8px",
-            }}
-          >
+          <Card style={StyleTab1Card}>
             <Grid container spacing={0}>
               <Grid
                 style={{
@@ -96,17 +115,7 @@ function Home() {
                 item
                 xs={4}
               >
-                <CardContent
-                  style={{
-                    marginTop: "15px",
-                    marginBottom: "10px",
-                    fontWeight: "500",
-                    fontSize: "18px",
-                    fontFamily: "Montserrat",
-                  }}
-                >
-                  Tables
-                </CardContent>
+                <CardContent style={StyleCardContentTable}>Tables</CardContent>
               </Grid>
 
               <Grid item xs={4}>
@@ -119,15 +128,7 @@ function Home() {
               </Grid>
             </Grid>
           </Card>
-          <Card
-            style={{
-              marginTop: "20px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "80px",
-              borderRadius: "8px",
-            }}
-          >
+          <Card style={StyleDetailCard}>
             <Grid container>
               <Grid item xs={6}>
                 <h4 className="bolder text-color">Balance</h4>
@@ -147,15 +148,7 @@ function Home() {
               </Grid>
             </Grid>
           </Card>
-          <Card
-            style={{
-              marginTop: "20px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "80px",
-              borderRadius: "8px",
-            }}
-          >
+          <Card style={StyleDetailCard}>
             <Grid container>
               <Grid item xs={6}>
                 <h4 className="bolder text-color">Today's Revenue</h4>
@@ -170,15 +163,7 @@ function Home() {
           </Card>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Card
-                style={{
-                  marginTop: "20px",
-                  border: "1px solid black",
-                  fontFamily: "Montserrat",
-                  height: "80px",
-                  borderRadius: "8px",
-                }}
-              >
+              <Card style={StyleDetailCard}>
                 <Grid container>
                   <Grid item xs={12}>
                     <h4 className="tab-heading text-color">
@@ -190,15 +175,7 @@ function Home() {
               </Card>
             </Grid>
             <Grid item xs={6}>
-              <Card
-                style={{
-                  marginTop: "20px",
-                  border: "1px solid black",
-                  fontFamily: "Montserrat",
-                  height: "80px",
-                  borderRadius: "8px",
-                }}
-              >
+              <Card style={StyleDetailCard}>
                 <Grid item xs={12}>
                   <h4 className="tab-heading text-color">Avg. Tab Value</h4>
                   <p className="tab-value"> $51.92</p>
@@ -206,15 +183,7 @@ function Home() {
               </Card>
             </Grid>
           </Grid>
-          <Card
-            style={{
-              marginTop: "20px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "80px",
-              borderRadius: "8px",
-            }}
-          >
+          <Card style={StyleDetailCard}>
             <Grid container>
               <Grid item xs={11}>
                 <h4 className="bolder text-color">Settings</h4>
@@ -229,15 +198,7 @@ function Home() {
           </Card>
         </TabPanel>
         <TabPanel value="2">
-          <Card
-            style={{
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "80px",
-              borderRadius: "8px",
-              backgroundColor: "#E3F2FD",
-            }}
-          >
+          <Card style={StyleNotificationCard1st}>
             <p
               style={{
                 paddingLeft: "10px",
@@ -258,16 +219,7 @@ function Home() {
               </Link>
             </p>
           </Card>
-          <Card
-            style={{
-              marginTop: "20px",
-              border: "1px solid black",
-              fontFamily: "Montserrat",
-              height: "80px",
-              borderRadius: "8px",
-              backgroundColor: "#E3F2FD",
-            }}
-          >
+          <Card style={StyleNotificationCard}>
             <p className="font-bold p-noti">
               Invite accepted by .
               <Link style={{ textDecoration: "none", fontWeight: "500" }}>
