@@ -57,7 +57,7 @@ function ConsumerLogin() {
             },
           }}
           id="outlined-basic"
-          label="Confrim password"
+          label="Enter your Email"
           variant="outlined"
           type="password"
           size="small"

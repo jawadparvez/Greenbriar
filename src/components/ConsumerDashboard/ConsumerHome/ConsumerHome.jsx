@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
@@ -102,15 +102,22 @@ function ConsumerHome() {
             indicatorColor="primary"
             textColor="primary"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             {category.map((cat, index) => {
               return (
                 <Tab
-                  style={{
+                  sx={{
+                    marginLeft: "0px",
+                    minWidth: "auto",
                     fontFamily: "Montserrat",
-                    fontWeight: "500",
-                    fontSize: "16px",
-                    padding: "12px 16px",
+                    color: "#667085",
+                    fontSize: "15px",
                     textTransform: "capitalize",
                   }}
                   label={cat.name}

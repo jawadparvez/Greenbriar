@@ -79,27 +79,33 @@ function HostSettings() {
             indicatorColor="primary"
             textColor="black"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             <Tab
               style={{
-                width: "5%",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
                 fontWeight: "500",
-                fontSize: "16px",
+                fontSize: "15px",
+                color: "#667085",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Profile"
               value="1"
             />
             <Tab
               style={{
-                width: "5%",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
                 fontWeight: "500",
-                fontSize: "16px",
+                fontSize: "15px",
+                color: "#667085",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Security"
               value="2"
