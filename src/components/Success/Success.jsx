@@ -21,6 +21,7 @@ function Success() {
     borderRadius: "8px",
     border: "1px solid black",
     height: "44px",
+    fontFamily: "Montserrat !important",
   };
 
 

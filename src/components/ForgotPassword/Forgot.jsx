@@ -20,14 +20,15 @@ function Forgot() {
 
 
   //Styling Components
-  const StyleButton ={
-            color: "white",
-            backgroundColor: "#0077FF",
-            borderColor: "black",
-            borderRadius: "8px",
-            border: "1px solid black",
-            height: "44px",
-          }
+  const StyleButton = {
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+    fontFamily: "Montserrat !important",
+  };
 
 
   //return Statement

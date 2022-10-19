@@ -39,13 +39,14 @@ function NewPassword() {
     },
   };
   const StleButton = {
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              height: "44px",
-            }
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+    fontFamily: "Montserrat !important",
+  };
 
   //Return Statement
   return (
