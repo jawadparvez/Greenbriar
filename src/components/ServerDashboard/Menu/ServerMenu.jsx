@@ -122,7 +122,7 @@ function ServerMenu() {
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "10px",
+                marginLeft: "-10px",
                 AlignItems: "left",
                 display: "flex",
               }}
@@ -150,8 +150,12 @@ function ServerMenu() {
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <TabList
                 onChange={handleTabChange}
-                style={{
-                  marginTop: "20px",
+                sx={{
+                  marginTop:'20px',
+                  "& .Mui-selected": {
+                    color: "#0077FF !important",
+                    borderBottom: "#0077FF",
+                  },
                 }}
                 value={valuee}
                 variant="scrollable"
@@ -164,10 +168,11 @@ function ServerMenu() {
                   return (
                     <Tab
                       style={{
+                        marginLeft: "10px",
+                        minWidth: "auto",
                         fontFamily: "Montserrat",
-                        fontWeight: "500",
-                        fontSize: "16px",
-                        padding: "12px 16px",
+                        color: "#667085",
+                        fontSize: "15px",
                         textTransform: "capitalize",
                       }}
                       label={cat.name}

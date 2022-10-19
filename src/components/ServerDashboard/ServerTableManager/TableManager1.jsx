@@ -86,7 +86,7 @@ const ServerTableManager = ({ page, setPage }) => {
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "10px",
+                marginLeft: "-10px",
                 AlignItems: "left !important",
                 display: "flex",
               }}

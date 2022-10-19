@@ -171,8 +171,12 @@ function TabHistory2({page, setPage}) {
             <DateRangePicker
               style={{
                 marginTop: "20px",
+                marginLeft:"30px",
                 outline: "none",
-                width: "160px",
+                width: "200px",
+                "&. svg":{
+                  color:"green"
+                }
                 
               }}
               placeholder="09 - 13 May"

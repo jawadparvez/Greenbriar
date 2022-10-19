@@ -125,54 +125,58 @@ function Settings() {
           <TabList
             onChange={handleTabChange}
             indicatorColor="primary"
-            textColor="black"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             <Tab
               style={{
-                marginLeft: "10px!important",
-                width: "120px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
-                fontSize: "16px",
+                color: "#667085",
+                fontSize: "15px",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Organization"
               value="1"
             />
             <Tab
               style={{
-                width: "5%",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
-                fontSize: "16px",
+                color: "#667085",
+                fontSize: "15px",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Profile"
               value="2"
             />
             <Tab
               style={{
-                width: "5%",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
-                fontSize: "16px",
+                color: "#667085",
+                fontSize: "15px",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Security"
               value="3"
             />
             <Tab
               style={{
-                width: "5%",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
-                fontSize: "16px",
+                color: "#667085",
+                fontSize: "15px",
                 textTransform: "capitalize",
-                padding: "0px!important",
               }}
               label="Support"
               value="4"

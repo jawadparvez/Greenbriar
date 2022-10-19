@@ -136,6 +136,7 @@ function TabHistory3({ page, setPage }) {
       <p
         style={{
           textAlign: "left",
+          marginTop:"10px",
           marginLeft: "10px",
           color: "#B1B1B1",
           fontFamily: "Montserrat",

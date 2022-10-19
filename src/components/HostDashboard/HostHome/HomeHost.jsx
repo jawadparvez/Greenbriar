@@ -39,13 +39,20 @@ const HostHome = () => {
             indicatorColor="primary"
             textColor="black"
             aria-label="lab API tabs example"
+            sx={{
+              "& .Mui-selected": {
+                fontWeight: "600 ",
+                color: "black !important",
+                borderBottom: "#0077FF",
+              },
+            }}
           >
             <Tab
               style={{
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "600",
+                color: "#9298A3",
                 fontSize: "17px",
-                padding: "12px 16px",
                 textTransform: "capitalize",
               }}
               label="Home Feed"
@@ -53,10 +60,10 @@ const HostHome = () => {
             />
             <Tab
               style={{
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
+                color: "#9298A3",
                 fontSize: "17px",
-                padding: "12px 16px",
                 textTransform: "capitalize",
               }}
               label="Notifications"
