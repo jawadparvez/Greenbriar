@@ -4,7 +4,9 @@ import Register1 from './Register1'
 import Register2 from './Register2'
 
 function Register() {
-    
+
+
+    //Declaration page,form data
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
       name: "",
@@ -15,7 +17,9 @@ function Register() {
       restaurantAddress: "",
       tableCount: ""
     });   
+    
 
+    //Component List
     const componentList = [
       <Register1
         formData={formData}
@@ -30,6 +34,9 @@ function Register() {
         setPage={setPage}
       />,
     ];
+
+
+    //return Statement
   return <div>
     {componentList[page]}
   </div>;

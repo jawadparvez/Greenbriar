@@ -178,11 +178,6 @@ function Register({ page, setPage, formData, setFormData }) {
               variant="outlined"
               className="form-group"
               size="small"
-              // value={formData.confirmpassword} //setting the value of the form to the props value
-              // onChange={
-              //   (e) =>
-              //     setFormData({ ...formData, confirmpassword: e.target.value }) //setting the formData to the value input of the textfield
-              // }
             />
             <FormHelperText id="standard-weight-helper-text">
               Passwords must match
@@ -205,7 +200,6 @@ function Register({ page, setPage, formData, setFormData }) {
               setPage(page + 1);
             }}
           >
-            {" "}
             Next
           </Link>
 

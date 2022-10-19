@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import Container from "@mui/material/Container";
 import { Checkbox, Link, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -13,16 +12,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { history } from "../../_helpers";
 import { authActions } from "../../_store";
 import "./login.css";
-export { Login };
 
 function Login() {
+
+  // Declaration of dispatch and authUser
   const dispatch = useDispatch();
   const authUser = useSelector((x) => x.auth.user);
-  const authError = useSelector((x) => x.auth.error);
 
-  if (authUser) history.navigate("/home");
-  useEffect(() => {
-  }, []);
 
   // form validation rules
   const validationSchema = Yup.object().shape({
@@ -35,23 +31,90 @@ function Login() {
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors, isSubmitting } = formState;
 
+
+  //Submitting Username, password
   function onSubmit({ username, password }) {
     return dispatch(authActions.login({ username, password }));
   }
 
+
+  //Navigation
   let navigate = useNavigate();
-  function handleClick() {
+
+  function handleNavigateSignUp() {
     navigate("/signup");
   }
-  function handleClickk() {
+  function handleNavigateForgotPassword() {
     navigate("/forgotpassword");
   }
+  if (authUser) history.navigate("/home");
 
+
+  //Styling Components
+  const StyleTextField = {
+    "& .MuiInputLabel-root": {
+      color: "#667085",
+      fontFamily: "Montserrat",
+    }, //styles the label
+    "& .MuiOutlinedInput-root": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+        borderRadius: "8px",
+        height: "47px",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+      },
+    },
+  };
+  const SignInButton = {
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    fontSize: "16px",
+    fontWeight: "500 ",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+    fontFamily: "Montserrat",
+  };
+
+  const SignInWithGoogle = {
+    borderColor: "black",
+    borderRadius: "8px",
+    fontFamily: "Montserrat",
+    fontSize: "16px",
+    fontWeight: "500 !important",
+    width: "hug(159px)",
+    border: "1px solid #00000",
+    height: "44px",
+    color: "#0077FF",
+  }
+
+  const StyleCheckbox = {
+    color: "#D0D5DD",
+    marginLeft: "0px",
+    position: "relative",
+    left: "-10px",
+    "&.Mui-checked": {
+      color: "#0077FF",
+    },
+  };
+
+
+  //return statement
   return (
     <div>
       <Container maxWidth="xs">
         <div className="margin-top">
           <form onSubmit={handleSubmit(onSubmit)}>
+            {" "}
+            {/*Form */}
             <h4 className="title">Sign In</h4>
             <p className="welcome-text">
               Welcome back! Please enter your <br /> details below
@@ -61,27 +124,7 @@ function Login() {
 
               <TextField
                 fullWidth
-                sx={{
-                  "& .MuiInputLabel-root": {
-                    color: "#667085",
-                    fontFamily: "Montserrat",
-                  }, //styles the label
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": {
-                      borderColor: "#000000",
-                      border: "1px solid",
-                      borderRadius: "8px",
-                      height: "47px",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-                  "& .MuiOutlinedInput-root.Mui-focused": {
-                    "& > fieldset": {
-                      borderColor: "#000000",
-                      border: "1px solid",
-                    },
-                  },
-                }}
+                sx={StyleTextField}
                 label="Enter your email"
                 variant="outlined"
                 name="username"
@@ -95,27 +138,7 @@ function Login() {
               <h5 className="left">Password</h5>
               <TextField
                 fullWidth
-                sx={{
-                  "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": {
-                      borderColor: "#000000",
-                      border: "1px solid",
-                      borderRadius: "8px",
-                      height: "47px",
-                    },
-                    "& > placeholder": {
-                      fontWeight: "900",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-                  "& .MuiOutlinedInput-root.Mui-focused": {
-                    "& > fieldset": {
-                      borderColor: "#000000",
-                      border: "1px solid",
-                    },
-                  },
-                }}
+                sx={StyleTextField}
                 label="Enter your password"
                 size="small"
                 type="password"
@@ -130,15 +153,7 @@ function Login() {
             <Grid container spacing={0}>
               <Grid className="checkbox" item xs={1}>
                 <Checkbox
-                  sx={{
-                    color: "#D0D5DD",
-                    marginLeft: "0px",
-                    position: "relative",
-                    left: "-10px",
-                    "&.Mui-checked": {
-                      color: "#0077FF",
-                    },
-                  }}
+                  sx={StyleCheckbox}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -147,7 +162,7 @@ function Login() {
               <Grid item xs={5}>
                 <div className="float">
                   <Link
-                    onClick={handleClickk}
+                    onClick={handleNavigateForgotPassword}
                     style={{
                       textDecoration: "none",
                       color: "#0077FF",
@@ -159,45 +174,20 @@ function Login() {
                 </div>
               </Grid>
             </Grid>
-
             <Button
               fullWidth
               className="signin-button button"
-              sx={{
-                color: "white",
-                backgroundColor: "#0077FF",
-                borderColor: "black",
-                fontSize: "16px!important",
-                fontWeight: "500 !important",
-                borderRadius: "8px",
-                border: "1px solid black",
-                height: "44px",
-                fontFamily: "Montserrat",
-              }}
+              sx={SignInButton}
               variant="contained"
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting && (
-                <span className="spinner-border spinner-border-sm mr-1"></span>
-              )}
               Sign In
             </Button>
-
             <Button
               className="google-button button"
               fullWidth
-              sx={{
-                borderColor: "black",
-                borderRadius: "8px",
-                fontFamily: "Montserrat!important",
-                fontSize: "16px!important",
-                fontWeight: "500!important",
-                width: "hug(159px)",
-                border: "1px solid #00000",
-                height: "44px",
-                color: "#0077FF",
-              }}
+              sx={SignInWithGoogle}
               variant="outlined"
               startIcon={<img className="google-icon" src={Logo} alt=""></img>}
             >
@@ -213,7 +203,7 @@ function Login() {
                 <Link
                   style={{ textDecoration: "none" }}
                   className="Sign-Up"
-                  onClick={handleClick}
+                  onClick={handleNavigateSignUp}
                 >
                   Sign up
                 </Link>
