@@ -124,10 +124,14 @@
     margin-left: -3%!important;
 
 }
-.center-t-cell{
+.center-t-cellphonenumber{
     display: flex;
-    text-align: center;
     margin-top: 10px!important;
+    margin-left: 11%!important;
+}
+.center-t-timetab{
+    display: flex;
+    margin-top: 10px !important;
     margin-left: 12%!important;
 
 }

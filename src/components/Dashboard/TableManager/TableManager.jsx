@@ -872,13 +872,13 @@ function TableManager() {
               <span className="center-t-name">Name</span>
             </Grid>
             <Grid item xs={2}>
-              <span className="center-t-r">Time</span>
+              <span className="center-t-timetab">Time</span>
             </Grid>
             <Grid item xs={2}>
               <span className="center-t-party">Party</span>
             </Grid>
-            <Grid item xs={4}>
-              <span className="center-t-cell">Cell Number</span>
+            <Grid item xs={5}>
+              <span className="center-t-cellphonenumber">Cell Number</span>
             </Grid>
           </Grid>
 
