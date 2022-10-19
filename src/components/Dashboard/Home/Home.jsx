@@ -46,7 +46,7 @@ function Home() {
             sx={{
               "& .Mui-selected": {
                 fontWeight: "600 ",
-                color:"black !important",
+                color: "black !important",
                 borderBottom: "#0077FF",
               },
             }}
@@ -54,21 +54,23 @@ function Home() {
             <Tab
               style={{
                 fontFamily: "Montserrat",
-                marginLeft:"10px",
+                marginLeft: "10px",
                 fontSize: "17px",
                 textTransform: "capitalize",
                 color: "#9298A3",
+                padding: "0px",
               }}
               label="Home Feed"
               value="1"
             />
             <Tab
               style={{
+                marginLeft:"10px",
                 fontFamily: "Montserrat",
-                paddingLeft:"10px",
                 fontSize: "17px",
                 textTransform: "capitalize",
                 color: "#9298A3",
+                padding: "0px",
               }}
               label="Notifications"
               value="2"

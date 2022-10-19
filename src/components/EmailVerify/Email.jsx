@@ -8,13 +8,28 @@ import { useNavigate } from "react-router-dom";
 import "./Email.css"
 
 function Email() {
+
+  //Navigation
   let navigate = useNavigate();
-  function handleClick() {
+  function handleNewPassword() {
     navigate("/newpassword");
   }
-  function handleClickk() {
+  function handleHome() {
     navigate("/");
   }
+
+
+  //Styled Component
+  const StyleButton = {
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+  };
+
+  //Return Statement
   return (
     <div>
       <Container maxWidth="xs">
@@ -37,16 +52,9 @@ function Email() {
           <Button
             fullWidth
             className="google-button button"
-            sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              height: "44px",
-            }}
+            sx={StyleButton}
             variant="contained"
-            onClick={handleClick}
+            onClick={handleNewPassword}
           >
             Open email app
           </Button>
@@ -59,7 +67,7 @@ function Email() {
                 <Link
                   style={{ textDecoration: "none", color: "#0077FF" }}
                   className="resendLink"
-                  onClick={handleClickk}
+                  onClick={handleHome}
                 >
                   Click to resend
                 </Link>
@@ -67,7 +75,7 @@ function Email() {
             </Grid>
           </div>
           <div className="mt-40">
-            <Link style={{ textDecoration: "none" }} onClick={handleClick}>
+            <Link style={{ textDecoration: "none" }} onClick={handleHome}>
               <img className="arrow-icon-verify" src={Arrow} alt=""></img>
               <span className="spacing">Back to log in</span>
             </Link>

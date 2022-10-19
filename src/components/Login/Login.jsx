@@ -1,6 +1,8 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { Checkbox, Link, Button } from "@mui/material";
+import { Link,} from "@mui/material";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Logo from "../../Assets/Images/Google-icon.png";
@@ -47,7 +49,7 @@ function Login() {
   function handleNavigateForgotPassword() {
     navigate("/forgotpassword");
   }
-  if (authUser) history.navigate("/home");
+  if (authUser) navigate("/home");
 
 
   //Styling Components

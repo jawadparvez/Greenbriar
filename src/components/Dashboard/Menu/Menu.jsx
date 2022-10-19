@@ -457,6 +457,7 @@ let navigate = useNavigate();
                     fontSize: "16px",
                     color: "#667085",
                     textTransform: "capitalize",
+                    padding:'0px'
                   }}
                   label={cat.name}
                   value={cat.id}

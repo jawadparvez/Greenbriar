@@ -36,7 +36,7 @@ function Register() {
     ];
 
 
-    //return Statement
+    //returns Component List
   return <div>
     {componentList[page]}
   </div>;

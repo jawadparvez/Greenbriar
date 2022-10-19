@@ -9,13 +9,45 @@ import Key from "../../Assets/Images/key.png";
 import './newpassword.css'
 
 function NewPassword() {
+
+  //Navigation
   let navigate = useNavigate();
-  function handleClickk() {
+  function handleHome() {
     navigate("/");
   }
-  function handleClick() {
+  function handleResetSuccess() {
     navigate("/resetsuccess");
   }
+
+  //Styled Components
+  const StyleTextField = {
+    "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+    "& .MuiOutlinedInput-root": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+        borderRadius: "8px",
+        height: "47px",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+      },
+    },
+  };
+  const StleButton = {
+              color: "white",
+              backgroundColor: "#0077FF",
+              borderColor: "black",
+              borderRadius: "8px",
+              border: "1px solid black",
+              height: "44px",
+            }
+
+  //Return Statement
   return (
     <div>
       <Container maxWidth="xs">
@@ -29,24 +61,7 @@ function NewPassword() {
           <h5 className="left">Password</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter your password"
             variant="outlined"
@@ -57,24 +72,7 @@ function NewPassword() {
           <FormControl fullWidth={true}>
             <TextField
               fullWidth
-              sx={{
-                "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-                "& .MuiOutlinedInput-root": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                    borderRadius: "8px",
-                    height: "47px",
-                  },
-                },
-                "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-                "& .MuiOutlinedInput-root.Mui-focused": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                  },
-                },
-              }}
+              sx={StyleTextField}
               id="outlined-basic"
               label="Confrim password"
               variant="outlined"
@@ -88,21 +86,14 @@ function NewPassword() {
           <Button
             fullWidth
             className="google-button button"
-            sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              height: "44px",
-            }}
+            sx={StleButton}
             variant="contained"
-            onClick={handleClick}
+            onClick={handleResetSuccess}
           >
             Reset Password
           </Button>
           <div className="mt-40">
-            <Link style={{ textDecoration: "none" }} onClick={handleClickk}>
+            <Link style={{ textDecoration: "none" }} onClick={handleHome}>
               <img className="arrow-icon-verify" src={Arrow} alt=""></img>
               <span className="spacing">Back to log in</span>
             </Link>

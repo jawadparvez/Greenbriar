@@ -5,10 +5,26 @@ import { Button} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./success.css"
 function Success() {
+
+  //Navigation
   let navigate = useNavigate();
   function handleClick() {
     navigate("/forgotpassword");
   }
+
+
+  //Styling Component
+  const StlyeButton = {
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+  };
+
+
+  //return Statement
   return (
     <div>
       <Container maxWidth="xs">
@@ -22,14 +38,7 @@ function Success() {
           <Button
             fullWidth
             className="verify-button button"
-            sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              height: "44px",
-            }}
+            sx={StlyeButton}
             variant="contained"
             onClick={handleClick}
           >

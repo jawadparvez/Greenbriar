@@ -8,11 +8,19 @@ import './verification.css'
 import { Container } from '@mui/system';
 import { useNavigate } from "react-router-dom";
 function Verification() {
+
+    // Declaration  
     const [OTP, setOTP] = useState("");
+
+
+    //Navigation
      let navigate = useNavigate();
      function handleClickk() {
        navigate("/");
      }
+
+
+     //Post OTP data to the database for now
      function handleClick() {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
@@ -37,6 +45,20 @@ function Verification() {
         .catch((error) => console.log("error", error));
        navigate("/success");
      }
+
+
+     //Styling Components
+     const StyleButton = {
+            color: "white",
+            backgroundColor: "#0077FF",
+            borderColor: "black",
+            borderRadius: "8px",
+            border: "1px solid black",
+            height: "44px",
+          }
+
+
+     //return Statement
   return (
     <Container maxWidth="xs">
       <div>
@@ -60,14 +82,7 @@ function Verification() {
         <Button
           fullWidth
           className="verify-button button"
-          sx={{
-            color: "white",
-            backgroundColor: "#0077FF",
-            borderColor: "black",
-            borderRadius: "8px",
-            border: "1px solid black",
-            height: "44px",
-          }}
+          sx={StyleButton}
           variant="contained"
           onClick={handleClick}
         >

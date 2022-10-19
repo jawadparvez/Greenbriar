@@ -7,13 +7,30 @@ import Key from "../../Assets/Images/key.png";
 import { useNavigate } from "react-router-dom";
 
 function Forgot() {
+
+
+  //Navigation
   let navigate = useNavigate();
-  function handleClick() {
+  function handleHome() {
     navigate("/");
   }
-  function handleClickk() {
+  function handleEmailVerify() {
     navigate("/emailverify");
   }
+
+
+  //Styling Components
+  const StyleButton ={
+            color: "white",
+            backgroundColor: "#0077FF",
+            borderColor: "black",
+            borderRadius: "8px",
+            border: "1px solid black",
+            height: "44px",
+          }
+
+
+  //return Statement
   return (
     <div>
       <Container maxWidth="xs">
@@ -53,21 +70,14 @@ function Forgot() {
         <Button
           fullWidth
           className="google-button button"
-          sx={{
-            color: "white",
-            backgroundColor: "#0077FF",
-            borderColor: "black",
-            borderRadius: "8px",
-            border: "1px solid black",
-            height: "44px",
-          }}
+          sx={StyleButton}
           variant="contained"
-          onClick={handleClickk}
+          onClick={handleEmailVerify}
         >
           Reset Password
         </Button>
         <div className="mt-40">
-          <Link style={{ textDecoration: "none" }} onClick={handleClick}>
+          <Link style={{ textDecoration: "none" }} onClick={handleHome}>
             <img className="arrow-icon-verify" src={Arrow} alt=""></img>
             <span className="spacing">Back to log in</span>
           </Link>

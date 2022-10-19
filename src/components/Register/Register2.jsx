@@ -10,11 +10,16 @@ import { useNavigate } from "react-router-dom";
 import './register2.css'
 
 function Register2({ page, setPage, formData, setFormData }) {
+
+
+  //Navigation
   let navigate = useNavigate();
   function handleClick() {
     navigate("/");
   }
 
+  
+  //Posting Register details to Database
   function submitHandle() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -32,9 +37,40 @@ function Register2({ page, setPage, formData, setFormData }) {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-
+      //navigation
       navigate("/verification");
   }
+
+
+  //Styling Components
+  const StyleTextField = {
+    "& .MuiInputLabel-root": { color: "gray" }, //styles the label
+    "& .MuiOutlinedInput-root": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+        borderRadius: "8px",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+      },
+    },
+  };
+  const StyleButton = {
+    color: "white",
+    backgroundColor: "#0077FF",
+    borderColor: "black",
+    borderRadius: "8px",
+    border: "1px solid black",
+    height: "44px",
+  };
+
+
+  //return Statement
   return (
     <div>
       <Container maxWidth="xs">
@@ -47,27 +83,11 @@ function Register2({ page, setPage, formData, setFormData }) {
           >
             <img className="arrow-icon" src={Arrow} alt=""></img>
           </Link>
-          <h5 className="left-1">Resturant Name</h5>
+          <h5 className="left marginTop20">Resturant Name</h5>
 
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter resturant name"
             variant="outlined"
@@ -83,23 +103,7 @@ function Register2({ page, setPage, formData, setFormData }) {
           <h5 className="left">Resturant Address</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter resturant address"
             variant="outlined"
@@ -115,23 +119,7 @@ function Register2({ page, setPage, formData, setFormData }) {
           <h5 className="left">Number of Tables</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter number"
             variant="outlined"
@@ -149,20 +137,12 @@ function Register2({ page, setPage, formData, setFormData }) {
           <Button
             fullWidth
             className="google-button button"
-            sx={{
-              color: "white",
-              backgroundColor: "#0077FF",
-              borderColor: "black",
-              borderRadius: "8px",
-              border: "1px solid black",
-              height: "44px",
-            }}
+            sx={StyleButton}
             variant="contained"
             onClick={() => {
               submitHandle();
             }}
           >
-            {" "}
             Create Account
           </Button>
           <div className="alreadyy-account">

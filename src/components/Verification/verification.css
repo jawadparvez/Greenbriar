@@ -3,34 +3,29 @@
 }
 
 .code-text{
-    font-family: 'Montserrat'!important;
-    font-style: normal!important;
+    font-family: 'Montserrat';
+    font-style: normal;
     font-weight: 500!important;
-    font-size: 24px!important;
-    line-height: 32px!important;
-    /* identical to box height, or 133% */
-
+    font-size: 24px;
+    line-height: 32px;
     text-align: center;
     margin-top: 24px;
-    /* Gray/900 */
-
     color: #101828;
-    margin-bottom: 0px;
-    }
+    margin-bottom: 5px;
+}
 
 .number-text{
     font-weight: 400!important;
-    font-size: 15px!important;
-    line-height: 24px!important;
-    /* or 150% */
-
+    font-size: 15px;
+    line-height: 24px;
     text-align: center;
-
     color: #000000;
+    margin-bottom: 20px;
 
 }
+
 .center input{
-    margin-top: 5px !important;
+    margin-top: 5px ;
     font-weight: 500;
     font-size: 48px;
     line-height: 60px;
@@ -46,12 +41,12 @@
 .flex{
     display: block;
     margin-left:20px;
-font-family: Montserrat!important;}
+    font-family: Montserrat!important;
+}
+
 .verify-button{
     margin-top: 30px!important;
 }
-
-
 
 .spacing{
     margin-left: 10px;
@@ -59,11 +54,11 @@ font-family: Montserrat!important;}
     font-size: 14px;
     color: #0077FF;
 }
+
 .css-1ps4owl-MuiTypography-root-MuiLink-root{
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 .mt-40{

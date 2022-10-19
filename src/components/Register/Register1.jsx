@@ -3,46 +3,56 @@ import Container from '@mui/material/Container';
 import {Link } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { FormControl, FormHelperText } from '@mui/material'
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import WDot from '../../Assets/Images/wDot.png' 
 import Dot from "../../Assets/Images/Dot.png";
 import { useNavigate } from "react-router-dom";
 import "./register.css"
 
 function Register({ page, setPage, formData, setFormData }) {
+
+  //Navigation
   let navigate = useNavigate();
   function handleClick() {
     navigate("/");
   }
+
+
+  //Styling Components
+  const StyleTextField = {
+    "& .MuiInputLabel-root": {
+      color: "#667085",
+      fontFamily: "Montserrat",
+    }, //styles the label
+    "& .MuiOutlinedInput-root": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+        borderRadius: "8px",
+        height: "47px",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+      },
+    },
+  };
+
+
+  //Return statement
   return (
     <div>
       <Container maxWidth="xs">
         <div className="margin-top">
           <h5 className="title">Personal Info</h5>
-
           <h5 className="left">First & Last Name</h5>
 
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
-            id="outlined-basic"
+            sx={StyleTextField}
             label="Enter your first and last name"
             variant="outlined"
             className="form-group"
@@ -56,24 +66,7 @@ function Register({ page, setPage, formData, setFormData }) {
           <h5 className="left">Mobile Number</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter your phone number"
             variant="outlined"
@@ -88,25 +81,8 @@ function Register({ page, setPage, formData, setFormData }) {
           <h5 className="left">Email</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
             id="outlined-basic"
+            sx={StyleTextField}
             label="Enter your email"
             variant="outlined"
             className="form-group"
@@ -120,24 +96,7 @@ function Register({ page, setPage, formData, setFormData }) {
           <h5 className="left">Password</h5>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={StyleTextField}
             id="outlined-basic"
             label="Enter your password"
             variant="outlined"
@@ -154,24 +113,7 @@ function Register({ page, setPage, formData, setFormData }) {
           <FormControl fullWidth={true}>
             <TextField
               fullWidth
-              sx={{
-                "& .MuiInputLabel-root": { color: "gray" }, //styles the label
-                "& .MuiOutlinedInput-root": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                    borderRadius: "8px",
-                    height: "47px",
-                  },
-                },
-                "& .MuiInputLabel-root.Mui-focused": { color: "gray" },
-                "& .MuiOutlinedInput-root.Mui-focused": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                  },
-                },
-              }}
+              sx={StyleTextField}
               id="outlined-basic"
               type="password"
               label="Confirm password"

@@ -4,36 +4,18 @@
     left: 20px;
 }
 
-.left-1{
-    font-style: normal;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    line-height: 20px !important;
-    /* identical to box height, or 143% */
-
-    text-align: left;
-    margin-bottom: 6px!important;
-    color: #000000;
-
-margin-top: 60px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+.marginTop20{
+    margin-top: 60px!important;
 }
 
 .wdot-icon{
-    margin-left: 10px!important;
+    margin-left: 10px;
 }
+
 .dot-icon{
     margin-left: 5px;
 }
-.align-center {
-    text-align: center;
-    margin-top: 40px;
-}
+
 .alreadyy-account{
     margin-top: 65% !important;
 }
