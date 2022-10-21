@@ -21,81 +21,97 @@ import { useNavigate } from "react-router-dom";
 import "./menu.css";
 
 function Menu() {
+  //Declaration Create Category
   const [openCreateCat, setOpenCreateCat] = useState(false);
-  const [open1, setOpen1] = useState(false);
-  const [opennn, setOpennn] = useState(false);
-  const [opennnn, setOpennnn] = useState(false);
-  const [opene, setOpene] = useState(false);
-
   const handleOpenCreateCat = () => setOpenCreateCat(true);
   const handleCloseCreateCat = () => setOpenCreateCat(false);
-  const handleOpen1 = () => setOpen1(true);
-  const handleClosee = () => setOpen1(false);
-  const handleOpennn = () => setOpennn(true);
-  const handleCloseee = () => setOpennn(false);
-  const handleOpennnn = () => setOpennnn(true);
-  const handleCloseeee = () => setOpennnn(false);
-  const handleOpene = () => setOpene(true);
-  const handleCloser = () => setOpene(false);
 
-  function handleOpenClose () {
-    handleCloseee();
+  //Declaration Remove Category
+  const [openRemoveCat, setOpenRemoveCat] = useState(false);
+  const handleOpenRemoveCat = () => setOpenRemoveCat(true);
+  const handleCloseRemoveCat = () => setOpenRemoveCat(false);
+
+  //Declaration Create Item
+  const [openCreateItem, setOpenCreateItem] = useState(false);
+  const handleOpenCreateItem = () => setOpenCreateItem(true);
+  const handleCloseCreateItem = () => setOpenCreateItem(false);
+
+  //Declaration Update Item
+  const [openUpdateItem, setOpenUpdateItem] = useState(false);
+  const handleOpenUpdateItem = () => setOpenUpdateItem(true);
+  const handleCloseUpdateItem = () => setOpenUpdateItem(false);
+
+  //Declaration Remove Item
+  const [openRemoveItem, setOpenRemoveItem] = useState(false);
+  const handleOpenRemoveItem = () => setOpenRemoveItem(true);
+  const handleCloseRemoveItem = () => setOpenRemoveItem(false);
+
+  //Open Remove Item Modal
+  function handleOpenRemoveItemModal() {
+    handleOpenRemoveItem();
+    handleCloseUpdateItem();
   }
 
-  function handleOpenClose2() {
-    handleOpene();
-    handleCloseeee();
-  }
-
+  //Declarting category and Item Variable
   const [category, setCategory] = useState([]);
   const [item, setItem] = useState([]);
- function fetchcat() {
-  fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
-    .then((response) => response.json())
-    .then((result) => {
-      setCategory(result);
-      if (result.length) {
-        setWtext("hidden");
-        setBtext("");
-      }
-      console.log("Categories are being displayed from the database");
-    });
- }
+
+  // Declare Navigation
+  let navigate = useNavigate();
+
+  //Fetch Category
+  function fetchcat() {
+    fetch("https://jawad-fake-server-app.herokuapp.com/categoryy")
+      .then((response) => response.json())
+      .then((result) => {
+        setCategory(result);
+        if (result.length) {
+          setWtext("hidden");
+          setBtext("");
+        }
+        console.log("Categories are being displayed from the database");
+      });
+  }
   useEffect(() => {
     fetchcat();
-      
   }, []);
 
+  //Fetch Items
   function fetchitem() {
-  fetch("https://jawad-fake-server-app.herokuapp.com/item")
-  .then((response) => response.json())
-  .then((result) => {
-    setItem(result);
-    console.log("Items are being retrieved from the database");
-  });
+    fetch("https://jawad-fake-server-app.herokuapp.com/item")
+      .then((response) => response.json())
+      .then((result) => {
+        setItem(result);
+        console.log("Items are being retrieved from the database");
+      });
   }
   useEffect(() => {
     fetchitem();
   }, []);
 
-
-
-
-  const [value, setValue] = useState("1");
+  //Text to show on Empty Category
   const [wtext, setWtext] = useState("");
-   const [btext, setBtext] = useState("hidden");
+
+  //Buttons to hide on Empty category
+  const [btext, setBtext] = useState("hidden");
+
+  // Tab context Value
+  const [value, setValue] = useState("1");
+
+  //Selected tab and set value
   const [selectedtab, setSelectedtab] = useState();
   const handleTabChange = (event, newTabIndex) => {
     setValue(newTabIndex);
-     setSelectedtab(event.target.ariaPlaceholder)
-
+    setSelectedtab(event.target.ariaPlaceholder);
   };
 
+  //Posting Category Schema
   const [catergoryname, setCategoryname] = useState({
     name: "",
   });
 
-  function submitHandle() {
+  //Posting Data to Database
+  function submitCreateCategory() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -115,24 +131,21 @@ function Menu() {
       .then((response) => response.text())
       .then((result) => fetchcat())
       .catch((error) => console.log("error", error));
-      
-      handleCloseCreateCat();
-  }
-let navigate = useNavigate();
 
-  const [removecategory, setRemovecategory] = useState([]);
-  function submitHandlee(){
+    handleCloseCreateCat();
+  }
+
+  //Delete Category
+  function submitRemoveCategory() {
     if (deletecat.length <= 0) {
       console.log("You haven't selected anything to delete");
     } else {
       for (var i = 0; i < deletecat.length; i++) deleteCategory(deletecat[i]);
     }
     navigate("/menu");
-    handleClosee();
+    handleCloseRemoveCat();
+  }
 
-    }
-    
-  
   function deleteCategory(id) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -147,141 +160,139 @@ let navigate = useNavigate();
     };
 
     fetch(
-      "https://jawad-fake-server-app.herokuapp.com/categoryy/"+id,
+      "https://jawad-fake-server-app.herokuapp.com/categoryy/" + id,
       requestOptions
     )
       .then((response) => response.text())
       .then((result) => fetchcat())
       .catch((error) => console.log("error", error));
-
-
   }
-  
-    const [itemname, setItemname] = useState({
-      name: "",
-      category: 0,
-      price: "",
-      description: "",
-    });
 
-    function submitHandling() {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      itemname.category = parseInt(selectedtab);
-      var raw = JSON.stringify(itemname);
+  //Posting Items to Database Schema
+  const [itemname, setItemname] = useState({
+    name: "",
+    category: 0,
+    price: "",
+    description: "",
+  });
 
-      var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-      };
+  function submitCreateItem() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    itemname.category = parseInt(selectedtab);
+    var raw = JSON.stringify(itemname);
 
-      fetch("https://jawad-fake-server-app.herokuapp.com/item/", requestOptions)
-        .then((response) => response.text())
-        .then((result) => fetchitem())
-        .catch((error) => console.log("error", error));
-
-      handleOpenClose();
-    }
-
-
-    function handleItemPut() {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      var raw = JSON.stringify(itemarray);
-
-      var requestOptions = {
-        method: "PUT",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-      };
-
-      fetch(
-        "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
-        requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => fetchitem())
-        .catch((error) => console.log("error", error));
-
-        handleCloseeee();
-    }
-
-    function handleItemDelete () {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-
-      var requestOptions = {
-        method: "DELETE",
-        headers: myHeaders,
-        redirect: "follow",
-      };
-
-      fetch(
-        "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
-        requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => fetchitem())
-        .catch((error) => console.log("error", error));
-
-        handleCloser();
-    }
-
-    const [valuee, setValuee] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-      setValuee(newValue);
-    };
-    const deletecat = [];
-    const [isChecked, setisChecked] = useState([]);
-    const handleCheckbox = (e) => {
-      const { value, checked } = e.target;
-      if (checked && check(deletecat, value)) {
-        deletecat.push(value);
-        console.log(deletecat);
-      } else if (!checked && !check(deletecat, value)) {
-        var index = deletecat.indexOf(value);
-        deletecat.splice(index, 1);
-        console.log(deletecat);
-      }
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
     };
 
-    function check(a, name) {
-      if(a.indexOf(name) != -1 ) {
-        return false;
-      }
-      else{
-        return true;
+    fetch("https://jawad-fake-server-app.herokuapp.com/item/", requestOptions)
+      .then((response) => response.text())
+      .then((result) => fetchitem())
+      .catch((error) => console.log("error", error));
+
+      handleCloseCreateItem();
+  }
+
+  //Update Item Data
+  function handleItemPut() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(itemarray);
+
+    var requestOptions = {
+      method: "PUT",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => fetchitem())
+      .catch((error) => console.log("error", error));
+
+    handleCloseUpdateItem();
+  }
+
+  //Delete Item from database
+  function handleItemDelete() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://jawad-fake-server-app.herokuapp.com/item/" + itemarray.id,
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => fetchitem())
+      .catch((error) => console.log("error", error));
+
+    handleCloseRemoveItem();
+  }
+
+  const [valueTabList, setValueTabList] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValueTabList(newValue);
+  };
+
+  // Delete Catergory Logic to handle all checkboxes and delete the relevant data
+  const deletecat = [];
+
+  const handleCheckbox = (e) => {
+    const { value, checked } = e.target;
+    if (checked && check(deletecat, value)) {
+      deletecat.push(value);
+      console.log(deletecat);
+    } else if (!checked && !check(deletecat, value)) {
+      var index = deletecat.indexOf(value);
+      deletecat.splice(index, 1);
+      console.log(deletecat);
+    }
+  };
+
+  function check(a, name) {
+    if (a.indexOf(name) != -1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  //Update Item and Schema
+  const [itemarray, setItemarray] = useState({
+    id: 0,
+    name: "",
+    category: 0,
+    price: "",
+    description: "",
+  });
+
+  function handleitem(e) {
+    for (var i = 0; i < item.length; i++) {
+      if (item[i].id == e.target.ariaPlaceholder) {
+        setItemarray(item[i]);
       }
     }
+    handleOpenUpdateItem();
+  }
 
-    const [itemarray, setItemarray] = useState({
-      id : 0,
-      name: "",
-      category: 0,
-      price: "",
-      description: "",
-  })
-    function handleitem (e) {
-      for(var i =0; i<item.length; i++)
-      { 
-        if(item[i].id == e.target.ariaPlaceholder)
-        {
-          setItemarray(item[i])
-          
-        }
-      }
-      handleOpennnn();
-    }
-
-    
-
-  const stylee = {
+  //Styled Component
+  const styleCategoryAddModal = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -298,7 +309,8 @@ let navigate = useNavigate();
     zIndex: "+1",
     p: 4,
   };
-  const style = {
+
+  const styleDeleteCat = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -315,7 +327,7 @@ let navigate = useNavigate();
     zIndex: "+1",
     p: 4,
   };
-  const styl = {
+  const styleItemModal = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -332,30 +344,80 @@ let navigate = useNavigate();
     zIndex: "+1",
     p: 4,
   };
+
+  const AddItemButton = {
+    marginTop: "20px",
+    marginLeft: "auto",
+    width: "max-content",
+    paddingTop: "3px",
+    paddingLeft: "10px",
+    paddingRight: "15px",
+    justifyContent: "end",
+    border: "1px solid black",
+    height: "30px",
+    borderRadius: "8px",
+  };
+
+  const CategoryRemoveButton = {
+    marginTop: "20px",
+    marginLeft: "auto",
+    marginRight: "10px",
+    width: "max-content",
+    paddingTop: "3px",
+    paddingLeft: "10px",
+    paddingRight: "15px",
+    justifyContent: "end",
+    border: "1px solid black",
+    height: "30px",
+    borderRadius: "8px",
+  };
+
+  const CategoryAddButton = {
+    marginTop: "20px",
+    marginLeft: "0px!important",
+    marginRight: "10px !important",
+    width: "max-content",
+    paddingTop: "3px",
+    paddingLeft: "10px",
+    paddingRight: "15px",
+    justifyContent: "end",
+    border: "1px solid black",
+    height: "30px",
+    borderRadius: "8px",
+  };
+
+  const styletextField = {
+              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  fontFamily: "Montserrat",
+                  fontWeight: "700",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  height: "47px",
+                },
+              },
+              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "#000000",
+                  border: "1px solid",
+                },
+              },
+            }
+
+  //return Statement
   return (
     <div>
       <Navbar />
       <h4 className="bolderr text-color">Menu</h4>
-      {category.map((cat, index) => {
-        return <></>;
-      })}
       <Grid container spacing={0}>
         <Grid item xs={4}>
           <Card
             className={`${btext}`}
-            style={{
-              marginTop: "20px",
-              marginLeft: "auto",
-              width: "max-content",
-              paddingTop: "3px",
-              paddingLeft: "10px",
-              paddingRight: "15px",
-              justifyContent: "end",
-              border: "1px solid black",
-              height: "30px",
-              borderRadius: "8px",
-            }}
-            onClick={handleOpennn}
+            style={AddItemButton}
+            onClick={handleOpenCreateItem}
           >
             <Link
               style={{
@@ -371,20 +433,8 @@ let navigate = useNavigate();
         <Grid item xs={4}>
           <Card
             className={`${btext}`}
-            style={{
-              marginTop: "20px",
-              marginLeft: "auto",
-              marginRight: "10px",
-              width: "max-content",
-              paddingTop: "3px",
-              paddingLeft: "10px",
-              paddingRight: "15px",
-              justifyContent: "end",
-              border: "1px solid black",
-              height: "30px",
-              borderRadius: "8px",
-            }}
-            onClick={handleOpen1}
+            style={CategoryRemoveButton}
+            onClick={handleOpenRemoveCat}
           >
             <Link
               style={{
@@ -398,22 +448,7 @@ let navigate = useNavigate();
           </Card>
         </Grid>
         <Grid item xs={4}>
-          <Card
-            style={{
-              marginTop: "20px",
-              marginLeft: "0px!important",
-              marginRight: "10px !important",
-              width: "max-content",
-              paddingTop: "3px",
-              paddingLeft: "10px",
-              paddingRight: "15px",
-              justifyContent: "end",
-              border: "1px solid black",
-              height: "30px",
-              borderRadius: "8px",
-            }}
-            onClick={handleOpenCreateCat}
-          >
+          <Card style={CategoryAddButton} onClick={handleOpenCreateCat}>
             <Link
               style={{
                 textDecoration: "none",
@@ -439,7 +474,7 @@ let navigate = useNavigate();
                 borderBottom: "#0077FF",
               },
             }}
-            value={valuee}
+            value={valueTabList}
             variant="scrollable"
             scrollButtons="auto"
             indicatorColor="primary"
@@ -564,30 +599,11 @@ let navigate = useNavigate();
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylee}>
+        <Box sx={styleCategoryAddModal}>
           <p className="left">Catergory Name</p>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={styletextField}
             label="Beverages"
             variant="outlined"
             size="small"
@@ -611,7 +627,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             onClick={() => {
-              submitHandle();
+              submitCreateCategory();
             }}
           >
             Add
@@ -638,8 +654,8 @@ let navigate = useNavigate();
           </Button>
         </Box>
       </Modal>
-      <Modal open={open1} onClose={handleClosee}>
-        <Box sx={style}>
+      <Modal open={openRemoveCat} onClose={handleCloseRemoveCat}>
+        <Box sx={styleDeleteCat}>
           <p
             style={{ marginTop: "5px", marginBottom: "5px" }}
             className="center-text bold-text"
@@ -664,7 +680,7 @@ let navigate = useNavigate();
                         sx={{
                           color: "#D0D5DD ",
                           marginLeft: "0px ",
-                          marginTop: "8px ",
+                          marginTop: "8px!important ",
                           marginBottom: "4px ",
                           position: "relative ",
                           padding: "0px",
@@ -712,7 +728,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={submitHandlee}
+            onClick={submitRemoveCategory}
           >
             Remove
           </Button>
@@ -730,14 +746,14 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosee}
+            onClick={handleCloseRemoveCat}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
-      <Modal open={opennn} onClose={handleCloseee}>
-        <Box sx={styl}>
+      <Modal open={openCreateItem} onClose={handleCloseCreateItem}>
+        <Box sx={styleItemModal}>
           <Grid container>
             <Grid item xs={6}>
               <Card
@@ -920,7 +936,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={submitHandling}
+            onClick={submitCreateItem}
           >
             Add
           </Button>
@@ -938,15 +954,14 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseee}
-            // onClick={handleClickkk}
+            onClick={handleCloseCreateItem}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
-      <Modal open={opennnn} onClose={handleCloseeee}>
-        <Box sx={styl}>
+      <Modal open={openUpdateItem} onClose={handleCloseUpdateItem}>
+        <Box sx={styleItemModal}>
           <Card
             style={{
               border: "2px solid black",
@@ -1086,7 +1101,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose2}
+            onClick={handleOpenRemoveItemModal}
           >
             Remove
           </Button>
@@ -1104,20 +1119,19 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseeee}
-            // onClick={handleClickkk}
+            onClick={handleCloseUpdateItem}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={opene}
-        onClose={handleCloser}
+        open={openRemoveItem}
+        onClose={handleCloseRemoveItem}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylee}>
+        <Box sx={styleCategoryAddModal}>
           <p style={{ marginTop: "30px" }} className="success-text">
             Are you sure you want to <br /> remove this item?
           </p>
@@ -1153,8 +1167,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloser}
-            // onClick={handleClickkk}
+            onClick={handleCloseRemoveItem}
           >
             Cancel
           </Button>
