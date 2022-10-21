@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
-import { Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
@@ -8,10 +7,9 @@ import TabList from "@mui/lab/TabList";
 import Card from "@mui/material/Card";
 import Modal from "@mui/material/Modal";
 import TabPanel from "@mui/lab/TabPanel";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Right from "../../../Assets/Images/right.png";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
-import "./tablemanager.css";
 import CircleChecked from "@material-ui/icons/CheckCircleOutline";
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
@@ -26,8 +24,10 @@ import Link from "@material-ui/core/Link";
 import RightWhite from "../../../Assets/Images/rightwhite.png"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useNavigate } from "react-router-dom";
+import "./tablemanager.css";
 
 
+//Select Menu options styling
 const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 0;
 const MenuProps = {
@@ -42,6 +42,7 @@ const MenuProps = {
   },
 };
 
+//static options for server selection
 const names = ["NO SERVER", "OLIVIA J", "ANDRE T", "CHASE G"];
 
 function TableManager() {
@@ -50,8 +51,7 @@ function TableManager() {
     setValue(newTabIndex);
   };
 
-
-
+  //Declaration and fetching table
   const [table, setTable] = useState([]);
 
   function fetchtable() {
@@ -66,6 +66,8 @@ function TableManager() {
     fetchtable();
   }, []);
 
+
+  //declaration and fetch guest 
  const [guest, setGuest] = useState([]);
   function fetchGuest() {
     fetch("https://jawad-fake-server-app.herokuapp.com/guests")
@@ -75,55 +77,69 @@ function TableManager() {
         console.log("guest has been retrieved");
       });
   }
-
   useEffect(() => {
     fetchGuest();
   },[]);
 
-  const [open, setOpen] = useState(false);
-  const [openn, setOpenn] = useState(false);
-  const [opennn, setOpennn] = useState(false);
-  const [opene, setOpene] = useState(false);
-  const [opener, setOpener] = useState(false);
-  const [opening, setOpening] = useState(false);
-  const [openin, setOpenin] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const handleOpenn = () => setOpenn(true);
-  const handleClosee = () => setOpenn(false);
-  const handleOpennn = () => setOpennn(true);
-  const handleCloseee = () => setOpennn(false);
-  const handleOpene = () => setOpene(true);
-  const handleCloser = () => setOpene(false);
-  const handleOpener = () => setOpener(true);
-  const handleCloserr = () => setOpener(false);
-  const handleOpening = () => setOpening(true);
-  const handleClosing = () => setOpening(false);
-  const handleOpenin = () => setOpenin(true);
-  const handleClosin = () => setOpenin(false);
+  //Open Modal for selecting option of adding or removing table 
+  const [openAddRemoveTable, setOpenAddRemoveTable] = useState(false);
+    const handleOpenAddRemoveTable = () => setOpenAddRemoveTable(true);
+    const handleCloseAddRemoveTable = () => setOpenAddRemoveTable(false);
+  
+  // Modal for Selecting and Opening tableSizer
+  const [openTableSizer, setOpenTableSizer] = useState(false);
+    const handleOpenTableSizer = () => setOpenTableSizer(true);
+    const handleCloseTableSizer = () => setOpenTableSizer(false);
 
-  function handleOpenClose() {
-    handleOpennn();
-    handleClose();
+  //Modal declaration to add table to tableamanger
+  const [openAddTable, setOpenAddTable] = useState(false);
+    const handleOpenAddTable = () => setOpenAddTable(true);
+    const handleCloseAddTable = () => setOpenAddTable(false);
+
+  //Modal remove table
+  const [openRemoveTable, setOpenRemoveTable] = useState(false);
+    const handleOpenRemoveTable = () => setOpenRemoveTable(true);
+    const handleCloseRemoveTable = () => setOpenRemoveTable(false);
+
+  //Modal add seats to tables
+  const [openAddTableSizer, setOpenAddTableSizer] = useState(false);
+    const handleOpenAddTableSizer = () => setOpenAddTableSizer(true);
+    const handleCloseAddTableSizer = () => setOpenAddTableSizer(false);
+  
+  // Add Guest to the party manager
+  const [openAddGuest, setOpenAddGuest] = useState(false);
+    const handleOpenAddGuest = () => setOpenAddGuest(true);
+    const handleCloseGuest = () => setOpenAddGuest(false);
+  
+  //Modal to remove Guest
+  const [openRemoveGuest, setOpenRemoveGuest] = useState(false);
+    const handleOpenRemoveGuest = () => setOpenRemoveGuest(true);
+    const handleCloseRemoveGuest = () => setOpenRemoveGuest(false);
+
+  // handle table add modal
+  function handleOpenTableAddModal() {
+    handleOpenAddTable();
+    handleCloseAddRemoveTable();
   }
 
-  function handleOpenClose2() {
-    handleOpene();
-    handleClose();
+  //remove to table modal
+  function handleOpenTableRemoveModal() {
+    handleOpenRemoveTable();
+    handleCloseAddRemoveTable();
   }
 
-  function handleOpenClose3() {
-    handleOpener();
-    handleClosee();
+  //
+  function handleOpenTableSizerModal() {
+    handleOpenAddTableSizer();
+    handleCloseTableSizer();
   }
 
   const [tableToAdd, setTableToAdd] = useState()
-
   function handleAddTables () {
     for (var i = 0; i < tableToAdd; i++) {
       handleAddTable();
     }
-    handleCloseee();
+    handleCloseAddTable();
   }
 
   const [addtable, setAddtable] = useState({
@@ -152,7 +168,6 @@ function TableManager() {
       .catch((error) => console.log("error", error));
   }
 
-
    const deletetable = [];
    const [isChecked, setisChecked] = useState([]);
    const handleCheckbox = (e) => {
@@ -175,7 +190,6 @@ function TableManager() {
    });
 
      const [tableSeatsToAdd, setTableSeatsToAdd] = useState();
-
            const addTableSeats = [];
            const handleSeatsCheckbox = (e) => {
              const { value, checked } = e.target;
@@ -190,8 +204,6 @@ function TableManager() {
            };
 
      function handleAddTablesSeats() {
-
-
       if (!tableSeatsToAdd && addTableSeats <= 0) {
         console.log("nothing is selected to be added");
       } else {
@@ -199,12 +211,8 @@ function TableManager() {
           handleTableSeats(addTableSeats[i]);
         }
       }
-      //  for (var i = 0; i < tableSeatsToAdd; i++) {}
-
-       handleCloserr();
+       handleCloseAddTableSizer();
      }
-
-
 
    function check(a, name) {
      if (a.indexOf(name) != -1) {
@@ -221,7 +229,7 @@ function TableManager() {
         for (var i = 0; i < deletetable.length; i++)
           deleteTable(deletetable[i]);
       }
-      handleCloser();
+      handleCloseRemoveTable();
     }
 
     function deleteTable(id) {
@@ -239,7 +247,6 @@ function TableManager() {
   .then((result) => fetchtable())
   .catch((error) => console.log("error", error));
     }
-
 
         function handleTableSeats(id) {
           var myHeaders = new Headers();
@@ -274,7 +281,6 @@ function TableManager() {
       const [personName, setPersonName] = React.useState([]);
       const [pname, setpname] = React.useState();
 
-
       const handleChange = (event) => {
         const {
           target: { value },
@@ -285,14 +291,12 @@ function TableManager() {
             console.log(event.target.name);
             tablearray = table[i];        
             console.log(table[i]);
-            handleTS(event.target.name,value);
-            
-          }
-          
+            handleTS(event.target.name,value);      
+          }        
         }
       };
 
-            function AddTableServer(id) {
+        function AddTableServer(id) {
               var myHeaders = new Headers();
               myHeaders.append("Content-Type", "application/json");
 
@@ -318,11 +322,8 @@ function TableManager() {
         tablearray.server = value;
         AddTableServer(name);
         console.log(tablearray);
-      }
-
+      }  
     
-    
-
   const [guestname, setGuestname] = useState({
     name: "",
     time:"00:00:00",
@@ -347,8 +348,7 @@ function TableManager() {
       .then((response) => response.text())
       .then((result) => fetchGuest())
       .catch((error) => console.log("error", error));
-
-      handleClosing();
+      handleCloseGuest();
   }
   const [guestarray, setGuestarray] = useState({
     id: 0,
@@ -363,12 +363,10 @@ function TableManager() {
         setGuestarray(guest[i]);
       }
     }
-
   }
    function handleDeleteguest() {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-
 
       var requestOptions = {
         method: "DELETE",
@@ -383,13 +381,10 @@ function TableManager() {
         .then((response) => response.text())
         .then((result) => fetchGuest())
         .catch((error) => console.log("error", error));
-    handleClosin();
+    handleCloseRemoveGuest();
       }
 
-
-
-  
-  const stylee = {
+  const styleAddRemoveTable = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -406,7 +401,7 @@ function TableManager() {
     zIndex: "+1",
     p: 4,
   };
-  const style = {
+  const styleTableSizer = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -423,7 +418,7 @@ function TableManager() {
     zIndex: "+1",
     p: 4,
   };
-  const styleee = {
+  const styleAddTable = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -440,7 +435,7 @@ function TableManager() {
     zIndex: "+1",
     p: 4,
   };
-  const styling = {
+  const styleGuestDetails = {
     position: "absolute",
     paddingTop: "0px !important",
     paddingLeft: "15px !important",
@@ -458,7 +453,7 @@ function TableManager() {
     p: 4,
   };
 
-  
+    //Navigation
     let navigate = useNavigate();
     function handleClick() {
       navigate(-1);
@@ -591,7 +586,7 @@ function TableManager() {
                   textTransform: "capitalize !important",
                 }}
                 variant="contained"
-                onClick={handleOpenn}
+                onClick={handleOpenTableSizer}
                 // onClick={handleClickkk}
               >
                 TSizer
@@ -616,7 +611,7 @@ function TableManager() {
                   textTransform: "capitalize",
                 }}
                 variant="contained"
-                onClick={handleOpen}
+                onClick={handleOpenAddRemoveTable}
               >
                 -/+ Table
               </Button>
@@ -761,7 +756,6 @@ function TableManager() {
                             </p>
                           );
                         }
-
                         return selected.join(", ");
                       }}
                       MenuProps={MenuProps}
@@ -777,7 +771,7 @@ function TableManager() {
                                   textAlign: "left ",
                                   marginLeft: "10px",
                                   marginTop: "-12px ",
-                                  padding:'0px'
+                                  padding: "0px",
                                 }}
                                 checked={personName.indexOf(name) > -1}
                               />
@@ -788,7 +782,7 @@ function TableManager() {
                                   textAlign: "left ",
                                   marginTop: "-5px ",
                                   fontSize: "10px",
-                                  padding:'0px',
+                                  padding: "0px",
                                   color: "#0077FF",
                                   marginLeft: "0px ",
                                 }}
@@ -861,7 +855,7 @@ function TableManager() {
                   height: "80px",
                   borderRadius: "8px",
                 }}
-                onClick={handleOpening}
+                onClick={handleOpenAddGuest}
               >
                 <h4 style={{ fontSize: "19px", marginTop: "21px" }}>+ Guest</h4>
               </Card>
@@ -896,7 +890,7 @@ function TableManager() {
                   height: "24px",
                   borderRadius: "8px",
                 }}
-                onClick={handleOpenin}
+                onClick={handleOpenRemoveGuest}
               >
                 <Grid container>
                   <Grid item xs={1}>
@@ -1137,12 +1131,12 @@ function TableManager() {
       </TabContext>
 
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openAddRemoveTable}
+        onClose={handleCloseAddRemoveTable}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylee}>
+        <Box sx={styleAddRemoveTable}>
           <p style={{ marginTop: "10px" }} className="center">
             -/+ Table
           </p>
@@ -1157,7 +1151,10 @@ function TableManager() {
           >
             <Grid container>
               <Grid item xs={11}>
-                <h4 className="bolder-text-modal " onClick={handleOpenClose}>
+                <h4
+                  className="bolder-text-modal "
+                  onClick={handleOpenTableAddModal}
+                >
                   Add Table
                 </h4>
               </Grid>
@@ -1177,7 +1174,10 @@ function TableManager() {
           >
             <Grid container>
               <Grid item xs={11}>
-                <h4 className="bolder-text-modal" onClick={handleOpenClose2}>
+                <h4
+                  className="bolder-text-modal"
+                  onClick={handleOpenTableRemoveModal}
+                >
                   Remove Table
                 </h4>
               </Grid>
@@ -1201,19 +1201,19 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloseAddRemoveTable}
           >
             Back
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={openn}
-        onClose={handleClosee}
+        open={openTableSizer}
+        onClose={handleCloseTableSizer}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={styleTableSizer}>
           <p className="center">Table Sizer</p>
           <Grid container>
             <Grid item xs={6}>
@@ -1303,7 +1303,7 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose3}
+            onClick={handleOpenTableSizerModal}
           >
             Edit
           </Button>
@@ -1322,19 +1322,19 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosee}
+            onClick={handleCloseTableSizer}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={opennn}
-        onClose={handleCloseee}
+        open={openAddTable}
+        onClose={handleCloseAddTable}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={styleee}>
+        <Box sx={styleAddTable}>
           <p className="center">+ Table</p>
           <input
             type={"number"}
@@ -1440,19 +1440,19 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseee}
+            onClick={handleCloseAddTable}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={opene}
-        onClose={handleCloser}
+        open={openRemoveTable}
+        onClose={handleCloseRemoveTable}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={styleTableSizer}>
           <p
             style={{ marginTop: "10px", marginBottom: "20px" }}
             className="center"
@@ -1582,19 +1582,19 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloser}
+            onClick={handleCloseRemoveTable}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={opener}
-        onClose={handleCloserr}
+        open={openAddTableSizer}
+        onClose={handleCloseAddTableSizer}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={styleTableSizer}>
           <p className="center">Table Sizer</p>
           <input
             type={"number"}
@@ -1738,7 +1738,7 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloserr}
+            onClick={handleCloseAddTableSizer}
           >
             Cancel
           </Button>
@@ -1746,12 +1746,12 @@ function TableManager() {
       </Modal>
 
       <Modal
-        open={opening}
-        onClose={handleClosing}
+        open={openAddGuest}
+        onClose={handleCloseGuest}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={styling}>
+        <Box sx={styleGuestDetails}>
           <p className="left">Name</p>
           <TextField
             fullWidth
@@ -1878,19 +1878,19 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosing}
+            onClick={handleCloseGuest}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={openin}
-        onClose={handleClosin}
+        open={openRemoveGuest}
+        onClose={handleCloseRemoveGuest}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={styling}>
+        <Box sx={styleGuestDetails}>
           <p className="left">Name</p>
           <TextField
             fullWidth
@@ -2004,7 +2004,7 @@ function TableManager() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosin}
+            onClick={handleCloseRemoveGuest}
           >
             Cancel
           </Button>
