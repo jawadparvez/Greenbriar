@@ -387,25 +387,25 @@ function Menu() {
   };
 
   const styletextField = {
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }
+    "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
+    "& .MuiOutlinedInput-root": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        fontFamily: "Montserrat",
+        fontWeight: "700",
+        border: "1px solid",
+        borderRadius: "8px",
+        height: "47px",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& > fieldset": {
+        borderColor: "#000000",
+        border: "1px solid",
+      },
+    },
+  };
 
   //return Statement
   return (
@@ -828,26 +828,7 @@ function Menu() {
           <p className="left">Item Name</p>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={styletextField}
             label="Italy 5 Cheese Dinner"
             variant="outlined"
             size="small"
@@ -859,26 +840,7 @@ function Menu() {
           <p className="left">Price</p>
           <TextField
             fullWidth
-            sx={{
-              "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  height: "47px",
-                },
-              },
-              "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                "& > fieldset": {
-                  borderColor: "#000000",
-                  border: "1px solid",
-                },
-              },
-            }}
+            sx={styletextField}
             label="$21.99"
             variant="outlined"
             size="small"
