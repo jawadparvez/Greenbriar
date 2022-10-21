@@ -21,14 +21,14 @@ import { useNavigate } from "react-router-dom";
 import "./menu.css";
 
 function Menu() {
-  const [open, setOpen] = useState(false);
+  const [openCreateCat, setOpenCreateCat] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [opennn, setOpennn] = useState(false);
   const [opennnn, setOpennnn] = useState(false);
   const [opene, setOpene] = useState(false);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpenCreateCat = () => setOpenCreateCat(true);
+  const handleCloseCreateCat = () => setOpenCreateCat(false);
   const handleOpen1 = () => setOpen1(true);
   const handleClosee = () => setOpen1(false);
   const handleOpennn = () => setOpennn(true);
@@ -116,7 +116,7 @@ function Menu() {
       .then((result) => fetchcat())
       .catch((error) => console.log("error", error));
       
-      handleClose();
+      handleCloseCreateCat();
   }
 let navigate = useNavigate();
 
@@ -412,7 +412,7 @@ let navigate = useNavigate();
               height: "30px",
               borderRadius: "8px",
             }}
-            onClick={handleOpen}
+            onClick={handleOpenCreateCat}
           >
             <Link
               style={{
@@ -457,7 +457,7 @@ let navigate = useNavigate();
                     fontSize: "16px",
                     color: "#667085",
                     textTransform: "capitalize",
-                    padding:'0px'
+                    padding: "0px",
                   }}
                   label={cat.name}
                   value={cat.id}
@@ -559,8 +559,8 @@ let navigate = useNavigate();
         Add your first menu category. Example “Appetizers”.
       </h4>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openCreateCat}
+        onClose={handleCloseCreateCat}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -631,7 +631,7 @@ let navigate = useNavigate();
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloseCreateCat}
             // onClick={handleClickkk}
           >
             Cancel
@@ -662,15 +662,15 @@ let navigate = useNavigate();
                     <Grid className="checkbox-modal" item xs={1}>
                       <Checkbox
                         sx={{
-                          color: "#D0D5DD !important",
-                          marginLeft: "0px !important",
-                          marginTop: "8px !important",
-                          marginBottom: "4px !important",
-                          position: "relative !important",
-                          paddingLeft: "0px !important",
-                          left: "12px !important",
+                          color: "#D0D5DD ",
+                          marginLeft: "0px ",
+                          marginTop: "8px ",
+                          marginBottom: "4px ",
+                          position: "relative ",
+                          padding: "0px",
+                          left: "12px ",
                           "&.Mui-checked": {
-                            color: "#0077FF !important",
+                            color: "#0077FF",
                           },
                         }}
                         icon={<CircleUnchecked />}

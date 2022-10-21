@@ -49,7 +49,7 @@ function Login() {
   function handleNavigateForgotPassword() {
     navigate("/forgotpassword");
   }
-  if (authUser) navigate("/home");
+  if (authUser) history.navigate("/home");
 
 
   //Styling Components
