@@ -254,27 +254,37 @@ const [data, setData] = useState("No result");
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
             onChange={handleTabChange}
+            sx={{
+              "& .Mui-selected": {
+                color: "#0077FF !important",
+                borderBottom: "#0077FF",
+              },
+            }}
             indicatorColor="primary"
             aria-label="lab API tabs example"
           >
             <Tab
               style={{
-                width: "50px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "600",
+                color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Table"
               value="1"
             />
             <Tab
               style={{
-                width: "50px",
+                marginLeft: "10px",
+                minWidth: "auto",
                 fontFamily: "Montserrat",
-                fontWeight: "500",
+                color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Waitlist"
               value="2"
@@ -414,7 +424,7 @@ const [data, setData] = useState("No result");
                   </Grid>
                   <Grid item xs={4}>
                     <Select
-                    fullWidth
+                      fullWidth
                       style={{
                         height: "19px",
                         marginTop: "2px",

@@ -93,9 +93,6 @@ function ConsumerHome() {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
             onChange={handleTabChange}
-            style={{
-              marginTop: "10px",
-            }}
             value={valuee}
             variant="scrollable"
             scrollButtons="auto"
@@ -104,6 +101,7 @@ function ConsumerHome() {
             aria-label="lab API tabs example"
             sx={{
               "& .Mui-selected": {
+                marginTop: "10px",
                 color: "#0077FF !important",
                 borderBottom: "#0077FF",
               },
@@ -112,13 +110,15 @@ function ConsumerHome() {
             {category.map((cat, index) => {
               return (
                 <Tab
-                  sx={{
-                    marginLeft: "0px",
+                  style={{
+                    marginLeft: "15px",
                     minWidth: "auto",
                     fontFamily: "Montserrat",
+                    fontWeight: "500",
+                    fontSize: "16px",
                     color: "#667085",
-                    fontSize: "15px",
                     textTransform: "capitalize",
+                    padding: "0px",
                   }}
                   label={cat.name}
                   value={cat.id}

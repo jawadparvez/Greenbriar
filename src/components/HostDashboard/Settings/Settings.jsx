@@ -89,11 +89,13 @@ function HostSettings() {
             <Tab
               style={{
                 minWidth: "auto",
+                marginLeft: "10px",
                 fontFamily: "Montserrat",
                 fontWeight: "500",
                 fontSize: "15px",
                 color: "#667085",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Profile"
               value="1"
@@ -101,11 +103,13 @@ function HostSettings() {
             <Tab
               style={{
                 minWidth: "auto",
+                marginLeft: "10px",
                 fontFamily: "Montserrat",
                 fontWeight: "500",
                 fontSize: "15px",
                 color: "#667085",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Security"
               value="2"

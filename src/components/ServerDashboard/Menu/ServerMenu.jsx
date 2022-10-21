@@ -151,7 +151,7 @@ function ServerMenu() {
               <TabList
                 onChange={handleTabChange}
                 sx={{
-                  marginTop:'20px',
+                  marginTop: "20px",
                   "& .Mui-selected": {
                     color: "#0077FF !important",
                     borderBottom: "#0077FF",
@@ -174,6 +174,7 @@ function ServerMenu() {
                         color: "#667085",
                         fontSize: "15px",
                         textTransform: "capitalize",
+                        padding: "0px",
                       }}
                       label={cat.name}
                       value={cat.id}
@@ -275,79 +276,80 @@ function ServerMenu() {
       ) : null}
       {showe ? (
         <>
-          <Card
-            style={{
-              border: "1px solid black",
-              marginTop: "30px",
-              height: "148px",
-              marginLeft: "6%",
-              borderRadius: "8px",
-            }}
-          >
-            <Grid container>
-              <Grid item xs={3}>
-                <Card
-                  style={{
-                    border: "1px solid black",
-                    backgroundColor: "#D1E9FF",
-                    fontFamily: "Montserrat",
-                    width: "70px",
-                    height: "70px",
-                    marginTop: "33px",
-                    marginLeft: "10px",
-                    borderRadius: "100px",
-                  }}
-                >
-                  <p
+          <div style={{marginRight:'20px'}}>
+            <Card
+              style={{
+                border: "1px solid black",
+                marginTop: "30px",
+                height: "148px",
+                marginLeft: "6%",
+                borderRadius: "8px",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={3}>
+                  <Card
                     style={{
-                      textAlign: "center",
-                      marginTop: "20px",
-                      fontSize: "15px",
+                      border: "1px solid black",
+                      backgroundColor: "#D1E9FF",
+                      fontFamily: "Montserrat",
+                      width: "70px",
+                      height: "70px",
+                      marginTop: "33px",
+                      marginLeft: "10px",
+                      borderRadius: "100px",
                     }}
                   >
-                    FMS
+                    <p
+                      style={{
+                        textAlign: "center",
+                        marginTop: "20px",
+                        fontSize: "15px",
+                      }}
+                    >
+                      FMS
+                    </p>
+                  </Card>
+                </Grid>
+                <Grid item xs={9}>
+                  <h4
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      marginTop: "20px",
+                      textAlign: "left",
+                      marginLeft: "5px",
+                      marginBottom: "0px",
+                    }}
+                  >
+                    Italy 5 Cheese Dinner
+                  </h4>
+                  <p
+                    style={{
+                      textAlign: "left",
+                      fontSize: "16px",
+                      fontWeight: "600",
+                      marginLeft: "5px",
+                      marginTop: "0px",
+                    }}
+                  >
+                    $21.99
                   </p>
-                </Card>
+                  <p
+                    style={{
+                      textAlign: "left",
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      marginLeft: "5px",
+                      marginTop: "0px",
+                    }}
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscin
+                  </p>
+                </Grid>
               </Grid>
-              <Grid item xs={9}>
-                <h4
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "600",
-                    marginTop: "20px",
-                    textAlign: "left",
-                    marginLeft: "5px",
-                    marginBottom: "0px",
-                  }}
-                >
-                  Italy 5 Cheese Dinner
-                </h4>
-                <p
-                  style={{
-                    textAlign: "left",
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    marginLeft: "5px",
-                    marginTop: "0px",
-                  }}
-                >
-                  $21.99
-                </p>
-                <p
-                  style={{
-                    textAlign: "left",
-                    fontSize: "14px",
-                    fontWeight: "400",
-                    marginLeft: "5px",
-                    marginTop: "0px",
-                  }}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscin
-                </p>
-              </Grid>
-            </Grid>
-          </Card>
-
+            </Card>
+          </div>
           <p
             style={{
               textAlign: "left",

@@ -454,6 +454,7 @@ function TabAndTip() {
               fontFamily: "Montserrat !important",
               height: "44px !important",
               width: "340px",
+              marginBottom:'10px',
             }}
             variant="contained"
             onClick={onClickShoww}

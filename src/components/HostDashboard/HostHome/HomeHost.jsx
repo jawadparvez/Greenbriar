@@ -50,10 +50,12 @@ const HostHome = () => {
             <Tab
               style={{
                 minWidth: "auto",
+                marginLeft:'10px',
                 fontFamily: "Montserrat",
                 color: "#9298A3",
                 fontSize: "17px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Home Feed"
               value="1"
@@ -61,10 +63,13 @@ const HostHome = () => {
             <Tab
               style={{
                 minWidth: "auto",
+                marginLeft:"10px",
                 fontFamily: "Montserrat",
                 color: "#9298A3",
                 fontSize: "17px",
                 textTransform: "capitalize",
+
+                padding: "0px",
               }}
               label="Notifications"
               value="2"

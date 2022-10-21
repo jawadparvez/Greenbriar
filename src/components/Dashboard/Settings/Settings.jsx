@@ -141,6 +141,7 @@ function Settings() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Organization"
               value="1"
@@ -153,6 +154,7 @@ function Settings() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Profile"
               value="2"
@@ -165,6 +167,7 @@ function Settings() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Security"
               value="3"
@@ -177,6 +180,7 @@ function Settings() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Support"
               value="4"
@@ -1201,7 +1205,7 @@ function Settings() {
                       marginTop: "8px !important",
                       marginBottom: "4px !important",
                       position: "relative !important",
-                      paddingLeft: "0px !important",
+                      padding:'0px',
                       left: "0px !important",
                       "&.Mui-checked": {
                         color: "#0077FF !important",

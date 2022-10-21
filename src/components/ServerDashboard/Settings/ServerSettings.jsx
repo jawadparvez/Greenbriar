@@ -94,6 +94,7 @@ function ServerSettings() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Profile"
               value="1"
@@ -101,10 +102,12 @@ function ServerSettings() {
             <Tab
               style={{
                 minWidth: "auto",
+                marginLeft:'10px',
                 fontFamily: "Montserrat",
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Security"
               value="2"

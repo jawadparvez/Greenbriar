@@ -517,6 +517,7 @@ function TableManager() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Table"
               value="1"
@@ -529,6 +530,7 @@ function TableManager() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Waitlist"
               value="2"
@@ -541,6 +543,7 @@ function TableManager() {
                 color: "#667085",
                 fontSize: "15px",
                 textTransform: "capitalize",
+                padding: "0px",
               }}
               label="Orders"
               value="3"
@@ -774,8 +777,7 @@ function TableManager() {
                                   textAlign: "left ",
                                   marginLeft: "10px",
                                   marginTop: "-12px ",
-                                  paddingTop: "0px ",
-                                  paddingBottom: "0px ",
+                                  padding:'0px'
                                 }}
                                 checked={personName.indexOf(name) > -1}
                               />
@@ -786,8 +788,9 @@ function TableManager() {
                                   textAlign: "left ",
                                   marginTop: "-5px ",
                                   fontSize: "10px",
+                                  padding:'0px',
                                   color: "#0077FF",
-                                  marginLeft: "0px",
+                                  marginLeft: "0px ",
                                 }}
                                 primary={name}
                               />
