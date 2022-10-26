@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import { Grid, Modal } from '@material-ui/core';
-import {Divider} from '@material-ui/core';
+import { Grid, Modal, Divider } from "@material-ui/core";
 import { Link } from "@mui/material";
 import { Checkbox, Button } from "@mui/material";
 import Card from "@mui/material/Card";
@@ -12,31 +11,31 @@ import { useNavigate } from "react-router-dom";
 import './users.css'
 
 function Users() {
-      const [open, setOpen] = React.useState(false);
-      const handleOpen = () => setOpen(true);
-      const handleClose = () => setOpen(false);
-            const [opene, setOpene] = React.useState(false);
-            const handleOpene = () => setOpene(true);
-            const handleClosee = () => setOpene(false);
-            const [opener, setOpener] = React.useState(false);
-            const handleOpener = () => setOpener(true);
-            const handleCloser = () => setOpener(false);
-            const [openerr, setOpenerr] = React.useState(false);
-            const handleOpenerr = () => setOpenerr(true);
-            const handleCloserr = () => setOpenerr(false);
+    const [openAddUser, setOpenAddUser] = React.useState(false);
+    const handleOpenAddUser = () => setOpenAddUser(true);
+    const handleCloseAddUser = () => setOpenAddUser(false);
+    const [openEditUser, setOpenEditUser] = React.useState(false);
+    const handleOpenEditRole = () => setOpenEditUser(true);
+    const handleCloseEditRole = () => setOpenEditUser(false);
+    const [openUserInvite, setUserInvite] = React.useState(false);
+    const handleOpenUserInvite = () => setUserInvite(true);
+    const handleCloseUserInvite = () => setUserInvite(false);
+    const [openEditRoleDetails, setOpenEditRoleDetails] = React.useState(false);
+    const handleOpenerr = () => setOpenEditRoleDetails(true);
+    const handleCloserr = () => setOpenEditRoleDetails(false);
 
-              function handleOpenClose() {
-                handleOpene();
-                handleClose();
-              }
-                function handleOpenClose2() {
-                  handleOpener();
-                  handleClosee();
-                }
-                function handleOpenClose3() {
-                  handleOpener();
-                  handleCloserr();
-                }
+    function handleOpenClose() {
+      handleOpenEditRole();
+      handleCloseAddUser();
+    }
+      function handleOpenClose2() {
+        handleOpenUserInvite();
+        handleCloseEditRole();
+      }
+      function handleOpenClose3() {
+        handleOpenUserInvite();
+        handleCloserr();
+      }
 
     const style = {
       position: "absolute",
@@ -124,7 +123,7 @@ function Users() {
                 fontWeight: "500",
                 marginLeft: "3px",
               }}
-              onClick={handleOpen}
+              onClick={handleOpenAddUser}
             >
               Invite
             </Link>
@@ -208,8 +207,8 @@ function Users() {
       </p>
 
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openAddUser}
+        onClose={handleCloseAddUser}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -365,7 +364,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClose}
+            onClick={handleCloseAddUser}
             // onClick={handleClickkk}
           >
             Cancel
@@ -373,8 +372,8 @@ function Users() {
         </Box>
       </Modal>
       <Modal
-        open={opene}
-        onClose={handleClosee}
+        open={openEditUser}
+        onClose={handleCloseEditRole}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -473,7 +472,7 @@ function Users() {
               color: "#FF1F00 !important",
             }}
             variant="contained"
-            onClick={handleClosee}
+            onClick={handleCloseEditRole}
             // onClick={handleClickkk}
           >
             Cancel Invite
@@ -481,8 +480,8 @@ function Users() {
         </Box>
       </Modal>
       <Modal
-        open={opener}
-        onClose={handleCloser}
+        open={openUserInvite}
+        onClose={handleCloseUserInvite}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -616,7 +615,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpener}
+            onClick={handleOpenUserInvite}
             // onClick={handleClickkk}
           >
             Invite
@@ -635,7 +634,7 @@ function Users() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloser}
+            onClick={handleCloseUserInvite}
             // onClick={handleClickkk}
           >
             Cancel
@@ -643,7 +642,7 @@ function Users() {
         </Box>
       </Modal>
       <Modal
-        open={openerr}
+        open={openEditRoleDetails}
         onClose={handleCloserr}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
