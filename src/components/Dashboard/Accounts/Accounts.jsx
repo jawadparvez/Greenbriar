@@ -1,10 +1,8 @@
-import React from 'react'
+import React,{ useState} from 'react'
 import Navbar from '../Navbar/Navbar'
-import { Grid } from "@mui/material";
-import { Link } from "@mui/material";
+import { Grid, Link, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
-import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Modal } from "@material-ui/core";
 import Slider from "@mui/material/Slider";
@@ -22,50 +20,49 @@ import VISA from '../../../Assets/Images/visa.png'
 import Plus from '../../../Assets/Images/plus.png'
 import './accounts.css'
 
-
-
-
-const Input = styled(MuiInput)`
-  width: 50%
-
-`;
+const Input = styled(MuiInput)`width: 50%`;
 
 function Accounts() {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-    const [opene, setOpene] = React.useState(false);
-    const handleOpene = () => setOpene(true);
-    const handleClosee = () => setOpene(false);
-    const [opening, setOpening] = React.useState(false);
-    const handleOpening = () => setOpening(true);
-    const handleCloseing = () => setOpening(false);
-    const [openeing, setOpeneing] = React.useState(false);
-    const handleOpeneing = () => setOpeneing(true);
-    const handleClosing = () => setOpeneing(false);
-    const [openeingg, setOpeneingg] = React.useState(false);
-    const handleOpeneingg = () => setOpeneingg(true);
-    const handleClosingg = () => setOpeneingg(false);
-    const [openingg, setOpeningg] = React.useState(false);
-    const handleOpeningg = () => setOpeningg(true);
-    const handleCloseingg = () => setOpeningg(false);
+    //Modals Open and Close handles
+    const [openAccountLink, setOpenAccountLink] = useState(false);
+    const handleOpenAccountLink = () => setOpenAccountLink(true);
+    const handleCloseAccountLink = () => setOpenAccountLink(false);
+    const [openCardDetails, setOpenCardDetails] = useState(false);
+    const handleOpenCardDetails = () => setOpenCardDetails(true);
+    const handleCloseCardDetails = () => setOpenCardDetails(false);
+    const [openBalance, setOpenBalance] = useState(false);
+    const handleOpenBalance = () => setOpenBalance(true);
+    const handleCloseBalance = () => setOpenBalance(false);
+    const [openCardBalance, setOpenCardBalance] = useState(false);
+    const handleOpenCardBalance = () => setOpenCardBalance(true);
+    const handleCloseCardBalance = () => setOpenCardBalance(false);
+    const [openAmount, setOpenAmount] = useState(false);
+    const handleOpenAmount = () => setOpenAmount(true);
+    const handleCloseAmount = () => setOpenAmount(false);
+    const [openTransfer, setOpenTransfer] = useState(false);
+    const handleOpenTransfer = () => setOpenTransfer(true);
+    const handleCloseTransfer = () => setOpenTransfer(false);
 
-  function handleOpenClose() {
-    handleOpen();
-    handleClosee();
-  }
-  function handleOpenClose2() {
-    handleOpeneingg();
-    handleCloseing();
+  // Handle Modals AccountDetails
+  function handleOpenAccountDetials() {
+    handleOpenAccountLink();
+    handleCloseCardDetails();
   }
 
-    function handleOpenClose3() {
-      handleOpeningg();
-      handleClosingg();
-    }
+  //handle Modals Open Amount 
+  function handleOpenAmountTransfer() {
+    handleOpenAmount();
+    handleCloseBalance();
+  }
 
+  //  handle modal transer money
+  function handleOpenTransferMoney() {
+      handleOpenTransfer();
+      handleCloseAmount();
+  }
 
-    const stylee = {
+  // styling cards link process 
+    const styleCardDetails = {
       position: "absolute",
       paddingTop: "0px !important",
       paddingLeft: "15px !important",
@@ -82,7 +79,9 @@ function Accounts() {
       zIndex: "+1",
       p: 4,
     };
-      const style = {
+
+    // styling balance component
+      const styleBalance = {
         position: "absolute",
         paddingTop: "0px !important",
         paddingLeft: "15px !important",
@@ -99,7 +98,9 @@ function Accounts() {
         zIndex: "+1",
         p: 4,
       };
-      const styling = {
+
+      // stlying linked card details
+      const styleCardRegistered = {
         position: "absolute",
         paddingTop: "0px !important",
         paddingLeft: "15px !important",
@@ -116,6 +117,8 @@ function Accounts() {
         zIndex: "+1",
         p: 4,
       };
+
+      // Stlying Account transfer success modal
       const stylingSuccess = {
         position: "absolute",
         paddingTop: "0px !important",
@@ -133,7 +136,9 @@ function Accounts() {
         zIndex: "+1",
         p: 4,
       };
-         const stylingModal = {
+
+      // Styling 
+      const stylingAmountDetails = {
            position: "absolute",
            paddingTop: "0px !important",
            paddingLeft: "15px !important",
@@ -216,7 +221,7 @@ function Accounts() {
           height: "80px",
           borderRadius: "8px",
         }}
-        onClick={handleOpening}
+        onClick={handleOpenBalance}
       >
         <Grid container>
           <Grid item xs={6}>
@@ -248,7 +253,7 @@ function Accounts() {
               style={{ marginTop: "13px" }}
               src={Plus}
               alt=""
-              onClick={handleOpene}
+              onClick={handleOpenCardDetails}
             />
           </Grid>
           <Grid item xs={10}>
@@ -261,7 +266,7 @@ function Accounts() {
                 fontWeight: "500",
                 color: "#0077FF",
               }}
-              onClick={handleOpene}
+              onClick={handleOpenCardDetails}
             >
               Add debit card
             </h4>
@@ -271,7 +276,7 @@ function Accounts() {
               style={{ marginTop: "13px" }}
               src={Right}
               alt=""
-              onClick={handleOpene}
+              onClick={handleOpenCardDetails}
             ></img>
           </Grid>
         </Grid>
@@ -313,12 +318,12 @@ function Accounts() {
         </Grid>
       </Card>
       <Modal
-        open={opene}
-        onClose={handleClosee}
+        open={openCardDetails}
+        onClose={handleCloseCardDetails}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylee}>
+        <Box sx={styleCardDetails}>
           <p style={{ color: "#344054" }} className="left">
             Card Holder Name
           </p>
@@ -456,7 +461,7 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose}
+            onClick={handleOpenAccountDetials}
           >
             Add
           </Button>
@@ -474,20 +479,19 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosee}
-            // onClick={handleClickkk}
+            onClick={handleCloseCardDetails}
           >
             Back
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openAccountLink}
+        onClose={handleCloseAccountLink}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylee}>
+        <Box sx={styleCardDetails}>
           <p
             style={{
               color: "#0077FF",
@@ -502,12 +506,12 @@ function Accounts() {
         </Box>
       </Modal>
       <Modal
-        open={opening}
-        onClose={handleCloseing}
+        open={openBalance}
+        onClose={handleCloseBalance}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={styleBalance}>
           <Card
             style={{
               marginTop: "20px",
@@ -545,7 +549,7 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose2}
+            onClick={handleOpenAmountTransfer}
           >
             Transfer
           </Button>
@@ -563,20 +567,19 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseing}
-            // onClick={handleClickkk}
+            onClick={handleCloseBalance}
           >
             Back
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={openeing}
-        onClose={handleClosing}
+        open={openCardBalance}
+        onClose={handleCloseCardBalance}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={styling}>
+        <Box sx={styleCardRegistered}>
           <Card
             style={{
               marginTop: "20px",
@@ -629,8 +632,7 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosing}
-            // onClick={handleClickkk}
+            onClick={handleCloseCardBalance}
           >
             Replace
           </Button>
@@ -648,20 +650,19 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosing}
-            // onClick={handleClickkk}
+            onClick={handleCloseCardBalance}
           >
             Back
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={openeingg}
-        onClose={handleClosingg}
+        open={openAmount}
+        onClose={handleCloseAmount}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stylingModal}>
+        <Box sx={stylingAmountDetails}>
           <p
             style={{ textAlign: "center", fontSize: "16px", fontWeight: "600" }}
           >
@@ -824,8 +825,7 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleOpenClose3}
-            // onClick={handleClickkk}
+            onClick={handleOpenTransferMoney}
           >
             Transfer
           </Button>
@@ -843,16 +843,15 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleClosingg}
-            // onClick={handleClickkk}
+            onClick={handleCloseAmount}
           >
             Cancel
           </Button>
         </Box>
       </Modal>
       <Modal
-        open={openingg}
-        onClose={handleCloseingg}
+        open={openTransfer}
+        onClose={handleCloseTransfer}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -891,7 +890,7 @@ function Accounts() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseingg}
+            onClick={handleCloseTransfer}
           >
             Close
           </Button>
