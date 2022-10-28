@@ -110,7 +110,7 @@ function TabHistory({ page, setPage}) {
               backgroundColor: "white !important",
               borderColor: "black !important",
               borderRadius: "8px !important",
-              fontWeight: "600 !important",
+              fontWeight: "500 !important",
               marginTop: "20px!Important",
               border: "1px solid black !important",
               fontFamily: "Montserrat!important",

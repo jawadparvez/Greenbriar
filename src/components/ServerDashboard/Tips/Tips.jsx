@@ -176,7 +176,8 @@ function Tips() {
             <img
               style={{
                 marginTop: "15px",
-                marginLeft: "-10px",
+                marginLeft: "10px",
+                padding:"0px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
