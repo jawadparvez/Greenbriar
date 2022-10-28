@@ -53,7 +53,8 @@ function TabHistory({ page, setPage}) {
             <img
               style={{
                 marginTop: "10px",
-                marginLeft: "-10px",
+                marginLeft: "10px",
+                padding:"0px",
                 AlignItems: "left !important",
                 display: "flex",
               }}
@@ -135,6 +136,7 @@ function TabHistory({ page, setPage}) {
               borderColor: "black !important",
               borderRadius: "8px !important",
               marginTop: "20px!Important",
+              padding: "0px",
               fontWeight: "500 !important",
               fontSize: "13px !important",
               border: "1px solid black !important",
@@ -165,6 +167,7 @@ function TabHistory({ page, setPage}) {
               border: "1px solid black !important",
               fontFamily: "Montserrat!important",
               fontSize: "13px !important",
+              padding: "0px",
               height: "40px !important",
               textTransform: "capitalize !important",
             }}
@@ -222,6 +225,7 @@ function TabHistory({ page, setPage}) {
                                   sx={{
                                     color: "#0376FB !important",
                                     marginLeft: "1px !important",
+                                    padding: "0px",
                                   }}
                                 />
                               }
@@ -232,6 +236,7 @@ function TabHistory({ page, setPage}) {
                                     marginLeft: "10px !important",
                                     width: "18px !important",
                                     height: "18px !important",
+                                    padding: "0px",
                                   }}
                                 />
                               }
@@ -241,6 +246,7 @@ function TabHistory({ page, setPage}) {
                                 position: "relative !important",
                                 marginTop: "6px !important",
                                 paddinTop: "0px !important",
+                                padding: "0px",
                                 marginBottom: "0px !important",
                                 width: "16px !important",
                                 height: "16px !important",

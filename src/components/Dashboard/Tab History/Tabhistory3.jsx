@@ -172,6 +172,7 @@ function TabHistory3({ page, setPage }) {
                                   sx={{
                                     color: "#0376FB !important",
                                     marginLeft: "1px !important",
+                                    padding:"0px",
                                   }}
                                 />
                               }
@@ -182,6 +183,7 @@ function TabHistory3({ page, setPage }) {
                                     marginLeft: "1px !important",
                                     width: "18px !important",
                                     height: "18px !important",
+                                    padding:"0px"
                                   }}
                                 />
                               }
@@ -191,6 +193,7 @@ function TabHistory3({ page, setPage }) {
                                 position: "relative !important",
                                 marginTop: "4px !important",
                                 paddinTop: "0px !important",
+                                padding:"0px",
                                 marginBottom: "0px !important",
                                 width: "16px !important",
                                 height: "16px !important",

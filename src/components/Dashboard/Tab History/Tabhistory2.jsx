@@ -234,6 +234,7 @@ function TabHistory2({page, setPage}) {
                 fontFamily: "Montserrat",
                 height: "163px",
                 borderRadius: "8px",
+                padding:'0px',
                 marginLeft: "10px",
                 marginRight: "10px",
               }}
@@ -250,6 +251,7 @@ function TabHistory2({page, setPage}) {
                                 <CheckBoxOutlineBlankRoundedIcon
                                   sx={{
                                     color: "#0376FB !important",
+                                    padding:"0px",
                                   }}
                                 />
                               }
@@ -258,6 +260,7 @@ function TabHistory2({page, setPage}) {
                                   sx={{
                                     color: "#0376FB !important",
                                     width: "18px !important",
+                                    padding:"0px",
                                     height: "18px !important",
                                   }}
                                 />
@@ -271,6 +274,7 @@ function TabHistory2({page, setPage}) {
                                 width: "16px !important",
                                 height: "16px !important",
                                 paddingLeft: "0px !important",
+                                padding:"0px",
                                 boxShadow: "0px 0px 0px 4px #F4EBFF !important",
                                 borderRadius: "4px !important",
                                 left: "12px !important",

@@ -116,6 +116,7 @@ function ViewOrder() {
                                   style={{
                                     color: "#0376FB",
                                     marginLeft: "1px",
+                                    padding:"0px",
                                   }}
                                 />
                               }
@@ -126,6 +127,7 @@ function ViewOrder() {
                                     marginLeft: "1px",
                                     width: "18px",
                                     height: "18px",
+                                    padding:"0px"
                                   }}
                                 />
                               }
@@ -139,6 +141,7 @@ function ViewOrder() {
                                 width: "16px !important",
                                 height: "16px !important",
                                 paddingLeft: "0px !important",
+                                padding:"0px",
                                 boxShadow: "0px 0px 0px 4px #F4EBFF !important",
                                 borderRadius: "4px !important",
                                 left: "12px !important",

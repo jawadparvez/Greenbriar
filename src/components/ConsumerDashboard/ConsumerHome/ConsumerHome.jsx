@@ -78,7 +78,7 @@ function ConsumerHome() {
         </Grid>
       </Grid>
 
-      <p
+      <p 
         style={{
           textAlign: "left",
           marginLeft: "3%",
