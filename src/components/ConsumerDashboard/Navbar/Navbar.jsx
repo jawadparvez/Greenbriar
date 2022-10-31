@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   AppBar,
   Toolbar,
@@ -7,7 +7,7 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
-  Button,
+  Button
 } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import Logo from "../../../Assets/Images/AppLogo.svg";
@@ -15,6 +15,7 @@ import { Grid } from "@mui/material";
 import "./Navbar.css";
 import SCAN from '../../../Assets/Images/scan.png';
 import Avatar from '../../../Assets/Images/Avatar.png'
+
 
 const useStyles = makeStyles((theme) => ({
   navlinks: { marginLeft: theme.spacing(10), display: "flex" },
@@ -34,6 +35,10 @@ function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  const [active, setActive] = useState(false);
+  const handleClick = () => {
+    setActive(!active);
+  }
   return (
     <AppBar
       position="static"
@@ -55,11 +60,11 @@ function Navbar() {
               exact
               component={NavLink}
               to={"/ConsumerHome"}
-              activeClassName="activeLink"
+              onClick={handleClick}
               style={{
-                color: "white",
+                color: active ? "white" : "#0077FF",
                 marginLeft: "-25px",
-                backgroundColor: "#0077FF ",
+                backgroundColor: active ? "#0077FF" : "white",
                 borderRadius: "8px ",
                 fontWeight: "500 ",
                 marginTop: "20px ",
@@ -68,9 +73,6 @@ function Navbar() {
                 width: "97px ",
                 height: "43px ",
                 textTransform: "capitalize ",
-                "&:hover": {
-                  backgroundColor: "purple",
-                },
               }}
               variant="contained"
             >
@@ -84,9 +86,9 @@ function Navbar() {
               activeClassName="activeLink"
               to="/ConsumerOrderItems"
               style={{
-                color: "#0077FF",
+                color: active ? "#0077FF" : "white",
                 marginLeft: "-25px",
-                backgroundColor: "white",
+                backgroundColor: active ? "white" : "#0077FF",
                 borderRadius: "8px ",
                 fontWeight: "500 ",
                 marginTop: "20px ",
@@ -109,7 +111,7 @@ function Navbar() {
             />
           </Grid>
           <Grid item xs={2}>
-            <NavLink to ="/ConsumerLogin">
+            <NavLink to="/ConsumerLogin">
               <img style={{ marginTop: "18px" }} src={Avatar} alt="" />
             </NavLink>
           </Grid>
