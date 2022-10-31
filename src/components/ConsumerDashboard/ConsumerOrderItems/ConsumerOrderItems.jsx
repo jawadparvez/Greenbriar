@@ -8,6 +8,8 @@ import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import Right from "../../../Assets/Images/right.png";
+import Plus from "../../../Assets/Images/plus.png";
 
 function ConsumerOrderItems() {
 
@@ -34,28 +36,41 @@ function ConsumerOrderItems() {
        setShoww(!showw);
        setShowwe(!showwe);
      }
-    function onClickPay() {
-        handleClose();
+    function onClickTip() {
+        handleOpen();
         setShower(true);
         setShowwe(false);
         setShoww(false);
     }
 
+    function onClickOpenCard () {
+        handleOpenConfirmPayment();
+        handleClose();
+    }
+
     const [open, setOpen] = useState(false);
     const [opene, setOpene] = useState(false);
+    const [openConfirmPayment, setOpenConfirmPayment] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const handleOpene = () => setOpene(true);
     const handleClosee = () => setOpene(false);
+    const handleOpenConfirmPayment = () => setOpenConfirmPayment(true);
+    const handleCloseConfirmPayment = () => setOpenConfirmPayment(false);
 
 
     let navigate = useNavigate();
 
     function NavigateReceipt() {
-      navigate("/ComsumerReceipt");
+      navigate("/ConsumerReceipt");
     }
     function handleClick() {
       navigate(-1);
+    }
+
+    function handleOpenNewPayment () {
+      handleOpene();
+      handleCloseConfirmPayment();
     }
 
     const stylee = {
@@ -85,6 +100,24 @@ function ConsumerOrderItems() {
        transform: "translate(-50%, -50%)",
        width: 350,
        height: "570px",
+       bgcolor: "white",
+       border: "1px solid black",
+       borderRadius: "8px",
+       boxShadow: 24,
+       zIndex: "+1",
+       p: 4,
+     };
+
+     const styleConfirmPayment = {
+       position: "absolute",
+       paddingTop: "0px !important",
+       paddingLeft: "15px !important",
+       paddingRight: "15px !important",
+       top: "40%",
+       left: "50%",
+       transform: "translate(-50%, -50%)",
+       width: 350,
+       height: "320px",
        bgcolor: "white",
        border: "1px solid black",
        borderRadius: "8px",
@@ -385,7 +418,7 @@ function ConsumerOrderItems() {
                 fontWeight: "600",
                 color: "#0077FF",
               }}
-              onClick={handleOpen}
+              onClick={onClickTip}
             >
               Custom
             </p>
@@ -466,7 +499,7 @@ function ConsumerOrderItems() {
               width: "340px",
             }}
             variant="contained"
-            onClick={handleOpene}
+            onClick={handleOpenConfirmPayment}
           >
             Pay Now
           </Button>
@@ -520,7 +553,7 @@ function ConsumerOrderItems() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={onClickPay}
+            onClick={onClickOpenCard}
           >
             Pay
           </Button>
@@ -542,7 +575,7 @@ function ConsumerOrderItems() {
               marginTop: "20px",
             }}
           >
-            Enter payment details
+            Confirm Payment
           </p>
 
           <p style={{ color: "#344054" }} className="left">
@@ -713,6 +746,160 @@ function ConsumerOrderItems() {
             }}
             variant="contained"
             onClick={handleClosee}
+          >
+            Cancel
+          </Button>
+
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "white !important",
+              backgroundColor: "#0077FF !important",
+              marginTop: "10px!important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+            }}
+            variant="contained"
+            onClick={NavigateReceipt}
+          >
+            Pay
+          </Button>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={openConfirmPayment}
+        onClose={handleCloseConfirmPayment}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={styleConfirmPayment}>
+          <p
+            style={{
+              fontSize: "16px",
+              fontWeight: "600",
+              color: "black",
+              textAlign: "center",
+              marginTop: "20px",
+            }}
+          >
+            Enter payment details
+          </p>
+          <Card
+            style={{
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "43px",
+              marginBottom: "10px",
+              borderRadius: "8px",
+              marginTop: "30px",
+            }}
+          >
+            <Grid container>
+              <Grid item xs={1}>
+                <img
+                  style={{ marginTop: "13px", marginLeft: "5px" }}
+                  src={Plus}
+                  alt=""
+                  onClick={handleOpenNewPayment}
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <h4
+                  style={{
+                    textAlign: "left",
+                    marginTop: "4px",
+                    marginLeft: "10px",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    color: "#0077FF",
+                  }}
+                  onClick={handleOpenNewPayment}
+                >
+                  Add debit card
+                </h4>
+              </Grid>
+              <Grid item xs={1}>
+                <img
+                  style={{ marginTop: "13px" }}
+                  src={Right}
+                  alt=""
+                  onClick={handleOpenNewPayment}
+                ></img>
+              </Grid>
+            </Grid>
+          </Card>
+          <Card
+            style={{
+              border: "1px solid black",
+              fontFamily: "Montserrat",
+              height: "43px",
+              marginBottom: "10px",
+              borderRadius: "8px",
+              marginTop: "10px",
+            }}
+          >
+            <Grid container>
+              <Grid item xs={1}>
+                <img
+                  style={{ marginTop: "13px", marginLeft: "5px" }}
+                  src={Plus}
+                  alt=""
+                  onClick={handleOpenNewPayment}
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <h4
+                  style={{
+                    textAlign: "left",
+                    marginTop: "4px",
+                    marginLeft: "10px",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    color: "#0077FF",
+                  }}
+                  onClick={handleOpenNewPayment}
+                >
+                  Add debit card
+                </h4>
+              </Grid>
+              <Grid item xs={1}>
+                <img
+                  style={{ marginTop: "13px" }}
+                  src={Right}
+                  alt=""
+                  onClick={handleOpenNewPayment}
+                ></img>
+              </Grid>
+            </Grid>
+          </Card>
+          <Divider
+            style={{
+              color: "black ",
+              marginTop: "10px ",
+              width: "100%",
+              justifyContent: "center",
+              marginLeft: "0px ",
+              borderBottom: "1px solid black",
+            }}
+          />
+          <Button
+            fullWidth
+            className="signin-button button"
+            sx={{
+              color: "Red !important",
+              backgroundColor: "white !important",
+              marginTop: "20px!important",
+              borderRadius: "8px !important",
+              border: "1px solid black !important",
+              fontFamily: "Montserrat !important",
+              height: "44px !important",
+            }}
+            variant="contained"
+            onClick={handleCloseConfirmPayment}
           >
             Cancel
           </Button>

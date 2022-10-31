@@ -9,7 +9,7 @@ import Navbar from './OrderNavbar.jsx'
 function ConsumerOrder() {
  let navigate = useNavigate();
      function handleClick() {
-       navigate("/ComsumerOrderItems");
+       navigate("/ConsumerOrderItems");
      } 
   return (
     <div>

@@ -251,7 +251,7 @@ function Header() {
           }
         />
         <Route
-          path="/ComsumerOrderItems"
+          path="/ConsumerOrderItems"
           element={
             <PrivateRoute>
               <ConsumerOrderItems />
@@ -259,7 +259,7 @@ function Header() {
           }
         />
         <Route
-          path="/ComsumerReceipt"
+          path="/ConsumerReceipt"
           element={
             <PrivateRoute>
               <ConsumerReceipt />
