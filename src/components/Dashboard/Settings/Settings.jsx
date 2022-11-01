@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
-import { Grid } from "@mui/material";
-import { Link } from "@mui/material";
+import { Grid, Link, Button } from "@mui/material";
 import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
@@ -11,8 +10,6 @@ import TabPanel from "@mui/lab/TabPanel";
 import Right from "../../../Assets/Images/rightarrow.png";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
-import { Button } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { Modal } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";

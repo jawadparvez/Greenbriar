@@ -260,6 +260,8 @@ function Users() {
                     color: "#D0D5DD !important",
                     marginLeft: "0px !important",
                     position: "relative !important",
+                    padding: "0px",
+                    marginBottom:"3px",
                     paddingLeft: "0px !important",
                     left: "12px !important",
                     "&.Mui-checked": {
@@ -286,6 +288,8 @@ function Users() {
                     color: "#D0D5DD !important",
                     marginLeft: "0px !important",
                     position: "relative !important",
+                    padding: "0px",
+                    marginBottom:"3px",
                     paddingLeft: "0px !important",
                     left: "12px !important",
                     "&.Mui-checked": {
@@ -313,6 +317,8 @@ function Users() {
                     marginLeft: "0px !important",
                     position: "relative !important",
                     paddingLeft: "0px !important",
+                    padding: "0px",
+                    marginBottom:"3px",
                     left: "12px !important",
                     "&.Mui-checked": {
                       color: "#0077FF !important",
@@ -531,6 +537,7 @@ function Users() {
                     marginLeft: "0px !important",
                     position: "relative !important",
                     paddingLeft: "0px !important",
+                    padding: "0px",
                     left: "12px !important",
                     "&.Mui-checked": {
                       color: "#0077FF !important",
@@ -556,7 +563,7 @@ function Users() {
                     color: "#D0D5DD !important",
                     marginLeft: "0px !important",
                     position: "relative !important",
-                    paddingLeft: "0px !important",
+                    padding: "0px",
                     left: "12px !important",
                     "&.Mui-checked": {
                       color: "#0077FF !important",
@@ -582,7 +589,7 @@ function Users() {
                     color: "#D0D5DD !important",
                     marginLeft: "0px !important",
                     position: "relative !important",
-                    paddingLeft: "0px !important",
+                    padding: "0px",
                     left: "12px !important",
                     "&.Mui-checked": {
                       color: "#0077FF !important",
