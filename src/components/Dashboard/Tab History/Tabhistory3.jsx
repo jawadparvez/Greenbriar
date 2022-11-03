@@ -15,9 +15,12 @@ import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutline
 import CheckIcon from "@mui/icons-material/Check";
 
 function TabHistory3({ page, setPage }) {
+
+  //Declaration of constant to store data from api
   const [item, setItem] = useState([]);
   const [order, setOrder] = useState([]);
 
+  //useEffect to fetch items from the api
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
@@ -26,6 +29,8 @@ function TabHistory3({ page, setPage }) {
         console.log("item is being retrieved");
       });
   }, []);
+
+  //useEffect to fetch orders from the api
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/orders")
       .then((response) => response.json())
@@ -34,10 +39,11 @@ function TabHistory3({ page, setPage }) {
         console.log("order is being retrieved");
       });
   }, []);
+
+  //return statement
   return (
     <div>
       <Navbar />
-
       <Grid container>
         <Grid item xs={6}>
           <img

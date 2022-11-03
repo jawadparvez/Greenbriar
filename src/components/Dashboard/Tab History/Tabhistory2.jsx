@@ -21,9 +21,12 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import Calender from "../../../Assets/Images/calendar.png";
 
 function TabHistory2({page, setPage}) {
+
+  //Declaration of contants to store the data fetched from the api 
   const [item, setItem] = useState([]);
   const [order, setOrder] = useState([]);
 
+  //useEffect to fetch the item from the api 
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
@@ -32,6 +35,8 @@ function TabHistory2({page, setPage}) {
         console.log("item is being retrieved");
       });
   }, []);
+
+  //useEffect to fetch the orders from the api
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/orders")
       .then((response) => response.json())
@@ -41,6 +46,7 @@ function TabHistory2({page, setPage}) {
       });
   }, []);
 
+  //Data for AreaChart to show data until backend is developed.
   const Ranges = [
   ];
   const data = [
@@ -81,14 +87,17 @@ function TabHistory2({page, setPage}) {
     },
   ];
 
+
+  //navigation to view order page
   let navigate = useNavigate();
   function handleClick() {
     navigate("/viewOrder");
   }
+
+  //return statement
   return (
     <div>
       <Navbar />
-
       <Grid container>
         <Grid item xs={2}>
           <img
@@ -176,8 +185,7 @@ function TabHistory2({page, setPage}) {
                 width: "200px",
                 "&. svg":{
                   color:"green"
-                }
-                
+                }      
               }}
               placeholder="09 - 13 May"
               ranges={Ranges}
