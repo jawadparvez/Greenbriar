@@ -6,12 +6,10 @@ import BlackArrow from "../../../Assets/Images/blackarrow.png";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import Paper from "@mui/material/Paper";
-import { Box, Button } from "@mui/material";
+import { Button, Checkbox, Link } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
-import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
-import { Checkbox } from "@mui/material";
 import Microphone from "../../../Assets/Images/Microphone.png";
 import BottomArrow from "../../../Assets/Images/bottomarrow.png";
 import RightArrow from "../../../Assets/Images/rightarrow.png";
@@ -19,9 +17,13 @@ import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutline
 import CheckIcon from "@mui/icons-material/Check";
 
 function TabHistory({ page, setPage}) {
+
+  //declaration of constants to store the fetched data.
   const [item, setItem] = useState([]);
   const [order, setOrder] = useState([]);
 
+
+  //useEffect to fetch item from the api.
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
@@ -30,6 +32,8 @@ function TabHistory({ page, setPage}) {
         console.log("item is being retrieved");
       });
   }, []);
+
+  //useEffect to fetch orders from the api 
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/orders")
       .then((response) => response.json())
@@ -39,10 +43,14 @@ function TabHistory({ page, setPage}) {
       });
   }, []);
 
-      let navigate = useNavigate();
-      function handleClick() {
-        navigate(-1);
-      }
+
+  //navigate to the last opened page. 
+  let navigate = useNavigate();
+  function handleClick() {
+      navigate(-1);
+  }
+
+  //retunr statement
   return (
     <div>
       <Navbar />
