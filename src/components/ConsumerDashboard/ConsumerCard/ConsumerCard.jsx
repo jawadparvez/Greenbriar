@@ -6,115 +6,43 @@ import TextField from "@mui/material/TextField";
 import Navbar from '../Navbar/Navbar'
 
 function ConsumerCard() {
+
+        //Navigate to the last opened page 
         let navigate = useNavigate();
         function handleClick() {
           navigate(-1);
         }
-  return (
-    <div>
-      <Navbar />
-      <h3
-        style={{
+    
+    //Styled Components
+    const AddCardStyle = {
           color: "#0077FF",
           textAlign: "center",
           marginRight: "20px",
           fontSize: "20px",
           marginTop: "5%",
           fontFamily: "Montserrat !important",
-        }}
-      >
-        Add Card
-      </h3>
-      <div style={{ marginLeft: "20px", marginRight: "20px" }}>
-        <p style={{ color: "#344054" }} className="left">
-          Card Holder Name
-        </p>
-        <TextField
-          fullWidth
-          sx={{
-            "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": {
-                fontFamily: "Montserrat",
-                fontWeight: "700",
-                border: "1px solid #000000",
-                borderRadius: "8px",
-                height: "47px",
-              },
-            },
-            "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-            "& .MuiOutlinedInput-root.Mui-focused": {
-              "& > fieldset": {
-                border: "1px solid #000000 ",
-              },
-            },
-          }}
-          variant="outlined"
-          size="small"
-        />
-        <p style={{ color: "#344054" }} className="left">
-          Card Nickname (optional)
-        </p>
-        <TextField
-          fullWidth
-          sx={{
-            "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": {
-                fontFamily: "Montserrat",
-                fontWeight: "700",
-                border: "1px solid #000000",
-                borderRadius: "8px",
-                height: "47px",
-              },
-            },
-            "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-            "& .MuiOutlinedInput-root.Mui-focused": {
-              "& > fieldset": {
-                border: "1px solid #000000 ",
-              },
-            },
-          }}
-          variant="outlined"
-          size="small"
-        />
-        <p style={{ color: "#344054" }} className="left">
-          Card Number
-        </p>
-        <TextField
-          fullWidth
-          sx={{
-            "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": {
-                fontFamily: "Montserrat",
-                fontWeight: "700",
-                border: "1px solid #000000",
-                borderRadius: "8px",
-                height: "47px",
-                color: "#667085",
-              },
-            },
-            "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-            "& .MuiOutlinedInput-root.Mui-focused": {
-              "& > fieldset": {
-                border: "1px solid #000000 ",
-                color: "#667085",
-              },
-            },
-          }}
-          variant="outlined"
-          size="small"
-        />
+        };
 
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <p style={{ color: "#344054" }} className="left">
-              CVV
-            </p>
-            <TextField
-              fullWidth
-              sx={{
+    const AddCardTextFieldStyle = {
+            "& .MuiInputLabel-root": { color: "#0077FF" }, //styles the label
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                fontFamily: "Montserrat",
+                fontWeight: "700",
+                border: "1px solid #000000",
+                borderRadius: "8px",
+                height: "47px",
+              },
+            },
+            "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
+            "& .MuiOutlinedInput-root.Mui-focused": {
+              "& > fieldset": {
+                border: "1px solid #000000 ",
+              },
+            },
+          };
+
+      const CVVTextFieldStyle = {
                 "& .MuiInputLabel-root": { color: "#667085" }, //styles the label
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": {
@@ -133,7 +61,49 @@ function ConsumerCard() {
                     color: "#667085",
                   },
                 },
-              }}
+              };
+  //return statement
+  return (
+    <div>
+      <Navbar />
+      <h3 style={AddCardStyle}>Add Card</h3>
+      <div style={{ marginLeft: "20px", marginRight: "20px" }}>
+        <p style={{ color: "#344054" }} className="left">
+          Card Holder Name
+        </p>
+        <TextField
+          fullWidth
+          sx={AddCardTextFieldStyle}
+          variant="outlined"
+          size="small"
+        />
+        <p style={{ color: "#344054" }} className="left">
+          Card Nickname (optional)
+        </p>
+        <TextField
+          fullWidth
+          sx={AddCardTextFieldStyle}
+          variant="outlined"
+          size="small"
+        />
+        <p style={{ color: "#344054" }} className="left">
+          Card Number
+        </p>
+        <TextField
+          fullWidth
+          sx={AddCardTextFieldStyle}
+          variant="outlined"
+          size="small"
+        />
+
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <p style={{ color: "#344054" }} className="left">
+              CVV
+            </p>
+            <TextField
+              fullWidth
+              sx={CVVTextFieldStyle}
               variant="outlined"
               size="small"
             />
@@ -144,27 +114,7 @@ function ConsumerCard() {
             </p>
             <TextField
               fullWidth
-              sx={{
-                "& .MuiInputLabel-root": {
-                  color: "#667085",
-                  fontFamily: "Montserrat",
-                }, //styles the label
-                "& .MuiOutlinedInput-root": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                    borderRadius: "8px",
-                    height: "47px",
-                  },
-                },
-                "& .MuiInputLabel-root.Mui-focused": { color: "#667085" },
-                "& .MuiOutlinedInput-root.Mui-focused": {
-                  "& > fieldset": {
-                    borderColor: "#000000",
-                    border: "1px solid",
-                  },
-                },
-              }}
+              sx={CVVTextFieldStyle}
               variant="outlined"
               size="small"
             />
