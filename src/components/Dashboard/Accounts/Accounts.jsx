@@ -137,7 +137,7 @@ function Accounts() {
         p: 4,
       };
 
-      // Styling 
+      // Styling Components
       const stylingAmountDetails = {
            position: "absolute",
            paddingTop: "0px !important",
@@ -155,7 +155,8 @@ function Accounts() {
            zIndex: "+1",
            p: 4,
          };
-
+         
+         //declaration and handling of payment slider in transfer account
           const [value, setValue] = React.useState(10000);
 
           const handleSliderChange = (event, newValue) => {
@@ -175,11 +176,15 @@ function Accounts() {
               setValue(1000000);
             }
           };
+      
 
+      //navigate to the last opened page.
       let navigate = useNavigate();
       function handleClick() {
         navigate(-1);
       }
+
+  //return Statement
   return (
     <div>
       <Navbar />

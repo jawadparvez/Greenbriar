@@ -17,14 +17,17 @@ import CheckSuccess from "../../../Assets/Images/CheckSuccess.png";
 
 function Settings() {
 
-    const [opening, setOpening] = React.useState(false);
-    const handleOpening = () => setOpening(true);
-    const handleCloseing = () => setOpening(false);   
+    //declaration of modal handling
+    const [openTicketSubmitted, setOpenTicketSubmitted] = React.useState(false);
+    const handleOpenTicketSubmitted = () => setOpenTicketSubmitted(true);
+    const handleCloseing = () => setOpenTicketSubmitted(false);   
+
         const [value, setValue] = useState("1");
         const handleTabChange = (event, newTabIndex) => {
           setValue(newTabIndex);
         };
 
+    //Declaraion of show hide states of components
         const [show, setShow] = useState(true);
         const [showw, setShoww] = useState(false);
         const [showe, setShowe] = useState(true);
@@ -38,7 +41,6 @@ function Settings() {
             setShow(!show)
             setShoww(!showw)
         }
-
 
         function onClickShoww() {
           setShowe(!showe);
@@ -54,7 +56,8 @@ function Settings() {
           setShowerr(!showerr);
           setShowwerr(!showwerr);
         }
-
+        
+        //Styled Component
         const stylingSuccess = {
           position: "absolute",
           paddingTop: "0px !important",
@@ -72,12 +75,14 @@ function Settings() {
           zIndex: "+1",
           p: 4,
         };
-        
+    
+    //Navigate to the last opened page
     let navigate = useNavigate();
     function handleClick() {
       navigate(-1);
     }
-
+  
+  //return Statement
   return (
     <div>
       <Navbar />
@@ -1202,7 +1207,7 @@ function Settings() {
                       marginTop: "8px !important",
                       marginBottom: "4px !important",
                       position: "relative !important",
-                      padding:'0px',
+                      padding: "0px",
                       left: "0px !important",
                       "&.Mui-checked": {
                         color: "#0077FF !important",
@@ -1242,7 +1247,7 @@ function Settings() {
                       textTransform: "capitalize !important",
                     }}
                     variant="contained"
-                    onClick={handleOpening}
+                    onClick={handleOpenTicketSubmitted}
                   >
                     Save
                   </Button>
@@ -1309,7 +1314,7 @@ function Settings() {
         </TabPanel>
       </TabContext>
       <Modal
-        open={opening}
+        open={openTicketSubmitted}
         onClose={handleCloseing}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"

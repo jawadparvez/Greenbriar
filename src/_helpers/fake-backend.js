@@ -38,7 +38,7 @@ function fakeBackend() {
                     token: 'fake-jwt-token'
                 });
             }
-
+            
             function getUsers() {
                 if (!isAuthenticated()) return unauthorized();
                 return ok(users);
