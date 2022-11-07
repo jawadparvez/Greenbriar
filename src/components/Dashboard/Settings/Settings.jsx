@@ -20,41 +20,43 @@ function Settings() {
     //declaration of modal handling
     const [openTicketSubmitted, setOpenTicketSubmitted] = React.useState(false);
     const handleOpenTicketSubmitted = () => setOpenTicketSubmitted(true);
-    const handleCloseing = () => setOpenTicketSubmitted(false);   
+    const handleCloseTicketSubmitted = () => setOpenTicketSubmitted(false);   
 
+    //manage mui tabs values and state to confirm which tab panels to show.
         const [value, setValue] = useState("1");
         const handleTabChange = (event, newTabIndex) => {
           setValue(newTabIndex);
         };
 
-    //Declaraion of show hide states of components
-        const [show, setShow] = useState(true);
-        const [showw, setShoww] = useState(false);
-        const [showe, setShowe] = useState(true);
-        const [showwe, setShowwe] = useState(false);
-        const [shower, setShower] = useState(true);
-        const [showwer, setShowwer] = useState(false);
-        const [showerr, setShowerr] = useState(true);
-        const [showwerr, setShowwerr] = useState(false);
+    //Declaration of show hide states of components
+        const [showOrgDetails, setShowOrgDetails] = useState(true);
+        const [showEditOrgDetails, setShowEditOrgDetails] = useState(false);
+        const [showUserDetails, setShowUserDetails] = useState(true);
+        const [showEditUserDetails, setShowEditUserDetails] = useState(false);
+        const [showPassword, setShowPassword] = useState(true);
+        const [showEditPassword, setShowEditPassword] = useState(false);
+        const [showSupport, setShowSupport] = useState(true);
+        const [showTicketHistory, setShowTicketHistory] = useState(false);
 
+        //handle Organization details section 
         function onClickShow() {
-            setShow(!show)
-            setShoww(!showw)
+            setShowOrgDetails(!showOrgDetails);
+            setShowEditOrgDetails(!showEditOrgDetails);
         }
-
+        //handle user details section
         function onClickShoww() {
-          setShowe(!showe);
-          setShowwe(!showwe);
+          setShowUserDetails(!showUserDetails);
+          setShowEditUserDetails(!showEditUserDetails);
         }
-
+        //handle password section
         function onClickShower() {
-          setShower(!shower);
-          setShowwer(!showwer);
+          setShowPassword(!showPassword);
+          setShowEditPassword(!showEditPassword);
         }
-
+        //handle Support Section 
         function onClickShowerr() {
-          setShowerr(!showerr);
-          setShowwerr(!showwerr);
+          setShowSupport(!showSupport);
+          setShowTicketHistory(!showTicketHistory);
         }
         
         //Styled Component
@@ -190,7 +192,7 @@ function Settings() {
           </TabList>
         </Box>
         <TabPanel value="1">
-          {show ? (
+          {showOrgDetails ? (
             <>
               <Grid container>
                 <Grid item xs={8}>
@@ -316,7 +318,7 @@ function Settings() {
               </p>
             </>
           ) : null}
-          {showw ? (
+          {showEditOrgDetails ? (
             <>
               <p
                 style={{
@@ -543,7 +545,7 @@ function Settings() {
           ) : null}
         </TabPanel>
         <TabPanel value="2">
-          {showe ? (
+          {showUserDetails ? (
             <>
               <Grid container>
                 <Grid item xs={8}>
@@ -685,7 +687,7 @@ function Settings() {
               </p>
             </>
           ) : null}
-          {showwe ? (
+          {showEditUserDetails ? (
             <>
               <p
                 style={{
@@ -877,7 +879,7 @@ function Settings() {
           ) : null}
         </TabPanel>
         <TabPanel value="3">
-          {shower ? (
+          {showPassword ? (
             <>
               <Grid container>
                 <Grid item xs={8}>
@@ -930,7 +932,7 @@ function Settings() {
               </Grid>
             </>
           ) : null}
-          {showwer ? (
+          {showEditPassword ? (
             <>
               <p
                 style={{
@@ -1122,7 +1124,7 @@ function Settings() {
           ) : null}
         </TabPanel>
         <TabPanel value="4">
-          {showerr ? (
+          {showSupport ? (
             <>
               <Card
                 style={{
@@ -1255,7 +1257,7 @@ function Settings() {
               </Grid>
             </>
           ) : null}
-          {showwerr ? (
+          {showTicketHistory ? (
             <>
               <p style={{ fontSize: "16px", fontWeight: "500" }}>
                 Ticket History
@@ -1315,7 +1317,7 @@ function Settings() {
       </TabContext>
       <Modal
         open={openTicketSubmitted}
-        onClose={handleCloseing}
+        onClose={handleCloseTicketSubmitted}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -1354,7 +1356,7 @@ function Settings() {
               height: "44px !important",
             }}
             variant="contained"
-            onClick={handleCloseing}
+            onClick={handleCloseTicketSubmitted}
           >
             Close
           </Button>
