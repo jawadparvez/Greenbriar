@@ -11,8 +11,11 @@ import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutline
 import CheckIcon from "@mui/icons-material/Check";
 
 function ViewTab() {
- const [item, setItem] = useState([]);
 
+  //fetch items from the database
+  const [item, setItem] = useState([]);
+
+  //use effect to fetch the data from the database
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
@@ -21,6 +24,8 @@ function ViewTab() {
         console.log("item is being retrieved");
       });
   }, []);
+
+  //return statement 
   return (
     <div>
       <Navbar />

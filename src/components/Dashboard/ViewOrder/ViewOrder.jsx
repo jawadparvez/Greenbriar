@@ -12,9 +12,11 @@ import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutline
 import CheckIcon from "@mui/icons-material/Check";
 
 function ViewOrder() {
+  //declaration of fetching the items and orders data from the database
   const [item, setItem] = useState([]);
   const [order, setOrder] = useState([]);
 
+  //use effect to fetch the data from the 
   useEffect(() => {
     fetch("https://jawad-fake-server-app.herokuapp.com/item")
       .then((response) => response.json())
